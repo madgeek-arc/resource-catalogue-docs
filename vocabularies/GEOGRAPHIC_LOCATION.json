@@ -1,0 +1,8 @@
+{
+    "id": "geographic_lcoation",
+    "name": "Geographic Location",
+    "description": "All Regions and Countries",
+    "parentId": null,
+    "type": "GEOGRAPHIC_LOCATION",
+    "extras": {}
+}

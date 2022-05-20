@@ -1,0 +1,1594 @@
+[
+  {
+    "id": "provider_hosting_legal_entity-czm",
+    "name": "Carl Zeiss Microscopy",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-csi",
+    "name": "Consorzio per il Sistema Informativo",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-isti",
+    "name": "Institute for Information Science and Technologies 'Alessandro Faedo' - ISTI",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ndci",
+    "name": "National Distributed Computing Infrastructure",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ukristfc",
+    "name": "UK Research and Innovation - Science and Technology Facilities Council",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-msw",
+    "name": "MyScienceWork",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cratis",
+    "name": "Centre de Recherche en Acquisition et Traitement de l'Image pour la Santé",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ef",
+    "name": "Europeana Foundation",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cebbruc",
+    "name": " CY-Biobank Center of Excellence in Biobanking and Biomedical Research - University of Cyprus",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ina",
+    "name": "Istituto Nazionale di Astrofisica",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-eodcwrm",
+    "name": "Earth Observation Data Centre for Water Resources Monitoring",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-figshare",
+    "name": "Figshare",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-phenomenal",
+    "name": "Phenomenal",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-100percentit",
+    "name": "100 Percent IT",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-pnosc",
+    "name": "Photon and Neutron Open Science Cloud",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gesisliss",
+    "name": "GESIS Leibniz Institute for the Social Sciences",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gbifp",
+    "name": "Global Biodiversity Information Facility Portugal: Regions module",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ideaconsult",
+    "name": "IDEAconsult",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-eipp",
+    "name": "European Infrastructure for Plant Phenotyping",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-iisas",
+    "name": "Institute of Informatics - Slovak Academy of Sciences",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-re3data",
+    "name": "re3data - Registry of Research Data Repositories",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-mn",
+    "name": "Miguel Nogueira",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-iimighpcupv",
+    "name": "Institute of Instrumentation for Molecular Imaging - Grid and High Performance Computing - Universitat Politècnica de València",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-sies",
+    "name": "Swedish Infrastructure for Ecosystem Science",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cloudferro",
+    "name": "CloudFerro",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-readcoop",
+    "name": "READ-COOP",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ifca",
+    "name": "Institute of Physics of Cantabria (IFCA)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-rilrdahcr",
+    "name": "LINDAT/CLARIAH-CZ Research Infrastructure for Language Resources and Digital Arts and Humanities in the Czech Republic",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-erilrt",
+    "name": "European Research Infrastructure for Language Resources and Technology",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-westlife",
+    "name": "West-Life",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-collabwith",
+    "name": "COLLABWITH",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-pface",
+    "name": "Partnership For Advanced Computing in Europe",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-capsh",
+    "name": "Committee for the Accessibility of Publications in Sciences and Humanities)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-drt",
+    "name": "Demonstration Reasoning - Test",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gsihsgmbh",
+    "name": "GSI Helmholtzzentrum für Schwerionenforschung GmbH",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cessdaeric",
+    "name": "Consortium of European Social Science Data Archives ERIC",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ifmsri",
+    "name": "Ifremer, the French Marine Science Research Institute",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cci",
+    "name": "Cineca Consorzio Interuniversitario",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ukaea",
+    "name": "UK Atomic Energy Authority",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-esa",
+    "name": "European Space Agency",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-kit",
+    "name": "Karlsruhe Institute of Technology",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-enhancer",
+    "name": "EnhanceR",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-eudat",
+    "name": "EUDAT",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-eiscatsa",
+    "name": "EISCAT Scientific Association",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-emblebi",
+    "name": "European Molecular Biology Laboratory - European Bioinformatics Institute",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-fssda",
+    "name": "Finnish Social Science Data Archive",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-crefa",
+    "name": "Center for Research in Ecology and Forestry Applications",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gbifpsp",
+    "name": "Global Biodiversity Information Facility Portugal: Spatial Portal",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-jelastic",
+    "name": "Jelastic",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-mi",
+    "name": "Mandat International",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-fsdinfo",
+    "name": "Forschungsdaten.info",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-lifewatcheric",
+    "name": "LifeWatch ERIC",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-dri",
+    "name": "Digital Repository of Ireland",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-er",
+    "name": "Eurac Research",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-mc",
+    "name": "Materials Cloud",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-okm",
+    "name": "Open Knowledge Maps",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-sixsq",
+    "name": "SixSq",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-nfsdipagr",
+    "name": "NuoroForestrySchool-DipAGR-UniSS.it",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-openaire",
+    "name": "OpenAIRE",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gbifpspl",
+    "name": "Global Biodiversity Information Facility Portugal: Species Portal",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-f6sn",
+    "name": "F6S Network",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ugr",
+    "name": "University of Granada – UGR",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-suite5dis",
+    "name": "Suite5 Data Intelligence Solutions",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ill",
+    "name": "Institut Laue Langevin",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-esse",
+    "name": "European Spallation Source ERIC",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-fctsg",
+    "name": "Fundacion Centro Tecnologico de Supercomputacion de Galicia",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gccumcg",
+    "name": "Genomics Coordination Center, University Medical Center Groningen",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-athena",
+    "name": "Athena Research and Innovation Center in Information and Communication Technologies",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-nirt",
+    "name": "National Infrastructures for Research and Technology",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-d4sciencei",
+    "name": "D4Science Infrastructure",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-sobigdata",
+    "name": "SoBigData",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-obeie",
+    "name": "Open Biomedical Engineering e-platform for Innovation through Education",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gbifpcr",
+    "name": "Global Biodiversity Information Facility Portugal: Collections Registry",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-uflo",
+    "name": "University of Florence",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ecgmbh",
+    "name": "Edelweiss Connect GmbH",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-geant",
+    "name": "GÉANT Association",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cyfronet",
+    "name": "ACC Cyfronet AGH-UST",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-dk",
+    "name": "Deutsches Klimarechenzentrum",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-dcc",
+    "name": "Digital Curation Centre",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-pncel",
+    "name": "Portuguese National Civil Engineering Laboratory",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-elixirb",
+    "name": "ELIXIR Belgium",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-rasdaman",
+    "name": "RASDAMAN",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-openminted",
+    "name": "OpenMinTeD",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-authenix",
+    "name": "AUTHENIX",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-inria",
+    "name": "Institut national de recherche en informatique et en automatique",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-icoseric",
+    "name": "Integrated Carbon Observation System European Research Infrastructure Consortium",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-humanum",
+    "name": "Huma-Num",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-sks",
+    "name": "Scientific Knowledge Services",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-fscai",
+    "name": "Fraunhofer SCAI",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-kn",
+    "name": "Koma Nord",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-datacite",
+    "name": "DataCite",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-dr",
+    "name": "Data Revenue",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-umg",
+    "name": "University of Minas Gerais",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gbifpsl",
+    "name": "Global Biodiversity Information Facility Portugal: Species Lists",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-compbiomed",
+    "name": "CompBioMed",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cyberbotics",
+    "name": "Cyberbotics",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ipsl",
+    "name": "Institut Pierre-Simon Laplace",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-jsc",
+    "name": "Jülich Supercomputing Centre",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-citesacds",
+    "name": "Communication & Information Technologies Experts SA Consulting and Development Services",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-emc",
+    "name": "Erasmus Medical Center",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-surf",
+    "name": "SURF",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ccninppp",
+    "name": "Computing Centre of the National Institute of Nuclear Physics and Particle Physics, CNRS",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-sadc",
+    "name": "Strasbourg astronomical Data Centre",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-des",
+    "name": "Deutsches Elektronen-Synchrotron",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-vu",
+    "name": "Vilnius University",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-dsw",
+    "name": "Data Stewardship Wizard",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-tanic",
+    "name": "Turkish Academic Network and Information Center",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-scigne",
+    "name": "The SCIGNE Platform",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-elixiruk",
+    "name": "ELIXIR United Kingdom",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-esci",
+    "name": "Estonian Scientific Computing Infrastructure",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-doab",
+    "name": "DOAB Foundation",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-infrafrontier",
+    "name": "INFRAFRONTIER",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ut",
+    "name": "University of Tartu",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-dg",
+    "name": "DigitalGlobe",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gbifpip",
+    "name": "Global Biodiversity Information Facility Portugal: Images Portal",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-emso",
+    "name": "European Multidisciplinary Seafloor and water column Observatory",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ml",
+    "name": "Millenia Life",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-hirmeos",
+    "name": "High Integration of Research Monographs in the European Open Science infratructure",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-osmooc",
+    "name": "Open Science MOOC",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-elixir",
+    "name": "Elixir",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ug",
+    "name": "University of Geneva",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-mws",
+    "name": "Mundi Web Services",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-iict",
+    "name": "Institute of Information and Communication Technologies",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-serveo",
+    "name": "Serveo",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-iasa",
+    "name": "Institute of Accelerating Systems and Applications",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-vecma",
+    "name": "Verified Exascale Computing for Multiscale Applications",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-upv",
+    "name": "Universitat Politècnica de València",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-openedition",
+    "name": "OpenEdition",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-tci",
+    "name": "The Cyprus Institute",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-switch",
+    "name": "SWITCH",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-exoscale",
+    "name": "EXOSCALE",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-csic",
+    "name": "Centro Nacional de Biotecnologia (CSIC)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cnrs",
+    "name": "Centre National de la Recherche Scientifique",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-orcuouk",
+    "name": "Oxford e-Research Centre, University of Oxford, UK",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ceric",
+    "name": "Central European Research Infrastructure Consortium",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ror",
+    "name": "Research Organization Registry",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-viseem",
+    "name": "VI-SEEM",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-tsystems",
+    "name": "T-Systems International",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cwl",
+    "name": "Common Workflow Language community",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-smartsmear",
+    "name": "Smart-SMEAR",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-uit",
+    "name": "UiT The Arctic University of Norway",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-fair",
+    "name": "FAIR Data Infrastructure for Physics, Chemistry, Materials Science, and Astronomy",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-iaprnrci",
+    "name": "Institute of Atmospheric Pollution Research - National Research Council of Italy",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gb",
+    "name": "Genias Benelux",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-norce",
+    "name": "NORCE Norwegian Research Centre",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ptit",
+    "name": "Posts and Telecommunications Institute of Technology",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gdg",
+    "name": "Gesellschaft für wissenschaftliche Datenverarbeitung mbH Göttingen",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-thoth",
+    "name": "Thoth: Open Book Metadata Dissemination System",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-licst",
+    "name": "Leibniz Information Centre for Science and Technology",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-elixiri",
+    "name": "ELIXIR Italy",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ibbmbnrc",
+    "name": "Institute of Biomembranes, Bioenergetics and Molecular Biotechnologies, National Research Council",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-sstirc",
+    "name": "Shanghai Science and Technology Innovation Resources Center",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-hhnirdpne",
+    "name": "Horia Hulubei National Institute for R&D in Physics and Nuclear Engineering",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-obp",
+    "name": "Open Book Publishers",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ininp",
+    "name": "Italian National Institute of Nuclear Physics",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-operasaisbl",
+    "name": "OPERAS AISBL",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ts",
+    "name": "Tree of Science",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gbif",
+    "name": "Global Biodiversity Information Facility (GBIF)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-terradue",
+    "name": "Terradue",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-rsu",
+    "name": "Riga Stradins University",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-bcuu",
+    "name": "Bijvoet Centre - Utrecht University",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cirmmp",
+    "name": "Magnetic Resonance Center of the University of Florence - CERM, Interuniversity consortium CIRMMP",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-weisb",
+    "name": "A Worldwide e-Infrastructure for Structural Biology",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ecamce",
+    "name": "E-CAM Centre of Excellence",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-aginfra",
+    "name": "AGINFRA+",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-bioexcel",
+    "name": "BioExcel Centre of Excellence",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-eoscdih",
+    "name": "EOSC DIH - Digital Innovation Hub",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ncche",
+    "name": "National Computing Center for Higher Education",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ufre",
+    "name": "University of Freiburg",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-sinergise",
+    "name": "Sinergise",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-coard",
+    "name": "Collaborative Open Access Research and Development",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-kitscc",
+    "name": "KIT - Steinbuch Centre for Computing",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-upltd",
+    "name": "Ubiquity Press Ltd",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-denbi",
+    "name": "de.NBI - German Network for Bioinformatics Infrastructure",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-plantnet",
+    "name": "PlantNet consortium (hosted by Inria)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-uo",
+    "name": "University of Oslo",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-csc",
+    "name": "CSC – IT CENTER FOR SCIENCE",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-snsc",
+    "name": "Swiss National Supercomputing Centre",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-meeo",
+    "name": "Meteorological and Environmental Earth Observation",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-rbi",
+    "name": "Ruđer Bošković Institute",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-seadatanet",
+    "name": "SeaDataNet",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-vamdc",
+    "name": "Virtual Atomic and Molecular Data Centre",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-scipedia",
+    "name": "SCIPEDIA",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-coronis",
+    "name": "CORONIS COMPUTING SL",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ebv",
+    "name": "Elsevier BV",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-dlsltd",
+    "name": "Diamond Light Source Ltd",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-expertai",
+    "name": "expert.ai",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-lago",
+    "name": "Latin American Giant Observatory",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-bsccns",
+    "name": "Barcelona Supercomputing Center - Centro Nacional de Supercomputación",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-sltum",
+    "name": "eScience Lab, The University of Manchester",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-psnc",
+    "name": "Poznan Supercomputing and Networking Center",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ddq",
+    "name": "DDQ B.V.",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-driah",
+    "name": "Digital Research Infrastructure for the Arts and Humanities",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-ciemat",
+    "name": "Scientific IT Research Activities and Knowledge, ICT Division, CIEMAT",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-eocoe",
+    "name": "Energy Oriented Centre of Excellence",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-gbifs",
+    "name": "GBIF Spain",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-egi",
+    "name": "EGI Foundation",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-emccc",
+    "name": "Euro-Mediterranean Center on Climate Change",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-bluebridge",
+    "name": "BlueBRIDGE",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  }
+]

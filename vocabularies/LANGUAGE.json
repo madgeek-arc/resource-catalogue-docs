@@ -1,0 +1,1482 @@
+[
+  {
+    "id": "aa",
+    "name": "Afar",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ab",
+    "name": "Abkhazian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ae",
+    "name": "Avestan",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "af",
+    "name": "Afrikaans",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ak",
+    "name": "Akan",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "am",
+    "name": "Amharic",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "an",
+    "name": "Aragonese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ar",
+    "name": "Arabic",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "as",
+    "name": "Assamese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "av",
+    "name": "Avaric",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ay",
+    "name": "Aymara",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "az",
+    "name": "Azerbaijani",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ba",
+    "name": "Bashkir",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "be",
+    "name": "Belarusian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "bg",
+    "name": "Bulgarian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "bh",
+    "name": "Bihari",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "bi",
+    "name": "Bislama",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "bm",
+    "name": "Bambara",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "bn",
+    "name": "Bengali",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "bo",
+    "name": "Tibetan",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "br",
+    "name": "Breton",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "bs",
+    "name": "Bosnian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ca",
+    "name": "Catalan",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ce",
+    "name": "Chechen",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ch",
+    "name": "Chamorro",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "co",
+    "name": "Corsican",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "cr",
+    "name": "Cree",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "cs",
+    "name": "Czech",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "cu",
+    "name": "Old Church Slavonic",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "cv",
+    "name": "Chuvash",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "cy",
+    "name": "Welsh",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "da",
+    "name": "Danish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "de",
+    "name": "German",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "dv",
+    "name": "Divehi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "dz",
+    "name": "Dzongkha",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ee",
+    "name": "Ewe",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "el",
+    "name": "Greek",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "en",
+    "name": "English",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "eo",
+    "name": "Esperanto",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "es",
+    "name": "Spanish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "et",
+    "name": "Estonian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "eu",
+    "name": "Basque",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "fa",
+    "name": "Persian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ff",
+    "name": "Fula",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "fi",
+    "name": "Finnish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "fj",
+    "name": "Fijian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "fo",
+    "name": "Faroese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "fr",
+    "name": "French",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "fy",
+    "name": "Western Frisian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ga",
+    "name": "Irish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "gd",
+    "name": "Galician",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "gl",
+    "name": "Gaelic",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "gn",
+    "name": "Guarani",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "gu",
+    "name": "Gujarati",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "gv",
+    "name": "Manx",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ha",
+    "name": "Hausa",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "he",
+    "name": "Hebrew",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "hi",
+    "name": "Hindi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ho",
+    "name": "Hiri Motu",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "hr",
+    "name": "Croatian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ht",
+    "name": "Haitian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "hu",
+    "name": "Hungarian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "hy",
+    "name": "Armenian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "hz",
+    "name": "Herero",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ia",
+    "name": "Interlingua",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "id",
+    "name": "Indonesian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ie",
+    "name": "Interlingue",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ig",
+    "name": "Igbo",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ii",
+    "name": "Nuosu",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "iii",
+    "name": "Sichuan Yi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ik",
+    "name": "Inupiak",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "io",
+    "name": "Ido",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "is",
+    "name": "Icelandic",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "it",
+    "name": "Italian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "iu",
+    "name": "Inuktitut",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ja",
+    "name": "Japanese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "jv",
+    "name": "Javanese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ka",
+    "name": "Georgian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "kg",
+    "name": "Kongo",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ki",
+    "name": "Kikuyu",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "kj",
+    "name": "Kwanyama",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "kk",
+    "name": "Kazakh",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "kl",
+    "name": "Kalaallisut",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "km",
+    "name": "Khmer",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "kn",
+    "name": "Kannada",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ko",
+    "name": "Korean",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "kr",
+    "name": "Kanuri",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ks",
+    "name": "Kashmiri",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ku",
+    "name": "Kurdish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "kv",
+    "name": "Komi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "kw",
+    "name": "Cornish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ky",
+    "name": "Kyrgyz",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "la",
+    "name": "Latin",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "lb",
+    "name": "Luxembourgish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "li",
+    "name": "Limburgish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ln",
+    "name": "Lingala",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "lo",
+    "name": "Lao",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "lt",
+    "name": "Lithuanian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "lu",
+    "name": "Luba-Katanga",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "lv",
+    "name": "Latvian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "mg",
+    "name": "Malagasy",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "mh",
+    "name": "Marshallese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "mi",
+    "name": "Maori",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "mk",
+    "name": "Macedonian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ml",
+    "name": "Malayalam",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "mn",
+    "name": "Mongolian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "mr",
+    "name": "Marathi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ms",
+    "name": "Malay",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "mt",
+    "name": "Maltese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "my",
+    "name": "Burmese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "na",
+    "name": "Nauru",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "nb",
+    "name": "Norwegian Bokmål",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "nd",
+    "name": "Northern Ndebele",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ne",
+    "name": "Nepali",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ng",
+    "name": "Ndonga",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "nl",
+    "name": "Dutch",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "nn",
+    "name": "Norwegian Nynorsk",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "no",
+    "name": "Norwegian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "nr",
+    "name": "Southern Ndebele",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "nv",
+    "name": "Navajo",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ny",
+    "name": "Chichewa",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "oc",
+    "name": "Occitan",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "oj",
+    "name": "Ojibwe",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "om",
+    "name": "Oromo",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "or",
+    "name": "Oriya",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "os",
+    "name": "Ossetian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ot",
+    "name": "Other",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "pa",
+    "name": "Panjabi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "pi",
+    "name": "Pāli",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "pl",
+    "name": "Polish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ps",
+    "name": "Pashto",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "pt",
+    "name": "Portuguese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "qu",
+    "name": "Quechua",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "rm",
+    "name": "Romansh",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "rn",
+    "name": "Kirundi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ro",
+    "name": "Romanian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ru",
+    "name": "Russian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "rw",
+    "name": "Kinyarwanda",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sa",
+    "name": "Sanskrit",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sar",
+    "name": "Sardinian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sd",
+    "name": "Sindhi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "se",
+    "name": "Sami",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sg",
+    "name": "Sango",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "si",
+    "name": "Sinhalese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sk",
+    "name": "Slovak",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sl",
+    "name": "Slovenian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sm",
+    "name": "Samoan",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sn",
+    "name": "Shona",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "so",
+    "name": "Somali",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sq",
+    "name": "Albanian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sr",
+    "name": "Serbian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ss",
+    "name": "Swati",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "st",
+    "name": "Sesotho",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "su",
+    "name": "Sundanese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sv",
+    "name": "Swedish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "sw",
+    "name": "Swahili",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ta",
+    "name": "Tamil",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "te",
+    "name": "Telugu",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "tg",
+    "name": "Tajik",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "th",
+    "name": "Thai",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ti",
+    "name": "Tigrinya",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "tk",
+    "name": "Turkmen",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "tl",
+    "name": "Tagalog",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "tn",
+    "name": "Setswana",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "to",
+    "name": "Tonga",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "tr",
+    "name": "Turkish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ts",
+    "name": "Tsonga",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "tt",
+    "name": "Tatar",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "tw",
+    "name": "Twi",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ty",
+    "name": "Tahitian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ug",
+    "name": "Uyghur",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "uk",
+    "name": "Ukrainian",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ur",
+    "name": "Urdu",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "uz",
+    "name": "Uzbek",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "ve",
+    "name": "Venda",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "vi",
+    "name": "Vietnamese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "vo",
+    "name": "Volapük",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "wa",
+    "name": "Wallon",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "wo",
+    "name": "Wolof",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "xh",
+    "name": "Xhosa",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "yi",
+    "name": "Yiddish",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "yo",
+    "name": "Yoruba",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "za",
+    "name": "Zhuang",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "zh",
+    "name": "Chinese",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  },
+  {
+    "id": "zu",
+    "name": "Zulu",
+    "description": null,
+    "parentId": null,
+    "type": "LANGUAGE",
+    "extras": {}
+  }
+]

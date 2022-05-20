@@ -1,0 +1,106 @@
+[
+  {
+    "id": "approved provider",
+    "name": "Approved Provider",
+    "description": "Approved Provider",
+    "parentId": null,
+    "type": "PROVIDER_STATE",
+    "extras": {}
+  },
+  {
+    "id": "pending provider",
+    "name": "Pending Provider",
+    "description": "Pending Provider",
+    "parentId": null,
+    "type": "PROVIDER_STATE",
+    "extras": {}
+  },
+  {
+    "id": "rejected provider",
+    "name": "Rejected Provider",
+    "description": "Rejected Provider",
+    "parentId": null,
+    "type": "PROVIDER_STATE",
+    "extras": {}
+  },
+  {
+    "id": "approved resource",
+    "name": "Approved Resource",
+    "description": "Approved Resource",
+    "parentId": null,
+    "type": "RESOURCE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "pending resource",
+    "name": "Pending Resource",
+    "description": "Pending Resource",
+    "parentId": null,
+    "type": "RESOURCE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "rejected resource",
+    "name": "Rejected Resource",
+    "description": "Rejected Resource",
+    "parentId": null,
+    "type": "RESOURCE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "approved template",
+    "name": "Approved Template",
+    "description": "Approved Template",
+    "parentId": null,
+    "type": "TEMPLATE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "no template status",
+    "name": "No Template Status",
+    "description": "No Template Status",
+    "parentId": null,
+    "type": "TEMPLATE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "pending template",
+    "name": "Pending Template",
+    "description": "Pending Template",
+    "parentId": null,
+    "type": "TEMPLATE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "rejected template",
+    "name": "Rejected Template",
+    "description": "Rejected Template",
+    "parentId": null,
+    "type": "TEMPLATE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "approved catalogue",
+    "name": "Approved Catalogue",
+    "description": "Approved Catalogue",
+    "parentId": null,
+    "type": "CATALOGUE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "pending catalogue",
+    "name": "Pending Catalogue",
+    "description": "Pending Catalogue",
+    "parentId": null,
+    "type": "CATALOGUE_STATE",
+    "extras": {}
+  },
+  {
+    "id": "rejected catalogue",
+    "name": "Rejected Catalogue",
+    "description": "Rejected Catalogue",
+    "parentId": null,
+    "type": "CATALOGUE_STATE",
+    "extras": {}
+  }
+]
