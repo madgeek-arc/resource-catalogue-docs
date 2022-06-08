@@ -121,8 +121,16 @@
   },
   {
     "id": "target_user-resource_provider_managers",
-    "name": "Resource Provider Managers",
+    "name": "Provider Managers",
     "description": "A Provider Manager is an individual within an organisation that is responsible for the quality of the Resources provided and monitors the delivery of the Resource.",
+    "parentId": null,
+    "type": "TARGET_USER",
+    "extras": {}
+  },
+  {
+    "id": "target_user-publishers",
+    "name": "Publishers",
+    "description": null,
     "parentId": null,
     "type": "TARGET_USER",
     "extras": {}
