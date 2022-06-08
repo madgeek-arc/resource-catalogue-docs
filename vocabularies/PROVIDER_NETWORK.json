@@ -1073,7 +1073,7 @@
   },
   {
     "id": "provider_network-eu_solaris",
-    "name": "EUROPEAN SOLAR RESEARCH INFRASTRUCTURE FOR CONCENTRATED SOLAR POWER (EU-SOLARIS)",
+    "name": "European SOLAR Research Infrastructure for Concentrated Solar Power (EU-SOLARIS)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1082,6 +1082,14 @@
   {
     "id": "provider_network-eucard",
     "name": "European Coordination for Accelerator Research & Development (EUCARD)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-eua",
+    "name": "European University Association (EUA)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1192,8 +1200,8 @@
     "extras": {}
   },
   {
-    "id": "provider_network-eurofusion",
-    "name": "Activities of the Roadmap to Fusion during Horizon 2020 through a Joint programme of the members of the EUROfusion consortium (EUROfusion)",
+    "id": "provider_network-a4u",
+    "name": "Alianza 4 Universidades (A4U)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1265,7 +1273,7 @@
   },
   {
     "id": "provider_network-fusenet",
-    "name": "The European Fusion Education Network (FUSENET)",
+    "name": "European Fusion Education Network (FUSENET)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1282,14 +1290,6 @@
   {
     "id": "provider_network-gaw",
     "name": "Global Atmosphere Watch Programme (GAW)",
-    "description": null,
-    "parentId": null,
-    "type": "PROVIDER_NETWORK",
-    "extras": {}
-  },
-  {
-    "id": "provider_network-gaw_dach",
-    "name": "Global Atmosphere Watch Programme-cooperation Germany, Austria, Switzerland (GAW-DACH)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1352,6 +1352,14 @@
     "extras": {}
   },
   {
+    "id": "provider_network-eosca",
+    "name": "European Open Science Cloud Association",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
     "id": "provider_network-ggbn",
     "name": "Global Genome Biodiversity Network (GGBN)",
     "description": null,
@@ -1385,7 +1393,7 @@
   },
   {
     "id": "provider_network-gmva",
-    "name": "The Global mm-VLBI Array (GMVA)",
+    "name": "Global mm-VLBI Array (GMVA)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1394,6 +1402,30 @@
   {
     "id": "provider_network-goos",
     "name": "Global Ocean Observing System (GOOS)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-guni",
+    "name": "Global University Network for Innovation (GUNI)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-gofairi",
+    "name": "GO FAIR Initiative",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-geriu",
+    "name": "Guild of European Research-Intensive Universities (the)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1577,7 +1609,7 @@
   },
   {
     "id": "provider_network-icofnet",
-    "name": "The inter-university core facility network (IcoFNET)",
+    "name": "Inter-university core facility network (IcoFNET)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1586,6 +1618,22 @@
   {
     "id": "provider_network-icom",
     "name": "International Council of Museums (ICOM)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-jrost",
+    "name": "Joint Roadmap for Open Science Tools",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-lraos",
+    "name": "Leibniz Research Alliance Open Science",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -1681,7 +1729,7 @@
   },
   {
     "id": "provider_network-infrafrontier",
-    "name": "Infrafrontier The European infrastructure for phenotyping and archiving of model mammalian genomes (INFRAFRONTIER)",
+    "name": "European infrastructure for phenotyping and archiving of model mammalian genomes (INFRAFRONTIER)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2113,7 +2161,7 @@
   },
   {
     "id": "provider_network-nano2life",
-    "name": "A network for bringing NANOtechnologies TO LIFE (NANO2LIFE)",
+    "name": "Network for bringing NANOtechnologies TO LIFE (NANO2LIFE)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2129,7 +2177,15 @@
   },
   {
     "id": "provider_network-nanofutures",
-    "name": "A cross-ETP Coordination Initiative on nanotechnology (NANOfutures)",
+    "name": "Cross-ETP Coordination Initiative on nanotechnology (NANOfutures)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-dini",
+    "name": "Deutsche Initiative für Netzwerkinformation (DINI)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2153,7 +2209,7 @@
   },
   {
     "id": "provider_network-nearctis",
-    "name": "A Network of Excellence for Advanced Road cooperative traffic management in the Information Society (NEARCTIS)",
+    "name": "Network of Excellence for Advanced Road cooperative traffic management in the Information Society (NEARCTIS)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2162,6 +2218,14 @@
   {
     "id": "provider_network-necer",
     "name": "Network of European CEntrifige for Research (NECER)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-oana",
+    "name": "Open Access Network Austria (OANA)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2218,6 +2282,22 @@
   {
     "id": "provider_network-nsmicts",
     "name": "Network of Spanish Marine ICTS (Red de ICTS Marinas)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-roc",
+    "name": "RO-Crate",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-rocc",
+    "name": "RO-Crate Community",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2401,7 +2481,7 @@
   },
   {
     "id": "provider_network-qb50",
-    "name": "An international network of 50 CubeSats for multi-point, in-situ measurements in the lower thermosphere and re-entry research (QB50)",
+    "name": "International network of 50 CubeSats for multi-point, in-situ measurements in the lower thermosphere and re-entry research (QB50)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2410,6 +2490,22 @@
   {
     "id": "provider_network-rad4med",
     "name": "Belgian Network for Radiation Applications in Healthcare (Rad4med)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-aakc",
+    "name": "Annotating All Knowledge Coalition",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_NETWORK",
+    "extras": {}
+  },
+  {
+    "id": "provider_network-acup",
+    "name": "Associació Catalana d'Universitats Públiques (ACUP)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2472,16 +2568,16 @@
     "extras": {}
   },
   {
-    "id": "provider_network-ritmare",
-    "name": "Flagship Project is one of the National Research Programmes funded by the Italian Ministry of University and Research (RITMARE)",
+    "id": "provider_network-rnme",
+    "name": "National Network for Electron Microscopy (RNME)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
     "extras": {}
   },
   {
-    "id": "provider_network-rnme",
-    "name": "National Network for Electron Microscopy (RNME)",
+    "id": "provider_network-fluxnet",
+    "name": "FLUXNET Network",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
@@ -2610,14 +2706,6 @@
   {
     "id": "provider_network-sln",
     "name": "ScienceLink Network",
-    "description": null,
-    "parentId": null,
-    "type": "PROVIDER_NETWORK",
-    "extras": {}
-  },
-  {
-    "id": "provider_network-snn",
-    "name": "SatNav Network",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_NETWORK",
