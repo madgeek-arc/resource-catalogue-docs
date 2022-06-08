@@ -24,8 +24,16 @@
     "extras": {}
   },
   {
-    "id": "provider_legal_status-european_economic_interest_grouping",
-    "name": "European Economic Interest Grouping",
+    "id": "provider_legal_status-sce",
+    "name": "European Cooperative Society (SCE)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_LEGAL_STATUS",
+    "extras": {}
+  },
+  {
+    "id": "provider_legal_status-eeig",
+    "name": "European Economic Interest Grouping (EEIG)",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_LEGAL_STATUS",
