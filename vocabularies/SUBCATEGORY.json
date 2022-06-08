@@ -400,6 +400,14 @@
     "extras": {}
   },
   {
+    "id": "subcategory-access_physical_and_eInfrastructures-network-dns",
+    "name": "DNS",
+    "description": null,
+    "parentId": "category-access_physical_and_eInfrastructures-network",
+    "type": "SUBCATEGORY",
+    "extras": {}
+  },
+  {
     "id": "subcategory-aggregators_and_integrators-aggregators_and_integrators-applications",
     "name": "Applications",
     "description": null,
@@ -514,6 +522,14 @@
   {
     "id": "subcategory-processing_and_analysis-data_analysis-workflows",
     "name": "Workflows",
+    "description": null,
+    "parentId": "category-processing_and_analysis-data_analysis",
+    "type": "SUBCATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "subcategory-processing_and_analysis-data_analysis-quality_assesment",
+    "name": "Quality Assesment",
     "description": null,
     "parentId": "category-processing_and_analysis-data_analysis",
     "type": "SUBCATEGORY",
@@ -1024,6 +1040,14 @@
     "extras": {}
   },
   {
+    "id": "subcategory-sharing_and_discovery-data-metadata",
+    "name": "Metadata",
+    "description": null,
+    "parentId": "category-sharing_and_discovery-data",
+    "type": "SUBCATEGORY",
+    "extras": {}
+  },
+  {
     "id": "subcategory-sharing_and_discovery-development_resources-apis_repository_gateway",
     "name": "APIs Repository/Gateway",
     "description": null,
@@ -1058,6 +1082,14 @@
   {
     "id": "subcategory-sharing_and_discovery-development_resources-software_libraries",
     "name": "Software Libraries",
+    "description": null,
+    "parentId": "category-sharing_and_discovery-development_resources",
+    "type": "SUBCATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "subcategory-sharing_and_discovery-development_resources-simulation_tools",
+    "name": "Simulation Tools",
     "description": null,
     "parentId": "category-sharing_and_discovery-development_resources",
     "type": "SUBCATEGORY",
