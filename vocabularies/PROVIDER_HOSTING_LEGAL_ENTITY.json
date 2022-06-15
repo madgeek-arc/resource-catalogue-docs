@@ -896,14 +896,6 @@
     "extras": {}
   },
   {
-    "id": "provider_hosting_legal_entity-lnecp",
-    "name": "Portuguese National Civil Engineering Laboratory (LNEC)",
-    "description": null,
-    "parentId": null,
-    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
-    "extras": {}
-  },
-  {
     "id": "provider_hosting_legal_entity-psnc",
     "name": "Poznan Supercomputing and Networking Center (PSNC)",
     "description": null,
