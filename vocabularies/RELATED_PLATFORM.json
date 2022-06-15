@@ -1,55 +1,15 @@
 [
   {
-    "id": "related_platform-100percentit",
-    "name": "100 Percent IT",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-aweisb",
-    "name": "A Worldwide e-Infrastructure for Structural Biology",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cyfronet",
-    "name": "ACC Cyfronet AGH-UST",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-aginfra",
-    "name": "AGINFRA+",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ands",
-    "name": "ANDS - Australian National Data Service",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
     "id": "related_platform-artportalen",
-    "name": "Artportalen (Swedish Species Observation System)",
+    "name": "ArtPortalen",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-athena",
-    "name": "Athena Research and Innovation Center in Information and Communication Technologies",
+    "id": "related_platform-arxiv",
+    "name": "arXiv",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -64,14 +24,6 @@
     "extras": {}
   },
   {
-    "id": "related_platform-authenix",
-    "name": "AUTHENIX",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
     "id": "related_platform-avp",
     "name": "AV-Portal",
     "description": null,
@@ -80,48 +32,16 @@
     "extras": {}
   },
   {
-    "id": "related_platform-bsccns",
-    "name": "Barcelona Supercomputing Center - Centro Nacional de Supercomputación",
+    "id": "related_platform-aws",
+    "name": "AWS",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-bcuu",
-    "name": "Bijvoet Centre - Utrecht University",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-bce",
-    "name": "BioExcel Centre of Excellence",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-bluebridge",
-    "name": "BlueBRIDGE",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-czm",
-    "name": "Carl Zeiss Microscopy",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ccdc",
-    "name": "CCDC - The Cambridge Crystallographic Data Centre",
+    "id": "related_platform-bluecloud",
+    "name": "Blue-Cloud",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -129,87 +49,23 @@
   },
   {
     "id": "related_platform-cdl",
-    "name": "CDL - California Digital Library",
+    "name": "California Digital Library",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-crefa",
-    "name": "Center for Research in Ecology and Forestry Applications",
+    "id": "related_platform-ccdc",
+    "name": "CCDC",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-ceric",
-    "name": "Central European Research Infrastructure Consortium",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cratis",
-    "name": "Centre de Recherche en Acquisition et Traitement de l'Image pour la Santé",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cnrs",
-    "name": "Centre National de la Recherche Scientifique",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cesnet",
-    "name": "CESNET",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ciemat",
-    "name": "CIEMAT - Scientific IT Research Activities and Knowledge, ICT Division",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cci",
-    "name": "Cineca Consorzio Interuniversitario",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cf",
-    "name": "CloudFerro",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cnrsccninppp",
-    "name": "CNRS - Computing Centre of the National Institute of Nuclear Physics and Particle Physics",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-coard",
-    "name": "Collaborative Open Access Research and Development",
+    "id": "related_platform-cessda",
+    "name": "CESSDA",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -224,56 +80,8 @@
     "extras": {}
   },
   {
-    "id": "related_platform-collabwithmp",
-    "name": "COLLABWITH MARKETPLACE",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-capsh",
-    "name": "Committee for the Accessibility of Publications in Sciences and Humanities",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cwl",
-    "name": "Common Workflow Language community",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-citesacds",
-    "name": "Communication & Information Technologies Experts SA Consulting and Development Services",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-compbiomed",
-    "name": "CompBioMed",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-csi",
-    "name": "Consorzio per il Sistema Informativo",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-coronis",
-    "name": "CORONIS COMPUTING SL",
+    "id": "related_platform-cccs",
+    "name": "Copernicus Climate Change Service",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -288,64 +96,16 @@
     "extras": {}
   },
   {
-    "id": "related_platform-csc",
-    "name": "CSC – IT CENTER FOR SCIENCE",
+    "id": "related_platform-dariahteach",
+    "name": "dariahTeach",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-csiccnb",
-    "name": "CSIC - Centro Nacional de Biotecnologia",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-csicsnrc",
-    "name": "CSIC - Spanish National Research Council",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cybcebbruc",
-    "name": "CY-Biobank Center of Excellence in Biobanking and Biomedical Research - University of Cyprus",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cyberbotics",
-    "name": "Cyberbotics",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-d4science",
-    "name": "D4Science Infrastructure",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-datarevenue",
-    "name": "Data Revenue",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-dsw",
-    "name": "Data Stewardship Wizard",
+    "id": "related_platform-dice",
+    "name": "Data Infrastructure Capacity for EOSC (DICE)",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -354,94 +114,6 @@
   {
     "id": "related_platform-datacite",
     "name": "DataCite",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ddqbv",
-    "name": "DDQ B.V.",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-nbi",
-    "name": "de.NBI - German Network for Bioinformatics Infrastructure",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-drt",
-    "name": "Demonstration Reasoning - Test",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-des",
-    "name": "Deutsches Elektronen-Synchrotron",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-dk",
-    "name": "Deutsches Klimarechenzentrum",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-dls",
-    "name": "Diamond Light Source Ltd",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-dice",
-    "name": "DICE - Data Infrastructure Capacity for EOSC",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-dcc",
-    "name": "Digital Curation Centre",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-dg",
-    "name": "Digital Globe",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-dri",
-    "name": "Digital Repository of Ireland",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-driah",
-    "name": "Digital Research Infrastructure for the Arts and Humanities",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -457,15 +129,7 @@
   },
   {
     "id": "related_platform-doab",
-    "name": "DOAB Foundation",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ecamce",
-    "name": "E-CAM Centre of Excellence",
+    "name": "DOAB",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -480,16 +144,8 @@
     "extras": {}
   },
   {
-    "id": "related_platform-eodcwrm",
-    "name": "Earth Observation Data Centre for Water Resources Monitoring",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ecgmbh",
-    "name": "Edelweiss Connect GmbH",
+    "id": "related_platform-eirgspp",
+    "name": "e-IRGSP projects",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -513,23 +169,23 @@
   },
   {
     "id": "related_platform-egi",
-    "name": "EGI Foundation",
+    "name": "EGI",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-eiscatsa",
-    "name": "EISCAT Scientific Association",
+    "id": "related_platform-egifc",
+    "name": "EGI Federated Cloud",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-elg",
-    "name": "ELG - European Language Grid",
+    "id": "related_platform-egiace",
+    "name": "EGI-ACE",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -544,64 +200,8 @@
     "extras": {}
   },
   {
-    "id": "related_platform-elixirbe",
-    "name": "ELIXIR Belgium",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-elixireu",
-    "name": "ELIXIR Europe",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-elixirit",
-    "name": "ELIXIR Italy",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-elixiruk",
-    "name": "ELIXIR United Kingdom",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-elsevier",
-    "name": "Elsevier BV",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-eoce",
-    "name": "Energy Oriented Centre of Excellence",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-enhancer",
-    "name": "EnhanceR",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-envri",
-    "name": "ENVRI-hub",
+    "id": "related_platform-emodnetc",
+    "name": "EMODnet Chemistry",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -609,22 +209,30 @@
   },
   {
     "id": "related_platform-eol",
-    "name": "EOL - Encyclopedia of Life",
+    "name": "Encyclopedia of Life",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-eoscdih",
-    "name": "EOSC DIH - Digital Innovation Hub",
+    "id": "related_platform-enc",
+    "name": "Endemia New Caledonia",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-eosclife",
+    "id": "related_platform-envri",
+    "name": "ENVRI Hub",
+    "description": null,
+    "parentId": null,
+    "type": "RELATED_PLATFORM",
+    "extras": {}
+  },
+  {
+    "id": "related_platform-eoscl",
     "name": "EOSC-Life",
     "description": null,
     "parentId": null,
@@ -632,7 +240,7 @@
     "extras": {}
   },
   {
-    "id": "related_platform-eoscnordic",
+    "id": "related_platform-eoscn",
     "name": "EOSC-Nordic",
     "description": null,
     "parentId": null,
@@ -640,48 +248,8 @@
     "extras": {}
   },
   {
-    "id": "related_platform-eoscpillar",
+    "id": "related_platform-eoscp",
     "name": "EOSC-Pillar",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-emc",
-    "name": "Erasmus Medical Center",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-eric",
-    "name": "ERIC - Consortium of European Social Science Data Archives",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-escience",
-    "name": "eScience Lab, The University of Manchester",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-esci",
-    "name": "Estonian Scientific Computing Infrastructure",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-eudat",
-    "name": "EUDAT",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -696,159 +264,23 @@
     "extras": {}
   },
   {
-    "id": "related_platform-eurac",
-    "name": "Eurac Research",
+    "id": "related_platform-elg",
+    "name": "European Language Grid",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-emccc",
-    "name": "Euro-Mediterranean Center on Climate Change",
+    "id": "related_platform-evs",
+    "name": "European Values Study (EVS)",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-eipp",
-    "name": "European Infrastructure for Plant Phenotyping",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-emblebi",
-    "name": "European Molecular Biology Laboratory - European Bioinformatics Institute",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-emso",
-    "name": "European Multidisciplinary Seafloor and water column Observatory",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-erilrt",
-    "name": "European Research Infrastructure for Language Resources and Technology",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-esa",
-    "name": "European Space Agency",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-esseric",
-    "name": "European Spallation Source ERIC",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ef",
-    "name": "Europeana Foundation",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-exoscale",
-    "name": "EXOSCALE",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-expertai",
-    "name": "expert.ai",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-f6sn",
-    "name": "F6S Network",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-fair",
-    "name": "FAIR Data Infrastructure for Physics, Chemistry, Materials Science, and Astronomy",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-figshare",
-    "name": "Figshare",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-fssda",
-    "name": "Finnish Social Science Data Archive",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-forschungsdaten",
-    "name": "Forschungsdaten.info",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-fscai",
-    "name": "Fraunhofer SCAI",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-fctsg",
-    "name": "Fundacion Centro Tecnologico de Supercomputacion de Galicia",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-garrcloud",
-    "name": "GARR Cloud Platform",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-farrcontainer",
+    "id": "related_platform-garrcp",
     "name": "GARR Container Platform",
     "description": null,
     "parentId": null,
@@ -856,40 +288,16 @@
     "extras": {}
   },
   {
+    "id": "related_platform-gatep",
+    "name": "GATE platform",
+    "description": null,
+    "parentId": null,
+    "type": "RELATED_PLATFORM",
+    "extras": {}
+  },
+  {
     "id": "related_platform-gbif",
-    "name": "GBIF - Global Biodiversity Information Facility (GBIF)",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gbifspain",
-    "name": "GBIF Spain",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-geant",
-    "name": "GÉANT Association",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-geniasbenelux",
-    "name": "Genias Benelux",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gccumcg",
-    "name": "Genomics Coordination Center, University Medical Center Groningen",
+    "name": "GBIF",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -904,88 +312,24 @@
     "extras": {}
   },
   {
-    "id": "related_platform-geoss",
-    "name": "GEOSS - Global Earth Observation system of Systems",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gdg",
-    "name": "Gesellschaft für wissenschaftliche Datenverarbeitung mbH Göttingen",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gesis",
-    "name": "GESIS Leibniz Institute for the Social Sciences",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gbifpcr",
-    "name": "Global Biodiversity Information Facility Portugal: Collections Registry",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gbifpip",
-    "name": "Global Biodiversity Information Facility Portugal: Images Portal",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gbifprm",
-    "name": "Global Biodiversity Information Facility Portugal: Regions module",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gbifpspatial",
-    "name": "Global Biodiversity Information Facility Portugal: Spatial Portal",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gbifpsl",
-    "name": "Global Biodiversity Information Facility Portugal: Species Lists",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-gbifpspecies",
-    "name": "Global Biodiversity Information Facility Portugal: Species Portal",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
     "id": "related_platform-grin",
-    "name": "GRIN - Germplasm Resources Information Network",
+    "name": "Germplasm Resources Information Network (GRIN)",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-gsihsgmbh",
-    "name": "GSI Helmholtzzentrum für Schwerionenforschung GmbH",
+    "id": "related_platform-geoss",
+    "name": "Global Earth Observation system of Systems (GEOSS)",
+    "description": null,
+    "parentId": null,
+    "type": "RELATED_PLATFORM",
+    "extras": {}
+  },
+  {
+    "id": "related_platform-hal",
+    "name": "HAL",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -1000,63 +344,7 @@
     "extras": {}
   },
   {
-    "id": "related_platform-hirmeos",
-    "name": "High Integration of Research Monographs in the European Open Science infratructure",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-hhnirdpne",
-    "name": "Horia Hulubei National Institute for R&D in Physics and Nuclear Engineering",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-hostkey",
-    "name": "hostkey",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-humanum",
-    "name": "Huma-Num",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ideaconsult",
-    "name": "IDEAconsult",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ifca",
-    "name": "IFCA - Institute of Physics of Cantabria",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ifmsri",
-    "name": "Ifremer, the French Marine Science Research Institute",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-infncloud",
+    "id": "related_platform-infnc",
     "name": "INFN-Cloud",
     "description": null,
     "parentId": null,
@@ -1064,120 +352,8 @@
     "extras": {}
   },
   {
-    "id": "related_platform-infrafrontier",
-    "name": "INFRAFRONTIER",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ill",
-    "name": "Institut Laue Langevin",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-inria",
-    "name": "Institut national de recherche en informatique et en automatique",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ipsl",
-    "name": "Institut Pierre-Simon Laplace",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-iasa",
-    "name": "Institute of Accelerating Systems and Applications",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-iaprnrci",
-    "name": "Institute of Atmospheric Pollution Research - National Research Council of Italy",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ibbmbnrc",
-    "name": "Institute of Biomembranes, Bioenergetics and Molecular Biotechnologies, National Research Council",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-iisas",
-    "name": "Institute of Informatics - Slovak Academy of Sciences",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-iict",
-    "name": "Institute of Information and Communication Technologies",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-iimighpcupv",
-    "name": "Institute of Instrumentation for Molecular Imaging - Grid and High Performance Computing - Universitat Politècnica de València",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-icoseric",
-    "name": "Integrated Carbon Observation System European Research Infrastructure Consortium",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-isti",
-    "name": "ISTI - Institute for Information Science and Technologies 'Alessandro Faedo'",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ina",
-    "name": "Istituto Nazionale di Astrofisica",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ininp",
-    "name": "Italian National Institute of Nuclear Physics",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-jelastic",
-    "name": "Jelastic",
+    "id": "related_platform-ispot",
+    "name": "iSpot",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -1192,152 +368,8 @@
     "extras": {}
   },
   {
-    "id": "related_platform-jsc",
-    "name": "Jülich Supercomputing Centre",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-kit",
-    "name": "Karlsruhe Institute of Technology",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-kitscc",
-    "name": "KIT - Steinbuch Centre for Computing",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-komanord",
-    "name": "Koma Nord",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-lago",
-    "name": "Latin American Giant Observatory",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-licst",
-    "name": "Leibniz Information Centre for Science and Technology",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-lifewatcheric",
-    "name": "LifeWatch ERIC",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-lindatclariah",
-    "name": "LINDAT/CLARIAH-CZ - Research Infrastructure for Language Resources and Digital Arts and Humanities in the Czech Republic",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-cermcirmmp",
-    "name": "Magnetic Resonance Center of the University of Florence - CERM, Interuniversity consortium CIRMMP",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-mi",
-    "name": "Mandat International",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-mc",
-    "name": "Materials Cloud",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-meeo",
-    "name": "Meteorological and Environmental Earth Observation",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-mn",
-    "name": "Miguel Nogueira",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ml",
-    "name": "Millenia Life",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-mws",
-    "name": "Mundi Web Services",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-msw",
-    "name": "MyScienceWork",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ncche",
-    "name": "National Computing Center for Higher Education",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-incd",
-    "name": "National Distributed Computing Infrastructure (INCD)",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-nirt",
-    "name": "National Infrastructures for Research and Technology",
+    "id": "related_platform-metacentrum",
+    "name": "MetaCentrum",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -1352,136 +384,32 @@
     "extras": {}
   },
   {
-    "id": "related_platform-nomadcoe",
-    "name": "NOMAD CoE",
+    "id": "related_platform-openairee",
+    "name": "OpenAIRE EXPLORE",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-norce",
-    "name": "NORCE Norwegian Research Centre",
+    "id": "related_platform-openairem",
+    "name": "OpenAIRE MONITOR",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-nfsdipagr",
-    "name": "NuoroForestrySchool-DipAGR-UniSS.it",
+    "id": "related_platform-openairerg",
+    "name": "OpenAIRE research graph",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-obeie",
-    "name": "Open Biomedical Engineering e-platform for Innovation through Education",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-obp",
-    "name": "Open Book Publishers",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-okm",
-    "name": "Open Knowledge Maps",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-osmooc",
-    "name": "Open Science MOOC",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-openaire",
-    "name": "OpenAIRE",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-openedition",
-    "name": "OpenEdition",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-openminted",
-    "name": "OpenMinTeD",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-operas",
-    "name": "OPERAS AISBL",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-oerc",
-    "name": "Oxford e-Research Centre, University of Oxford, UK",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-pface",
-    "name": "Partnership For Advanced Computing in Europe",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-phenomenal",
-    "name": "Phenomenal",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-pnosc",
-    "name": "Photon and Neutron Open Science Cloud",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-plantnet",
-    "name": "Pl@ntNet",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-plantnetconsortium",
-    "name": "PlantNet consortium (hosted by Inria)",
+    "id": "related_platform-oc",
+    "name": "OpenCitations",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -1489,14 +417,22 @@
   },
   {
     "id": "related_platform-pogo",
-    "name": "POGO - Partnership for Observation of the Global Oceans",
+    "name": "Partnership for Observation of the Global Oceans (POGO)",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-policycloud",
+    "id": "related_platform-pnp",
+    "name": "Pl@ntNet platform",
+    "description": null,
+    "parentId": null,
+    "type": "RELATED_PLATFORM",
+    "extras": {}
+  },
+  {
+    "id": "related_platform-pc",
     "name": "PolicyCloud",
     "description": null,
     "parentId": null,
@@ -1504,88 +440,8 @@
     "extras": {}
   },
   {
-    "id": "related_platform-pncel",
-    "name": "Portuguese National Civil Engineering Laboratory",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ptit",
-    "name": "Posts and Telecommunications Institute of Technology",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-psnc",
-    "name": "Poznan Supercomputing and Networking Center",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-rasdaman",
-    "name": "RASDAMAN",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-re3data",
-    "name": "re3data - Registry of Research Data Repositories",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-readcoop",
-    "name": "READ-COOP",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ror",
-    "name": "Research Organization Registry",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-rsu",
-    "name": "Riga Stradins University",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-rbi",
-    "name": "Ruđer Bošković Institute",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-sks",
-    "name": "Scientific Knowledge Services",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-scipedia",
-    "name": "SCIPEDIA",
+    "id": "related_platform-rjb",
+    "name": "Real Jardín Botánico",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -1608,64 +464,16 @@
     "extras": {}
   },
   {
-    "id": "related_platform-serveo",
-    "name": "Serveo",
+    "id": "related_platform-tsd",
+    "name": "Service for Sensitive Data (TSD)",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-sstirc",
-    "name": "Shanghai Science and Technology Innovation Resources Center",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-sinergise",
-    "name": "Sinergise",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-sixsq",
-    "name": "SixSq",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-smartsmear",
-    "name": "Smart-SMEAR",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-sobigdata",
-    "name": "SoBigData",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-sadc",
-    "name": "Strasbourg astronomical Data Centre",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-suite5",
-    "name": "Suite5 Data Intelligence Solutions",
+    "id": "related_platform-sshom",
+    "name": "SSH Open Marketplace",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -1680,56 +488,24 @@
     "extras": {}
   },
   {
-    "id": "related_platform-sies",
-    "name": "Swedish Infrastructure for Ecosystem Science",
+    "id": "related_platform-share",
+    "name": "Survey of Health, Ageing and Retirement in Europe (SHARE)",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-snsc",
-    "name": "Swiss National Supercomputing Centre",
+    "id": "related_platform-tf",
+    "name": "Taylor&Francis",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-switch",
-    "name": "SWITCH",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-tsystems",
-    "name": "T-Systems International",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-taylorfrancis",
-    "name": "Taylor & Francis",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-terradue",
-    "name": "Terradue",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-tci",
-    "name": "The Cyprus Institute",
+    "id": "related_platform-tb",
+    "name": "Tela Botanica",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
@@ -1744,195 +520,67 @@
     "extras": {}
   },
   {
-    "id": "related_platform-scinge",
-    "name": "The SCIGNE Platform",
+    "id": "related_platform-tnomadl",
+    "name": "The NOMAD Laboratory",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-thoth",
-    "name": "Thoth: Open Book Metadata Dissemination System",
+    "id": "related_platform-tpg",
+    "name": "the Plant Game",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-tib",
-    "name": "TIB – Leibniz Information Centre for Science and Technology and University Library",
+    "id": "related_platform-tibp",
+    "name": "TIB Portal",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-tos",
-    "name": "Tree of Science",
+    "id": "related_platform-tripleh",
+    "name": "TRIPLE H2020 project",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-tubitak",
-    "name": "TÜBİTAK - The Scientific and Technological Research Council of Turkey",
+    "id": "related_platform-tubitakcc",
+    "name": "TÜBITAK cloud compute",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-tanic",
-    "name": "Turkish Academic Network and Information Center",
+    "id": "related_platform-vlab",
+    "name": "Virtual Earth Laboratory (VLab)",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-up",
-    "name": "Ubiquity Press Ltd",
+    "id": "related_platform-zbwice",
+    "name": "ZBW Information Centre for Economics",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
   {
-    "id": "related_platform-uit",
-    "name": "UiT The Arctic University of Norway",
+    "id": "related_platform-zenodo",
+    "name": "Zenodo",
     "description": null,
     "parentId": null,
     "type": "RELATED_PLATFORM",
     "extras": {}
   },
-  {
-    "id": "related_platform-ukaea",
-    "name": "UK Atomic Energy Authority",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ukristfc",
-    "name": "UK Research and Innovation - Science and Technology Facilities Council",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-upv",
-    "name": "Universitat Politècnica de València",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-uoflorence",
-    "name": "University of Florence",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-uofreiburg",
-    "name": "University of Freiburg",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-uog",
-    "name": "University of Geneva",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-ugr",
-    "name": "University of Granada – UGR",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-umg",
-    "name": "University of Minas Gerais",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-oslo",
-    "name": "University of Oslo",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-uot",
-    "name": "University of Tartu",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-vecma",
-    "name": "Verified Exascale Computing for Multiscale Applications",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-viseem",
-    "name": "VI-SEEM",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-vu",
-    "name": "Vilnius University",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-vamdc",
-    "name": "Virtual Atomic and Molecular Data Centre",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-westlife",
-    "name": "West-Life",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  },
-  {
-    "id": "related_platform-zbw",
-    "name": "ZBW – Leibniz Information Centre for Economics",
-    "description": null,
-    "parentId": null,
-    "type": "RELATED_PLATFORM",
-    "extras": {}
-  }
 ]
