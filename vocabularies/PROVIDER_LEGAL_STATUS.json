@@ -88,14 +88,6 @@
     "extras": {}
   },
   {
-    "id": "provider_legal_status-not_a_legal_entity",
-    "name": "Not a Legal Entity",
-    "description": null,
-    "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
-    "extras": {}
-  },
-  {
     "id": "provider_legal_status-other",
     "name": "Other",
     "description": null,
