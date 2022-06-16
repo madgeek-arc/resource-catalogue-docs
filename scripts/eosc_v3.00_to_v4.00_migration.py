@@ -25,14 +25,6 @@ for file in os.listdir(directory + '/provider/'):
             tree = root.getroot()
             provider = root.find('{http://einfracentral.eu}provider')
 
-            # metadata -> published
-            metadata = root.find('{http://einfracentral.eu}metadata')
-            published = metadata.find('{http://einfracentral.eu}published')
-            if published is None:
-                newPublished = ET.Element("tns:published")
-                newPublished.text = 'false'
-                metadata.append(newPublished)
-
             # catalogueId
             catalogueId = provider.find('{http://einfracentral.eu}catalogueId')
             if catalogueId is None:
@@ -96,14 +88,6 @@ for folder in os.listdir(directory + '/provider/'):
                 tree = root.getroot()
                 provider = root.find('{http://einfracentral.eu}provider')
 
-                # metadata -> published
-                metadata = root.find('{http://einfracentral.eu}metadata')
-                published = metadata.find('{http://einfracentral.eu}published')
-                if published is None:
-                    newPublished = ET.Element("tns:published")
-                    newPublished.text = 'false'
-                    metadata.append(newPublished)
-
                 # catalogueId
                 catalogueId = provider.find('{http://einfracentral.eu}catalogueId')
                 if catalogueId is None:
@@ -165,14 +149,6 @@ for file in os.listdir(directory + '/infra_service/'):
             tree = root.getroot()
             service = root.find('{http://einfracentral.eu}service')
 
-            # metadata -> published
-            metadata = root.find('{http://einfracentral.eu}metadata')
-            published = metadata.find('{http://einfracentral.eu}published')
-            if published is None:
-                newPublished = ET.Element("tns:published")
-                newPublished.text = 'false'
-                metadata.append(newPublished)
-
             # catalogueId
             catalogueId = service.find('{http://einfracentral.eu}catalogueId')
             if catalogueId is None:
@@ -233,20 +209,6 @@ for file in os.listdir(directory + '/infra_service/'):
             #     for entry in serviceRelatedPlatforms:
             #         entry.text = 'related_platform-tbd'
 
-            # terms of use
-            # serviceTOU = service.find('{http://einfracentral.eu}termsOfUse')
-            # if serviceTOU is None:
-            #     serviceTOU = ET.Element("tns:termsOfUse")
-            #     serviceTOU.text = 'https://providers.eosc-portal.eu/home'
-            #     service.append(serviceTOU)
-
-            # privacy policy
-            # servicePrivacyPolicy = service.find('{http://einfracentral.eu}privacyPolicy')
-            # if servicePrivacyPolicy is None:
-            #     servicePrivacyPolicy = ET.Element("tns:privacyPolicy")
-            #     servicePrivacyPolicy.text = 'https://providers.eosc-portal.eu/home'
-            #     service.append(servicePrivacyPolicy)
-
             root.write('output.xml')
 
             content = []
@@ -277,14 +239,6 @@ for folder in os.listdir(directory + '/infra_service/'):
                 root = ET.ElementTree(ET.fromstring(xml))
                 tree = root.getroot()
                 service = root.find('{http://einfracentral.eu}service')
-
-                # metadata -> published
-                metadata = root.find('{http://einfracentral.eu}metadata')
-                published = metadata.find('{http://einfracentral.eu}published')
-                if published is None:
-                    newPublished = ET.Element("tns:published")
-                    newPublished.text = 'false'
-                    metadata.append(newPublished)
 
                 # catalogueId
                 catalogueId = service.find('{http://einfracentral.eu}catalogueId')
@@ -346,20 +300,6 @@ for folder in os.listdir(directory + '/infra_service/'):
                 #     for entry in serviceRelatedPlatforms:
                 #         entry.text = 'related_platform-tbd'
 
-                # terms of use
-                # serviceTOU = service.find('{http://einfracentral.eu}termsOfUse')
-                # if serviceTOU is None:
-                #     serviceTOU = ET.Element("tns:termsOfUse")
-                #     serviceTOU.text = 'https://providers.eosc-portal.eu/home'
-                #     service.append(serviceTOU)
-
-                # privacy policy
-                # servicePrivacyPolicy = service.find('{http://einfracentral.eu}privacyPolicy')
-                # if servicePrivacyPolicy is None:
-                #     servicePrivacyPolicy = ET.Element("tns:privacyPolicy")
-                #     servicePrivacyPolicy.text = 'https://providers.eosc-portal.eu/home'
-                #     service.append(servicePrivacyPolicy)
-
                 root.write('output.xml')
                 content = []
                 with open("output.xml", "r") as xml_file:
@@ -388,14 +328,6 @@ for file in os.listdir(directory + '/pending_provider/'):
             root = ET.ElementTree(ET.fromstring(xml))
             tree = root.getroot()
             provider = root.find('{http://einfracentral.eu}provider')
-
-            # metadata -> published
-            metadata = root.find('{http://einfracentral.eu}metadata')
-            published = metadata.find('{http://einfracentral.eu}published')
-            if published is None:
-                newPublished = ET.Element("tns:published")
-                newPublished.text = 'false'
-                metadata.append(newPublished)
 
             # catalogueId
             catalogueId = provider.find('{http://einfracentral.eu}catalogueId')
@@ -460,14 +392,6 @@ for folder in os.listdir(directory + '/pending_provider/'):
                 tree = root.getroot()
                 provider = root.find('{http://einfracentral.eu}provider')
 
-                # metadata -> published
-                metadata = root.find('{http://einfracentral.eu}metadata')
-                published = metadata.find('{http://einfracentral.eu}published')
-                if published is None:
-                    newPublished = ET.Element("tns:published")
-                    newPublished.text = 'false'
-                    metadata.append(newPublished)
-
                 # catalogueId
                 catalogueId = provider.find('{http://einfracentral.eu}catalogueId')
                 if catalogueId is None:
@@ -529,14 +453,6 @@ for file in os.listdir(directory + '/pending_service/'):
             tree = root.getroot()
             service = root.find('{http://einfracentral.eu}service')
 
-            # metadata -> published
-            metadata = root.find('{http://einfracentral.eu}metadata')
-            published = metadata.find('{http://einfracentral.eu}published')
-            if published is None:
-                newPublished = ET.Element("tns:published")
-                newPublished.text = 'false'
-                metadata.append(newPublished)
-
             # catalogueId
             catalogueId = service.find('{http://einfracentral.eu}catalogueId')
             if catalogueId is None:
@@ -597,20 +513,6 @@ for file in os.listdir(directory + '/pending_service/'):
             #     for entry in serviceRelatedPlatforms:
             #         entry.text = 'related_platform-tbd'
 
-            # terms of use
-            # serviceTOU = service.find('{http://einfracentral.eu}termsOfUse')
-            # if serviceTOU is None:
-            #     serviceTOU = ET.Element("tns:termsOfUse")
-            #     serviceTOU.text = 'https://providers.eosc-portal.eu/home'
-            #     service.append(serviceTOU)
-
-            # privacy policy
-            # servicePrivacyPolicy = service.find('{http://einfracentral.eu}privacyPolicy')
-            # if servicePrivacyPolicy is None:
-            #     servicePrivacyPolicy = ET.Element("tns:privacyPolicy")
-            #     servicePrivacyPolicy.text = 'https://providers.eosc-portal.eu/home'
-            #     service.append(servicePrivacyPolicy)
-
             root.write('output.xml')
 
             content = []
@@ -641,14 +543,6 @@ for folder in os.listdir(directory + '/pending_service/'):
                 root = ET.ElementTree(ET.fromstring(xml))
                 tree = root.getroot()
                 service = root.find('{http://einfracentral.eu}service')
-
-                # metadata -> published
-                metadata = root.find('{http://einfracentral.eu}metadata')
-                published = metadata.find('{http://einfracentral.eu}published')
-                if published is None:
-                    newPublished = ET.Element("tns:published")
-                    newPublished.text = 'false'
-                    metadata.append(newPublished)
 
                 # catalogueId
                 catalogueId = service.find('{http://einfracentral.eu}catalogueId')
@@ -709,20 +603,6 @@ for folder in os.listdir(directory + '/pending_service/'):
                 # if serviceRelatedPlatforms is not None:
                 #     for entry in serviceRelatedPlatforms:
                 #         entry.text = 'related_platform-tbd'
-
-                # terms of use
-                # serviceTOU = service.find('{http://einfracentral.eu}termsOfUse')
-                # if serviceTOU is None:
-                #     serviceTOU = ET.Element("tns:termsOfUse")
-                #     serviceTOU.text = 'https://providers.eosc-portal.eu/home'
-                #     service.append(serviceTOU)
-
-                # privacy policy
-                # servicePrivacyPolicy = service.find('{http://einfracentral.eu}privacyPolicy')
-                # if servicePrivacyPolicy is None:
-                #     servicePrivacyPolicy = ET.Element("tns:privacyPolicy")
-                #     servicePrivacyPolicy.text = 'https://providers.eosc-portal.eu/home'
-                #     service.append(servicePrivacyPolicy)
 
                 root.write('output.xml')
                 content = []
