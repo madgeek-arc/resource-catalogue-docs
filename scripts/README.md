@@ -1,5 +1,5 @@
 # Install Packages
 $ pip install -r requirements.txt
 
-# Change data directory folder path
-directory = '/path/to/data/'
+# Run the following command
+python3 eosc_v3.00_to_v4.00_migration.py --path [path/to/folder]
