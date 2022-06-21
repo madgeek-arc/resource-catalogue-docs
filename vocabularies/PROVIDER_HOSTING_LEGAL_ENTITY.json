@@ -1,5 +1,141 @@
 [  
   {
+    "id": "provider_hosting_legal_entity-100pit",
+    "name": "100 Percent IT",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-asgcc",
+    "name": "Academia Sinica Grid Computing Centre",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-acccaghust",
+    "name": "ACC Cyfronet AGH-UST",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-altec",
+    "name": "Aerospace Logistics Technology Engineering Company (ALTEC)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-amsub",
+    "name": "Alma Mater Studiorum - Università di Bologna",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-al",
+    "name": "Arkivum Limited",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-arc",
+    "name": "Athena Research and Innovation Center in Information and Communication Technologies (ARC)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-acdhch",
+    "name": "Austrian Centre for Digital Humanities and Cultural Heritage (ACDH-CH)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-bsc",
+    "name": "Barcelona Supercomputing Center - Centro Nacional de Supercomputación (BSC)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-biisa",
+    "name": "BI INSIGHT S.A.",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-bul",
+    "name": "Bielefeld University Library",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-bcuu",
+    "name": "Bijvoet Centre - Utrecht University",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-czm",
+    "name": "Carl Zeiss Microscopy",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-creaf",
+    "name": "Center for Research in Ecology and Forestry Applications (CREAF)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-centerdata",
+    "name": "Centerdata",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cericeric",
+    "name": "Central European Research Infrastructure Consortium (CERIC-ERIC)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-cu",
+    "name": "Charles University",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
     "id": "provider_hosting_legal_entity-cdrc",
     "name": "Centre de recherche Crem",
     "description": null,
