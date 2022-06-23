@@ -237,7 +237,7 @@ def migrate_services(json_file, isVersion):
 
 ######################################################## RUN ###########################################################
 parser = argparse.ArgumentParser()
-parser.add_argument("-p", help="sets the folder path", type=str, required=True)
+parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 args = parser.parse_args()
 provider_migration(args.path)
 service_migration(args.path)
