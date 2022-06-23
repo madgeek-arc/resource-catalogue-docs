@@ -85,15 +85,18 @@ def migrate_providers(json_file, isVersion):
         newHLEValue = hostingLegalEntityDict.get(previousHLEValue)
         if newHLEValue:
             hostingLegalEntity.text = newHLEValue
-            print('Successfully updated the Hosting Legal Entity value [', previousHLEValue,
-                  '] for the Provider with id [', providerId, '] with the value [',
-                  newHLEValue, ']')
+            if not isVersion:
+                print('Successfully updated the Hosting Legal Entity value [', previousHLEValue,
+                      '] for the Provider with id [', providerId, '] with the value [',
+                      newHLEValue, ']')
         else:
             if previousHLEValue is not None:
-                print('Could not update the Hosting Legal Entity value [', previousHLEValue,
-                      '] for the Provider with id [', providerId, ']')
+                if not isVersion:
+                    print('Could not update the Hosting Legal Entity value [', previousHLEValue,
+                          '] for the Provider with id [', providerId, ']')
             else:
-                print('Provider with id [', providerId, '] has no Hosting Legal Entity entry')
+                if not isVersion:
+                    print('Provider with id [', providerId, '] has no Hosting Legal Entity entry')
 
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
@@ -212,15 +215,18 @@ def migrate_services(json_file, isVersion):
                 newRPValue = relatedPlatformsDict.get(previousRPValue)
                 if newRPValue:
                     entry.text = newRPValue
-                    print('Successfully updated the Related Platform value [', previousRPValue,
-                          '] for the Service with id [', serviceId, '] with the value [',
-                          newRPValue, ']')
+                    if not isVersion:
+                        print('Successfully updated the Related Platform value [', previousRPValue,
+                              '] for the Service with id [', serviceId, '] with the value [',
+                              newRPValue, ']')
                 else:
                     if previousRPValue is not None:
-                        print('Could not update the Related Platform value [', previousRPValue, '] for the Service with id ['
-                              , serviceId, ']')
+                        if not isVersion:
+                            print('Could not update the Related Platform value [', previousRPValue, '] for the Service with id ['
+                                  , serviceId, ']')
                     else:
-                        print('Service with id [', serviceId, '] has no Related Platform entries')
+                        if not isVersion:
+                            print('Service with id [', serviceId, '] has no Related Platform entries')
 
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
