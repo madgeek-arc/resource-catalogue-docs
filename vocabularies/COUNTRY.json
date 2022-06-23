@@ -32,14 +32,6 @@
     "extras": {}
   },
   {
-    "id": "AH",
-    "name": "Schengen Area",
-    "description": "All Schengen Area countries.",
-    "parentId": "geographic_location",
-    "type": "COUNTRY",
-    "extras": {}
-  },
-  {
     "id": "AI",
     "name": "Anguilla",
     "description": null,
@@ -544,14 +536,6 @@
     "extras": {}
   },
   {
-    "id": "EO",
-    "name": "Europe",
-    "description": "All European Countries.",
-    "parentId": "geographic_location",
-    "type": "COUNTRY",
-    "extras": {}
-  },
-  {
     "id": "ER",
     "name": "Eritrea",
     "description": null,
@@ -571,22 +555,6 @@
     "id": "ET",
     "name": "Ethiopia",
     "description": null,
-    "parentId": "geographic_location",
-    "type": "COUNTRY",
-    "extras": {}
-  },
-  {
-    "id": "EU",
-    "name": "European Union",
-    "description": "All Countries of the European Union.",
-    "parentId": "geographic_location",
-    "type": "COUNTRY",
-    "extras": {}
-  },
-  {
-    "id": "EZ",
-    "name": "Euro Zone",
-    "description": "All Countries of the Eurozone.",
     "parentId": "geographic_location",
     "type": "COUNTRY",
     "extras": {}
@@ -1987,14 +1955,6 @@
     "id": "WS",
     "name": "Samoa",
     "description": null,
-    "parentId": "geographic_location",
-    "type": "COUNTRY",
-    "extras": {}
-  },
-  {
-    "id": "WW",
-    "name": "Worldwide",
-    "description": "All Countries.",
     "parentId": "geographic_location",
     "type": "COUNTRY",
     "extras": {}
