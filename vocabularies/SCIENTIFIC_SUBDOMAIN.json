@@ -350,13 +350,5 @@
     "parentId": "scientific_domain-social_sciences",
     "type": "SCIENTIFIC_SUBDOMAIN",
     "extras": {}
-  },
-  {
-    "id": "scientific_subdomain-vaccination",
-    "name": "vaccination",
-    "description": "Vocabulary submitted by mantagmg@gmail.com",
-    "parentId": null,
-    "type": "SCIENTIFIC_SUBDOMAIN",
-    "extras": {}
   }
 ]
