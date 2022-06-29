@@ -472,8 +472,8 @@
     "extras": {}
   },
   {
-    "id": "subcategory-processing_and_analysis-data_analysis-data_exploitation",
-    "name": "Data Exploitation",
+    "id": "subcategory-processing_and_analysis-data_analysis-data_extrapolation",
+    "name": "Data Extrapolation",
     "description": null,
     "parentId": "category-processing_and_analysis-data_analysis",
     "type": "SUBCATEGORY",
