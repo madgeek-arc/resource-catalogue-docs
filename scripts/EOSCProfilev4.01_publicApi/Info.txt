@@ -1,0 +1,15 @@
+Script [eosc_public_API_migration.py] changes:
+	Providers/Resources:
+		* Adds published field (with predefined value 'false') on Metadata
+
+Script [copyResourcesToUpperLevel.py] changes:
+    Providers:
+        if Provider is active with status 'approved provider':
+            * Creates a new registry for this Provider with:
+                identifier -> originalId -> oldId
+                newId = catalogueId + '.' + oldId
+    Resources:
+        if Resource is active, latest with status 'approved resource':
+            * Creates a new registry for this Resource with:
+                identifier -> originalId -> oldId
+                newId = catalogueId + '.' + oldId

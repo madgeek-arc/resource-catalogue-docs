@@ -1,0 +1,23 @@
+Script [eosc_v3.00_to_v4.00_migration.py] changes:
+	Providers:
+		* Adds catalogueId field (with predefined value 'eosc')
+		* Hosting Legal Entity field migration (from free text to controlled values)
+		* Multimedia field migration (refactored field)
+			v3.00 -> single URL
+			v4.00 -> multimediaName (with predefine value 'Multimedia 1'), multimediaURL (with predefine value the URL from the previous version)
+					 for more URLS, more names are added respectively ('Multimedia 2', 'Multimedia 3', etc..) 
+	Resources:
+		* Added catalogueId field (with predefined value 'eosc')
+		* Added abbreviation field (taken from Resource name) 
+			For names < 30 chars, set abbreviation value = name
+			For names > 30 chars, set abbreviation value = first letter from each word of the name
+		* Related Platforms field migration (from free text to controlled values)
+		* Use Cases field migration (refactored field)
+			v3.00 -> single URL
+			v4.00 -> useCaseName (with predefine value 'Use Case 1'), useCaseUrl (with predefine value the URL from the previous version)
+					 for more URLS, more names are added respectively ('Use Case 2', 'Use Case 3', etc..)
+		* Multimedia field migration (refactored field)
+			v3.00 -> single URL
+			v4.00 -> multimediaName (with predefine value 'Multimedia 1'), multimediaURL (with predefine value the URL from the previous version)
+					 for more URLS, more names are added respectively ('Multimedia 2', 'Multimedia 3', etc..)
+		* serviceLevel field rename to resourceLevel
