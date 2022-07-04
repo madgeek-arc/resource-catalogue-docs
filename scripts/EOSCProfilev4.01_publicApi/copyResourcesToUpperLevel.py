@@ -21,11 +21,12 @@ def folder_selection(directory):
             if file.endswith('.json'):
                 with open(directory + migrationFolder + file, 'r') as json_file:
                     migrated_data = migrate(json_file)
-                    json_data = update_core_id(migrated_data)
-                    fileName = json_data.get("id")
-                    # write to file
-                    with open(directory + migrationFolder + fileName + '.json', 'w') as json_file:
-                        json.dump(json_data, json_file, indent=2)
+                    if migrated_data[1]:
+                        json_data = update_core_id(migrated_data[0])
+                        fileName = json_data.get("id")
+                        # write to file
+                        with open(directory + migrationFolder + fileName + '.json', 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
 
 
 def migrate(json_file):
@@ -55,9 +56,11 @@ def migrate(json_file):
         provider = root.find('{http://einfracentral.eu}provider')
         id = provider.find('{http://einfracentral.eu}id')
         catalogueId = provider.find('{http://einfracentral.eu}catalogueId')
+    entered = False
     if active is not None and active.text == 'true':
         if (status is not None and status.text == 'approved provider') or \
                 (status is not None and status.text == 'approved resource' and latest is not None and latest.text == 'true'):
+            entered = True
             if identifier is not None:
                 originalId = identifier.find('{http://einfracentral.eu}originalId')
                 if originalId is not None:
@@ -84,7 +87,7 @@ def migrate(json_file):
         bs_content = bs(content, "xml")
         json_data['payload'] = str(bs_content)
 
-    return json_data
+    return json_data, entered
 
 
 def update_core_id(json_data):
