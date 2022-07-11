@@ -45,7 +45,7 @@ def migrate(json_file):
     status = root.find('{http://einfracentral.eu}status')
     metadata = root.find('{http://einfracentral.eu}metadata')
     published = metadata.find('{http://einfracentral.eu}published')
-    identifier = root.find('{http://einfracentral.eu}identifier')
+    identifiers = root.find('{http://einfracentral.eu}identifiers')
     if isService:
         latest = root.find('{http://einfracentral.eu}latest')
         service = root.find('{http://einfracentral.eu}service')
@@ -58,12 +58,12 @@ def migrate(json_file):
     if active is not None and active.text == 'true':
         if (status is not None and status.text == 'approved provider') or \
                 (status is not None and status.text == 'approved resource' and latest is not None and latest.text == 'true'):
-            if identifier is not None:
-                originalId = identifier.find('{http://einfracentral.eu}originalId')
+            if identifiers is not None:
+                originalId = identifiers.find('{http://einfracentral.eu}originalId')
                 if originalId is not None:
                     originalId.text = id.text
             else:
-                newIdentifier = ET.Element("tns:identifier")
+                newIdentifier = ET.Element("tns:identifiers")
                 tree.append(newIdentifier)
                 originalId = ET.Element("tns:originalId")
                 originalId.text = id.text

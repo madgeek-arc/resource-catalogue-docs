@@ -36,7 +36,7 @@ def migrate(json_file, isVersion):
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
 
-    # metadata -> published
+    # metadata -> ADD published, REMOVE source, originalId
     metadata = root.find('{http://einfracentral.eu}metadata')
     if metadata is not None:
         published = metadata.find('{http://einfracentral.eu}published')
@@ -44,6 +44,12 @@ def migrate(json_file, isVersion):
             newPublished = ET.Element("tns:published")
             newPublished.text = 'false'
             metadata.append(newPublished)
+        source = metadata.find('{http://einfracentral.eu}source')
+        if source is not None:
+            metadata.remove(source)
+        originalId = metadata.find('{http://einfracentral.eu}originalId')
+        if originalId is not None:
+            metadata.remove(originalId)
 
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
