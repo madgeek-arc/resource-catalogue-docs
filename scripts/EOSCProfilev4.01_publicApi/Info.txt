@@ -1,6 +1,7 @@
 Script [eosc_public_API_migration.py] changes:
 	Providers/Resources:
 		* Adds published field (with predefined value 'false') on Metadata
+		* Removes source, originalId fields (as deprecated) from Metadata
 
 Script [copyResourcesToUpperLevel.py] changes:
     Providers:
