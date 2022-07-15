@@ -32,9 +32,15 @@ def folder_selection(directory):
 def migrate(json_file, isVersion):
     json_data = json.load(json_file)
     xml = json_data['payload']
+    resourceCoreId = json_data['id']
 
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
+    tree = root.getroot()
+    resource = root.find('{http://einfracentral.eu}provider')
+    if resource is None:
+        resource = root.find('{http://einfracentral.eu}service')
+    resourceId = resource.find('{http://einfracentral.eu}id').text
 
     # metadata -> ADD published, REMOVE source, originalId
     metadata = root.find('{http://einfracentral.eu}metadata')
@@ -50,6 +56,13 @@ def migrate(json_file, isVersion):
         originalId = metadata.find('{http://einfracentral.eu}originalId')
         if originalId is not None:
             metadata.remove(originalId)
+    else:
+        print("Resource with id: [", resourceCoreId, "]-[", resourceId, "] has null Metadata. Creating them..")
+        newMetadata = ET.Element("tns:metadata")
+        newPublished = ET.Element("tns:published")
+        newPublished.text = 'false'
+        newMetadata.append(newPublished)
+        tree.append(newMetadata)
 
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
