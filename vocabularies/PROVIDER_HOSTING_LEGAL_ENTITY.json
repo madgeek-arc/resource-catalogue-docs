@@ -64,6 +64,14 @@
     "extras": {}
   },
   {
+    "id": "provider_hosting_legal_entity-bcsl",
+    "name": "Bineo Consulting SL",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
     "id": "provider_hosting_legal_entity-bsc",
     "name": "Barcelona Supercomputing Center - Centro Nacional de Supercomputación (BSC)",
     "description": null,
@@ -1032,6 +1040,14 @@
     "extras": {}
   },
   {
+    "id": "provider_hosting_legal_entity-psi",
+    "name": "Paul Scherrer Institute (PSI)",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
     "id": "provider_hosting_legal_entity-psnc",
     "name": "Poznan Supercomputing and Networking Center (PSNC)",
     "description": null,
@@ -1058,6 +1074,14 @@
   {
     "id": "provider_hosting_legal_entity-readcoop",
     "name": "READ-COOP SCE",
+    "description": null,
+    "parentId": null,
+    "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
+    "extras": {}
+  },
+  {
+    "id": "provider_hosting_legal_entity-rli",
+    "name": "Reiner Lemoine Institute",
     "description": null,
     "parentId": null,
     "type": "PROVIDER_HOSTING_LEGAL_ENTITY",
