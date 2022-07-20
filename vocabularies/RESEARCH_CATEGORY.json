@@ -48,14 +48,6 @@
     "extras": {}
   },
   {
-    "id": "research_category-dro",
-    "name": "Discover Research Outputs",
-    "description": null,
-    "parentId": null,
-    "type": "RESEARCH_CATEGORY",
-    "extras": {}
-  },
-  {
     "id": "research_category-ari",
     "name": "Access Research Infrastructures",
     "description": null,
