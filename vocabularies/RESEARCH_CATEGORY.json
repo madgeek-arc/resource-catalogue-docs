@@ -1,0 +1,66 @@
+[
+  {
+    "id": "research_category-dro",
+    "name": "Discover Research Outputs",
+    "description": null,
+    "parentId": null,
+    "type": "RESEARCH_CATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "research_category-pro",
+    "name": "Publish Research Outputs",
+    "description": null,
+    "parentId": null,
+    "type": "RESEARCH_CATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "research_category-pa",
+    "name": "Process and Analyze",
+    "description": null,
+    "parentId": null,
+    "type": "RESEARCH_CATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "research_category-acr",
+    "name": "Access Computing Resources",
+    "description": null,
+    "parentId": null,
+    "type": "RESEARCH_CATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "research_category-fie",
+    "name": "Find Instruments & Equipment",
+    "description": null,
+    "parentId": null,
+    "type": "RESEARCH_CATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "research_category-atm",
+    "name": "Access Training Material",
+    "description": null,
+    "parentId": null,
+    "type": "RESEARCH_CATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "research_category-ari",
+    "name": "Access Research Infrastructures",
+    "description": null,
+    "parentId": null,
+    "type": "RESEARCH_CATEGORY",
+    "extras": {}
+  },
+  {
+    "id": "research_category-fb",
+    "name": "Find Bundles",
+    "description": null,
+    "parentId": null,
+    "type": "RESEARCH_CATEGORY",
+    "extras": {}
+  }
+]
