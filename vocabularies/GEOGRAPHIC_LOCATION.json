@@ -1,8 +1,10 @@
-{
-    "id": "geographic_lcoation",
-    "name": "Geographic Location",
-    "description": "All Regions and Countries",
-    "parentId": null,
-    "type": "GEOGRAPHIC_LOCATION",
-    "extras": {}
-}
+[
+  {
+        "id": "geographic_location",
+        "name": "Geographic Location",
+        "description": "All Regions and Countries",
+        "parentId": null,
+        "type": "GEOGRAPHIC_LOCATION",
+        "extras": {}
+  }
+]
