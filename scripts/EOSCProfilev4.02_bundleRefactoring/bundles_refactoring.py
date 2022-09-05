@@ -19,6 +19,9 @@ def service_migration(directory):
                     with open(directory + migrationFolder + file, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
 
+    # rename infra_service folder to service
+    os.rename(directory + '/infra_service/', directory + '/service/')
+
 
 def migrate_services(json_file):
     json_data = json.load(json_file)
@@ -30,9 +33,15 @@ def migrate_services(json_file):
 
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
+    tree = root.getroot()
 
     # infraService -> serviceBundle
     root.getroot().tag = "{http://einfracentral.eu}serviceBundle"
+
+    # remove latest field
+    latest = root.find('{http://einfracentral.eu}latest')
+    if latest is not None:
+        tree.remove(latest)
 
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
