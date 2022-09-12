@@ -13,17 +13,28 @@ def service_migration(directory):
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
+                isVersion = False
                 with open(directory + migrationFolder + file, 'r') as json_file:
-                    json_data = migrate_services(json_file)
+                    json_data = migrate_services(json_file, isVersion)
                     # write to file
                     with open(directory + migrationFolder + file, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
+            if file.endswith('-version'):
+                isVersion = True
+                versionFiles = os.listdir(directory + migrationFolder + file)
+                for versionFile in versionFiles:
+                    with open(directory + migrationFolder + file + '/' + versionFile, 'r') as json_file:
+                        json_data = migrate_services(json_file, isVersion)
+                        # write to file
+                        with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
+
 
     # rename infra_service folder to service
     os.rename(directory + '/infra_service/', directory + '/service/')
 
 
-def migrate_services(json_file):
+def migrate_services(json_file, isVersion):
     json_data = json.load(json_file)
     xml = json_data['payload']
 
@@ -49,6 +60,8 @@ def migrate_services(json_file):
         content = "".join(content)
         bs_content = bs(content, "xml")
         json_data['payload'] = str(bs_content)
+        if isVersion:
+            json_data['resource']['payload'] = json_data['payload']
 
     return json_data
 ##################################################### FUNCTIONS ########################################################
