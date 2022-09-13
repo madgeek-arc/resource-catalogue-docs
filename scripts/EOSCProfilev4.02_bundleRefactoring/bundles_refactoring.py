@@ -41,6 +41,9 @@ def migrate_services(json_file, isVersion):
     # resourceTypeName
     if json_data['resourceTypeName'] == 'infra_service':
         json_data['resourceTypeName'] = 'service'
+    if isVersion:
+        if json_data["resource"]["resourceTypeName"] == "infra_service":
+            json_data["resource"]["resourceTypeName"] = "service"
 
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
