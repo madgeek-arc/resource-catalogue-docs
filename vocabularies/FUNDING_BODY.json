@@ -257,7 +257,7 @@
   },
   {
     "id": "funding_body-ec",
-    "name": "European Comission (EC)",
+    "name": "European Commission (EC)",
     "description": null,
     "parentId": null,
     "type": "FUNDING_BODY",
