@@ -8,8 +8,6 @@ import shutil
 ######################################################## IMPORTS #######################################################
 
 ######################################################## GLOBAL ########################################################
-allDumpFolders = ['/catalogue/', '/event/', '/infra_service/', '/pending_provider/', '/pending_service/',
-                      '/provider/', '/vocabulary/', '/vocabulary_curation/']
 serviceRelatedFolders = ['/pending_service/', '/infra_service/']
 ######################################################## GLOBAL ########################################################
 
@@ -63,7 +61,7 @@ def find_all_versions(json_file):
                 loggingInfoObject.userRole = loggingInfoUserRole.text
             loggingInfoType = loggingInfo.find('{http://einfracentral.eu}type')
             if loggingInfoType is not None:
-                loggingInfoObject.ttype = loggingInfoType.text
+                loggingInfoObject.type = loggingInfoType.text
             loggingInfoComment = loggingInfo.find('{http://einfracentral.eu}comment')
             if loggingInfoComment is not None:
                 loggingInfoObject.comment = loggingInfoComment.text
@@ -148,7 +146,9 @@ def update_latest_services_loggingInfo(directory, latestServices, oldLoggingInfo
 
                                     tree.append(loggingInfo)
 
-                    ### ADD SORT ###
+                    # Sort LoggingInfo list
+                    allLoggingInfo = root.findall('{http://einfracentral.eu}loggingInfo')
+                    tree.extend(sorted(allLoggingInfo, key=lambda x: tree.remove(x) or x.find('{http://einfracentral.eu}date').text))
 
                     root.write('output.xml')
                     with open("output.xml", "r") as xml_file:
@@ -166,13 +166,13 @@ class LoggingInfo:
     userEmail = None
     userFullName = None
     userRole = None
-    ttype = None
+    type = None
     comment = None
     actionType = None
 
     def asdict(self):
         return {'date': self.date, 'userEmail': self.userEmail, 'userFullName': self.userFullName,
-                'userRole': self.userRole, 'type': self.ttype, 'comment': self.comment, 'actionType':  self.actionType}
+                'userRole': self.userRole, 'type': self.type, 'comment': self.comment, 'actionType':  self.actionType}
 ##################################################### FUNCTIONS ########################################################
 
 
