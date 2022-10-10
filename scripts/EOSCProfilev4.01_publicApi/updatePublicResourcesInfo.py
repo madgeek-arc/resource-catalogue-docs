@@ -9,7 +9,9 @@ import argparse
 
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
-    migrationFolders = ['/infra_service/', '/datasource/']  #TODO: Change folder name to '/infra_service/' for PROD
+    # TODO: 1 folder -> ['/infra_service/'] for PROD
+    # TODO: 2 folders -> ['/service/', '/datasource/'] for BETA
+    migrationFolders = ['/infra_service/']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
