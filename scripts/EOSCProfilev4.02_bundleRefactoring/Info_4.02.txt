@@ -8,9 +8,3 @@ Script [bundles_refactoring.py] changes:
         * Renames 'infraService' tag to 'serviceBundle'
         * Removes 'latest' field
         * Renames directory from 'infra_service' to 'service'
-
-Script [updatePublicResourcesInfo.py] changes:
-    Services, Datasources:
-        * Updates the IDs of various fields of Public Services/Datasources (resourceOrganisation, resourceProviders,
-          requiredResources, relatedResources) to their respective Public ones
-          (eg. resourceOrganisation : openaire -> eosc.openaire)

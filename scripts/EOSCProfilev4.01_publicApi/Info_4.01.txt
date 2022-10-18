@@ -14,3 +14,9 @@ Script [copyResourcesToUpperLevel.py] changes:
             * Creates a new registry for this Resource with:
                 identifier -> originalId -> oldId
                 newId = catalogueId + '.' + oldId
+
+Script [updatePublicResourcesInfo.py] changes:
+    Services:
+        * Updates the IDs of various fields of Public Services (resourceOrganisation, resourceProviders,
+          requiredResources, relatedResources) to their respective Public ones
+          (eg. resourceOrganisation : openaire -> eosc.openaire)
