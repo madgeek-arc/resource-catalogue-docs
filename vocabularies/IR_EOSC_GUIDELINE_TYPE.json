@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ir_eosc_guideline_type-eosc_core_interoperability_guideline",
+    "name": "EOSC-Core Interoperability Guideline",
+    "description": null,
+    "parentId": null,
+    "type": "IR_EOSC_GUIDELINE_TYPE",
+    "extras": {}
+  },
+  {
+    "id": "ir_eosc_guideline_type-eosc_exchange_interoperability_guideline_thematic",
+    "name": "EOSC-Exchange Interoperability Guideline (Thematic)",
+    "description": null,
+    "parentId": null,
+    "type": "IR_EOSC_GUIDELINE_TYPE",
+    "extras": {}
+  },
+  {
+    "id": "ir_eosc_guideline_type-eosc_exchange_interoperability_guideline_horizontal",
+    "name": "EOSC-Exchange Interoperability Guideline (Horizontal)",
+    "description": null,
+    "parentId": null,
+    "type": "IR_EOSC_GUIDELINE_TYPE",
+    "extras": {}
+  }
+]

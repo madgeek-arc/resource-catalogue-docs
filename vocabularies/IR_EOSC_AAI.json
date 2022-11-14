@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ir_eosc_aai-yes",
+    "name": "Yes",
+    "description": null,
+    "parentId": null,
+    "type": "IR_EOSC_AAI",
+    "extras": {}
+  },
+  {
+    "id": "ir_eosc_aai-no",
+    "name": "No",
+    "description": null,
+    "parentId": null,
+    "type": "IR_EOSC_AAI",
+    "extras": {}
+  }
+]

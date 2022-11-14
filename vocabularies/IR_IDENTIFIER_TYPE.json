@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ir_identifier_type-doi",
+    "name": "DOI",
+    "description": null,
+    "parentId": null,
+    "type": "IR_IDENTIFIER_TYPE",
+    "extras": {}
+  }
+]

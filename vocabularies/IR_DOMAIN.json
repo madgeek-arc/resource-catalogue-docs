@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ir_domain-agnostic",
+    "name": "Agnostic",
+    "description": null,
+    "parentId": null,
+    "type": "IR_DOMAIN_TYPE",
+    "extras": {}
+  }
+]

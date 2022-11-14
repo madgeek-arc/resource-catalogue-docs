@@ -1,0 +1,226 @@
+[
+  {
+    "id": "ir_resource_type_general-audiovisual",
+    "name": "Audiovisual",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-book",
+    "name": "Book",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-book_chapter",
+    "name": "Book Chapter",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-collection",
+    "name": "Collection",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-computational_notebook",
+    "name": "Computational Notebook",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-conference_paper",
+    "name": "Conference Paper",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-conference_proceeding",
+    "name": "Conference Proceeding",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-data_paper",
+    "name": "Data Paper",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-dataset",
+    "name": "Dataset",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-dissertation",
+    "name": "Dissertation",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-event",
+    "name": "Event",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-image",
+    "name": "Image",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-interactive_resource",
+    "name": "Interactive Resource",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-journal",
+    "name": "Journal",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-journal_article",
+    "name": "Journal Article",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-model",
+    "name": "Model",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-output_management_plan",
+    "name": "Output Management Plan",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-peer_review",
+    "name": "Peer Review",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-physical_object",
+    "name": "Physical Object",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-preprint",
+    "name": "Preprint",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-report",
+    "name": "Report",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-service",
+    "name": "Service",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-software",
+    "name": "Software",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-sound",
+    "name": "Sound",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-standard",
+    "name": "Standard",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-text",
+    "name": "Text",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-workflow",
+    "name": "Workflow",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-other",
+    "name": "Other",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  }
+]
