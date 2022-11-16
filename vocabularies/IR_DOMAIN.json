@@ -4,7 +4,7 @@
     "name": "Agnostic",
     "description": null,
     "parentId": null,
-    "type": "IR_DOMAIN_TYPE",
+    "type": "IR_DOMAIN",
     "extras": {}
   }
 ]
