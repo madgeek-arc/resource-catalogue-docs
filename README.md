@@ -25,123 +25,570 @@
   #### CRUD operations for Catalogues + external (non EOSC) resources (Datasources, Providers, Services)
   - DELETE
     - Deletes the Datasource of the specific Catalogue given its ID:
-        ```diff
-        /catalogue/{catalogueId}/datasource/{id}
-        ```
+      ```diff
+      /catalogue/{catalogueId}/datasource/{id}
+      Parameters:
+        catalogueId: String (required)
+        id : String (required)
+      ```
     - Deletes the Provider of the specific Catalogue given its ID:
-        ```diff
-        /catalogue/{catalogueId}/provider/{id}
-        ```
+      ```diff
+      /catalogue/{catalogueId}/provider/{id}
+      Parameters:
+        catalogueId: String (required)
+        id : String (required)
+      ```
     - Deletes the Service of the specific Catalogue given its ID:
-        ```diff
-        /catalogue/{catalogueId}/resource/{id}
-        ```
+      ```diff
+      /catalogue/{catalogueId}/resource/{id}
+      Parameters:
+        catalogueId: String (required)
+        id : String (required)
+      ```
   - GET
     - Get a list of all Catalogues in the Portal:
-        ```diff
-        /catalogue/all
-        ```
+      ```diff
+      /catalogue/all
+      Parameters:
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
     - Returns the Datasource of the specific Catalogue given its ID:
-        ```diff
-        /catalogue/{catalogueId}/datasource/{resourceId}
-        ```
+      ```diff
+      /catalogue/{catalogueId}/datasource/{resourceId}
+      Parameters:
+        catalogueId: String (required)
+        resourceId : String (required)
+      ```
     - Get a list of all Providers of the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/provider/all
-        ```
+      ```diff
+      /catalogue/{catalogueId}/provider/all
+      Parameters:
+        catalogueId: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
     - Returns the Provider of the specific Catalogue given its ID:
-        ```diff
-        /catalogue/{catalogueId}/provider/{providerId}
-        ```
+      ```diff
+      /catalogue/{catalogueId}/provider/{providerId}
+      Parameters:
+        catalogueId: String (required)
+        providerId : String (required)
+      ```
     - Returns the Service of the specific Catalogue given its ID:
-        ```diff
-        /catalogue/{catalogueId}/resource/{resourceId}
-        ```
+      ```diff
+      /catalogue/{catalogueId}/resource/{resourceId}
+      Parameters:
+        catalogueId: String (required)
+        resourceId : String (required)
+      ```
     - Get a list of all Datasources of the specific Provider of the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/{providerId}/datasource/all
-        ```
+      ```diff
+      /catalogue/{catalogueId}/{providerId}/datasource/all
+      Parameters:
+        catalogueId: String (required)
+        providerId : String (required)
+      ```
     - Get a list of all Service of the specific Provider of the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/{providerId}/resource/all
-        ```
+      ```diff
+      /catalogue/{catalogueId}/{providerId}/resource/all
+      Parameters:
+        catalogueId: String (required)
+        providerId : String (required)
+      ```
     - Get a specific Catalogue given its ID:
-        ```diff
-        /catalogue/{id}
-        ```
+      ```diff
+      /catalogue/{id}
+      Parameters:
+        id: String (required)
+      ```
   - POST
     - Creates a new Catalogue:
-        ```diff
-        /catalogue
-        ```
+      ```diff
+      /catalogue
+      Parameters:
+        catalogue: JSON (required)
+      ```
     - Creates a new Datasource for the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/datasource
-        ```
+      ```diff
+      /catalogue/{catalogueId}/datasource
+      Parameters:
+        datasource: JSON (required)
+        catalogueId: String (required)
+      ```
     - Creates a new Provider for the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/provider
-        ```
+      ```diff
+      /catalogue/{catalogueId}/provider
+      Parameters:
+        provider: JSON (required)
+        catalogueId: String (required)
+      ```
     - Creates a new Service for the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/resource
-        ```
+      ```diff
+      /catalogue/{catalogueId}/resource
+      Parameters:
+        service: JSON (required)
+        catalogueId: String (required)
+      ```
   - PUT
     - Updates a specific Catalogue:
-        ```diff
-        /catalogue
-        ```
+      ```diff
+      /catalogue
+      Parameters:
+        catalogue: JSON (required)
+        comment: String
+      ```
     - Updates the Datasource of the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/datasource
-        ```
+      ```diff
+      /catalogue/{catalogueId}/datasource
+      Parameters:
+        datasource: JSON (required)
+        catalogueId: String (required)
+        comment: String
+      ```
     - Updates the Provider of the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/provider
-        ```
+      ```diff
+      /catalogue/{catalogueId}/provider
+      Parameters:
+        provider: JSON (required)
+        catalogueId: String (required)
+        comment: String
+      ```
     - Updates the Service of the specific Catalogue:
-        ```diff
-        /catalogue/{catalogueId}/resource
-        ```
+      ```diff
+      /catalogue/{catalogueId}/resource
+      Parameters:
+        service: JSON (required)
+        catalogueId: String (required)
+        comment: String
+      ```
 
 - ### Datasource
-  #### CRUD operations for EOSC Datasources
-  
+  #### CRUD operations for Datasources
+  - DELETE
+    - Deletes the Datasource of the specific Catalogue given its ID:
+      ```diff
+      /datasource/{id}
+      Parameters:
+        id: String (required)
+        catalogueId: String (required)
+      ```
+  - GET
+    - Get a list of all Datasources of the specific Catalogue in the Portal:
+      ```diff
+      /datasource/all
+      Parameters:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Datasource of the specific Catalogue given its ID:
+      ```diff
+      /datasource/{id}
+      Parameters:
+        id: String (required)
+        catalogue_id: String
+      ```
+  - POST
+    - Creates a new EOSC Datasource:
+      ```diff
+      /datasource
+      Parameters:
+        datasource: JSON (required)
+      ```
+     - Validates a Datasource:
+        ```diff
+        /datasource/validate
+        Parameters:
+          datasource: JSON (required)
+        ```
+  - PUT
+    - Updates a specific EOSC Datasource:
+      ```diff
+      /datasource
+      Parameters:
+        datasource: JSON (required)
+        comment: String
+      ```
+        
+- ### Interoperability Record:
+  #### Get information about Interoperability Records
+  - GET
+    - Get a list of all Interoperability Records in the Portal:
+      ```diff
+      /interoperabilityRecord/all
+      Parameters:
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Interoperability Record given its ID:
+      ```diff
+      /interoperabilityRecord/{id}
+      Parameters:
+        id: String (required)
+      ```
+        
 - ### Provider
-  #### CRUD operations for EOSC Providers
-
+  #### CRUD operations for Providers
+  - DELETE
+    - Deletes the Provider of the specific Catalogue given its ID:
+      ```diff
+      /provider/{id}
+      Parameters:
+        id: String (required)
+        catalogue_id: String (required)
+      ```
+  - GET
+    - Get a list of all Providers of the specific Catalogue in the Portal:
+      ```diff
+      /provider/all
+      Parameters:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns all Datasources of a specific Provider of the EOSC Catalogue given its ID:
+      ```diff
+      /provider/datasources/{id}
+      Parameters:
+        id: String (required)
+      ```
+     - Returns all Services of a specific Provider of the EOSC Catalogue given its ID:
+        ```diff
+        /provider/services/{id}
+        Parameters:
+          id: String (required)
+        ```
+    - Returns the Provider of the specific Catalogue given its ID:
+      ```diff
+      /provider/{id}
+      Parameters:
+        id: String (required)
+        catalogue_id: String
+      ```
+  - PUT
+    - Updates the Provider of the specific Catalogue give its ID:
+      ```diff
+      /provider
+      Parameters:
+        provider: JSON (required)
+        catalogue_id: String
+        comment: String
+      ```
 - ### Public
   #### Get information about Public resources (Datasources, Providers, Services)
+  - GET
+    - Get a list of all Public Datasources of the specific Catalogue in the Portal:
+      ```diff
+      /public/datasource/all
+      Parameters:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Public Datasource of the specific Catalogue given its ID:
+      ```diff
+      /public/datasource/{id}
+      Parameters:
+        id: String (required)
+        catalogue_id: String
+      ```
+    - Get a list of all Public Providers of the specific Catalogue in the Portal:
+      ```diff
+      /public/provider/all
+      Parameters:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Public Provider of the specific Catalogue given its ID:
+      ```diff
+      /public/provider/{id}
+      Parameters:
+        id: String (required)
+        catalogue_id: String
+      ```
+    - Get a list of all Public Services of the specific Catalogue in the Portal:
+      ```diff
+      /public/resource/all
+      Parameters:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Public Service of the specific Catalogue given its ID:
+      ```diff
+      /public/resource/{id}
+      Parameters:
+        id: String (required)
+        catalogue_id: String
+      ```
   
 - ### Resource
-  #### CRUD operations for EOSC Services
+  #### CRUD operations for Services
+  (Mapping also supports '/resource')
+  - DELETE
+    - Deletes the Service of the specific Catalogue given its ID:
+      ```diff
+      /service/{id}
+      Parameters:
+        id: String (required)
+        catalogue_id: String
+      ```
+  - GET
+    - Returns a list of all Services of the specific Catalogue in the Portal:
+      ```diff
+        /service/all
+        Parameters:
+          catalogue_id: String (required)
+          query: String (Keyword to refine the search)
+          from : int (Starting index in the result set)
+          quantity: int (Quantity to be fetched)
+          order: String (asc/desc)
+          orderField: String (eg. id)
+      ```
+    - Get all Resources in the catalogue organized by an attribute:
+      ```diff
+        /service/by/{field}
+        Parameters:
+          field: Service field (required)
+      ```
+    - Returns the Service of the specific Catalogue given its ID:
+      ```diff
+        /service/{id}
+        Parameters:
+          id: String (required)
+          catalogue_id: String
+      ```
+  - POST
+    - Creates a new EOSC Service:
+      ```diff
+        /service
+        Parameters:
+          service: JSON (required)
+    - Validates a Service:
+      ```diff
+      /service/validate
+      Parameters:
+        service: JSON (required)
+  - PUT
+    - Updates a specific EOSC Service:
+      ```diff
+      /service
+      Parameters:
+        service: JSON (required)
+        comment: String
+      ```
+  
+- ### Resource Interoperability Record
+  #### CRUD operations for Services
+  - DELETE
+    - Deletes the Resource Interoperability Record of the specific Resource:
+      ```diff
+      /resourceInteroperabilityRecord/{resourceId}/{resourceInteroperabilityRecordId}
+      Parameters:
+        resourceId: String (required)
+        resourceInteroperabilityRecordId: String (required)
+      ```
+  - GET
+    - Returns a list of all Resource Interoperability Records of the specific Catalogue in the Portal:
+      ```diff
+      /resourceInteroperabilityRecord/all
+      Parameters:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Resource Interoperability Record of the specific Catalogue given the Resource ID:
+      ```diff
+        /resourceInteroperabilityRecord/byResource/{resourceId}
+        Parameters:
+          resourceId: String (required)
+          catalogue_id: String
+      ```
+    - Returns the Resource Interoperability Record of the specific Catalogue given its ID:
+      ```diff
+        /resourceInteroperabilityRecord/{id}
+        Parameters:
+          id: String (required)
+      ```
+  - POST
+    - Creates a new Resource Interoperability Record given its resourceType (eg. service, datasource):
+      ```diff
+        /resourceInteroperabilityRecord
+        Parameters:
+          resourceInteroperabilityRecord: JSON (required)
+          resourceType: String (required)
+      ```
+  - PUT
+    - Updates a specific Resource Interoperability Record:
+      ```diff
+      /resourceInteroperabilityRecord
+      Parameters:
+        resourceInteroperabilityRecord: JSON (required)
+      ```
   
 - ### Service Extensions
-  #### CRUD operations for Service Extensions
+  #### CRUD operations for Service Extensions (Helpdesk/Monitoring)
+  - DELETE
+    - Deletes the Helpdesk of the specific Resource of the specific Catalogue:
+      ```diff
+      /service-extensions/helpdesk/{catalogueId}/{serviceId}
+      Parameters:
+        catalogueId: String (required)
+        serviceId: String (required)
+      ```
+    - Deletes the Monitoring of the specific Resource of the specific Catalogue:
+      ```diff
+      /service-extensions/monitoring/{catalogueId}/{serviceId}
+      Parameters:
+        catalogueId: String (required)
+        serviceId: String (required)
+      ```
+  - GET
+    - Returns a list of all Helpdesks of the specific Catalogue in the Portal:
+      ```diff
+        /service-extensions/helpdesk/all
+        Parameters:
+          catalogue_id: String (required)
+          query: String (Keyword to refine the search)
+          from : int (Starting index in the result set)
+          quantity: int (Quantity to be fetched)
+          order: String (asc/desc)
+          orderField: String (eg. id)
+      ```
+    - Returns the Helpdesk of the specific Catalogue given the Resource ID:
+      ```diff
+        /service-extensions/helpdesk/byService/{serviceId}
+        Parameters:
+          serviceId: String (required)
+          catalogue_id: String
+      ```
+    - Returns the Helpdesk of the specific Catalogue given its ID:
+      ```diff
+        /service-extensions/helpdesk/{id}
+        Parameters:
+          id: String (required)
+      ```
+    - Returns a list of all Monitorings of the specific Catalogue in the Portal:
+      ```diff
+        /service-extensions/monitoring/all
+        Parameters:
+          catalogue_id: String (required)
+          query: String (Keyword to refine the search)
+          from : int (Starting index in the result set)
+          quantity: int (Quantity to be fetched)
+          order: String (asc/desc)
+          orderField: String (eg. id)
+      ```
+    - Returns the Monitoring of the specific Catalogue given the Resource ID:
+      ```diff
+        /service-extensions/monitoring/byService/{serviceId}
+        Parameters:
+          serviceId: String (required)
+          catalogue_id: String
+      ```
+    - Returns a list with all the available Monitoring Service Types:
+      ```diff
+        /service-extensions/monitoring/serviceTypes
+      ```
+    - Returns the Monitoring of the specific Catalogue given its ID:
+      ```diff
+        /service-extensions/monitoring/{id}
+        Parameters:
+          id: String (required)
+      ```
+  - POST
+    - Creates a new Helpdesk for the specific Catalogue:
+      ```diff
+        /service-extensions/helpdesk
+        Parameters:
+          helpdesk: JSON (required)
+          catalogue_id: String
+    - Creates a new Monitoring for the specific Catalogue:
+      ```diff
+        /service-extensions/monitoring
+        Parameters:
+          monitoring: JSON (required)
+          catalogue_id: String
+  - PUT
+    - Updates a specific Helpdesk of a specific Catalogue:
+      ```diff
+      /service-extensions/helpdesk
+      Parameters:
+        helpdesk: JSON (required)
+        catalogue_id: String
+      ```
+    - Updates a specific Monitoring of a specific Catalogue:
+      ```diff
+      /service-extensions/montoring
+      Parameters:
+        montoring: JSON (required)
+        catalogue_id: String
+      ```
 
 - ### Vocabulary   
   #### Get information about Vocabularies
   - GET
     - Get all Vocabularies grouped by Type:
-        ```diff
-        /vocabulary/byType
-        ```
+      ```diff
+      /vocabulary/byType
+      ```
     - Get all Vocabularies of a specific Type:
-        ```diff
-        /vocabulary/byType/{type}
-        ```
+      ```diff
+      /vocabulary/byType/{type}
+      Parameters:
+        type: Vocabulary Type (required)
+      ```
     - Get a list of EU Countries:
-        ```diff
-        /vocabulary/countries/EU
-        ```
+      ```diff
+      /vocabulary/countries/EU
+      ```
     - Get a list of WW Countries:
-        ```diff
-        /vocabulary/countries/WW
-        ```
+      ```diff
+      /vocabulary/countries/WW
+      ```
     - Get a specific Vocabulary given its ID:
-        ```diff
-        /vocabulary/{id}
-        ```
+      ```diff
+      /vocabulary/{id}
+      Parameters:
+        id: String (required)
+      ```
+
+### Notes:
+- Resource (with capital 'R') refers to both Services/Datasources
+- If catalogueId/catalogue_id is not provided, the field gets automatically the Project's Catalogue name as its value (in our case 'eosc')
+- catalogueId/catalogue_id = 'all' will fetch all the resources from all Catalogues.
+
+
+
 ## Objects:
   ### Catalogue:
     {
@@ -371,6 +818,58 @@
       "paymentModel": "https://example.com",
       "pricing": "https://example.com"
     }
+    
+  ### Interoperability Record:
+    {
+      "id": "(auto-assigned)",
+      "identifierInfo": {
+        "identifier": "string",
+        "identifierType": "string"
+      },
+      "creators": [
+        {
+          "creatorNameTypeInfo": {
+            "creatorName": "string",
+            "nameType": "string"
+          },
+          "givenName": "string",
+          "familyName": "string",
+          "nameIdentifier": "string",
+          "creatorAffiliationInfo": {
+            "affiliation": "string",
+            "affiliationIdentifier": "string"
+          }
+        }
+      ],
+      "title": "string",
+      "publicationYear": 0,
+      "resourceTypesInfo": [
+        {
+          "resourceType": "string",
+          "resourceTypeGeneral": "string"
+        }
+      ],
+      "created": "string",
+      "updated": "string",
+      "eoscRelatedStandards": [
+        null
+      ],
+      "rights": [
+        {
+          "rightTitle": "string",
+          "rightURI": "string",
+          "rightIdentifier": "string"
+        }
+      ],
+      "description": "string",
+      "status": "string",
+      "domain": "string",
+      "eoscGuidelineType": "string",
+      "eoscIntegrationOptions": [
+        "string"
+      ],
+      "eoscAAI": false
+    }
 
   ### Provider:
     {
@@ -594,7 +1093,33 @@
       "paymentModel": "https://example.com",
       "pricing": "https://example.com"
     }
-  
+
+  ### Resource Extras:
+    {
+      "eoscIFGuidelines": [
+        {
+          "label": "string",
+          "pid": "string",
+          "semanticRelationship": "string",
+          "url": "string"
+        }
+      ],
+      "horizontalService": false,
+      "researchCategories": [
+        "string"
+      ]
+    }
+    
+  ### Resource Interoperability Record:
+    {
+      "id": "(required on PUT only)",
+      "resourceId": "string",
+      "catalogueId": "string",
+      "interoperabilityRecordIds": [
+        "string"
+      ]
+    }
+
   ### Helpdesk:
     {
       "id": "(required on PUT only)",
@@ -637,6 +1162,16 @@
           ]
         }
       ]
+    }
+    
+  ### Vocabulary:
+    {
+      "description": "string",
+      "extras": {},
+      "id": "string",
+      "name": "string",
+      "parentId": "string",
+      "type": "string"
     }
 
 ## Vocabulary Types:
