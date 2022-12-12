@@ -15,11 +15,14 @@
 
 ## API:
 
-- https://providers.eosc-portal.eu/api OR https://api.eosc-portal.eu/
+- https://providers.eosc-portal.eu/api, https://api.eosc-portal.eu/
 - https://beta.providers.eosc-portal.eu/api/
 - https://sandbox.providers.eosc-portal.eu/api/
 
 ## Controllers:
+
+  #### Obtain and Use API Token
+  You can obtain an API token for the secured methods [here](https://aai.eosc-portal.eu/providers-api/). The obtained token can be used in a bearer authorization header like this: 'Authorization: Bearer [token]'
 
 - ### Catalogue
   #### CRUD operations for Catalogues + external (non EOSC) resources (Datasources, Providers, Services)
@@ -27,21 +30,21 @@
     - Deletes the Datasource of the specific Catalogue given its ID:
       ```diff
       /catalogue/{catalogueId}/datasource/{id}
-      Parameters:
+      Params:
         catalogueId: String (required)
         id : String (required)
       ```
     - Deletes the Provider of the specific Catalogue given its ID:
       ```diff
       /catalogue/{catalogueId}/provider/{id}
-      Parameters:
+      Params:
         catalogueId: String (required)
         id : String (required)
       ```
     - Deletes the Service of the specific Catalogue given its ID:
       ```diff
       /catalogue/{catalogueId}/resource/{id}
-      Parameters:
+      Params:
         catalogueId: String (required)
         id : String (required)
       ```
@@ -49,7 +52,7 @@
     - Get a list of all Catalogues in the Portal:
       ```diff
       /catalogue/all
-      Parameters:
+      Params:
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
         quantity: int (Quantity to be fetched)
@@ -59,14 +62,14 @@
     - Returns the Datasource of the specific Catalogue given its ID:
       ```diff
       /catalogue/{catalogueId}/datasource/{resourceId}
-      Parameters:
+      Params:
         catalogueId: String (required)
         resourceId : String (required)
       ```
     - Get a list of all Providers of the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/provider/all
-      Parameters:
+      Params:
         catalogueId: String (required)
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
@@ -77,94 +80,101 @@
     - Returns the Provider of the specific Catalogue given its ID:
       ```diff
       /catalogue/{catalogueId}/provider/{providerId}
-      Parameters:
+      Params:
         catalogueId: String (required)
         providerId : String (required)
       ```
     - Returns the Service of the specific Catalogue given its ID:
       ```diff
       /catalogue/{catalogueId}/resource/{resourceId}
-      Parameters:
+      Params:
         catalogueId: String (required)
         resourceId : String (required)
       ```
     - Get a list of all Datasources of the specific Provider of the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/{providerId}/datasource/all
-      Parameters:
+      Params:
         catalogueId: String (required)
         providerId : String (required)
       ```
     - Get a list of all Service of the specific Provider of the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/{providerId}/resource/all
-      Parameters:
+      Params:
         catalogueId: String (required)
         providerId : String (required)
       ```
     - Get a specific Catalogue given its ID:
       ```diff
       /catalogue/{id}
-      Parameters:
+      Params:
         id: String (required)
       ```
   - POST
     - Creates a new Catalogue:
       ```diff
       /catalogue
-      Parameters:
-        catalogue: JSON (required)
+      Body:
+        Catalogue JSON (required)
       ```
     - Creates a new Datasource for the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/datasource
-      Parameters:
-        datasource: JSON (required)
+      Body:
+        Datasource JSON (required)
+      Params:
         catalogueId: String (required)
       ```
     - Creates a new Provider for the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/provider
-      Parameters:
-        provider: JSON (required)
+      Body:
+        Provider JSON (required)
+      Params:
         catalogueId: String (required)
       ```
     - Creates a new Service for the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/resource
-      Parameters:
-        service: JSON (required)
+      Body:
+        Service JSON (required)
+      Params:
         catalogueId: String (required)
       ```
   - PUT
     - Updates a specific Catalogue:
       ```diff
       /catalogue
-      Parameters:
-        catalogue: JSON (required)
+      Body:
+        Catalogue JSON (required)
+      Params:
         comment: String
       ```
     - Updates the Datasource of the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/datasource
-      Parameters:
-        datasource: JSON (required)
+      Body:
+        Datasource JSON (required)
+      Params:
         catalogueId: String (required)
         comment: String
       ```
     - Updates the Provider of the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/provider
-      Parameters:
-        provider: JSON (required)
+      Body:
+        Provider JSON (required)
+      Params:
         catalogueId: String (required)
         comment: String
       ```
     - Updates the Service of the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/resource
-      Parameters:
-        service: JSON (required)
+      Body:
+        Service JSON (required)
+      Params:
         catalogueId: String (required)
         comment: String
       ```
@@ -175,7 +185,7 @@
     - Deletes the Datasource of the specific Catalogue given its ID:
       ```diff
       /datasource/{id}
-      Parameters:
+      Params:
         id: String (required)
         catalogueId: String (required)
       ```
@@ -183,7 +193,7 @@
     - Get a list of all Datasources of the specific Catalogue in the Portal:
       ```diff
       /datasource/all
-      Parameters:
+      Params:
         catalogue_id: String (required)
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
@@ -194,7 +204,7 @@
     - Returns the Datasource of the specific Catalogue given its ID:
       ```diff
       /datasource/{id}
-      Parameters:
+      Params:
         id: String (required)
         catalogue_id: String
       ```
@@ -202,21 +212,22 @@
     - Creates a new EOSC Datasource:
       ```diff
       /datasource
-      Parameters:
-        datasource: JSON (required)
+      Body:
+        Datasource JSON (required)
       ```
      - Validates a Datasource:
         ```diff
         /datasource/validate
-        Parameters:
-          datasource: JSON (required)
+        Body:
+          Datasource JSON (required)
         ```
   - PUT
     - Updates a specific EOSC Datasource:
       ```diff
       /datasource
-      Parameters:
-        datasource: JSON (required)
+      Body:
+        Datasource JSON (required)
+      Params:
         comment: String
       ```
         
@@ -226,7 +237,7 @@
     - Get a list of all Interoperability Records in the Portal:
       ```diff
       /interoperabilityRecord/all
-      Parameters:
+      Params:
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
         quantity: int (Quantity to be fetched)
@@ -236,7 +247,7 @@
     - Returns the Interoperability Record given its ID:
       ```diff
       /interoperabilityRecord/{id}
-      Parameters:
+      Params:
         id: String (required)
       ```
         
@@ -246,7 +257,7 @@
     - Deletes the Provider of the specific Catalogue given its ID:
       ```diff
       /provider/{id}
-      Parameters:
+      Params:
         id: String (required)
         catalogue_id: String (required)
       ```
@@ -254,7 +265,7 @@
     - Get a list of all Providers of the specific Catalogue in the Portal:
       ```diff
       /provider/all
-      Parameters:
+      Params:
         catalogue_id: String (required)
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
@@ -265,19 +276,19 @@
     - Returns all Datasources of a specific Provider of the EOSC Catalogue given its ID:
       ```diff
       /provider/datasources/{id}
-      Parameters:
+      Params:
         id: String (required)
       ```
      - Returns all Services of a specific Provider of the EOSC Catalogue given its ID:
         ```diff
         /provider/services/{id}
-        Parameters:
+        Params:
           id: String (required)
         ```
     - Returns the Provider of the specific Catalogue given its ID:
       ```diff
       /provider/{id}
-      Parameters:
+      Params:
         id: String (required)
         catalogue_id: String
       ```
@@ -285,8 +296,9 @@
     - Updates the Provider of the specific Catalogue give its ID:
       ```diff
       /provider
-      Parameters:
-        provider: JSON (required)
+      Body:
+        Provider JSON (required)
+      Params:
         catalogue_id: String
         comment: String
       ```
@@ -296,7 +308,7 @@
     - Get a list of all Public Datasources of the specific Catalogue in the Portal:
       ```diff
       /public/datasource/all
-      Parameters:
+      Params:
         catalogue_id: String (required)
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
@@ -307,14 +319,14 @@
     - Returns the Public Datasource of the specific Catalogue given its ID:
       ```diff
       /public/datasource/{id}
-      Parameters:
+      Params:
         id: String (required)
         catalogue_id: String
       ```
     - Get a list of all Public Providers of the specific Catalogue in the Portal:
       ```diff
       /public/provider/all
-      Parameters:
+      Params:
         catalogue_id: String (required)
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
@@ -325,14 +337,14 @@
     - Returns the Public Provider of the specific Catalogue given its ID:
       ```diff
       /public/provider/{id}
-      Parameters:
+      Params:
         id: String (required)
         catalogue_id: String
       ```
     - Get a list of all Public Services of the specific Catalogue in the Portal:
       ```diff
       /public/resource/all
-      Parameters:
+      Params:
         catalogue_id: String (required)
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
@@ -343,7 +355,7 @@
     - Returns the Public Service of the specific Catalogue given its ID:
       ```diff
       /public/resource/{id}
-      Parameters:
+      Params:
         id: String (required)
         catalogue_id: String
       ```
@@ -355,7 +367,7 @@
     - Deletes the Service of the specific Catalogue given its ID:
       ```diff
       /service/{id}
-      Parameters:
+      Params:
         id: String (required)
         catalogue_id: String
       ```
@@ -363,7 +375,7 @@
     - Returns a list of all Services of the specific Catalogue in the Portal:
       ```diff
         /service/all
-        Parameters:
+        Params:
           catalogue_id: String (required)
           query: String (Keyword to refine the search)
           from : int (Starting index in the result set)
@@ -374,13 +386,13 @@
     - Get all Resources in the catalogue organized by an attribute:
       ```diff
         /service/by/{field}
-        Parameters:
+        Params:
           field: Service field (required)
       ```
     - Returns the Service of the specific Catalogue given its ID:
       ```diff
         /service/{id}
-        Parameters:
+        Params:
           id: String (required)
           catalogue_id: String
       ```
@@ -388,19 +400,20 @@
     - Creates a new EOSC Service:
       ```diff
         /service
-        Parameters:
-          service: JSON (required)
+        Body:
+          Service JSON (required)
     - Validates a Service:
       ```diff
       /service/validate
-      Parameters:
-        service: JSON (required)
+      Body:
+        Service JSON (required)
   - PUT
     - Updates a specific EOSC Service:
       ```diff
       /service
-      Parameters:
-        service: JSON (required)
+      Body:
+        Service JSON (required)
+      Params:
         comment: String
       ```
   
@@ -410,7 +423,7 @@
     - Deletes the Resource Interoperability Record of the specific Resource:
       ```diff
       /resourceInteroperabilityRecord/{resourceId}/{resourceInteroperabilityRecordId}
-      Parameters:
+      Params:
         resourceId: String (required)
         resourceInteroperabilityRecordId: String (required)
       ```
@@ -418,7 +431,7 @@
     - Returns a list of all Resource Interoperability Records of the specific Catalogue in the Portal:
       ```diff
       /resourceInteroperabilityRecord/all
-      Parameters:
+      Params:
         catalogue_id: String (required)
         query: String (Keyword to refine the search)
         from : int (Starting index in the result set)
@@ -429,30 +442,31 @@
     - Returns the Resource Interoperability Record of the specific Catalogue given the Resource ID:
       ```diff
         /resourceInteroperabilityRecord/byResource/{resourceId}
-        Parameters:
+        Params:
           resourceId: String (required)
           catalogue_id: String
       ```
     - Returns the Resource Interoperability Record of the specific Catalogue given its ID:
       ```diff
         /resourceInteroperabilityRecord/{id}
-        Parameters:
+        Params:
           id: String (required)
       ```
   - POST
     - Creates a new Resource Interoperability Record given its resourceType (eg. service, datasource):
       ```diff
         /resourceInteroperabilityRecord
-        Parameters:
-          resourceInteroperabilityRecord: JSON (required)
+        Body:
+          ResourceInteroperabilityRecord: JSON (required)
+        Params:
           resourceType: String (required)
       ```
   - PUT
     - Updates a specific Resource Interoperability Record:
       ```diff
       /resourceInteroperabilityRecord
-      Parameters:
-        resourceInteroperabilityRecord: JSON (required)
+      Body:
+        ResourceInteroperabilityRecord: JSON (required)
       ```
   
 - ### Service Extensions
@@ -461,14 +475,14 @@
     - Deletes the Helpdesk of the specific Resource of the specific Catalogue:
       ```diff
       /service-extensions/helpdesk/{catalogueId}/{serviceId}
-      Parameters:
+      Params:
         catalogueId: String (required)
         serviceId: String (required)
       ```
     - Deletes the Monitoring of the specific Resource of the specific Catalogue:
       ```diff
       /service-extensions/monitoring/{catalogueId}/{serviceId}
-      Parameters:
+      Params:
         catalogueId: String (required)
         serviceId: String (required)
       ```
@@ -476,7 +490,7 @@
     - Returns a list of all Helpdesks of the specific Catalogue in the Portal:
       ```diff
         /service-extensions/helpdesk/all
-        Parameters:
+        Params:
           catalogue_id: String (required)
           query: String (Keyword to refine the search)
           from : int (Starting index in the result set)
@@ -487,20 +501,20 @@
     - Returns the Helpdesk of the specific Catalogue given the Resource ID:
       ```diff
         /service-extensions/helpdesk/byService/{serviceId}
-        Parameters:
+        Params:
           serviceId: String (required)
           catalogue_id: String
       ```
     - Returns the Helpdesk of the specific Catalogue given its ID:
       ```diff
         /service-extensions/helpdesk/{id}
-        Parameters:
+        Params:
           id: String (required)
       ```
     - Returns a list of all Monitorings of the specific Catalogue in the Portal:
       ```diff
         /service-extensions/monitoring/all
-        Parameters:
+        Params:
           catalogue_id: String (required)
           query: String (Keyword to refine the search)
           from : int (Starting index in the result set)
@@ -511,7 +525,7 @@
     - Returns the Monitoring of the specific Catalogue given the Resource ID:
       ```diff
         /service-extensions/monitoring/byService/{serviceId}
-        Parameters:
+        Params:
           serviceId: String (required)
           catalogue_id: String
       ```
@@ -522,35 +536,39 @@
     - Returns the Monitoring of the specific Catalogue given its ID:
       ```diff
         /service-extensions/monitoring/{id}
-        Parameters:
+        Params:
           id: String (required)
       ```
   - POST
     - Creates a new Helpdesk for the specific Catalogue:
       ```diff
         /service-extensions/helpdesk
-        Parameters:
-          helpdesk: JSON (required)
+        Body:
+          Helpdesk JSON (required)
+        Params:
           catalogue_id: String
     - Creates a new Monitoring for the specific Catalogue:
       ```diff
         /service-extensions/monitoring
-        Parameters:
-          monitoring: JSON (required)
+        Body:
+          Monitoring JSON (required)
+        Params:
           catalogue_id: String
   - PUT
     - Updates a specific Helpdesk of a specific Catalogue:
       ```diff
       /service-extensions/helpdesk
-      Parameters:
-        helpdesk: JSON (required)
+      Body:
+        Helpdesk JSON (required)
+      Params:
         catalogue_id: String
       ```
     - Updates a specific Monitoring of a specific Catalogue:
       ```diff
       /service-extensions/montoring
-      Parameters:
-        montoring: JSON (required)
+      Body:
+        Monitoring JSON (required)
+      Params:
         catalogue_id: String
       ```
 
@@ -564,7 +582,7 @@
     - Get all Vocabularies of a specific Type:
       ```diff
       /vocabulary/byType/{type}
-      Parameters:
+      Params:
         type: Vocabulary Type (required)
       ```
     - Get a list of EU Countries:
@@ -578,7 +596,7 @@
     - Get a specific Vocabulary given its ID:
       ```diff
       /vocabulary/{id}
-      Parameters:
+      Params:
         id: String (required)
       ```
 
