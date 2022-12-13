@@ -610,51 +610,51 @@
 ## Objects:
   ### Catalogue:
     {
-      "id":"(required on PUT only)",
-      "abbreviation":"string",
-      "name":"string",
-      "website":"https://example.com",
-      "legalEntity":false,
-      "legalStatus":"string",
-      "hostingLegalEntity":"string",
-      "description":"string",
-      "logo":"https://example.com",
+      "id": "(required on PUT only)",
+      "abbreviation": "string",
+      "name": "string",
+      "website": "URL",
+      "legalEntity": "boolean",
+      "legalStatus": "string",
+      "hostingLegalEntity": "string",
+      "description": "string",
+      "logo":"URL",
       "multimedia":[
         {
-           "multimediaURL":"string",
-           "multimediaName":"string"
+           "multimediaURL": "URL",
+           "multimediaName": "string"
         }
       ],
       "scientificDomains":[
         {
-           "scientificDomain":"string",
-           "scientificSubdomain":"string"
+           "scientificDomain": "string",
+           "scientificSubdomain": "string"
         }
       ],
       "tags":[
         "string"
       ],
       "location":{
-        "streetNameAndNumber":"string",
-        "postalCode":"string",
-        "city":"string",
-        "region":"string",
-        "country":"string"
+        "streetNameAndNumber": "string",
+        "postalCode": "string",
+        "city": "string",
+        "region": "string",
+        "country": "string"
       },
       "mainContact":{
-        "firstName":"string",
-        "lastName":"string",
-        "email":"string",
-        "phone":"string",
-        "position":"string"
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "phone": "string",
+        "position": "string"
       },
       "publicContacts":[
         {
-           "firstName":"string",
-           "lastName":"string",
-           "email":"string",
-           "phone":"string",
-           "position":"string"
+           "firstName": "string",
+           "lastName": "string",
+           "email": "string",
+           "phone": "string",
+           "position": "string"
         }
       ],
       "participatingCountries":[
@@ -668,10 +668,10 @@
       ],
       "users":[
         {
-           "email":"string",
-           "id":"string",
-           "name":"string",
-           "surname":"string"
+           "email": "string",
+           "id": "string",
+           "name": "string",
+           "surname": "string"
         }
       ]
     }
@@ -679,11 +679,11 @@
   ### Datasource:
     {
       "id": "(required on PUT only)",
-      "submissionPolicyURL": "https://example.com",
+      "submissionPolicyURL": "URL",
       "abbreviation": "string",
-      "preservationPolicyURL": "https://example.com",
+      "preservationPolicyURL": "URL",
       "name": "string",
-      "versionControl": false,
+      "versionControl": "boolean",
       "persistentIdentitySystems": [
         {
           "persistentIdentityEntityType": "string",
@@ -698,23 +698,23 @@
         "string"
       ],
       "datasourceClassification": "string",
-      "webpage": "https://example.com",
+      "webpage": "URL",
       "description": "string",
       "researchEntityTypes": [
         "string"
       ],
       "tagline": "string",
-      "thematic": false,
-      "logo": "https://example.com",
+      "thematic": "boolean",
+      "logo": "URL",
       "researchProductLicensings": [
         {
           "researchProductLicenseName": "string",
-          "researchProductLicenseURL": "string"
+          "researchProductLicenseURL": "URL"
         }
       ],
       "multimedia": [
         {
-          "multimediaURL": "string",
+          "multimediaURL": "URL",
           "multimediaName": "string"
         }
       ],
@@ -723,7 +723,7 @@
       ],
       "researchProductMetadataLicensing": {
         "researchProductMetadataLicenseName": "string",
-        "researchProductMetadataLicenseURL": "string"
+        "researchProductMetadataLicenseURL": "URL"
       },
       "useCases": [
         {
@@ -799,7 +799,7 @@
         "string"
       ],
       "version": "string",
-      "lastUpdate": "2020-01-01",
+      "lastUpdate": "string",
       "changeLog": [
         "string"
       ],
@@ -822,19 +822,19 @@
       "grantProjectNames": [
         "string"
       ],
-      "helpdeskPage": "https://example.com",
-      "userManual": "https://example.com",
-      "termsOfUse": "https://example.com",
-      "privacyPolicy": "https://example.com",
-      "accessPolicy": "https://example.com",
-      "resourceLevel": "https://example.com",
-      "trainingInformation": "https://example.com",
-      "statusMonitoring": "https://example.com",
-      "maintenance": "https://example.com",
+      "helpdeskPage": "URL",
+      "userManual": "URL",
+      "termsOfUse": "URL",
+      "privacyPolicy": "URL",
+      "accessPolicy": "URL",
+      "resourceLevel": "URL",
+      "trainingInformation": "URL",
+      "statusMonitoring": "URL",
+      "maintenance": "URL",
       "orderType": "string",
-      "order": "https://example.com",
-      "paymentModel": "https://example.com",
-      "pricing": "https://example.com"
+      "order": "URL",
+      "paymentModel": "URL",
+      "pricing": "URL"
     }
     
   ### Interoperability Record:
@@ -860,7 +860,7 @@
         }
       ],
       "title": "string",
-      "publicationYear": 0,
+      "publicationYear": "string",
       "resourceTypesInfo": [
         {
           "resourceType": "string",
@@ -870,12 +870,12 @@
       "created": "string",
       "updated": "string",
       "eoscRelatedStandards": [
-        null
+        "URL"
       ],
       "rights": [
         {
           "rightTitle": "string",
-          "rightURI": "string",
+          "rightURI": "URL",
           "rightIdentifier": "string"
         }
       ],
@@ -886,7 +886,7 @@
       "eoscIntegrationOptions": [
         "string"
       ],
-      "eoscAAI": false
+      "eoscAAI": "boolean"
     }
 
   ### Provider:
@@ -894,15 +894,15 @@
       "id": "(required on PUT only)",
       "abbreviation": "string",
       "name": "string",
-      "website": "https://example.com",
-      "legalEntity": false,
+      "website": "URL,
+      "legalEntity": "boolean",
       "legalStatus": "string",
       "hostingLegalEntity": "string",
       "description": "string",
-      "logo": "https://example.com",
+      "logo": "URL",
       "multimedia": [
         {
-          "multimediaURL": "string",
+          "multimediaURL": "URL",
           "multimediaName": "string"
         }
       ],
@@ -993,19 +993,19 @@
       "resourceProviders": [
         "string"
       ],
-      "webpage": "https://example.com",
+      "webpage": "URL",
       "description": "string",
       "tagline": "string",
-      "logo": "https://example.com",
+      "logo": "URL",
       "multimedia": [
         {
-          "multimediaURL": "string",
+          "multimediaURL": "URL",
           "multimediaName": "string"
         }
       ],
       "useCases": [
         {
-          "useCaseURL": "string",
+          "useCaseURL": "URL",
           "useCaseName": "string"
         }
       ],
@@ -1074,7 +1074,7 @@
         "string"
       ],
       "version": "string",
-      "lastUpdate": "2020-01-01",
+      "lastUpdate": "string",
       "changeLog": [
         "string"
       ],
@@ -1097,19 +1097,19 @@
       "grantProjectNames": [
         "string"
       ],
-      "helpdeskPage": "https://example.com",
-      "userManual": "https://example.com",
-      "termsOfUse": "https://example.com",
-      "privacyPolicy": "https://example.com",
-      "accessPolicy": "https://example.com",
-      "resourceLevel": "https://example.com",
-      "trainingInformation": "https://example.com",
-      "statusMonitoring": "https://example.com",
-      "maintenance": "https://example.com",
+      "helpdeskPage": "URL",
+      "userManual": "URL",
+      "termsOfUse": "URL",
+      "privacyPolicy": "URL",
+      "accessPolicy": "URL",
+      "resourceLevel": "URL",
+      "trainingInformation": "URL",
+      "statusMonitoring": "URL",
+      "maintenance": "URL",
       "orderType": "string",
-      "order": "https://example.com",
-      "paymentModel": "https://example.com",
-      "pricing": "https://example.com"
+      "order": "URL",
+      "paymentModel": "URL",
+      "pricing": "URL"
     }
 
   ### Resource Extras:
@@ -1119,7 +1119,7 @@
           "label": "string",
           "pid": "string",
           "semanticRelationship": "string",
-          "url": "string"
+          "url": "URL"
         }
       ],
       "horizontalService": false,
@@ -1159,8 +1159,8 @@
       "signatures": [
         "string"
       ],
-      "ticketPreservation": false,
-      "webform": false
+      "ticketPreservation": "boolean",
+      "webform": "boolean
     }
 
   ### Monitoring:
@@ -1171,7 +1171,7 @@
       "monitoringGroups": [
         {
           "serviceType": "string",
-          "endpoint": "string",
+          "endpoint": "URL",
           "metrics": [
             {
               "probe": "string",
