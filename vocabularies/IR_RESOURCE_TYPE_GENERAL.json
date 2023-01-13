@@ -222,5 +222,61 @@
     "parentId": null,
     "type": "IR_RESOURCE_TYPE_GENERAL",
     "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-api",
+    "name": "API",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-metadata_schema",
+    "name": "Metadata Schema",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-specification",
+    "name": "Specification",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-policy",
+    "name": "Policy",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-framework",
+    "name": "Framework",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-human_readable_guideline",
+    "name": "Human Readable Guideline",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
+  },
+  {
+    "id": "ir_resource_type_general-configuration_template",
+    "name": "Configuration Template",
+    "description": null,
+    "parentId": null,
+    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "extras": {}
   }
 ]

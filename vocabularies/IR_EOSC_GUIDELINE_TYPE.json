@@ -22,5 +22,13 @@
     "parentId": null,
     "type": "IR_EOSC_GUIDELINE_TYPE",
     "extras": {}
+  },
+  {
+    "id": "ir_eosc_guideline_type-operational_baseline",
+    "name": "Operational Baseline",
+    "description": null,
+    "parentId": null,
+    "type": "IR_EOSC_GUIDELINE_TYPE",
+    "extras": {}
   }
 ]
