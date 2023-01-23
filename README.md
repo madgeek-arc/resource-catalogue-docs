@@ -112,12 +112,6 @@
         id: String (required)
       ```
   - POST
-    - Creates a new Catalogue:
-      ```diff
-      /catalogue
-      Body:
-        Catalogue JSON (required)
-      ```
     - Creates a new Datasource for the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/datasource
