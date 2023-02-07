@@ -4,7 +4,7 @@
     "name": "Fully Open Access",
     "description": "No ordering procedure necessary to access the resource and no user authentication required.",
     "parentId": null,
-    "type": "ORDER_TYPE",
+    "type": "Order type",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Open Access",
     "description": "No ordering procedure necessary to access the resource but requires user authentication.",
     "parentId": null,
-    "type": "ORDER_TYPE",
+    "type": "Order type",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Order Required",
     "description": "Resource requires an ordering procedure.",
     "parentId": null,
-    "type": "ORDER_TYPE",
+    "type": "Order type",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "ORDER_TYPE",
+    "type": "Order type",
     "extras": {}
   }
 ]

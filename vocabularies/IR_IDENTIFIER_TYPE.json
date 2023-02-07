@@ -4,7 +4,7 @@
     "name": "DOI",
     "description": null,
     "parentId": null,
-    "type": "IR_IDENTIFIER_TYPE",
+    "type": "Interoperability Record identifier type",
     "extras": {}
   }
 ]

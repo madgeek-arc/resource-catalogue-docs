@@ -4,7 +4,7 @@
     "name": "Being Upgraded",
     "description": "The Research Infrastructure is currently being upgraded. It is probable that many services are in containment or unavailable. Please add the projected year of completion of upgrades.",
     "parentId": null,
-    "type": "PROVIDER_LIFE_CYCLE_STATUS",
+    "type": "Provider life cycle status",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Operational",
     "description": "Τhe Research Infrastructure is constructed and all operations are being offered. Please add the beginning year of the operations.",
     "parentId": null,
-    "type": "PROVIDER_LIFE_CYCLE_STATUS",
+    "type": "Provider life cycle status",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LIFE_CYCLE_STATUS",
+    "type": "Provider life cycle status",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Under Construction",
     "description": "The Research Infrastructure is under construction. Please add the projected start date of user operation.",
     "parentId": null,
-    "type": "PROVIDER_LIFE_CYCLE_STATUS",
+    "type": "Provider life cycle status",
     "extras": {}
   }
 ]

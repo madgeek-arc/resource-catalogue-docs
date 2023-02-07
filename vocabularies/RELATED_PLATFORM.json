@@ -4,7 +4,7 @@
     "name": "ANDS",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "ArtPortalen",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "arXiv",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Atlas of Living Australia",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "AV-Portal",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "AWS",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Blue-Cloud",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "California Digital Library",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "CCDC",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "CESSDA",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "COLLABWITH",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Copernicus Climate Change Service",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "Crossref",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "dariahTeach",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -116,7 +116,7 @@
     "name": "Data Infrastructure Capacity for EOSC (DICE)",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -124,7 +124,7 @@
     "name": "DataCite",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -132,7 +132,7 @@
     "name": "Digital Science",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -140,7 +140,7 @@
     "name": "DOAB",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -148,7 +148,7 @@
     "name": "e-INFRA CZ",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -156,7 +156,7 @@
     "name": "e-IRGSP projects",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -164,7 +164,7 @@
     "name": "eduGAIN",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -172,7 +172,7 @@
     "name": "eduTEAMS",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -180,7 +180,7 @@
     "name": "EGI",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -188,7 +188,7 @@
     "name": "EGI Federated Cloud",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -196,7 +196,7 @@
     "name": "EGI-ACE",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -204,7 +204,7 @@
     "name": "ELIXIR",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -212,7 +212,7 @@
     "name": "EMODnet Chemistry",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -220,7 +220,7 @@
     "name": "Encyclopedia of Life",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -228,7 +228,7 @@
     "name": "Endemia New Caledonia",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -236,7 +236,7 @@
     "name": "ENVRI Hub",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -244,7 +244,7 @@
     "name": "EOSC-Life",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -252,7 +252,7 @@
     "name": "EOSC-Nordic",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -260,7 +260,7 @@
     "name": "EOSC-Pillar",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -268,7 +268,7 @@
     "name": "EUDAT CDI",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -276,7 +276,7 @@
     "name": "European Language Grid",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -284,7 +284,7 @@
     "name": "European Values Study (EVS)",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -292,7 +292,7 @@
     "name": "GARR Container Platform",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -300,7 +300,7 @@
     "name": "GATE platform",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -308,7 +308,7 @@
     "name": "GBIF",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -316,7 +316,7 @@
     "name": "GeoNames",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -324,7 +324,7 @@
     "name": "Germplasm Resources Information Network (GRIN)",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -332,7 +332,7 @@
     "name": "Global Earth Observation system of Systems (GEOSS)",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -340,7 +340,7 @@
     "name": "HAL",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -348,7 +348,7 @@
     "name": "Hamelin",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -356,7 +356,7 @@
     "name": "INFN-Cloud",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -364,7 +364,7 @@
     "name": "iSpot",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -372,7 +372,7 @@
     "name": "JISC",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -380,7 +380,7 @@
     "name": "MetaCentrum",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -388,7 +388,7 @@
     "name": "Natusfera",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -396,7 +396,7 @@
     "name": "OpenAIRE EXPLORE",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -404,7 +404,7 @@
     "name": "OpenAIRE MONITOR",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -412,7 +412,7 @@
     "name": "OpenAIRE research graph",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -420,7 +420,7 @@
     "name": "OpenCitations",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -428,7 +428,7 @@
     "name": "Partnership for Observation of the Global Oceans (POGO)",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -436,7 +436,7 @@
     "name": "Pl@ntNet platform",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -444,7 +444,7 @@
     "name": "PolicyCloud",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -452,7 +452,7 @@
     "name": "Real Jardín Botánico",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -460,7 +460,7 @@
     "name": "Scopus",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -468,7 +468,7 @@
     "name": "SeaDataNet",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -476,7 +476,7 @@
     "name": "Service for Sensitive Data (TSD)",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -484,7 +484,7 @@
     "name": "SSH Open Marketplace",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -492,7 +492,7 @@
     "name": "SURF",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -500,7 +500,7 @@
     "name": "Survey of Health, Ageing and Retirement in Europe (SHARE)",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -508,7 +508,7 @@
     "name": "Taylor&Francis",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -516,7 +516,7 @@
     "name": "Tela Botanica",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -524,7 +524,7 @@
     "name": "The Dataverse Project",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -532,7 +532,7 @@
     "name": "The NOMAD Laboratory",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -540,7 +540,7 @@
     "name": "The Plant Game",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -548,7 +548,7 @@
     "name": "TIB Portal",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -556,7 +556,7 @@
     "name": "TRIPLE H2020 project",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -564,7 +564,7 @@
     "name": "TÜBITAK cloud compute",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -572,7 +572,7 @@
     "name": "Virtual Earth Laboratory (VLab)",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -580,7 +580,7 @@
     "name": "ZBW Information Centre for Economics",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   },
   {
@@ -588,7 +588,7 @@
     "name": "Zenodo",
     "description": null,
     "parentId": null,
-    "type": "RELATED_PLATFORM",
+    "type": "Related platform",
     "extras": {}
   }
 ]

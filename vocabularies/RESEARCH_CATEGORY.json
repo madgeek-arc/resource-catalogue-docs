@@ -4,7 +4,7 @@
     "name": "Discover Research Outputs",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Publish Research Outputs",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Process and Analyse",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Access Computing and Storage Resources",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Find Instruments & Equipment",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Access Training Material",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Access Research Infrastructures",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Find Bundles",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Manage Research Data",
     "description": null,
     "parentId": null,
-    "type": "RESEARCH_CATEGORY",
+    "type": "Research category",
     "extras": {}
   }
 ]

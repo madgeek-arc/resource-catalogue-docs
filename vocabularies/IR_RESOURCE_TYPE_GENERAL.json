@@ -4,7 +4,7 @@
     "name": "Audiovisual",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Book",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Book Chapter",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Collection",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Computational Notebook",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Conference Paper",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Conference Proceeding",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Data Paper",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Dataset",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Dissertation",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Event",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Image",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "Interactive Resource",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "Journal",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -116,7 +116,7 @@
     "name": "Journal Article",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -124,7 +124,7 @@
     "name": "Model",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -132,7 +132,7 @@
     "name": "Output Management Plan",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -140,7 +140,7 @@
     "name": "Peer Review",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -148,7 +148,7 @@
     "name": "Physical Object",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -156,7 +156,7 @@
     "name": "Preprint",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -164,7 +164,7 @@
     "name": "Report",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -172,7 +172,7 @@
     "name": "Service",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -180,7 +180,7 @@
     "name": "Software",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -188,7 +188,7 @@
     "name": "Sound",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -196,7 +196,7 @@
     "name": "Standard",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -204,7 +204,7 @@
     "name": "Text",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -212,7 +212,7 @@
     "name": "Workflow",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -220,7 +220,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -228,7 +228,7 @@
     "name": "API",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -236,7 +236,7 @@
     "name": "Metadata Schema",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -244,7 +244,7 @@
     "name": "Specification",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -252,7 +252,7 @@
     "name": "Policy",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -260,7 +260,7 @@
     "name": "Framework",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -268,7 +268,7 @@
     "name": "Human Readable Guideline",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   },
   {
@@ -276,7 +276,7 @@
     "name": "Configuration Template",
     "description": null,
     "parentId": null,
-    "type": "IR_RESOURCE_TYPE_GENERAL",
+    "type": "Interoperability Record resource type general",
     "extras": {}
   }
 ]

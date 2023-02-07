@@ -4,7 +4,7 @@
     "name": "Anti Fraud Information System (AFIS2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "European Agricultural Guarantee Fund (after transfers between EAGF and EAFRD) (AGR)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Net transfer between EAGF and EAFRD (AGRNET)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Asylum, Migration and Integration Fund (AMF)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Rights, equality and citizenship programme (CDF2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Connecting Europe Facility (CEF)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Cohesion Fund (CF)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Contribution from the Cohesion Fund to the CEF programme (CF_DET)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Common foreign and security policy (CFSP2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Europe for Citizens (CIT2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Competitiveness (more developed regions) (COMPREG)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Consumer programme (CONS)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "European Earth Observation Programme (COPERNICUS)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "Programme for the competitiveness of enterprises and small and medium-sized enterprises (COSME)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -116,7 +116,7 @@
     "name": "Union Civil Protection Mechanism — Member States (CPM_H3)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -124,7 +124,7 @@
     "name": "Union Civil Protection Mechanism — Outside EU (CPM_H4)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -132,7 +132,7 @@
     "name": "Creative Europe programme (CREA)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -140,7 +140,7 @@
     "name": "Action programme for customs in the European Union (CUST 2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -148,7 +148,7 @@
     "name": "Development Cooperation Instrument (DCI2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -156,7 +156,7 @@
     "name": "The Union programme for education, training, youth and sport (Erasmus+) (E4A)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -164,7 +164,7 @@
     "name": "European Agricultural Fund for Rural Development (after transfers between EAGF and EAFRD) (EAFRD)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -172,7 +172,7 @@
     "name": "European Agricultural Fund for Rural Development (EAFRD2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -180,7 +180,7 @@
     "name": "European Agricultural Guarantee Fund (EAGF2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -188,7 +188,7 @@
     "name": "Emergency Aid Reserve (EAR2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -196,7 +196,7 @@
     "name": "Energy projects to aid economic recovery (EERP)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -204,7 +204,7 @@
     "name": "European Fund for Sustainable Development (EFSD)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -212,7 +212,7 @@
     "name": "European Fund for Strategic Investments (EFSI)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -220,7 +220,7 @@
     "name": "European Globalisation Adjustment Fund (EGF2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -228,7 +228,7 @@
     "name": "European Instrument for Democracy and Human Rights (EIDHR2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -236,7 +236,7 @@
     "name": "European Maritime and Fisheries Fund (EMFF2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -244,7 +244,7 @@
     "name": "European Neighbourhood Instrument (ENI)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -252,7 +252,7 @@
     "name": "European Regional Development Fund (ERDF)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -260,7 +260,7 @@
     "name": "European Solidarity Corps (ESC)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -268,7 +268,7 @@
     "name": "European Social Fund (ESF)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -276,7 +276,7 @@
     "name": "European statistical programme (ESP2017)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -284,7 +284,7 @@
     "name": "European statistical programme (ESP2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -292,7 +292,7 @@
     "name": "EU Aid Volunteers initiative (EUAV)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -300,7 +300,7 @@
     "name": "Euratom research and training programme (EURATOM)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -308,7 +308,7 @@
     "name": "Comparison of fingerprints for the effective application of the Dublin Convention (EURODAC2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -316,7 +316,7 @@
     "name": "European Union Solidarity Fund (EUSF2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -324,7 +324,7 @@
     "name": "European Union Solidarity Fund (EUSF) — Member States (EUSF_H3)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -332,7 +332,7 @@
     "name": "European Union Solidarity Fund (EUSF) — Countries negotiating for accession (EUSF_H4)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -340,7 +340,7 @@
     "name": "Fund for European Aid to the Most Deprived (FEAD)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -348,7 +348,7 @@
     "name": "Food and feed (FF2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -356,7 +356,7 @@
     "name": "Specific activities in the field of financial reporting and auditing (FINSER2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -364,7 +364,7 @@
     "name": "Action programme for taxation in the European Union (FISC2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -372,7 +372,7 @@
     "name": "Implementation and exploitation of European satellite navigation systems (EGNOS and Galileo) (GAL2014)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -380,7 +380,7 @@
     "name": "EU cooperation with Greenland (GRLD2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -388,7 +388,7 @@
     "name": "The framework programme for research and innovation (H2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -396,7 +396,7 @@
     "name": "Union's action in the field of health (Health programme) (HEALTH)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -404,7 +404,7 @@
     "name": "Programme to promote activities in the field of the protection of the European Union's financial interests (HERC3)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -412,7 +412,7 @@
     "name": "Supplementary high flux reactor (HFR) programmes (HFR2015)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -420,7 +420,7 @@
     "name": "Humanitarian aid (HUMA2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -428,7 +428,7 @@
     "name": "Enhancing consumers involvement in EU policy making in the field of financial services (ICFS)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -436,7 +436,7 @@
     "name": "Instrument for emergency support within the Union (IES)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -444,7 +444,7 @@
     "name": "Instrument contributing to Stability and Peace (IFS2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -452,7 +452,7 @@
     "name": "Instrument for Nuclear Safety Cooperation (INSC2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -460,7 +460,7 @@
     "name": "Instrument for Pre-accession Assistance (IPA2)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -468,7 +468,7 @@
     "name": "Interoperability Solutions for European Public Administrations (ISA2015)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -476,7 +476,7 @@
     "name": "Interoperability Solutions for European public administrations, businesses and citizens (ISA2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -484,7 +484,7 @@
     "name": "Internal Security Fund (ISF)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -492,7 +492,7 @@
     "name": "International thermonuclear experimental reactor (ITER)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -500,7 +500,7 @@
     "name": "Justice programme (JUST)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -508,7 +508,7 @@
     "name": "Programme for the Environment and Climate Action (LIFE2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -516,7 +516,7 @@
     "name": "Guarantee Fund for external actions (LOAN2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -524,7 +524,7 @@
     "name": "Macro financial assistance (MFA)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -532,7 +532,7 @@
     "name": "Nuclear decommissioning assistance programmes in Bulgaria, Lithuania and Slovakia (ND)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -540,7 +540,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -548,7 +548,7 @@
     "name": "Outermost and sparsely populated regions (OUTREG)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -556,7 +556,7 @@
     "name": "Exchange, assistance and training programme for the protection of the euro against counterfeiting (PERI2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -564,7 +564,7 @@
     "name": "Partnership instrument for cooperation with third countries (PI)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -572,7 +572,7 @@
     "name": "European Union programme for employment and social innovation (PSCI)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -580,7 +580,7 @@
     "name": "Regional convergence (REGCONV)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -588,7 +588,7 @@
     "name": "Compulsory contributions to regional fisheries management organisations (RFMOs) and to other international organisations",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -596,7 +596,7 @@
     "name": "Sustainable Fisheries Partnership Agreements (SFPAs)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -604,7 +604,7 @@
     "name": "Schengen Information System (SIS2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -612,7 +612,7 @@
     "name": "Technical assistance and innovative actions (TA_IA)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -620,7 +620,7 @@
     "name": "Instrument of financial support for encouraging the economic development of the Turkish Cypriot community (TCC)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -628,7 +628,7 @@
     "name": "European territorial cooperation (TERRCOOP)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -636,7 +636,7 @@
     "name": "Transition regions (TRANSREG)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -644,7 +644,7 @@
     "name": "Visa Information System (VIS2020)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -652,7 +652,7 @@
     "name": "Youth employment initiative (specific top-up allocation) (YEI))",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -660,7 +660,7 @@
     "name": "Large Research Infrastructures Programme of the MEYS, Czech Republic",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -668,7 +668,7 @@
     "name": "Development, deployment and operation of ICT-based e-infrastructures",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -676,7 +676,7 @@
     "name": "NUCLEU Programme (Romania)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -684,7 +684,7 @@
     "name": "LINDAT/CLARIAH-CZ Digital Research Infrastructure for the Language Technologies, Arts and Humanities (LM2018101)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   },
   {
@@ -692,7 +692,7 @@
     "name": "ESA EO Exploitation Platforms initiative",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_PROGRAM",
+    "type": "Funding program",
     "extras": {}
   }
 ]

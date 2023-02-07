@@ -4,7 +4,7 @@
     "name": "Agency for Environment and Energy Management (ADEME)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Arts and Humanities Research Council (AHRC)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Academy of Finland (AKA)",
     "description": "Finland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "National Authority for Scientific Research (ANCS)",
     "description": "Romania",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "French National Research Agency (ANR)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Research and Development Agency (APVV)",
     "description": "Slovakia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Australian Research Council (ARC)",
     "description": "Australia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Slovenian Research Agency (ARRS)",
     "description": "Slovenia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Alfred Wegener Institute for Polar and Marine Research (AWI)",
     "description": "Germany",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Biotechnology and Biological Sciences Research Council (BBSRC)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Belmont Forum (BF)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Federal Ministry of Education and Research (BMBF)",
     "description": "Germany",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "La Caixa Foundation (CAIXA)",
     "description": "Spain",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "Center for Industrial Technological Development (CDTI)",
     "description": "Spain",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -116,7 +116,7 @@
     "name": "Alternative Energies and Atomic Energy Commission (CEA)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -124,7 +124,7 @@
     "name": "Canadian Institutes of Health Research (CIHR)",
     "description": "Canada",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -132,7 +132,7 @@
     "name": "National University Research Council (CNCSIS) - Romania",
     "description": "Romania",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -140,7 +140,7 @@
     "name": "National Centre for Space Studies (CNES)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -148,7 +148,7 @@
     "name": "National Council for Scientific and Technological Development (CNPq)",
     "description": "Brazil",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -156,7 +156,7 @@
     "name": "National Research Council (CNR)",
     "description": "Italy",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -164,7 +164,7 @@
     "name": "National Centre for Scientific Research (CNRS)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -172,7 +172,7 @@
     "name": "Croatian Science Foundation (CSF)",
     "description": "Croatia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -180,7 +180,7 @@
     "name": "Spanish National Research Council (CSIC)",
     "description": "Spain",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -188,7 +188,7 @@
     "name": "Danish Agency for Science and Higher Education (DASHE)",
     "description": "Denmark",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -196,7 +196,7 @@
     "name": "Danish Agency for Science, Technology and Innovation (DASTI)",
     "description": "Denmark",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -204,7 +204,7 @@
     "name": "The Danish Council for Independent Research (DDF)",
     "description": "Denmark",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -212,7 +212,7 @@
     "name": "Danish Council for Independent Research (DFF)",
     "description": "Denmark",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -220,7 +220,7 @@
     "name": "German Research Foundation (DFG)",
     "description": "Germany",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -228,7 +228,7 @@
     "name": "General Operational Directorate for Economy, Employment and Research (DGO6)",
     "description": "Belgium",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -236,7 +236,7 @@
     "name": "German Aerospace Center (DLR)",
     "description": "Germany",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -244,7 +244,7 @@
     "name": "Danish National Research Foundation (DNRF)",
     "description": "Denmark",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -252,7 +252,7 @@
     "name": "Federal Department of Economic Affairs, Education and Research (EAER)",
     "description": "Switzerland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -260,7 +260,7 @@
     "name": "European Commission (EC)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -268,7 +268,7 @@
     "name": "Engineering and Physical Sciences Research Council (EPSRC)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -276,7 +276,7 @@
     "name": "European Space Agency (ESA)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -284,7 +284,7 @@
     "name": "Economic and Social Research Council (ESRC)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -292,7 +292,7 @@
     "name": "Estonian Research Council (ETAG)",
     "description": "Estonia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -300,7 +300,7 @@
     "name": "São Paulo Research Foundation (FAPESP)",
     "description": "Brazil",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -308,7 +308,7 @@
     "name": "Foundation for Science and Technology (FCT)",
     "description": "Portugal",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -316,7 +316,7 @@
     "name": "Austrian Research Promotion Agency (FFG)",
     "description": "Austria",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -324,7 +324,7 @@
     "name": "Foundation for Polish Science (FNP)",
     "description": "Poland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -332,7 +332,7 @@
     "name": "National Research Fund (FNR)",
     "description": "Luxembourg",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -340,7 +340,7 @@
     "name": "Fonds National de la Recherche Scientifique (FNRS)",
     "description": "Belgium",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -348,7 +348,7 @@
     "name": "Foundation for Fundamental Research on Matter (FOM)",
     "description": "Netherlands",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -356,7 +356,7 @@
     "name": "Swedish Research Council for Health, Working Life and Welfare (FORTE)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -364,7 +364,7 @@
     "name": "Fritz Thyssen Foundation (FTS)",
     "description": "Germany",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -372,7 +372,7 @@
     "name": "Austrian Science Fund (FWF)",
     "description": "Austria",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -380,7 +380,7 @@
     "name": "Research Foundation Flanders (FWO)",
     "description": "Belgium",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -388,7 +388,7 @@
     "name": "Czech Science Foundation (GACR)",
     "description": "Czechia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -396,7 +396,7 @@
     "name": "General Secretariat for Research and Technology (GSRT)",
     "description": "Greece",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -404,7 +404,7 @@
     "name": "Innovation Fund Denmark (IFD)",
     "description": "Denmark",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -412,7 +412,7 @@
     "name": "French Research Institute for Exploitation of the Sea (IFREMER)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -420,7 +420,7 @@
     "name": "Innovation Fund of the Ministry of Economy of the Slovak Republic (IMSR)",
     "description": "Slovakia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -428,7 +428,7 @@
     "name": "Brussels Institute for Research and Innovation (INNOVIRIS)",
     "description": "Belgium",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -436,7 +436,7 @@
     "name": "National institute of Agricultural Research (INRA)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -444,7 +444,7 @@
     "name": "National Institute of Health and Medical Research (INSERM)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -452,7 +452,7 @@
     "name": "French Polar Institute (IPEV)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -460,7 +460,7 @@
     "name": "Irish Research Council (IRC)",
     "description": "Ireland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -468,7 +468,7 @@
     "name": "International Science Council (ISC)",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -476,7 +476,7 @@
     "name": "Carlos III Health Institute (ISCIII)",
     "description": "Spain",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -484,7 +484,7 @@
     "name": "Israel Science Foundation (ISF)",
     "description": "Israel",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -492,7 +492,7 @@
     "name": "Agency for Innovation by Science and Technology (IWT)",
     "description": "Belgium",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -500,7 +500,7 @@
     "name": "Japanese Society for the Promotion of Science (JSPS)",
     "description": "Japan",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -508,7 +508,7 @@
     "name": "Japanese Science and Technology Agency (JST)",
     "description": "Japan",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -516,7 +516,7 @@
     "name": "Knut and Alice Wallenberg Foundation (KAWS)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -524,7 +524,7 @@
     "name": "Knowledge Foundation (KKS)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -532,7 +532,7 @@
     "name": "Research Council of Lithuania (LMT)",
     "description": "Lithuania",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -540,7 +540,7 @@
     "name": "Malta Council for Science and Technology (MCST)",
     "description": "Malta",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -548,7 +548,7 @@
     "name": "Ministry for Education and Scientific Research (MECR)",
     "description": "Romania",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -556,7 +556,7 @@
     "name": "Ministry of Higher Education and Research (MESR)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -564,7 +564,7 @@
     "name": "Ministry of Education, Science and Technological Development of Republic of Serbia (MESTD)",
     "description": "Serbia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -572,7 +572,7 @@
     "name": "Ministry for Economic Development and Technology (MGRT)",
     "description": "Slovenia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -580,7 +580,7 @@
     "name": "Ministry for Economy and Competitveness (MINECO)",
     "description": "Spain",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -588,7 +588,7 @@
     "name": "Swedish Foundation for Strategic Environmental Research (MISTRA)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -596,7 +596,7 @@
     "name": "Agency for Science, Innovation and Technology (MITA)",
     "description": "Lithuania",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -604,7 +604,7 @@
     "name": "Ministry for Education, University and Research (MIUR)",
     "description": "Italy",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -612,7 +612,7 @@
     "name": "Ministry of Science and Technology of the People's Republic of China (MOST)",
     "description": "China",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -620,7 +620,7 @@
     "name": "Max Planck Society for the Advancement of Science (MPG)",
     "description": "Germany",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -628,7 +628,7 @@
     "name": "Medical Research Council (MRC)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -636,7 +636,7 @@
     "name": "Ministry of Science and Education Republic of Croatia (MSE)",
     "description": "Croatia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -644,7 +644,7 @@
     "name": "The Ministry of Education, Science, Research and Sports of the Slovak Republic (MSVVaS SR)",
     "description": "Slovakia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -652,7 +652,7 @@
     "name": "National Aeronautics and Space Administration (NASA)",
     "description": "United States",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -660,7 +660,7 @@
     "name": "National Centre for Research and Development (NCBiR)",
     "description": "Poland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -668,7 +668,7 @@
     "name": "National Science Center (NCN)",
     "description": "Poland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -676,7 +676,7 @@
     "name": "Natural Environment Research Council (NERC)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -684,7 +684,7 @@
     "name": "National Health and Medical Research Council (NHMRC)",
     "description": "Australia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -692,7 +692,7 @@
     "name": "National Institutes of Health (NIG)",
     "description": "United States",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -700,7 +700,7 @@
     "name": "National Research, Development and Innovation Fund (NKFIA)",
     "description": "Hungary",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -708,7 +708,7 @@
     "name": "National Research Foundation (NRF)",
     "description": "South Africa",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -716,7 +716,7 @@
     "name": "Natural Sciences and Engineering Research Council of Canada (NSERC)",
     "description": "Canada",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -724,7 +724,7 @@
     "name": "National Science Foundation (NSF)",
     "description": "United States",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -732,7 +732,7 @@
     "name": "Netherlands Organisation for Scientific Research (NWO)",
     "description": "Netherlands",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -740,7 +740,7 @@
     "name": "Austrian Academy of Sciences (OeAW)",
     "description": "Austria",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -748,7 +748,7 @@
     "name": "National Foundation for Research, Technology and Development (OeNFTE)",
     "description": "Austria",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -756,7 +756,7 @@
     "name": "French National Aerospace Research Center (ONERA)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -764,7 +764,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -772,7 +772,7 @@
     "name": "Icelandic Centre for Research (RANNIS)",
     "description": "Iceland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -780,7 +780,7 @@
     "name": "Research Council of Norway (RCN)",
     "description": "Norway",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -788,7 +788,7 @@
     "name": "Research Council UK (RCUK)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -796,7 +796,7 @@
     "name": "The Swedish Foundation for Humanities and Social Sciences (RJ)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -804,7 +804,7 @@
     "name": "Research Promotion Foundation (RPF)",
     "description": "Cyprus",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -812,7 +812,7 @@
     "name": "Swedish Energy Agency (SEA)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -820,7 +820,7 @@
     "name": "Swedish Environmental Protection Agency (SEPA)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -828,7 +828,7 @@
     "name": "Science Foundation Ireland (SFI)",
     "description": "Ireland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -836,7 +836,7 @@
     "name": "Secretariat-General for Investment (SGPI)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -844,7 +844,7 @@
     "name": "Swiss National Science Foundation (SNF)",
     "description": "Switzerland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -852,7 +852,7 @@
     "name": "Swedish National Space Board (SNSB)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -860,7 +860,7 @@
     "name": "Swedish Reseach Council Formas (SRCF)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -868,7 +868,7 @@
     "name": "Swedish Radiation Safety Authority (SRSA)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -876,7 +876,7 @@
     "name": "Swedish Foundation for Strategic Research (SSF)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -884,7 +884,7 @@
     "name": "Social Sciences and Humanities Research Council (SSHRC)",
     "description": "Canada",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -892,7 +892,7 @@
     "name": "Science and Technology Facilities Council (STFC)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -900,7 +900,7 @@
     "name": "Technology Foundation (STW)",
     "description": "Netherlands",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -908,7 +908,7 @@
     "name": "Technology Agency of the Czech Republic (TACR)",
     "description": "Czechia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -916,7 +916,7 @@
     "name": "Tara Expeditions Foundation (TARA)",
     "description": "France",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -924,7 +924,7 @@
     "name": "Finnish Funding Agency for Technology and Innovation (TEKES)",
     "description": "Finland",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -932,7 +932,7 @@
     "name": "Scientific and Technological Research Council of Turkey (TUBITAK)",
     "description": "Turkey",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -940,7 +940,7 @@
     "name": "Executive Agency for Higher Education, Research, Development and Innovation Funding (UEFISCDI - CNCS)",
     "description": "Romania",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -948,7 +948,7 @@
     "name": "UK Research and Innovation (UKRI)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -956,7 +956,7 @@
     "name": "Scientific Grant Agency (VEGA)",
     "description": "Slovakia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -964,7 +964,7 @@
     "name": "State Education Development Agency (VIAA)",
     "description": "Latvia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -972,7 +972,7 @@
     "name": "Swedish Governmental Agency for Innovation Systems (VINNOVA)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -980,7 +980,7 @@
     "name": "Flanders Innovation & Entrepeneurship (VLAIO)",
     "description": "Belgium",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -988,7 +988,7 @@
     "name": "Swedish Research Council (VR)",
     "description": "Sweden",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -996,7 +996,7 @@
     "name": "Volkswagen Foundation (VS)",
     "description": "Germany",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -1004,7 +1004,7 @@
     "name": "Wellcome trust (WT)",
     "description": "United Kingdom",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -1012,7 +1012,7 @@
     "name": "Vienna Science and Technology Fund (WWTF)",
     "description": "Austria",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -1020,7 +1020,7 @@
     "name": "Ministry of Education, Youth and Sports of the Czech Republic (MEYS)",
     "description": "Czechia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   },
   {
@@ -1028,7 +1028,7 @@
     "name": "Arcadia Fund",
     "description": "Czechia",
     "parentId": null,
-    "type": "FUNDING_BODY",
+    "type": "Funding body",
     "extras": {}
   }
 ]

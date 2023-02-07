@@ -4,7 +4,7 @@
     "name": "EOSC",
     "description": "EOSC",
     "parentId": null,
-    "type": "MONITORING_MONITORED_BY",
+    "type": "Monitored by",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "EGI",
     "description": "EGI",
     "parentId": null,
-    "type": "MONITORING_MONITORED_BY",
+    "type": "Monitored by",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "EUDAT",
     "description": "EUDAT",
     "parentId": null,
-    "type": "MONITORING_MONITORED_BY",
+    "type": "Monitored by",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "NI4OS-Europe",
     "description": "NI4OS-Europe",
     "parentId": null,
-    "type": "MONITORING_MONITORED_BY",
+    "type": "Monitored by",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Other",
     "description": "Other",
     "parentId": null,
-    "type": "MONITORING_MONITORED_BY",
+    "type": "Monitored by",
     "extras": {}
   }
 ]

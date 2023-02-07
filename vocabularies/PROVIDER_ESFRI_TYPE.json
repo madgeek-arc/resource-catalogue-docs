@@ -4,7 +4,7 @@
     "name": "Landmark",
     "description": "RI is an ESFRI landmark",
     "parentId": null,
-    "type": "PROVIDER_ESFRI_TYPE",
+    "type": "Provider esfri type",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Node",
     "description": "RI is a node of an ESFRI project",
     "parentId": null,
-    "type": "PROVIDER_ESFRI_TYPE",
+    "type": "Provider esfri type",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Not ESFRI",
     "description": "Not an ESFRI project or landmark",
     "parentId": null,
-    "type": "PROVIDER_ESFRI_TYPE",
+    "type": "Provider esfri type",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_ESFRI_TYPE",
+    "type": "Provider esfri type",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Project",
     "description": "RI is an ESFRI project",
     "parentId": null,
-    "type": "PROVIDER_ESFRI_TYPE",
+    "type": "Provider esfri type",
     "extras": {}
   }
 ]

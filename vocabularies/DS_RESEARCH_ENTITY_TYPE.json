@@ -4,7 +4,7 @@
     "name": "Research Data",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Research Software",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Research Publication",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Other Research Products",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Funders",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Projects",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Researchers",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Orgranizations",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Services",
     "description": "",
     "parentId": null,
-    "type": "DS_RESEARCH_ENTITY_TYPE",
+    "type": "Research entity type",
     "extras": {}
   }
 ]

@@ -4,7 +4,7 @@
     "name": "Access physical & eInfrastructures",
     "description": "Ultra-fast connectivity and ubiquitous access, high performance computing, cloud capacity and storage.",
     "parentId": null,
-    "type": "SUPERCATEGORY",
+    "type": "Supercategory",
     "extras": {
       "icon": "ic_security.svg",
       "icon_active": "ic_security_active.svg"
@@ -15,7 +15,7 @@
     "name": "Aggregators & Integrators",
     "description": null,
     "parentId": null,
-    "type": "SUPERCATEGORY",
+    "type": "Supercategory",
     "extras": {
       "icon": "ic_aggregator.svg",
       "icon_active": "ic_aggregator_active.svg"
@@ -26,7 +26,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "SUPERCATEGORY",
+    "type": "Supercategory",
     "extras": {
       "icon": "ic_software.svg",
       "icon_active": "ic_software_active.svg"
@@ -37,7 +37,7 @@
     "name": "Processing & Analysis",
     "description": null,
     "parentId": null,
-    "type": "SUPERCATEGORY",
+    "type": "Supercategory",
     "extras": {
       "icon": "ic_analytics.svg",
       "icon_active": "ic_analytics_active.svg"
@@ -48,7 +48,7 @@
     "name": "Security & Operations",
     "description": null,
     "parentId": null,
-    "type": "SUPERCATEGORY",
+    "type": "Supercategory",
     "extras": {
       "icon": "ic_operations.svg",
       "icon_active": "ic_operations_active.svg"
@@ -59,7 +59,7 @@
     "name": "Sharing & Discovery",
     "description": null,
     "parentId": null,
-    "type": "SUPERCATEGORY",
+    "type": "Supercategory",
     "extras": {
       "icon": "ic_data.svg",
       "icon_active": "ic_data_active.svg"
@@ -70,7 +70,7 @@
     "name": "Training & Support",
     "description": null,
     "parentId": null,
-    "type": "SUPERCATEGORY",
+    "type": "Supercategory",
     "extras": {
       "icon": "ic_training.svg",
       "icon_active": "ic_training_active.svg"

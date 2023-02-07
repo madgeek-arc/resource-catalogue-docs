@@ -4,7 +4,7 @@
     "name": "DOI",
     "description": "",
     "parentId": null,
-    "type": "DS_PERSISTENT_IDENTITY_SCHEME",
+    "type": "Persistent identity scheme",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Handle",
     "description": "",
     "parentId": null,
-    "type": "DS_PERSISTENT_IDENTITY_SCHEME",
+    "type": "Persistent identity scheme",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "RoR",
     "description": "",
     "parentId": null,
-    "type": "DS_PERSISTENT_IDENTITY_SCHEME",
+    "type": "Persistent identity scheme",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "ORCID",
     "description": "",
     "parentId": null,
-    "type": "DS_PERSISTENT_IDENTITY_SCHEME",
+    "type": "Persistent identity scheme",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "ISNI",
     "description": "",
     "parentId": null,
-    "type": "DS_PERSISTENT_IDENTITY_SCHEME",
+    "type": "Persistent identity scheme",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "ArXiv",
     "description": "",
     "parentId": null,
-    "type": "DS_PERSISTENT_IDENTITY_SCHEME",
+    "type": "Persistent identity scheme",
     "extras": {}
   },
   {
@@ -52,14 +52,14 @@
     "name": "PMCID",
     "description": "",
     "parentId": null,
-    "type": "DS_PERSISTENT_IDENTITY_SCHEME",
+    "type": "Persistent identity scheme",
     "extras": {}
   },{
     "id": "ds_persistent_identity_scheme-ark",
     "name": "ARK",
     "description": "",
     "parentId": null,
-    "type": "DS_PERSISTENT_IDENTITY_SCHEME",
+    "type": "Persistent identity scheme",
     "extras": {}
   }
 ]

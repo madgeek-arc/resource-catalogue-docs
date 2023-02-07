@@ -4,7 +4,7 @@
     "name": "Distributed",
     "description": "The Provider has multiple physical locations but a unified management structure and a single coordination centre.",
     "parentId": null,
-    "type": "PROVIDER_STRUCTURE_TYPE",
+    "type": "Provider structure type",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Mobile",
     "description": "The Provider is changing its physical location on a regular basis (e.g., satellites, research vessels)",
     "parentId": null,
-    "type": "PROVIDER_STRUCTURE_TYPE",
+    "type": "Provider structure type",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_STRUCTURE_TYPE",
+    "type": "Provider structure type",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Single-sited",
     "description": "The Provider has one main physical location for users.",
     "parentId": null,
-    "type": "PROVIDER_STRUCTURE_TYPE",
+    "type": "Provider structure type",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Virtual",
     "description": "The Provider is exclusively an electronic resource/service.",
     "parentId": null,
-    "type": "PROVIDER_STRUCTURE_TYPE",
+    "type": "Provider structure type",
     "extras": {}
   }
 ]

@@ -4,7 +4,7 @@
     "name": "Association",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Consortium",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Corporation",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "European Cooperative Society (SCE)",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "European Economic Interest Grouping (EEIG)",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "European Research Infrastructure Consortium (ERIC)",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Foundation",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Grouping",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "International or intergovernmental organisation or framework",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Non For Profit Company",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Non-Governmental Organisation",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "Partnership",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "Private Company",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -116,7 +116,7 @@
     "name": "Public Company",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -124,7 +124,7 @@
     "name": "Public Legal Entity",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -132,7 +132,7 @@
     "name": "Public Legal Entity under Private Law",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -140,7 +140,7 @@
     "name": "Self Employed",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -148,7 +148,7 @@
     "name": "Society",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -156,7 +156,7 @@
     "name": "Trust",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   },
   {
@@ -164,7 +164,7 @@
     "name": "Union",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_LEGAL_STATUS",
+    "type": "Provider legal status",
     "extras": {}
   }
 ]
