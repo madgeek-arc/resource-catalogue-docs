@@ -4,7 +4,7 @@
         "name": "Geographic Location",
         "description": "All Regions and Countries",
         "parentId": null,
-        "type": "GEOGRAPHIC_LOCATION",
+        "type": "Geographic location",
         "extras": {}
   }
 ]

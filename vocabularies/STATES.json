@@ -4,7 +4,7 @@
     "name": "Approved Provider",
     "description": "Approved Provider",
     "parentId": null,
-    "type": "PROVIDER_STATE",
+    "type": "Provider state",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Pending Provider",
     "description": "Pending Provider",
     "parentId": null,
-    "type": "PROVIDER_STATE",
+    "type": "Provider state",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Rejected Provider",
     "description": "Rejected Provider",
     "parentId": null,
-    "type": "PROVIDER_STATE",
+    "type": "Provider state",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Approved Resource",
     "description": "Approved Resource",
     "parentId": null,
-    "type": "RESOURCE_STATE",
+    "type": "Resource state",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Pending Resource",
     "description": "Pending Resource",
     "parentId": null,
-    "type": "RESOURCE_STATE",
+    "type": "Resource state",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Rejected Resource",
     "description": "Rejected Resource",
     "parentId": null,
-    "type": "RESOURCE_STATE",
+    "type": "Resource state",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Approved Template",
     "description": "Approved Template",
     "parentId": null,
-    "type": "TEMPLATE_STATE",
+    "type": "Template state",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "No Template Status",
     "description": "No Template Status",
     "parentId": null,
-    "type": "TEMPLATE_STATE",
+    "type": "Template state",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Pending Template",
     "description": "Pending Template",
     "parentId": null,
-    "type": "TEMPLATE_STATE",
+    "type": "Template state",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Rejected Template",
     "description": "Rejected Template",
     "parentId": null,
-    "type": "TEMPLATE_STATE",
+    "type": "Template state",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Approved Catalogue",
     "description": "Approved Catalogue",
     "parentId": null,
-    "type": "CATALOGUE_STATE",
+    "type": "Catalogue state",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Pending Catalogue",
     "description": "Pending Catalogue",
     "parentId": null,
-    "type": "CATALOGUE_STATE",
+    "type": "Catalogue state",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "Rejected Catalogue",
     "description": "Rejected Catalogue",
     "parentId": null,
-    "type": "CATALOGUE_STATE",
+    "type": "Catalogue state",
     "extras": {}
   }
 ]

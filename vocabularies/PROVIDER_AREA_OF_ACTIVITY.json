@@ -4,7 +4,7 @@
     "name": "Applied Research",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_AREA_OF_ACTIVITY",
+    "type": "Provider area of activity",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Basic Research",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_AREA_OF_ACTIVITY",
+    "type": "Provider area of activity",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_AREA_OF_ACTIVITY",
+    "type": "Provider area of activity",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Technological Development",
     "description": null,
     "parentId": null,
-    "type": "PROVIDER_AREA_OF_ACTIVITY",
+    "type": "Provider area of activity",
     "extras": {}
   }
 ]

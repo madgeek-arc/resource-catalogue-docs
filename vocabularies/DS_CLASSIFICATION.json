@@ -4,7 +4,7 @@
     "name": "Repository",
     "description": "",
     "parentId": null,
-    "type": "DS_CLASSIFICATION",
+    "type": "Classification",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Catalogue of Research Products",
     "description": "",
     "parentId": null,
-    "type": "DS_CLASSIFICATION",
+    "type": "Classification",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Scientific Database",
     "description": "",
     "parentId": null,
-    "type": "DS_CLASSIFICATION",
+    "type": "Classification",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Aggregators",
     "description": "",
     "parentId": null,
-    "type": "DS_CLASSIFICATION",
+    "type": "Classification",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Journal Archive",
     "description": "",
     "parentId": null,
-    "type": "DS_CLASSIFICATION",
+    "type": "Classification",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Publisher Archive",
     "description": "",
     "parentId": null,
-    "type": "DS_CLASSIFICATION",
+    "type": "Classification",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "CRIS System",
     "description": "",
     "parentId": null,
-    "type": "DS_CLASSIFICATION",
+    "type": "Classification",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Research Entity Registry",
     "description": "",
     "parentId": null,
-    "type": "DS_CLASSIFICATION",
+    "type": "Classification",
     "extras": {}
   }
 ]

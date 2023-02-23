@@ -4,7 +4,7 @@
     "name": "Andorra",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "United Arab Emirates (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Afghanistan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Antigua and Barbuda",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Anguilla",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Albania",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Armenia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Angola",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Antarctica",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Argentina",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "American Samoa",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Austria",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "Australia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "Aruba",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -116,7 +116,7 @@
     "name": "Åland Islands",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -124,7 +124,7 @@
     "name": "Azerbaijan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -132,7 +132,7 @@
     "name": "Bosnia and Herzegovina",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -140,7 +140,7 @@
     "name": "Barbados",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -148,7 +148,7 @@
     "name": "Bangladesh",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -156,7 +156,7 @@
     "name": "Belgium",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -164,7 +164,7 @@
     "name": "Burkina Faso",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -172,7 +172,7 @@
     "name": "Bulgaria",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -180,7 +180,7 @@
     "name": "Bahrain",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -188,7 +188,7 @@
     "name": "Burundi",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -196,7 +196,7 @@
     "name": "Benin",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -204,7 +204,7 @@
     "name": "Saint Barthélemy",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -212,7 +212,7 @@
     "name": "Bermuda",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -220,7 +220,7 @@
     "name": "Brunei Darussalam",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -228,7 +228,7 @@
     "name": "Bolivia, Plurinational State of",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -236,7 +236,7 @@
     "name": "Bonaire, Sint Eustatius and Saba",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -244,7 +244,7 @@
     "name": "Brazil",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -252,7 +252,7 @@
     "name": "Bahamas (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -260,7 +260,7 @@
     "name": "Bhutan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -268,7 +268,7 @@
     "name": "Bouvet Island",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -276,7 +276,7 @@
     "name": "Botswana",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -284,7 +284,7 @@
     "name": "Belarus",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -292,7 +292,7 @@
     "name": "Belize",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -300,7 +300,7 @@
     "name": "Canada",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -308,7 +308,7 @@
     "name": "Cocos (Keeling) Islands (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -316,7 +316,7 @@
     "name": "Congo (the Democratic Republic of the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -324,7 +324,7 @@
     "name": "Central African Republic (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -332,7 +332,7 @@
     "name": "Congo (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -340,7 +340,7 @@
     "name": "Switzerland",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -348,7 +348,7 @@
     "name": "Côte d'Ivoire",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -356,7 +356,7 @@
     "name": "Cook Islands (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -364,7 +364,7 @@
     "name": "Chile",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -372,7 +372,7 @@
     "name": "Cameroon",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -380,7 +380,7 @@
     "name": "China",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -388,7 +388,7 @@
     "name": "Colombia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -396,7 +396,7 @@
     "name": "Costa Rica",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -404,7 +404,7 @@
     "name": "Cuba",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -412,7 +412,7 @@
     "name": "Cabo Verde",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -420,7 +420,7 @@
     "name": "Curaçao",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -428,7 +428,7 @@
     "name": "Christmas Island",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -436,7 +436,7 @@
     "name": "Cyprus",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -444,7 +444,7 @@
     "name": "Czechia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -452,7 +452,7 @@
     "name": "Germany",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -460,7 +460,7 @@
     "name": "Djibouti",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -468,7 +468,7 @@
     "name": "Denmark",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -476,7 +476,7 @@
     "name": "Dominica",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -484,7 +484,7 @@
     "name": "Dominican Republic (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -492,7 +492,7 @@
     "name": "Algeria",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -500,7 +500,7 @@
     "name": "Ecuador",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -508,7 +508,7 @@
     "name": "Estonia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -516,7 +516,7 @@
     "name": "Egypt",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -524,7 +524,7 @@
     "name": "Western Sahara",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -532,7 +532,7 @@
     "name": "Greece",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -540,7 +540,7 @@
     "name": "Eritrea",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -548,7 +548,7 @@
     "name": "Spain",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -556,7 +556,7 @@
     "name": "Ethiopia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -564,7 +564,7 @@
     "name": "Finland",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -572,7 +572,7 @@
     "name": "Fiji",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -580,7 +580,7 @@
     "name": "Falkland Islands (the) [Malvinas]",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -588,7 +588,7 @@
     "name": "Micronesia (Federated States of)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -596,7 +596,7 @@
     "name": "Faroe Islands",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -604,7 +604,7 @@
     "name": "France",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -612,7 +612,7 @@
     "name": "Gabon",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -620,7 +620,7 @@
     "name": "Grenada",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -628,7 +628,7 @@
     "name": "Georgia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -636,7 +636,7 @@
     "name": "French Guiana",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -644,7 +644,7 @@
     "name": "Guernsey",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -652,7 +652,7 @@
     "name": "Ghana",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -660,7 +660,7 @@
     "name": "Gibraltar",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -668,7 +668,7 @@
     "name": "Greenland",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -676,7 +676,7 @@
     "name": "Gambia (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -684,7 +684,7 @@
     "name": "Guinea",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -692,7 +692,7 @@
     "name": "Guadeloupe",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -700,7 +700,7 @@
     "name": "Equatorial Guinea",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -708,7 +708,7 @@
     "name": "South Georgia and the South Sandwich Islands",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -716,7 +716,7 @@
     "name": "Guatemala",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -724,7 +724,7 @@
     "name": "Guam",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -732,7 +732,7 @@
     "name": "Guinea-Bissau",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -740,7 +740,7 @@
     "name": "Guyana",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -748,7 +748,7 @@
     "name": "Hong Kong",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -756,7 +756,7 @@
     "name": "Heard Island and McDonald Islands",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -764,7 +764,7 @@
     "name": "Honduras",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -772,7 +772,7 @@
     "name": "Croatia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -780,7 +780,7 @@
     "name": "Haiti",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -788,7 +788,7 @@
     "name": "Hungary",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -796,7 +796,7 @@
     "name": "Indonesia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -804,7 +804,7 @@
     "name": "Ireland",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -812,7 +812,7 @@
     "name": "Israel",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -820,7 +820,7 @@
     "name": "Isle of Man",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -828,7 +828,7 @@
     "name": "India",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -836,7 +836,7 @@
     "name": "British Indian Ocean Territory (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -844,7 +844,7 @@
     "name": "Iraq",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -852,7 +852,7 @@
     "name": "Iran (Islamic Republic of)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -860,7 +860,7 @@
     "name": "Iceland",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -868,7 +868,7 @@
     "name": "Italy",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -876,7 +876,7 @@
     "name": "Jersey",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -884,7 +884,7 @@
     "name": "Jamaica",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -892,7 +892,7 @@
     "name": "Jordan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -900,7 +900,7 @@
     "name": "Japan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -908,7 +908,7 @@
     "name": "Kenya",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -916,7 +916,7 @@
     "name": "Kyrgyzstan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -924,7 +924,7 @@
     "name": "Cambodia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -932,7 +932,7 @@
     "name": "Kiribati",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -940,7 +940,7 @@
     "name": "Comoros (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -948,7 +948,7 @@
     "name": "Saint Kitts and Nevis",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -956,7 +956,7 @@
     "name": "Korea (the Democratic People's Republic of)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -964,7 +964,7 @@
     "name": "Korea (the Republic of)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -972,7 +972,7 @@
     "name": "Kuwait",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -980,7 +980,7 @@
     "name": "Cayman Islands (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -988,7 +988,7 @@
     "name": "Kazakhstan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -996,7 +996,7 @@
     "name": "Lao People's Democratic Republic (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1004,7 +1004,7 @@
     "name": "Lebanon",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1012,7 +1012,7 @@
     "name": "Saint Lucia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1020,7 +1020,7 @@
     "name": "Liechtenstein",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1028,7 +1028,7 @@
     "name": "Sri Lanka",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1036,7 +1036,7 @@
     "name": "Liberia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1044,7 +1044,7 @@
     "name": "Lesotho",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1052,7 +1052,7 @@
     "name": "Lithuania",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1060,7 +1060,7 @@
     "name": "Luxembourg",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1068,7 +1068,7 @@
     "name": "Latvia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1076,7 +1076,7 @@
     "name": "Libya",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1084,7 +1084,7 @@
     "name": "Morocco",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1092,7 +1092,7 @@
     "name": "Monaco",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1100,7 +1100,7 @@
     "name": "Moldova (Republic of)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1108,7 +1108,7 @@
     "name": "Montenegro",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1116,7 +1116,7 @@
     "name": "Saint Martin (French part)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1124,7 +1124,7 @@
     "name": "Madagascar",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1132,7 +1132,7 @@
     "name": "Marshall Islands (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1140,7 +1140,7 @@
     "name": "North Macedonia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1148,7 +1148,7 @@
     "name": "Mali",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1156,7 +1156,7 @@
     "name": "Myanmar",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1164,7 +1164,7 @@
     "name": "Mongolia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1172,7 +1172,7 @@
     "name": "Macao",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1180,7 +1180,7 @@
     "name": "Northern Mariana Islands (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1188,7 +1188,7 @@
     "name": "Martinique",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1196,7 +1196,7 @@
     "name": "Mauritania",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1204,7 +1204,7 @@
     "name": "Montserrat",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1212,7 +1212,7 @@
     "name": "Malta",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1220,7 +1220,7 @@
     "name": "Mauritius",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1228,7 +1228,7 @@
     "name": "Maldives",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1236,7 +1236,7 @@
     "name": "Malawi",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1244,7 +1244,7 @@
     "name": "Mexico",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1252,7 +1252,7 @@
     "name": "Malaysia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1260,7 +1260,7 @@
     "name": "Mozambique",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1268,7 +1268,7 @@
     "name": "Namibia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1276,7 +1276,7 @@
     "name": "New Caledonia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1284,7 +1284,7 @@
     "name": "Niger (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1292,7 +1292,7 @@
     "name": "Norfolk Island",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1300,7 +1300,7 @@
     "name": "Nigeria",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1308,7 +1308,7 @@
     "name": "Nicaragua",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1316,7 +1316,7 @@
     "name": "Netherlands (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1324,7 +1324,7 @@
     "name": "Norway",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1332,7 +1332,7 @@
     "name": "Nepal",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1340,7 +1340,7 @@
     "name": "Nauru",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1348,7 +1348,7 @@
     "name": "Niue",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1356,7 +1356,7 @@
     "name": "New Zealand",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1364,7 +1364,7 @@
     "name": "Oman",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1372,7 +1372,7 @@
     "name": "Other",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1380,7 +1380,7 @@
     "name": "Panama",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1388,7 +1388,7 @@
     "name": "Peru",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1396,7 +1396,7 @@
     "name": "French Polynesia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1404,7 +1404,7 @@
     "name": "Papua New Guinea",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1412,7 +1412,7 @@
     "name": "Philippines (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1420,7 +1420,7 @@
     "name": "Pakistan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1428,7 +1428,7 @@
     "name": "Poland",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1436,7 +1436,7 @@
     "name": "Saint Pierre and Miquelon",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1444,7 +1444,7 @@
     "name": "Pitcairn",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1452,7 +1452,7 @@
     "name": "Puerto Rico",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1460,7 +1460,7 @@
     "name": "Palestine, State of",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1468,7 +1468,7 @@
     "name": "Portugal",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1476,7 +1476,7 @@
     "name": "Palau",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1484,7 +1484,7 @@
     "name": "Paraguay",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1492,7 +1492,7 @@
     "name": "Qatar",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1500,7 +1500,7 @@
     "name": "Réunion",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1508,7 +1508,7 @@
     "name": "Romania",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1516,7 +1516,7 @@
     "name": "Serbia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1524,7 +1524,7 @@
     "name": "Russian Federation (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1532,7 +1532,7 @@
     "name": "Rwanda",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1540,7 +1540,7 @@
     "name": "Saudi Arabia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1548,7 +1548,7 @@
     "name": "Solomon Islands",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1556,7 +1556,7 @@
     "name": "Seychelles",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1564,7 +1564,7 @@
     "name": "Sudan (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1572,7 +1572,7 @@
     "name": "Sweden",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1580,7 +1580,7 @@
     "name": "Singapore",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1588,7 +1588,7 @@
     "name": "Saint Helena, Ascension and Tristan da Cunha",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1596,7 +1596,7 @@
     "name": "Slovenia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1604,7 +1604,7 @@
     "name": "Svalbard and Jan Mayen",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1612,7 +1612,7 @@
     "name": "Slovakia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1620,7 +1620,7 @@
     "name": "Sierra Leone",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1628,7 +1628,7 @@
     "name": "San Marino",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1636,7 +1636,7 @@
     "name": "Senegal",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1644,7 +1644,7 @@
     "name": "Somalia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1652,7 +1652,7 @@
     "name": "Suriname",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1660,7 +1660,7 @@
     "name": "South Sudan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1668,7 +1668,7 @@
     "name": "São Tomé and Príncipe",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1676,7 +1676,7 @@
     "name": "El Salvador",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1684,7 +1684,7 @@
     "name": "Sint Maarten (Dutch part)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1692,7 +1692,7 @@
     "name": "Syrian Arab Republic (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1700,7 +1700,7 @@
     "name": "Eswatini",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1708,7 +1708,7 @@
     "name": "Turks and Caicos Islands (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1716,7 +1716,7 @@
     "name": "Chad",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1724,7 +1724,7 @@
     "name": "French Southern Territories (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1732,7 +1732,7 @@
     "name": "Togo",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1740,7 +1740,7 @@
     "name": "Thailand",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1748,7 +1748,7 @@
     "name": "Tajikistan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1756,7 +1756,7 @@
     "name": "Tokelau",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1764,7 +1764,7 @@
     "name": "Timor-Leste",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1772,7 +1772,7 @@
     "name": "Turkmenistan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1780,7 +1780,7 @@
     "name": "Tunisia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1788,7 +1788,7 @@
     "name": "Tonga",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1796,7 +1796,7 @@
     "name": "Turkey",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1804,7 +1804,7 @@
     "name": "Trinidad and Tobago",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1812,7 +1812,7 @@
     "name": "Tuvalu",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1820,7 +1820,7 @@
     "name": "Taiwan (Province of China)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1828,7 +1828,7 @@
     "name": "Tanzania, United Republic of",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1836,7 +1836,7 @@
     "name": "Ukraine",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1844,7 +1844,7 @@
     "name": "Uganda",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1852,7 +1852,7 @@
     "name": "United Kingdom of Great Britain and Northern Ireland (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1860,7 +1860,7 @@
     "name": "United States Minor Outlying Islands",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1868,7 +1868,7 @@
     "name": "United States of America (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1876,7 +1876,7 @@
     "name": "Uruguay",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1884,7 +1884,7 @@
     "name": "Uzbekistan",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1892,7 +1892,7 @@
     "name": "Holy See (the)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1900,7 +1900,7 @@
     "name": "Saint Vincent and the Grenadines",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1908,7 +1908,7 @@
     "name": "Venezuela (Bolivarian Republic of)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1916,7 +1916,7 @@
     "name": "Virgin Islands (British)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1924,7 +1924,7 @@
     "name": "Virgin Islands (U.S.)",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1932,7 +1932,7 @@
     "name": "Viet Nam",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1940,7 +1940,7 @@
     "name": "Vanuatu",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1948,7 +1948,7 @@
     "name": "Wallis and Futuna",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1956,7 +1956,7 @@
     "name": "Samoa",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1964,7 +1964,7 @@
     "name": "Yemen",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1972,7 +1972,7 @@
     "name": "Mayotte",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1980,7 +1980,7 @@
     "name": "South Africa",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1988,7 +1988,7 @@
     "name": "Zambia",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   },
   {
@@ -1996,7 +1996,7 @@
     "name": "Zimbabwe",
     "description": null,
     "parentId": "geographic_location",
-    "type": "COUNTRY",
+    "type": "Country",
     "extras": {}
   }
 ]

@@ -4,7 +4,7 @@
     "name": "EOSC-Core Interoperability Guideline",
     "description": null,
     "parentId": null,
-    "type": "IR_EOSC_GUIDELINE_TYPE",
+    "type": "Interoperability Record eosc guideline type",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "EOSC-Exchange Interoperability Guideline (Thematic)",
     "description": null,
     "parentId": null,
-    "type": "IR_EOSC_GUIDELINE_TYPE",
+    "type": "Interoperability Record eosc guideline type",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "EOSC-Exchange Interoperability Guideline (Horizontal)",
     "description": null,
     "parentId": null,
-    "type": "IR_EOSC_GUIDELINE_TYPE",
+    "type": "Interoperability Record eosc guideline type",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Operational Baseline",
     "description": null,
     "parentId": null,
-    "type": "IR_EOSC_GUIDELINE_TYPE",
+    "type": "Interoperability Record eosc guideline type",
     "extras": {}
   }
 ]

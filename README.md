@@ -112,12 +112,6 @@
         id: String (required)
       ```
   - POST
-    - Creates a new Catalogue:
-      ```diff
-      /catalogue
-      Body:
-        Catalogue JSON (required)
-      ```
     - Creates a new Datasource for the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/datasource
@@ -885,8 +879,7 @@
       "eoscGuidelineType": "string",
       "eoscIntegrationOptions": [
         "string"
-      ],
-      "eoscAAI": "boolean"
+      ]
     }
 
   ### Provider:
@@ -1206,7 +1199,6 @@
   - [FUNDING_BODY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/FUNDING_BODY.json)
   - [FUNDING_PROGRAM](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/FUNDING_PROGRAM.json)
   - [GEOGRAPHIC_LOCATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/GEOGRAPHIC_LOCATION.json)
-  - [IR_DOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_DOMAIN.json)
   - [IR_EOSC_GUIDELINE_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_EOSC_GUIDELINE_TYPE.json)
   - [IR_IDENTIFIER_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_IDENTIFIER_TYPE.json)
   - [IR_NAME_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_NAME_TYPE.json)

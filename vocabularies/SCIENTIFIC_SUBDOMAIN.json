@@ -4,7 +4,7 @@
     "name": "Agricultural Biotechnology",
     "description": null,
     "parentId": "scientific_domain-agricultural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Agriculture, Forestry & Fisheries",
     "description": null,
     "parentId": "scientific_domain-agricultural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Animal & Dairy Sciences",
     "description": null,
     "parentId": "scientific_domain-agricultural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Other Agricultural Sciences",
     "description": null,
     "parentId": "scientific_domain-agricultural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Veterinary Sciences",
     "description": null,
     "parentId": "scientific_domain-agricultural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Chemical Engineering",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Civil Engineering",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Electrical, Electronic & Information Engineering",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Environmental Biotechnology",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Environmental Engineering",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Industrial Biotechnology",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Materials Engineering",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "Mechanical Engineering",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "Medical Engineering",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -116,7 +116,7 @@
     "name": "Nanotechnology",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -124,7 +124,7 @@
     "name": "Other Engineering & Technology Sciences",
     "description": null,
     "parentId": "scientific_domain-engineering_and_technology",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -132,7 +132,7 @@
     "name": "Generic",
     "description": null,
     "parentId": "scientific_domain-generic",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -140,7 +140,7 @@
     "name": "Arts",
     "description": null,
     "parentId": "scientific_domain-humanities",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -148,7 +148,7 @@
     "name": "History & Archaeology",
     "description": null,
     "parentId": "scientific_domain-humanities",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -156,7 +156,7 @@
     "name": "Languages & Literature",
     "description": null,
     "parentId": "scientific_domain-humanities",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -164,7 +164,7 @@
     "name": "Other Humanities",
     "description": null,
     "parentId": "scientific_domain-humanities",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -172,7 +172,7 @@
     "name": "Philosophy, Ethics & Religion",
     "description": null,
     "parentId": "scientific_domain-humanities",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -180,7 +180,7 @@
     "name": "Basic Medicine",
     "description": null,
     "parentId": "scientific_domain-medical_and_health_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -188,7 +188,7 @@
     "name": "Clinical Medicine",
     "description": null,
     "parentId": "scientific_domain-medical_and_health_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -196,7 +196,7 @@
     "name": "Health Sciences",
     "description": null,
     "parentId": "scientific_domain-medical_and_health_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -204,7 +204,7 @@
     "name": "Medical Biotechnology",
     "description": null,
     "parentId": "scientific_domain-medical_and_health_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -212,7 +212,7 @@
     "name": "Other Medical Sciences",
     "description": null,
     "parentId": "scientific_domain-medical_and_health_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -220,7 +220,7 @@
     "name": "Biological Sciences",
     "description": null,
     "parentId": "scientific_domain-natural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -228,7 +228,7 @@
     "name": "Chemical Sciences",
     "description": null,
     "parentId": "scientific_domain-natural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -236,7 +236,7 @@
     "name": "Computer & Information Sciences",
     "description": null,
     "parentId": "scientific_domain-natural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -244,7 +244,7 @@
     "name": "Earth & Related Environmental Sciences",
     "description": null,
     "parentId": "scientific_domain-natural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -252,7 +252,7 @@
     "name": "Mathematics",
     "description": null,
     "parentId": "scientific_domain-natural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -260,7 +260,7 @@
     "name": "Other Natural Sciences",
     "description": null,
     "parentId": "scientific_domain-natural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -268,7 +268,7 @@
     "name": "Physical Sciences",
     "description": null,
     "parentId": "scientific_domain-natural_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -276,7 +276,7 @@
     "name": "Other",
     "description": null,
     "parentId": "scientific_domain-other",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -284,7 +284,7 @@
     "name": "Economics & Business",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -292,7 +292,7 @@
     "name": "Educational Sciences",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -300,7 +300,7 @@
     "name": "Law",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -308,7 +308,7 @@
     "name": "Media & Communications",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -316,7 +316,7 @@
     "name": "Other Social Sciences",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -324,7 +324,7 @@
     "name": "Political Sciences",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -332,7 +332,7 @@
     "name": "Psychology",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -340,7 +340,7 @@
     "name": "Social & Economic Geography",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   },
   {
@@ -348,7 +348,7 @@
     "name": "Sociology",
     "description": null,
     "parentId": "scientific_domain-social_sciences",
-    "type": "SCIENTIFIC_SUBDOMAIN",
+    "type": "Scientific subdomain",
     "extras": {}
   }
 ]

@@ -4,7 +4,7 @@
     "name": "Alpha",
     "description": "Resource prototype available for closed set of users",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Beta",
     "description": "Resource being developed while available for testing publicly",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Concept",
     "description": "Concept development",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Design",
     "description": "Resource in design",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Discovery",
     "description": "Researching users needs, exploring technological or policy constraints",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Implementation",
     "description": "Resource in deployment",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "In containment",
     "description": "Resource active, but generally not available to new users",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Operation",
     "description": "Resource offered",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Planned",
     "description": "Resource plan defined",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Preparation",
     "description": "Resource in preparatory phase",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Production",
     "description": "Resource available in the live environment",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "Retirement",
     "description": "Resource is not anymore offered",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "Termination",
     "description": "Resource dissolution, dismantling",
     "parentId": null,
-    "type": "LIFE_CYCLE_STATUS",
+    "type": "Life cycle status",
     "extras": {}
   }
 ]

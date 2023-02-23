@@ -4,7 +4,7 @@
     "name": "Compute",
     "description": "High-performance computing resources and scalable cloud compute capacity for demanding job processes.",
     "parentId": "supercategory-access_physical_and_eInfrastructures",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_compute.svg",
       "icon_active": "ic_compute_active.svg"
@@ -15,7 +15,7 @@
     "name": "Data Storage",
     "description": "Reliable, secure and scalable cloud storage for scientific data, apps and workloads.",
     "parentId": "supercategory-access_physical_and_eInfrastructures",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_storage.svg",
       "icon_active": "ic_storage_active.svg"
@@ -26,7 +26,7 @@
     "name": "Instrument & Equipment",
     "description": "Access to instruments and equipment.",
     "parentId": "supercategory-access_physical_and_eInfrastructures",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {}
   },
   {
@@ -34,7 +34,7 @@
     "name": "Material Storage",
     "description": "Access to biological, chemical, historical, archeological, cultural, etc. storage. Includes the acquisition, preparation and processing of samples and materials in view of their preservation.",
     "parentId": "supercategory-access_physical_and_eInfrastructures",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_storage.svg",
       "icon_active": "ic_storage_active.svg"
@@ -45,7 +45,7 @@
     "name": "Network",
     "description": "Ultra-fast connectivity and ubiquitous access to eInfrastructures' resources and services.",
     "parentId": "supercategory-access_physical_and_eInfrastructures",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_networking.svg",
       "icon_active": "ic_networking_active.svg"
@@ -56,7 +56,7 @@
     "name": "Aggregators & Integrators",
     "description": "Thematic, Regional and other Aggregators & Integrators.",
     "parentId": "supercategory-aggregators_and_integrators",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_aggregator.svg",
       "icon_active": "ic_aggregator_active.svg"
@@ -67,7 +67,7 @@
     "name": "Other",
     "description": null,
     "parentId": "supercategory-other",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_other.svg",
       "icon_active": "ic_other_active.svg"
@@ -78,7 +78,7 @@
     "name": "Data Analysis",
     "description": "Processes for data with the goal of discovering useful information, informing conclusions, and supporting decision-making.",
     "parentId": "supercategory-processing_and_analysis",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_analytics.svg",
       "icon_active": "ic_analytics_active.svg"
@@ -89,7 +89,7 @@
     "name": "Data Management",
     "description": "Robust, feature-rich and user-friendly data management services.",
     "parentId": "supercategory-processing_and_analysis",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_data.svg",
       "icon_active": "ic_data_active.svg"
@@ -100,7 +100,7 @@
     "name": "Measurement & Materials Analysis",
     "description": "Processess and techiques for material analysis, characterisation and monitoring.",
     "parentId": "supercategory-processing_and_analysis",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_analytics.svg",
       "icon_active": "ic_analytics_active.svg"
@@ -111,7 +111,7 @@
     "name": "Operations & Infrastructure Management Services",
     "description": "Services for monitoring, scaling, creating, tracking and automating operations on infrastructures and services.",
     "parentId": "supercategory-security_and_operations",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_operations.svg",
       "icon_active": "ic_operations_active.svg"
@@ -122,7 +122,7 @@
     "name": "Security & Identity",
     "description": "Protect infrastructure and manage user identities and access against advanced threats across devices, data, apps, etc.",
     "parentId": "supercategory-security_and_operations",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_security.svg",
       "icon_active": "ic_security_active.svg"
@@ -133,7 +133,7 @@
     "name": "Applications",
     "description": "End-user applications offered-as-a-service or deployed-on-demand.",
     "parentId": "supercategory-sharing_and_discovery",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_application.svg",
       "icon_active": "ic_application_active.svg"
@@ -144,7 +144,7 @@
     "name": "Data",
     "description": "Vast range of datasets to facilitate research and scientific activities.",
     "parentId": "supercategory-sharing_and_discovery",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_data.svg",
       "icon_active": "ic_data_active.svg"
@@ -155,7 +155,7 @@
     "name": "Development Resources",
     "description": "Developer tools, development kits, libraries, APIs.",
     "parentId": "supercategory-sharing_and_discovery",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {}
   },
   {
@@ -163,7 +163,7 @@
     "name": "Samples",
     "description": "Collection, preparation and delivery of biological, chemical, environmental or other samples.",
     "parentId": "supercategory-sharing_and_discovery",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {}
   },
   {
@@ -171,7 +171,7 @@
     "name": "Scholarly Communication",
     "description": "Research findings available to the wider academic community and beyond.",
     "parentId": "supercategory-sharing_and_discovery",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {}
   },
   {
@@ -179,7 +179,7 @@
     "name": "Software",
     "description": "Software, platforms and tools offered-as-a-service or deployed-on-demand.",
     "parentId": "supercategory-sharing_and_discovery",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_software.svg",
       "icon_active": "ic_software_active.svg"
@@ -190,7 +190,7 @@
     "name": "Consultancy & Support",
     "description": "Dedicated professional support for a wide range of scientific disciplines and research activities.",
     "parentId": "supercategory-training_and_support",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_consulting.svg",
       "icon_active": "ic_consulting_active.svg"
@@ -201,7 +201,7 @@
     "name": "Education & Training",
     "description": "Highly-specialized seminars and courses to help advance research knowledge and sharpen scientific skills.",
     "parentId": "supercategory-training_and_support",
-    "type": "CATEGORY",
+    "type": "Category",
     "extras": {
       "icon": "ic_training.svg",
       "icon_active": "ic_training_active.svg"

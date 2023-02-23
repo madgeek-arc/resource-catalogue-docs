@@ -4,7 +4,7 @@
     "name": "Candidate",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Proposed",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Consultation",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "On Hold",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Update Pending",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Accepted",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Operating",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Deprecated",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Abandoned",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Withdrawn",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Rejected",
     "description": null,
     "parentId": null,
-    "type": "IR_STATUS",
+    "type": "Interoperability Record status",
     "extras": {}
   }
 ]

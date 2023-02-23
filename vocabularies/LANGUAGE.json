@@ -4,7 +4,7 @@
     "name": "Afar",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -12,7 +12,7 @@
     "name": "Abkhazian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "Avestan",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Afrikaans",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Akan",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -44,7 +44,7 @@
     "name": "Amharic",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -52,7 +52,7 @@
     "name": "Aragonese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -60,7 +60,7 @@
     "name": "Arabic",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -68,7 +68,7 @@
     "name": "Assamese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -76,7 +76,7 @@
     "name": "Avaric",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -84,7 +84,7 @@
     "name": "Aymara",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -92,7 +92,7 @@
     "name": "Azerbaijani",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -100,7 +100,7 @@
     "name": "Bashkir",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -108,7 +108,7 @@
     "name": "Belarusian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -116,7 +116,7 @@
     "name": "Bulgarian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -124,7 +124,7 @@
     "name": "Bihari",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -132,7 +132,7 @@
     "name": "Bislama",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -140,7 +140,7 @@
     "name": "Bambara",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -148,7 +148,7 @@
     "name": "Bengali",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -156,7 +156,7 @@
     "name": "Tibetan",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -164,7 +164,7 @@
     "name": "Breton",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -172,7 +172,7 @@
     "name": "Bosnian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -180,7 +180,7 @@
     "name": "Catalan",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -188,7 +188,7 @@
     "name": "Chechen",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -196,7 +196,7 @@
     "name": "Chamorro",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -204,7 +204,7 @@
     "name": "Corsican",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -212,7 +212,7 @@
     "name": "Cree",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -220,7 +220,7 @@
     "name": "Czech",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -228,7 +228,7 @@
     "name": "Old Church Slavonic",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -236,7 +236,7 @@
     "name": "Chuvash",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -244,7 +244,7 @@
     "name": "Welsh",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -252,7 +252,7 @@
     "name": "Danish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -260,7 +260,7 @@
     "name": "German",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -268,7 +268,7 @@
     "name": "Divehi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -276,7 +276,7 @@
     "name": "Dzongkha",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -284,7 +284,7 @@
     "name": "Ewe",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -292,7 +292,7 @@
     "name": "Greek",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -300,7 +300,7 @@
     "name": "English",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -308,7 +308,7 @@
     "name": "Esperanto",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -316,7 +316,7 @@
     "name": "Spanish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -324,7 +324,7 @@
     "name": "Estonian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -332,7 +332,7 @@
     "name": "Basque",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -340,7 +340,7 @@
     "name": "Persian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -348,7 +348,7 @@
     "name": "Fula",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -356,7 +356,7 @@
     "name": "Finnish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -364,7 +364,7 @@
     "name": "Fijian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -372,7 +372,7 @@
     "name": "Faroese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -380,7 +380,7 @@
     "name": "French",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -388,7 +388,7 @@
     "name": "Western Frisian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -396,7 +396,7 @@
     "name": "Irish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -404,7 +404,7 @@
     "name": "Galician",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -412,7 +412,7 @@
     "name": "Gaelic",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -420,7 +420,7 @@
     "name": "Guarani",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -428,7 +428,7 @@
     "name": "Gujarati",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -436,7 +436,7 @@
     "name": "Manx",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -444,7 +444,7 @@
     "name": "Hausa",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -452,7 +452,7 @@
     "name": "Hebrew",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -460,7 +460,7 @@
     "name": "Hindi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -468,7 +468,7 @@
     "name": "Hiri Motu",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -476,7 +476,7 @@
     "name": "Croatian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -484,7 +484,7 @@
     "name": "Haitian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -492,7 +492,7 @@
     "name": "Hungarian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -500,7 +500,7 @@
     "name": "Armenian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -508,7 +508,7 @@
     "name": "Herero",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -516,7 +516,7 @@
     "name": "Interlingua",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -524,7 +524,7 @@
     "name": "Indonesian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -532,7 +532,7 @@
     "name": "Interlingue",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -540,7 +540,7 @@
     "name": "Igbo",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -548,7 +548,7 @@
     "name": "Nuosu",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -556,7 +556,7 @@
     "name": "Sichuan Yi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -564,7 +564,7 @@
     "name": "Inupiak",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -572,7 +572,7 @@
     "name": "Ido",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -580,7 +580,7 @@
     "name": "Icelandic",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -588,7 +588,7 @@
     "name": "Italian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -596,7 +596,7 @@
     "name": "Inuktitut",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -604,7 +604,7 @@
     "name": "Japanese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -612,7 +612,7 @@
     "name": "Javanese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -620,7 +620,7 @@
     "name": "Georgian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -628,7 +628,7 @@
     "name": "Kongo",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -636,7 +636,7 @@
     "name": "Kikuyu",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -644,7 +644,7 @@
     "name": "Kwanyama",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -652,7 +652,7 @@
     "name": "Kazakh",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -660,7 +660,7 @@
     "name": "Kalaallisut",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -668,7 +668,7 @@
     "name": "Khmer",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -676,7 +676,7 @@
     "name": "Kannada",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -684,7 +684,7 @@
     "name": "Korean",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -692,7 +692,7 @@
     "name": "Kanuri",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -700,7 +700,7 @@
     "name": "Kashmiri",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -708,7 +708,7 @@
     "name": "Kurdish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -716,7 +716,7 @@
     "name": "Komi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -724,7 +724,7 @@
     "name": "Cornish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -732,7 +732,7 @@
     "name": "Kyrgyz",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -740,7 +740,7 @@
     "name": "Latin",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -748,7 +748,7 @@
     "name": "Luxembourgish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -756,7 +756,7 @@
     "name": "Limburgish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -764,7 +764,7 @@
     "name": "Lingala",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -772,7 +772,7 @@
     "name": "Lao",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -780,7 +780,7 @@
     "name": "Lithuanian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -788,7 +788,7 @@
     "name": "Luba-Katanga",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -796,7 +796,7 @@
     "name": "Latvian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -804,7 +804,7 @@
     "name": "Malagasy",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -812,7 +812,7 @@
     "name": "Marshallese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -820,7 +820,7 @@
     "name": "Maori",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -828,7 +828,7 @@
     "name": "Macedonian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -836,7 +836,7 @@
     "name": "Malayalam",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -844,7 +844,7 @@
     "name": "Mongolian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -852,7 +852,7 @@
     "name": "Marathi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -860,7 +860,7 @@
     "name": "Malay",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -868,7 +868,7 @@
     "name": "Maltese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -876,7 +876,7 @@
     "name": "Burmese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -884,7 +884,7 @@
     "name": "Nauru",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -892,7 +892,7 @@
     "name": "Norwegian Bokmål",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -900,7 +900,7 @@
     "name": "Northern Ndebele",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -908,7 +908,7 @@
     "name": "Nepali",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -916,7 +916,7 @@
     "name": "Ndonga",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -924,7 +924,7 @@
     "name": "Dutch",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -932,7 +932,7 @@
     "name": "Norwegian Nynorsk",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -940,7 +940,7 @@
     "name": "Norwegian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -948,7 +948,7 @@
     "name": "Southern Ndebele",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -956,7 +956,7 @@
     "name": "Navajo",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -964,7 +964,7 @@
     "name": "Chichewa",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -972,7 +972,7 @@
     "name": "Occitan",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -980,7 +980,7 @@
     "name": "Ojibwe",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -988,7 +988,7 @@
     "name": "Oromo",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -996,7 +996,7 @@
     "name": "Oriya",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1004,7 +1004,7 @@
     "name": "Ossetian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1012,7 +1012,7 @@
     "name": "Other",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1020,7 +1020,7 @@
     "name": "Panjabi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1028,7 +1028,7 @@
     "name": "Pāli",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1036,7 +1036,7 @@
     "name": "Polish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1044,7 +1044,7 @@
     "name": "Pashto",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1052,7 +1052,7 @@
     "name": "Portuguese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1060,7 +1060,7 @@
     "name": "Quechua",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1068,7 +1068,7 @@
     "name": "Romansh",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1076,7 +1076,7 @@
     "name": "Kirundi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1084,7 +1084,7 @@
     "name": "Romanian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1092,7 +1092,7 @@
     "name": "Russian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1100,7 +1100,7 @@
     "name": "Kinyarwanda",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1108,7 +1108,7 @@
     "name": "Sanskrit",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1116,7 +1116,7 @@
     "name": "Sardinian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1124,7 +1124,7 @@
     "name": "Sindhi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1132,7 +1132,7 @@
     "name": "Sami",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1140,7 +1140,7 @@
     "name": "Sango",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1148,7 +1148,7 @@
     "name": "Sinhalese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1156,7 +1156,7 @@
     "name": "Slovak",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1164,7 +1164,7 @@
     "name": "Slovenian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1172,7 +1172,7 @@
     "name": "Samoan",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1180,7 +1180,7 @@
     "name": "Shona",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1188,7 +1188,7 @@
     "name": "Somali",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1196,7 +1196,7 @@
     "name": "Albanian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1204,7 +1204,7 @@
     "name": "Serbian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1212,7 +1212,7 @@
     "name": "Swati",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1220,7 +1220,7 @@
     "name": "Sesotho",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1228,7 +1228,7 @@
     "name": "Sundanese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1236,7 +1236,7 @@
     "name": "Swedish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1244,7 +1244,7 @@
     "name": "Swahili",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1252,7 +1252,7 @@
     "name": "Tamil",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1260,7 +1260,7 @@
     "name": "Telugu",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1268,7 +1268,7 @@
     "name": "Tajik",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1276,7 +1276,7 @@
     "name": "Thai",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1284,7 +1284,7 @@
     "name": "Tigrinya",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1292,7 +1292,7 @@
     "name": "Turkmen",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1300,7 +1300,7 @@
     "name": "Tagalog",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1308,7 +1308,7 @@
     "name": "Setswana",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1316,7 +1316,7 @@
     "name": "Tonga",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1324,7 +1324,7 @@
     "name": "Turkish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1332,7 +1332,7 @@
     "name": "Tsonga",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1340,7 +1340,7 @@
     "name": "Tatar",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1348,7 +1348,7 @@
     "name": "Twi",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1356,7 +1356,7 @@
     "name": "Tahitian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1364,7 +1364,7 @@
     "name": "Uyghur",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1372,7 +1372,7 @@
     "name": "Ukrainian",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1380,7 +1380,7 @@
     "name": "Urdu",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1388,7 +1388,7 @@
     "name": "Uzbek",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1396,7 +1396,7 @@
     "name": "Venda",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1404,7 +1404,7 @@
     "name": "Vietnamese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1412,7 +1412,7 @@
     "name": "Volapük",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1420,7 +1420,7 @@
     "name": "Wallon",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1428,7 +1428,7 @@
     "name": "Wolof",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1436,7 +1436,7 @@
     "name": "Xhosa",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1444,7 +1444,7 @@
     "name": "Yiddish",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1452,7 +1452,7 @@
     "name": "Yoruba",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1460,7 +1460,7 @@
     "name": "Zhuang",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1468,7 +1468,7 @@
     "name": "Chinese",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   },
   {
@@ -1476,7 +1476,7 @@
     "name": "Zulu",
     "description": null,
     "parentId": null,
-    "type": "LANGUAGE",
+    "type": "Language",
     "extras": {}
   }
 ]

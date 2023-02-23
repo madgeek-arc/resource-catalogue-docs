@@ -4,7 +4,7 @@
     "name": "Schengen Area",
     "description": "All Schengen Area countries.",
     "parentId": "geographic_location",
-    "type": "REGION",
+    "type": "Region",
     "extras": {}
     },
     {
@@ -12,7 +12,7 @@
     "name": "Europe",
     "description": "All European Countries.",
     "parentId": "geographic_location",
-    "type": "REGION",
+    "type": "Region",
     "extras": {}
   },
   {
@@ -20,7 +20,7 @@
     "name": "European Union",
     "description": "All Countries of the European Union.",
     "parentId": "geographic_location",
-    "type": "REGION",
+    "type": "Region",
     "extras": {}
   },
   {
@@ -28,7 +28,7 @@
     "name": "Euro Zone",
     "description": "All Countries of the Eurozone.",
     "parentId": "geographic_location",
-    "type": "REGION",
+    "type": "Region",
     "extras": {}
   },
   {
@@ -36,7 +36,7 @@
     "name": "Worldwide",
     "description": "All Countries.",
     "parentId": "geographic_location",
-    "type": "REGION",
+    "type": "Region",
     "extras": {}
   }
 ]
