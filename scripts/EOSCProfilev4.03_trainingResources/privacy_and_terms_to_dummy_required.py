@@ -41,13 +41,13 @@ def migrate(json_file, isVersion):
     termsOfUse = resource.find('{http://einfracentral.eu}termsOfUse')
     if termsOfUse is None:
         newtermsOfUse = ET.Element("tns:termsOfUse")
-        newtermsOfUse.text = 'https://www.example.com'
+        newtermsOfUse.text = 'https://wiki.eoscfuture.eu/display/PUBLIC/About+ToU+and+PP'
         resource.append(newtermsOfUse)
     # set dummy value to privacyPolicy field
     privacyPolicy = resource.find('{http://einfracentral.eu}privacyPolicy')
     if privacyPolicy is None:
         newprivacyPolicy = ET.Element("tns:privacyPolicy")
-        newprivacyPolicy.text = 'https://www.example.com'
+        newprivacyPolicy.text = 'https://wiki.eoscfuture.eu/display/PUBLIC/About+ToU+and+PP'
         resource.append(newprivacyPolicy)
 
     root.write('output.xml')
