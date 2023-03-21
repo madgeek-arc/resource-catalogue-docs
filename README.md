@@ -1217,6 +1217,69 @@
       "paymentModel": "URL",
       "pricing": "URL"
     }
+    
+  ### Training Resource:
+    {
+      "id": "(required on PUT only)",
+      "title": "string",
+      "resourceOrganisation": "string",
+      "resourceProviders": [
+        "string"
+      ],
+      "authors": [
+        "string"
+      ],
+      "url": "URL",
+      "urlType": "string",
+      "eoscRelatedServices": [
+        "string"
+      ],
+      "description": "string",
+      "keywords": [
+        "string"
+      ],
+      "license": "string",
+      "accessRights": "string",
+      "versionDate": "Date",
+      "targetGroups": [
+        "string"
+      ],
+      "learningResourceTypes": [
+        "string"
+      ],
+      "learningOutcomes": [
+        "string"
+      ],
+      "expertiseLevel": "string",
+      "contentResourceTypes": [
+        "string"
+      ],
+      "qualifications": [
+        "string"
+      ],
+      "duration": "string",
+      "languages": [
+        "string"
+      ],
+      "geographicalAvailabilities": [
+        "string"
+      ],
+      "scientificDomains": [
+        {
+          "scientificDomain": "string",
+          "scientificSubdomain": "string"
+        }
+      ],
+      "contact": {
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "phone": "string",
+        "position": "string",
+        "organisation": "string"
+      },
+      "catalogueId": "string"
+    }
 
   ### Resource Extras:
     {
@@ -1345,3 +1408,9 @@
   - [TARGET_USER](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TARGET_USER.json)
   - [TEMPLATE_STATE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TEMPLATE_STATE.json)
   - [TRL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TRL.json)
+  - [TR_ACCESS_RIGHT](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_ACCESS_RIGHT.json)
+  - [TR_CONTENT_RESOURCE_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_CONTENT_RESOURCE_TYPE.json)
+  - [TR_DCMI_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_DCMI_TYPE.json)
+  - [TR_EXPERTISE_LEVEL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_EXPERTISE_LEVEL.json)
+  - [TR_QUALIFICATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_QUALIFICATION.json)
+  - [TR_URL_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_URL_TYPE.json)
