@@ -16,8 +16,8 @@
 ## API:
 
 - https://providers.eosc-portal.eu/api, https://api.eosc-portal.eu/
-- https://beta.providers.eosc-portal.eu/api/
 - https://sandbox.providers.eosc-portal.eu/api/
+- https://beta.providers.eosc-portal.eu/api/
 
 ## Controllers:
 
@@ -44,6 +44,13 @@
     - Deletes the Service of the specific Catalogue given its ID:
       ```diff
       /catalogue/{catalogueId}/resource/{id}
+      Params:
+        catalogueId: String (required)
+        id : String (required)
+      ```
+    - Deletes the Training Resource of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/trainingResource/{id}
       Params:
         catalogueId: String (required)
         id : String (required)
@@ -91,6 +98,13 @@
         catalogueId: String (required)
         resourceId : String (required)
       ```
+    - Returns the Training Resource of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/trainingResource/{trainingResourceId}
+      Params:
+        catalogueId: String (required)
+        trainingResourceId : String (required)
+      ```
     - Get a list of all Datasources of the specific Provider of the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/{providerId}/datasource/all
@@ -101,6 +115,13 @@
     - Get a list of all Service of the specific Provider of the specific Catalogue:
       ```diff
       /catalogue/{catalogueId}/{providerId}/resource/all
+      Params:
+        catalogueId: String (required)
+        providerId : String (required)
+      ```
+    - Get a list of all Training Resources of the specific Provider of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/{providerId}/trainingResource/all
       Params:
         catalogueId: String (required)
         providerId : String (required)
@@ -136,6 +157,14 @@
       Params:
         catalogueId: String (required)
       ```
+    - Creates a new Training Resource for the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/trainingResource
+      Body:
+        Training Resource JSON (required)
+      Params:
+        catalogueId: String (required)
+      ```
   - PUT
     - Updates a specific Catalogue:
       ```diff
@@ -168,6 +197,15 @@
       /catalogue/{catalogueId}/resource
       Body:
         Service JSON (required)
+      Params:
+        catalogueId: String (required)
+        comment: String
+      ```
+    - Updates the Training Resource of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/trainingResource
+      Body:
+        Training Resource JSON (required)
       Params:
         catalogueId: String (required)
         comment: String
@@ -353,10 +391,29 @@
         id: String (required)
         catalogue_id: String
       ```
+    - Get a list of all Public Training Resources of the specific Catalogue in the Portal:
+      ```diff
+      /public/trainingResource/all
+      Params:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Public Training Resource of the specific Catalogue given its ID:
+      ```diff
+      /public/trainingResource/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
   
-- ### Resource
+- ### Resource 
   #### CRUD operations for Services
-  (Mapping also supports '/resource')
+  ##### Mapping also supports '/resource'
+  ##### Query GET API calls now support the 'type' path param with values 'service', 'datasource', 'all'
   - DELETE
     - Deletes the Service of the specific Catalogue given its ID:
       ```diff
@@ -377,7 +434,7 @@
           order: String (asc/desc)
           orderField: String (eg. id)
       ```
-    - Get all Resources in the catalogue organized by an attribute:
+    - Get all Services in the catalogue organized by an attribute:
       ```diff
         /service/by/{field}
         Params:
@@ -564,6 +621,62 @@
         Monitoring JSON (required)
       Params:
         catalogue_id: String
+      ```
+
+- ### Training Resource
+  #### CRUD operations for Training Resources
+  - DELETE
+    - Deletes the Training Resource of the specific Catalogue given its ID:
+      ```diff
+      /trainingResource/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+  - GET
+    - Returns a list of all Training Resources of the specific Catalogue in the Portal:
+      ```diff
+        /trainingResource/all
+        Params:
+          catalogue_id: String (required)
+          query: String (Keyword to refine the search)
+          from : int (Starting index in the result set)
+          quantity: int (Quantity to be fetched)
+          order: String (asc/desc)
+          orderField: String (eg. id)
+      ```
+    - Get all Training Resources in the catalogue organized by an attribute:
+      ```diff
+        /trainingResource/by/{field}
+        Params:
+          field: Training Resource field (required)
+      ```
+    - Returns the Training Resource of the specific Catalogue given its ID:
+      ```diff
+        /trainingResource/{id}
+        Params:
+          id: String (required)
+          catalogue_id: String
+      ```
+  - POST
+    - Creates a new EOSC Training Resource:
+      ```diff
+        /trainingResource
+        Body:
+          Training Resource JSON (required)
+    - Validates a Training Resource:
+      ```diff
+      /trainingResource/validate
+      Body:
+        Training Resource JSON (required)
+  - PUT
+    - Updates a specific EOSC Training Resource:
+      ```diff
+      /trainingResource
+      Body:
+        Training Resource JSON (required)
+      Params:
+        comment: String
       ```
 
 - ### Vocabulary   
