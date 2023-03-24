@@ -9,9 +9,9 @@
 
 ## Swagger UI Instances:
 
-- [Production](https://api.eosc-portal.eu/)
-- [Sandbox](https://beta.providers.eosc-portal.eu/api/)
-- [Beta](https://sandbox.providers.eosc-portal.eu/api/)
+- [Production](https://providers.eosc-portal.eu/openapi)
+- [Sandbox](https://beta.providers.eosc-portal.eu/openapi)
+- [Beta](https://sandbox.providers.eosc-portal.eu/openapi)
 
 ## API:
 
