@@ -1,0 +1,18 @@
+[
+  {
+    "id": "service_type-service",
+    "name": "Service",
+    "description": "Services accept input (data), perform processing, and generate one or more outputs (data)",
+    "parentId": null,
+    "type": "Service type",
+    "extras": {}
+  },
+  {
+    "id": "service_type-datasource",
+    "name": "Datasource",
+    "description": "Datasources are EOSC services that host collections of research products",
+    "parentId": null,
+    "type": "Service type",
+    "extras": {}
+  }
+]
