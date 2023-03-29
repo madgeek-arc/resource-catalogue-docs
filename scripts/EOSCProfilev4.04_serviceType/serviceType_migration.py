@@ -38,7 +38,6 @@ def migrate(json_file, isVersion):
     resource = root.find('{http://einfracentral.eu}service')
     serviceType = "service_type-service"
     if resource is None:
-        resource = root.find('{http://einfracentral.eu}datasource')
         serviceType = "service_type-datasource"
 
     # create serviceType xml element
