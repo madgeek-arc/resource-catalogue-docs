@@ -33,7 +33,6 @@ def migrate(json_file, isVersion):
     xml = json_data['payload']
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
-    tree = root.getroot()
 
     catalogue = root.find('{http://einfracentral.eu}catalogue')
 
@@ -47,7 +46,7 @@ def migrate(json_file, isVersion):
 
     # endOfLife field
     endOfLife = ET.Element("tns:endOfLife")
-    endOfLife.text = "string"
+    endOfLife.text = "TBD"
 
     # update Catalogue with the new fields
     catalogue.append(inclusionCriteria)
