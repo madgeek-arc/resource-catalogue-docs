@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ct_compatibility-openaire_3_0",
+    "name": "Openaire 3.0",
+    "description": "Configuration Template compatibility",
+    "parentId": null,
+    "type": "Configuration Template compatibility",
+    "extras": {}
+  },
+  {
+    "id": "ct_compatibility-openaire_4_0",
+    "name": "Openaire 4.0",
+    "description": "Configuration Template compatibility",
+    "parentId": null,
+    "type": "Configuration Template compatibility",
+    "extras": {}
+  },
+  {
+    "id": "ct_compatibility-other",
+    "name": "Other",
+    "description": "Configuration Template compatibility",
+    "parentId": null,
+    "type": "Configuration Template compatibility",
+    "extras": {}
+  }
+]
