@@ -1,7 +1,15 @@
 [
   {
-    "id": "ct_compatibility-openaire_3_0",
-    "name": "Openaire 3.0",
+    "id": "ct_compatibility-driver",
+    "name": "Driver",
+    "description": "Configuration Template compatibility",
+    "parentId": null,
+    "type": "Configuration Template compatibility",
+    "extras": {}
+  },
+  {
+    "id": "ct_compatibility-openaire_2_0_data",
+    "name": "Openaire 2.0 Data",
     "description": "Configuration Template compatibility",
     "parentId": null,
     "type": "Configuration Template compatibility",
@@ -16,8 +24,8 @@
     "extras": {}
   },
   {
-    "id": "ct_compatibility-other",
-    "name": "Other",
+    "id": "ct_compatibility-unknown",
+    "name": "Unknown",
     "description": "Configuration Template compatibility",
     "parentId": null,
     "type": "Configuration Template compatibility",
