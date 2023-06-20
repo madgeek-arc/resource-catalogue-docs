@@ -8,6 +8,14 @@
     "extras": {}
   },
   {
+    "id": "provider_legal_status-charity",
+    "name": "Exempt charity under the Charities Act 2011",
+    "description": null,
+    "parentId": null,
+    "type": "Provider legal status",
+    "extras": {}
+  },
+  {
     "id": "provider_legal_status-consortium",
     "name": "Consortium",
     "description": null,
