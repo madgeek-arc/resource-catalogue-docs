@@ -1,22 +1,27 @@
 ######################################################## IMPORTS #######################################################
 import os
+from dotenv import load_dotenv
 import requests
 import json
-import properties
 import argparse
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup as bs
 import uuid
 ######################################################## IMPORTS #######################################################
 
+
+###################################################### PROPERTIES ######################################################
+BASEDIR = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(BASEDIR, 'properties.env'))
+username = os.getenv('PID_USERNAME')
+key = os.getenv('PID_KEY')
+auth = os.getenv('PID_AUTH')
+prefix = os.getenv('PID_PREFIX')
+api = os.getenv('PID_API')
+###################################################### PROPERTIES ######################################################
+
+
 ##################################################### FUNCTIONS ########################################################
-def get_env(env_name):
-    env = os.environ.get(env_name)
-    if env is None:
-        raise EnvironmentError("Missing environment variable: " + env_name)
-    return env
-
-
 def folder_selection(directory):
     migrationFolders = ['service/']
     # migrationFolders = ['catalogue/', 'provider/', 'service/', 'datasource/', 'training_resource/',
@@ -26,7 +31,7 @@ def folder_selection(directory):
             if file.endswith('.json'):
                 isVersion = False
                 with open(directory + migrationFolder + file, 'r') as json_file:
-                    json_data = migrate(json_file, isVersion)
+                    json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
                     # write to file
                     with open(directory + migrationFolder + file, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
@@ -35,12 +40,13 @@ def folder_selection(directory):
                 versionFiles = os.listdir(directory + migrationFolder + file)
                 for versionFile in versionFiles:
                     with open(directory + migrationFolder + file + '/' + versionFile, 'r') as json_file:
-                        json_data = migrate(json_file, isVersion)
+                        json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
                         # write to file
                         with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
                             json.dump(json_data, json_file, indent=2)
 
-def migrate(json_file, isVersion):
+def migrate(json_file, isVersion, resourceType):
+    global resource
     isPublic = False
     json_data = json.load(json_file)
     xml = json_data['payload']
@@ -48,8 +54,21 @@ def migrate(json_file, isVersion):
     root = ET.ElementTree(ET.fromstring(xml))
     tree = root.getroot()
 
-    resourceId = root.find('{http://einfracentral.eu}id')
-    print(resourceId)
+    # get resource ID from resource type
+    match resourceType:
+        case "catalogue":
+            resource = root.find('{http://einfracentral.eu}catalogue')
+        case "provider":
+            resource = root.find('{http://einfracentral.eu}provider')
+        case "service":
+            resource = root.find('{http://einfracentral.eu}service')
+        case "datasource":
+            resource = root.find('{http://einfracentral.eu}datasource')
+        case "training_resource":
+            resource = root.find('{http://einfracentral.eu}training_resource')
+        case "interoperability_record":
+            resource = root.find('{http://einfracentral.eu}interoperability_record')
+    resourceId = resource.find('{http://einfracentral.eu}id')
     identifiers = root.find('{http://einfracentral.eu}identifiers')
     if identifiers is not None:
         originalId = identifiers.find('{http://einfracentral.eu}originalId')
@@ -92,7 +111,8 @@ def create_alternative_identifier(alternativeIdentifiers, resourceId):
 
 def create_pid(resourceId):
     pid = str(uuid.uuid4())  # DECIDE PID CREATION STRATEGY
-    url = "https://hdl.grnet.gr:8001/api/handles/" + prefix + "/" + pid
+    print(pid)
+    url = api + prefix + "/" + pid
 
     payload = json.dumps({
       "values": [
@@ -102,7 +122,8 @@ def create_pid(resourceId):
           "data": {
             "value": {
               "index": 301,
-              "handle": "21.T15999/ATHINADEMO",
+              "handle": prefix + "/" + username,
+              # [create hdl,delete hdl,read val,modify val,del val,add val,modify admin,del admin,add admin]
               "permissions": "011111110011",
               "format": "admin"
             },
@@ -112,35 +133,26 @@ def create_pid(resourceId):
         {
           "index": 1,
           "type": "id",
-          "data": '"' + resourceId + '"'
+          "data": resourceId.text
         }
         # WE CAN ALSO ADD THE RESOURCE'S URL AS A VALUE
       ]
     })
     headers = {
       'Content-Type': 'application/json',
-      'Authorization': "'" + auth + "'"
+      'Authorization': auth
     }
 
     response = requests.request("PUT", url, headers=headers, data=payload)
-
-    print(response.text)
+    print(payload)
+    print(response)
     return pid
 ##################################################### FUNCTIONS ########################################################
-
-
-###################################################### PROPERTIES ######################################################
-username = get_env('USERNAME')
-key = get_env('KEY')
-auth = get_env('AUTH')
-prefix = get_env('PREFIX')
-###################################################### PROPERTIES ######################################################
 
 
 ######################################################## RUN ###########################################################
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 args = parser.parse_args()
-print(args)
 folder_selection(args.path)
 ######################################################## RUN ###########################################################
