@@ -1,22 +1,22 @@
 ######################################################## IMPORTS #######################################################
+import os
 import requests
 import json
 import properties
 import argparse
 import xml.etree.ElementTree as ET
-import os
 from bs4 import BeautifulSoup as bs
 import uuid
 ######################################################## IMPORTS #######################################################
 
-###################################################### PROPERTIES ######################################################
-username = properties.username
-key = properties.key
-auth = properties.auth
-prefix = properties.prefix
-###################################################### PROPERTIES ######################################################
-
 ##################################################### FUNCTIONS ########################################################
+def get_env(env_name):
+    env = os.environ.get(env_name)
+    if env is None:
+        raise EnvironmentError("Missing environment variable: " + env_name)
+    return env
+
+
 def folder_selection(directory):
     migrationFolders = ['service/']
     # migrationFolders = ['catalogue/', 'provider/', 'service/', 'datasource/', 'training_resource/',
@@ -127,6 +127,15 @@ def create_pid(resourceId):
     print(response.text)
     return pid
 ##################################################### FUNCTIONS ########################################################
+
+
+###################################################### PROPERTIES ######################################################
+username = get_env('USERNAME')
+key = get_env('KEY')
+auth = get_env('AUTH')
+prefix = get_env('PREFIX')
+###################################################### PROPERTIES ######################################################
+
 
 ######################################################## RUN ###########################################################
 parser = argparse.ArgumentParser()
