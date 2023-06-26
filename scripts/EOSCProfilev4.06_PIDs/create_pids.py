@@ -7,6 +7,7 @@ import argparse
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup as bs
 import uuid
+import hashlib
 ######################################################## IMPORTS #######################################################
 
 
@@ -23,7 +24,7 @@ api = os.getenv('PID_API')
 
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
-    migrationFolders = ['service/']
+    migrationFolders = ['provider/']
     # migrationFolders = ['catalogue/', 'provider/', 'service/', 'datasource/', 'training_resource/',
     #                     'interoperability_record/']
     for migrationFolder in migrationFolders:
@@ -32,27 +33,36 @@ def folder_selection(directory):
                 isVersion = False
                 with open(directory + migrationFolder + file, 'r') as json_file:
                     json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
-                    # write to file
-                    with open(directory + migrationFolder + file, 'w') as json_file:
-                        json.dump(json_data, json_file, indent=2)
+                    if json_data is not None:
+                        # write to file
+                        with open(directory + migrationFolder + file, 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
             if file.endswith('-version'):
                 isVersion = True
                 versionFiles = os.listdir(directory + migrationFolder + file)
                 for versionFile in versionFiles:
                     with open(directory + migrationFolder + file + '/' + versionFile, 'r') as json_file:
                         json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
-                        # write to file
-                        with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
-                            json.dump(json_data, json_file, indent=2)
+                        if json_data is not None:
+                            # write to file
+                            with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
+                                json.dump(json_data, json_file, indent=2)
 
 def migrate(json_file, isVersion, resourceType):
     global resource
-    isPublic = False
     json_data = json.load(json_file)
     xml = json_data['payload']
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
     tree = root.getroot()
+
+    # continue migration ONLY for Public resources
+    metadata = root.find('{http://einfracentral.eu}metadata')
+    if metadata is not None:
+        published = metadata.find('{http://einfracentral.eu}published')
+        if published is not None:
+            if published.text == "false":
+                return None
 
     # get resource ID from resource type
     match resourceType:
@@ -71,20 +81,17 @@ def migrate(json_file, isVersion, resourceType):
     resourceId = resource.find('{http://einfracentral.eu}id')
     identifiers = root.find('{http://einfracentral.eu}identifiers')
     if identifiers is not None:
-        originalId = identifiers.find('{http://einfracentral.eu}originalId')
-        if originalId is not None:
-            isPublic = True  # USE IT IF WE NEED DIFFERENT STRATEGY FOR PUBLIC ENTITIES
         alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
         if alternativeIdentifiers is not None:
-            create_alternative_identifier(alternativeIdentifiers, resourceId)
+            create_alternative_identifier(alternativeIdentifiers, resourceId.text)
         else:
             newAlternativeIdentifiers = ET.Element("tns:alternativeIdentifiers")
-            create_alternative_identifier(newAlternativeIdentifiers, resourceId)
+            create_alternative_identifier(newAlternativeIdentifiers, resourceId.text)
             identifiers.append(newAlternativeIdentifiers)
     else:
         newIdentifiers = ET.Element("tns:identifiers")
         newAlternativeIdentifiers = ET.Element("tns:alternativeIdentifiers")
-        create_alternative_identifier(newAlternativeIdentifiers, resourceId)
+        create_alternative_identifier(newAlternativeIdentifiers, resourceId.text)
         newIdentifiers.append(newAlternativeIdentifiers)
         tree.append(newIdentifiers)
 
@@ -109,8 +116,27 @@ def create_alternative_identifier(alternativeIdentifiers, resourceId):
     newAlternativeIdentifier.append(alternativeIdentifierValue)
     alternativeIdentifiers.append(newAlternativeIdentifier)
 
+def generate_short_hash(input_str):
+    try:
+        # Create MD5 hash instance
+        md = hashlib.md5()
+
+        # Generate hash value for the input string
+        md.update(input_str.encode())
+        hash_bytes = md.digest()
+
+        # Convert byte array to a hexadecimal string
+        hash_str = ''.join(format(byte, '02x') for byte in hash_bytes)
+
+        # Return the first 8 characters of the hash string
+        return hash_str[:8]
+    except:
+        # Handle algorithm not found exception
+        print("An error occurred during hash generation. Generating UUID4 instead" + input_str)
+        return str(uuid.uuid4())
+
 def create_pid(resourceId):
-    pid = str(uuid.uuid4())  # DECIDE PID CREATION STRATEGY
+    pid = generate_short_hash(resourceId)
     print(pid)
     url = api + prefix + "/" + pid
 
@@ -133,7 +159,7 @@ def create_pid(resourceId):
         {
           "index": 1,
           "type": "id",
-          "data": resourceId.text
+          "data": resourceId
         }
         # WE CAN ALSO ADD THE RESOURCE'S URL AS A VALUE
       ]
