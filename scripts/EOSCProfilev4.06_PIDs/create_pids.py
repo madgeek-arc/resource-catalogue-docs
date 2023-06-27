@@ -24,9 +24,7 @@ api = os.getenv('PID_API')
 
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
-    migrationFolders = ['provider/']
-    # migrationFolders = ['catalogue/', 'provider/', 'service/', 'datasource/', 'training_resource/',
-    #                     'interoperability_record/']
+    migrationFolders = ['provider/', 'service/', 'datasource/', 'training_resource/', 'interoperability_record/']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
