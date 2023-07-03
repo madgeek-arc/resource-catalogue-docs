@@ -73,9 +73,9 @@ def migrate(json_file, isVersion, resourceType):
         case "datasource":
             resource = root.find('{http://einfracentral.eu}datasource')
         case "training_resource":
-            resource = root.find('{http://einfracentral.eu}training_resource')
+            resource = root.find('{http://einfracentral.eu}trainingResource')
         case "interoperability_record":
-            resource = root.find('{http://einfracentral.eu}interoperability_record')
+            resource = root.find('{http://einfracentral.eu}interoperabilityRecord')
     resourceId = resource.find('{http://einfracentral.eu}id')
     identifiers = root.find('{http://einfracentral.eu}identifiers')
     if identifiers is not None:
