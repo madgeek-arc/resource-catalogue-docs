@@ -1,5 +1,29 @@
 [
   {
+    "id": "approved catalogue",
+    "name": "Approved Catalogue",
+    "description": "Approved Catalogue",
+    "parentId": null,
+    "type": "Catalogue state",
+    "extras": {}
+  },
+  {
+    "id": "pending catalogue",
+    "name": "Pending Catalogue",
+    "description": "Pending Catalogue",
+    "parentId": null,
+    "type": "Catalogue state",
+    "extras": {}
+  },
+  {
+    "id": "rejected catalogue",
+    "name": "Rejected Catalogue",
+    "description": "Rejected Catalogue",
+    "parentId": null,
+    "type": "Catalogue state",
+    "extras": {}
+  },
+  {
     "id": "approved provider",
     "name": "Approved Provider",
     "description": "Approved Provider",
@@ -21,30 +45,6 @@
     "description": "Rejected Provider",
     "parentId": null,
     "type": "Provider state",
-    "extras": {}
-  },
-  {
-    "id": "approved resource",
-    "name": "Approved Resource",
-    "description": "Approved Resource",
-    "parentId": null,
-    "type": "Resource state",
-    "extras": {}
-  },
-  {
-    "id": "pending resource",
-    "name": "Pending Resource",
-    "description": "Pending Resource",
-    "parentId": null,
-    "type": "Resource state",
-    "extras": {}
-  },
-  {
-    "id": "rejected resource",
-    "name": "Rejected Resource",
-    "description": "Rejected Resource",
-    "parentId": null,
-    "type": "Resource state",
     "extras": {}
   },
   {
@@ -80,27 +80,51 @@
     "extras": {}
   },
   {
-    "id": "approved catalogue",
-    "name": "Approved Catalogue",
-    "description": "Approved Catalogue",
+    "id": "approved resource",
+    "name": "Approved Resource",
+    "description": "Approved Resource",
     "parentId": null,
-    "type": "Catalogue state",
+    "type": "Resource state",
     "extras": {}
   },
   {
-    "id": "pending catalogue",
-    "name": "Pending Catalogue",
-    "description": "Pending Catalogue",
+    "id": "pending resource",
+    "name": "Pending Resource",
+    "description": "Pending Resource",
     "parentId": null,
-    "type": "Catalogue state",
+    "type": "Resource state",
     "extras": {}
   },
   {
-    "id": "rejected catalogue",
-    "name": "Rejected Catalogue",
-    "description": "Rejected Catalogue",
+    "id": "rejected resource",
+    "name": "Rejected Resource",
+    "description": "Rejected Resource",
     "parentId": null,
-    "type": "Catalogue state",
+    "type": "Resource state",
+    "extras": {}
+  },
+  {
+    "id": "approved datasource",
+    "name": "Approved Datasource",
+    "description": "Approved Datasource",
+    "parentId": null,
+    "type": "Datasource state",
+    "extras": {}
+  },
+  {
+    "id": "pending datasource",
+    "name": "Pending Datasource",
+    "description": "Pending Datasource",
+    "parentId": null,
+    "type": "Datasource state",
+    "extras": {}
+  },
+  {
+    "id": "rejected datasource",
+    "name": "Rejected Datasource",
+    "description": "Rejected Datasource",
+    "parentId": null,
+    "type": "Datasource state",
     "extras": {}
   },
   {
