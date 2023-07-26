@@ -1,5 +1,7 @@
 ######################################################## IMPORTS #######################################################
 import os
+import threading
+import time
 from dotenv import load_dotenv
 import requests
 import json
@@ -23,28 +25,28 @@ api = os.getenv('PID_API')
 
 
 ##################################################### FUNCTIONS ########################################################
-def folder_selection(directory):
-    migrationFolders = ['provider/', 'service/', 'datasource/', 'training_resource/', 'interoperability_record/']
-    for migrationFolder in migrationFolders:
-        for file in os.listdir(directory + migrationFolder):
-            if file.endswith('.json'):
-                isVersion = False
-                with open(directory + migrationFolder + file, 'r') as json_file:
+def folder_selection(directory, migrationFolder):
+    for file in os.listdir(directory + migrationFolder):
+        if file.endswith('.json'):
+            isVersion = False
+            with open(directory + migrationFolder + file, 'r') as json_file:
+                json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
+                if json_data is not None:
+                    # write to file
+                    with open(directory + migrationFolder + file, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
+        if file.endswith('-version'):
+            isVersion = True
+            versionFiles = os.listdir(directory + migrationFolder + file)
+            for versionFile in versionFiles:
+                with open(directory + migrationFolder + file + '/' + versionFile, 'r') as json_file:
                     json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
                     if json_data is not None:
                         # write to file
-                        with open(directory + migrationFolder + file, 'w') as json_file:
+                        with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
                             json.dump(json_data, json_file, indent=2)
-            if file.endswith('-version'):
-                isVersion = True
-                versionFiles = os.listdir(directory + migrationFolder + file)
-                for versionFile in versionFiles:
-                    with open(directory + migrationFolder + file + '/' + versionFile, 'r') as json_file:
-                        json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
-                        if json_data is not None:
-                            # write to file
-                            with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
-                                json.dump(json_data, json_file, indent=2)
+    return  # close thread
+
 
 def migrate(json_file, isVersion, resourceType):
     global resource
@@ -104,6 +106,7 @@ def migrate(json_file, isVersion, resourceType):
 
     return json_data
 
+
 def create_alternative_identifier(alternativeIdentifiers, resourceId):
     newAlternativeIdentifier = ET.Element("tns:alternativeIdentifier")
     alternativeIdentifierType = ET.Element("tns:type")
@@ -113,6 +116,7 @@ def create_alternative_identifier(alternativeIdentifiers, resourceId):
     newAlternativeIdentifier.append(alternativeIdentifierType)
     newAlternativeIdentifier.append(alternativeIdentifierValue)
     alternativeIdentifiers.append(newAlternativeIdentifier)
+
 
 def generate_short_hash(input_str):
     try:
@@ -133,9 +137,9 @@ def generate_short_hash(input_str):
         print("An error occurred during hash generation. Generating UUID4 instead" + input_str)
         return str(uuid.uuid4())
 
+
 def create_pid(resourceId):
     pid = generate_short_hash(resourceId)
-    print(pid)
     url = api + prefix + "/" + pid
 
     payload = json.dumps({
@@ -162,15 +166,56 @@ def create_pid(resourceId):
         # WE CAN ALSO ADD THE RESOURCE'S URL AS A VALUE
       ]
     })
+
     headers = {
       'Content-Type': 'application/json',
       'Authorization': auth
     }
 
     response = requests.request("PUT", url, headers=headers, data=payload)
-    print(payload)
-    print(response)
+    if response.status_code != 200 and response.status_code != 201:
+        print(response.status_code)
     return pid
+
+
+def create_threads(directory):
+    start = time.process_time()
+    print("Starting at:", start)
+    migrationFolders = ['provider/', 'service/', 'datasource/', 'training_resource/', 'interoperability_record/']
+    t1 = threading.Thread(target=folder_selection, args=(directory, migrationFolders[0]))
+    t2 = threading.Thread(target=folder_selection, args=(directory, migrationFolders[1]))
+    t3 = threading.Thread(target=folder_selection, args=(directory, migrationFolders[2]))
+    t4 = threading.Thread(target=folder_selection, args=(directory, migrationFolders[3]))
+    t5 = threading.Thread(target=folder_selection, args=(directory, migrationFolders[4]))
+    threads = [t1, t2, t3, t4, t5]
+    start_multithreading_execution(threads, start)
+
+
+def start_multithreading_execution(threads, start):
+    for thread in threads:
+        thread.start()
+    check_if_threads_have_finished(threads, start)
+
+
+def check_if_threads_have_finished(threads, start):
+    finished_threads = []
+    while any(thread.is_alive() for thread in threads):
+        for i, thread in enumerate(threads):
+            if not thread.is_alive() and thread not in finished_threads:
+                finished_threads.append(thread)
+                if i == 0:
+                    print("Provider thread has finished at", time.process_time() - start)
+                elif i == 1:
+                    print("Service thread has finished at", time.process_time() - start)
+                elif i == 2:
+                    print("Datasource thread has finished at", time.process_time() - start)
+                elif i == 3:
+                    print("Training Resource thread has finished at", time.process_time() - start)
+                elif i == 4:
+                    print("Interoperability Record thread has finished at", time.process_time() - start)
+
+    print("All threads have finished at", time.process_time() - start)
+    return
 ##################################################### FUNCTIONS ########################################################
 
 
@@ -178,5 +223,5 @@ def create_pid(resourceId):
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 args = parser.parse_args()
-folder_selection(args.path)
+create_threads(args.path)
 ######################################################## RUN ###########################################################
