@@ -95,8 +95,8 @@ def migrate(json_file, isVersion, resourceType):
         newIdentifiers.append(newAlternativeIdentifiers)
         tree.append(newIdentifiers)
 
-    root.write('output.xml')
-    with open("output.xml", "r") as xml_file:
+    root.write(resourceType + '-output.xml')
+    with open(resourceType + "-output.xml", "r") as xml_file:
         content = xml_file.readlines()
         content = "".join(content)
         bs_content = bs(content, "xml")
