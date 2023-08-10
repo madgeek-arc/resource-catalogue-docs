@@ -6,6 +6,7 @@
 # Strategy -> each Datasource json file to be split into 2 different json files (1 Service and 1 Datasource)
 
       # NO NEED TO KEEP VERSION FOLDERS, MAKES IT MORE COMPLICATED WITH FILE/FOLDER RENAMES AND PARENT IDS #
+                    # AFTER SCRIPT EXECUTION, CREATE THE CORRESPONDING PUBLIC SERVICES #
 
 ######################################################## Changes #######################################################
 
@@ -54,7 +55,6 @@ def folder_selection(directory):
                 os.rename(directory + datasourceFolder + file + '/' + versionFile,
                           directory + datasourceFolder + file + '/' + data[1])
         if not isVersion:
-            # print("Rename Version Folder for " + file + " to " + data[1])
             os.rename(directory + datasourceFolder + file, directory + datasourceFolder + data[1])
 
     # Migrate Services
@@ -185,13 +185,9 @@ def migrate_to_datasource(json_file, isVersion):
 
     # change core ID
     newCoreId = create_new_id()
-    oldCoreId = json_data['id']
     json_data['id'] = newCoreId
     if isVersion:
         json_data["resource"]["id"] = newCoreId
-        # print("After the execution .json file and -version folder names must change from", oldCoreId, "to", newCoreId)
-    # else:
-        # print("After the execution .json file must change from", oldCoreId, "to", newCoreId)
 
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
@@ -209,6 +205,8 @@ def migrate_to_service(json_file, isVersion):
     xml = json_data['payload']
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
+
+    print("Create Public Service for the entity: " + json_data['id'])
 
     datasource = root.find('{http://einfracentral.eu}datasource')
 
