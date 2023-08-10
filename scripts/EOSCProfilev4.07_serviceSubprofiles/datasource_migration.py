@@ -6,7 +6,6 @@
 # Strategy -> each Datasource json file to be split into 2 different json files (1 Service and 1 Datasource)
 
       # NO NEED TO KEEP VERSION FOLDERS, MAKES IT MORE COMPLICATED WITH FILE/FOLDER RENAMES AND PARENT IDS #
-                    # AFTER SCRIPT EXECUTION, CREATE THE CORRESPONDING PUBLIC SERVICES #
 
 ######################################################## Changes #######################################################
 
