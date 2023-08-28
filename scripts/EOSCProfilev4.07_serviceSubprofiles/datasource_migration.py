@@ -5,7 +5,7 @@
 
 # Strategy -> each Datasource json file to be split into 2 different json files (1 Service and 1 Datasource)
 
-      # NO NEED TO KEEP VERSION FOLDERS, MAKES IT MORE COMPLICATED WITH FILE/FOLDER RENAMES AND PARENT IDS #
+                                    # DELETE DATASOURCE VERSION FOLDERS #
 
 ######################################################## Changes #######################################################
 
@@ -29,6 +29,8 @@ def folder_selection(directory):
     # existing Datasoure folder (copy). Its contents will be updated to Services
     serviceFolder = '/datasource_to_service/'
     copy_tree(directory + datasourceFolder, directory + serviceFolder)
+    # folders we need to ONLY remove the serviceType field
+    otherFolders = ['/service/', '/pending_service']
 
     # Migrate Datasources
     for file in os.listdir(directory + datasourceFolder):
@@ -74,6 +76,27 @@ def folder_selection(directory):
                     # write to file
                     with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
+
+    # Migrate other folders
+    # for migrationFolder in otherFolders:
+    #     for file in os.listdir(directory + migrationFolder):
+    #         if file.endswith('.json'):
+    #             isVersion = False
+    #             with open(directory + migrationFolder + file, 'r') as json_file:
+    #                 json_data = migrate_other_folders(json_file, isVersion)
+    #                 # write to file
+    #                 with open(directory + migrationFolder + file, 'w') as json_file:
+    #                     json.dump(json_data, json_file, indent=2)
+    #         if file.endswith('-version'):
+    #             isVersion = True
+    #             versionFiles = os.listdir(directory + migrationFolder + file)
+    #             for versionFile in versionFiles:
+    #                 with open(directory + migrationFolder + file + '/' + versionFile, 'r') as json_file:
+    #                     json_data = migrate_other_folders(json_file, isVersion)
+    #                     # write to file
+    #                     with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
+    #                         json.dump(json_data, json_file, indent=2)
+
 
 def migrate_to_datasource(json_file, isVersion):
     json_data = json.load(json_file)
@@ -199,13 +222,15 @@ def migrate_to_datasource(json_file, isVersion):
 
     return json_data, newCoreId+'.json'
 
+
 def migrate_to_service(json_file, isVersion):
     json_data = json.load(json_file)
     xml = json_data['payload']
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
 
-    print("Create Public Service for the entity: " + json_data['id'])
+    if not isVersion:
+        print("Create Public Service for the entity: " + json_data['id'])
 
     datasource = root.find('{http://einfracentral.eu}datasource')
 
@@ -227,12 +252,8 @@ def migrate_to_service(json_file, isVersion):
               researchProductAccessPolicies, researchProductMetadataLicensing, researchProductMetadataAccessPolicies]
     remove_service_related_fields(datasource, fields)
 
-    # migrate serviceType to Datasource
-    resourceExtras = root.find('{http://einfracentral.eu}resourceExtras')
-    if resourceExtras is not None:
-        serviceType = resourceExtras.find('{http://einfracentral.eu}serviceType')
-        if serviceType is not None:
-            serviceType.text = 'service_type-service'
+    # remove serviceType field from ResourceExtras
+    remove_service_type_field(root)
 
     # format ID
     id = datasource.find('{http://einfracentral.eu}id')
@@ -263,13 +284,43 @@ def migrate_to_service(json_file, isVersion):
 
     return json_data
 
+
+def migrate_other_folders(json_file, isVersion):
+    json_data = json.load(json_file)
+    xml = json_data['payload']
+    ET.register_namespace("tns", "http://einfracentral.eu")
+    root = ET.ElementTree(ET.fromstring(xml))
+    remove_service_type_field(root)
+
+    root.write('output.xml')
+    with open("output.xml", "r") as xml_file:
+        content = xml_file.readlines()
+        content = "".join(content)
+        bs_content = bs(content, "xml")
+        json_data['payload'] = str(bs_content)
+        if isVersion:
+            json_data['resource']['payload'] = json_data['payload']
+
+    return json_data
+
+
 def create_new_id():
     return str(uuid.uuid4())
+
 
 def remove_service_related_fields(datasource, fields):
     for field in fields:
         if field is not None:
             datasource.remove(field)
+
+
+def remove_service_type_field(root):
+    resourceExtras = root.find('{http://einfracentral.eu}resourceExtras')
+    if resourceExtras is not None:
+        serviceType = resourceExtras.find('{http://einfracentral.eu}serviceType')
+        if serviceType is not None:
+            resourceExtras.remove(serviceType)
+
 
 def format_string(provider, serviceId):
     # Remove accents, replace consecutive whitespaces with a single space, strip trailing whitespaces
