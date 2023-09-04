@@ -18,19 +18,74 @@ import argparse
 from distutils.dir_util import copy_tree
 import uuid
 from unidecode import unidecode  # removes accents
+from multiprocessing import Pool
+import time
 ######################################################## IMPORTS #######################################################
 
+###################################################### GLOBALS #########################################################
+lowLevelIDtoServiceIdMap = dict()
+
+# existing Datasoure folder. Its contents will be updated according to the new Datasource object
+datasourceFolder = '/datasource/'
+# existing Datasoure folder (copy). Its contents will be updated to Services
+serviceFolder = '/datasource_to_service/'
+# folders we need to ONLY remove the serviceType field
+otherFolders = ['/service/', '/pending_service/']
+###################################################### GLOBALS #########################################################
+
 ##################################################### FUNCTIONS ########################################################
+def fillLowLevelIds():
+    for file in os.listdir(args.path + datasourceFolder):
+        if file.endswith('.json'):
+            with open(args.path + datasourceFolder + file, 'r') as json_file:
+                json_data = json.load(json_file)
+                xml = json_data['payload']
+                ET.register_namespace("tns", "http://einfracentral.eu")
+                root = ET.ElementTree(ET.fromstring(xml))
+
+                datasource = root.find('{http://einfracentral.eu}datasource')
+
+                # format ID
+                id = datasource.find('{http://einfracentral.eu}id')
+
+                # create Service ID (concerning the Service ID creation process)
+                abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
+                resourceOrganisation = datasource.find('{http://einfracentral.eu}resourceOrganisation')
+                serviceId = ET.Element("tns:serviceId")
+                if abbreviation is not None and resourceOrganisation is not None:
+                    if abbreviation.text is not None and resourceOrganisation.text is not None:
+                        serviceId.text = format_string(resourceOrganisation.text, abbreviation.text)
+
+                metadata = root.find('{http://einfracentral.eu}metadata')
+                if metadata is not None:
+                    published = metadata.find('{http://einfracentral.eu}published')
+                    if published is not None:
+                        if published.text == 'false':
+                            lowLevelIDtoServiceIdMap[serviceId.text] = id.text.split(".")[1]
+
 def folder_selection(directory):
     global isVersion
 
-    # existing Datasoure folder. Its contents will be updated according to the new Datasource object
-    datasourceFolder = '/datasource/'
-    # existing Datasoure folder (copy). Its contents will be updated to Services
-    serviceFolder = '/datasource_to_service/'
     copy_tree(directory + datasourceFolder, directory + serviceFolder)
-    # folders we need to ONLY remove the serviceType field
-    otherFolders = ['/service/', '/pending_service']
+
+    # Migrate Services
+    # for file in os.listdir(directory + serviceFolder):
+    #     if file.endswith('.json'):
+    #         isVersion = False
+    #         with open(directory + serviceFolder + file, 'r') as json_file:
+    #             json_data = migrate_to_service(json_file, isVersion)
+    #             # write to file
+    #             with open(directory + serviceFolder + file, 'w') as json_file:
+    #                 json.dump(json_data, json_file, indent=2)
+    #     if file.endswith('-version'):
+    #         isVersion = True
+    #         versionFiles = os.listdir(directory + serviceFolder + file)
+    #         for versionFile in versionFiles:
+    #             with open(directory + serviceFolder + file + '/' + versionFile, 'r') as json_file:
+    #                 json_data = migrate_to_service(json_file, isVersion)
+    #                 # write to file
+    #                 with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
+    #                     json.dump(json_data, json_file, indent=2)
 
     # Migrate Datasources
     for file in os.listdir(directory + datasourceFolder):
@@ -58,47 +113,91 @@ def folder_selection(directory):
         if not isVersion:
             os.rename(directory + datasourceFolder + file, directory + datasourceFolder + data[1])
 
-    # Migrate Services
-    for file in os.listdir(directory + serviceFolder):
-        if file.endswith('.json'):
-            isVersion = False
-            with open(directory + serviceFolder + file, 'r') as json_file:
-                json_data = migrate_to_service(json_file, isVersion)
-                # write to file
-                with open(directory + serviceFolder + file, 'w') as json_file:
-                    json.dump(json_data, json_file, indent=2)
-        if file.endswith('-version'):
-            isVersion = True
-            versionFiles = os.listdir(directory + serviceFolder + file)
-            for versionFile in versionFiles:
-                with open(directory + serviceFolder + file + '/' + versionFile, 'r') as json_file:
-                    json_data = migrate_to_service(json_file, isVersion)
-                    # write to file
-                    with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
-                        json.dump(json_data, json_file, indent=2)
-
     # Migrate other folders
-    # for migrationFolder in otherFolders:
-    #     for file in os.listdir(directory + migrationFolder):
-    #         if file.endswith('.json'):
-    #             isVersion = False
-    #             with open(directory + migrationFolder + file, 'r') as json_file:
-    #                 json_data = migrate_other_folders(json_file, isVersion)
-    #                 # write to file
-    #                 with open(directory + migrationFolder + file, 'w') as json_file:
-    #                     json.dump(json_data, json_file, indent=2)
-    #         if file.endswith('-version'):
-    #             isVersion = True
-    #             versionFiles = os.listdir(directory + migrationFolder + file)
-    #             for versionFile in versionFiles:
-    #                 with open(directory + migrationFolder + file + '/' + versionFile, 'r') as json_file:
-    #                     json_data = migrate_other_folders(json_file, isVersion)
-    #                     # write to file
-    #                     with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
-    #                         json.dump(json_data, json_file, indent=2)
+    # p = Pool(args.cores)
+    # p.map(migrate_other_folders, [otherFolders])
+
+
+def migrate_to_service(json_file, isVersion):
+    json_data = json.load(json_file)
+    xml = json_data['payload']
+    ET.register_namespace("tns", "http://einfracentral.eu")
+    root = ET.ElementTree(ET.fromstring(xml))
+    tree = root.getroot()
+
+    datasource = root.find('{http://einfracentral.eu}datasource')
+
+    # delete Datasource related fields
+    submissionPolicyURL = datasource.find('{http://einfracentral.eu}submissionPolicyURL')
+    preservationPolicyURL = datasource.find('{http://einfracentral.eu}preservationPolicyURL')
+    versionControl = datasource.find('{http://einfracentral.eu}versionControl')
+    persistentIdentitySystems = datasource.find('{http://einfracentral.eu}persistentIdentitySystems')
+    jurisdiction = datasource.find('{http://einfracentral.eu}jurisdiction')
+    datasourceClassification = datasource.find('{http://einfracentral.eu}datasourceClassification')
+    researchEntityTypes = datasource.find('{http://einfracentral.eu}researchEntityTypes')
+    thematic = datasource.find('{http://einfracentral.eu}thematic')
+    researchProductLicensings = datasource.find('{http://einfracentral.eu}researchProductLicensings')
+    researchProductAccessPolicies = datasource.find('{http://einfracentral.eu}researchProductAccessPolicies')
+    researchProductMetadataLicensing = datasource.find('{http://einfracentral.eu}researchProductMetadataLicensing')
+    researchProductMetadataAccessPolicies = datasource.find('{http://einfracentral.eu}researchProductMetadataAccessPolicies')
+    fields = [submissionPolicyURL, preservationPolicyURL, versionControl, persistentIdentitySystems, jurisdiction,
+              datasourceClassification, researchEntityTypes, thematic, researchProductLicensings,
+              researchProductAccessPolicies, researchProductMetadataLicensing, researchProductMetadataAccessPolicies]
+    remove_unwanted_fields(datasource, fields)
+
+    # remove serviceType field from ResourceExtras
+    remove_service_type_field(root)
+
+    # format ID
+    id = datasource.find('{http://einfracentral.eu}id')
+    abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
+    resourceOrganisation = datasource.find('{http://einfracentral.eu}resourceOrganisation')
+    if id is not None:
+        if abbreviation is not None and resourceOrganisation is not None:
+            if abbreviation.text is not None and resourceOrganisation.text is not None:
+                id.text = format_string(resourceOrganisation.text, abbreviation.text)
+
+    # if Service is Public update its originalId with the new Service ID
+    metadata = root.find('{http://einfracentral.eu}metadata')
+    if metadata is not None:
+        published = metadata.find('{http://einfracentral.eu}published')
+        if published is not None:
+            if published.text == 'true':
+                identifiers = root.find('{http://einfracentral.eu}identifiers')
+                if identifiers is not None:
+                    originalId = identifiers.find('{http://einfracentral.eu}originalId')
+                    if originalId is not None:
+                        # remove Catalogue ID
+                        publicId = format_string(resourceOrganisation.text, abbreviation.text)
+                        originalId.text = publicId.split(".")[1] + "." + publicId.split(".")[2]
+
+    # add LoggingInfo about migration
+    tree.append(add_logging_info_registration())
+
+    # change Payload's tags
+    root.getroot().tag = "{http://einfracentral.eu}serviceBundle"
+    datasource.tag = '{http://einfracentral.eu}service'
+
+    # change resourceTypeName
+    json_data['resourceTypeName'] = 'service'
+    if isVersion:
+        json_data["resource"]["resourceTypeName"] = 'service'
+
+    sort(tree)
+    root.write('output.xml')
+    with open("output.xml", "r") as xml_file:
+        content = xml_file.readlines()
+        content = "".join(content)
+        bs_content = bs(content, "xml")
+        json_data['payload'] = str(bs_content)
+        if isVersion:
+            json_data['resource']['payload'] = json_data['payload']
+
+    return json_data
 
 
 def migrate_to_datasource(json_file, isVersion):
+    global published
     json_data = json.load(json_file)
     xml = json_data['payload']
     ET.register_namespace("tns", "http://einfracentral.eu")
@@ -123,17 +222,6 @@ def migrate_to_datasource(json_file, isVersion):
     if resourceExtras is not None:
         tree.remove(resourceExtras)
 
-    # remove identifiers field
-    identifiers = root.find('{http://einfracentral.eu}identifiers')
-    if identifiers is not None:
-        tree.remove(identifiers)
-
-    # create Datasource ID
-    id = datasource.find('{http://einfracentral.eu}id')
-    if id is not None:
-        if id.text is not None:
-            id.text = create_new_id()
-
     # create Service ID (concerning the Service ID creation process)
     abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
     resourceOrganisation = datasource.find('{http://einfracentral.eu}resourceOrganisation')
@@ -142,6 +230,29 @@ def migrate_to_datasource(json_file, isVersion):
         if abbreviation.text is not None and resourceOrganisation.text is not None:
             serviceId.text = format_string(resourceOrganisation.text, abbreviation.text)
     datasource.append(serviceId)
+
+    # if Datasource is Public update its originalId with the new Datasource ID
+    metadata = root.find('{http://einfracentral.eu}metadata')
+    if metadata is not None:
+        published = metadata.find('{http://einfracentral.eu}published')
+        if published is not None:
+            if published.text == 'true':
+                identifiers = root.find('{http://einfracentral.eu}identifiers')
+                if identifiers is not None:
+                    originalId = identifiers.find('{http://einfracentral.eu}originalId')
+                    if originalId is not None:
+                        lowLevelServiceId = serviceId.text.split(".")[1] + "." + serviceId.text.split(".")[2]
+                        if lowLevelServiceId in lowLevelIDtoServiceIdMap:
+                            originalId.text = lowLevelIDtoServiceIdMap[lowLevelServiceId]
+
+    # create Datasource ID
+    id = datasource.find('{http://einfracentral.eu}id')
+    if id is not None:
+        if id.text is not None:
+            if published.text == 'false':
+                id.text = id.text.split(".")[1]
+            else:
+                id.text = id.text.split(".")[0] + "." + id.text.split(".")[2]
 
     # migrate catalogueId
     # same field name no need to do anything
@@ -203,7 +314,10 @@ def migrate_to_datasource(json_file, isVersion):
               relatedPlatforms, fundingBody, fundingPrograms, grantProjectNames, helpdeskPage, userManual, termsOfUse,
               privacyPolicy, accessPolicy, resourceLevel, trainingInformation, statusMonitoring, maintenance, orderType,
               order, paymentModel, pricing]
-    remove_service_related_fields(datasource, fields)
+    remove_unwanted_fields(datasource, fields)
+
+    # add LoggingInfo about migration
+    tree.append(add_logging_info_registration())
 
     # change core ID
     newCoreId = create_new_id()
@@ -211,6 +325,7 @@ def migrate_to_datasource(json_file, isVersion):
     if isVersion:
         json_data["resource"]["id"] = newCoreId
 
+    sort(tree)
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
         content = xml_file.readlines()
@@ -223,69 +338,28 @@ def migrate_to_datasource(json_file, isVersion):
     return json_data, newCoreId+'.json'
 
 
-def migrate_to_service(json_file, isVersion):
-    json_data = json.load(json_file)
-    xml = json_data['payload']
-    ET.register_namespace("tns", "http://einfracentral.eu")
-    root = ET.ElementTree(ET.fromstring(xml))
-
-    if not isVersion:
-        print("Create Public Service for the entity: " + json_data['id'])
-
-    datasource = root.find('{http://einfracentral.eu}datasource')
-
-    # delete Datasource related fields
-    submissionPolicyURL = datasource.find('{http://einfracentral.eu}submissionPolicyURL')
-    preservationPolicyURL = datasource.find('{http://einfracentral.eu}preservationPolicyURL')
-    versionControl = datasource.find('{http://einfracentral.eu}versionControl')
-    persistentIdentitySystems = datasource.find('{http://einfracentral.eu}persistentIdentitySystems')
-    jurisdiction = datasource.find('{http://einfracentral.eu}jurisdiction')
-    datasourceClassification = datasource.find('{http://einfracentral.eu}datasourceClassification')
-    researchEntityTypes = datasource.find('{http://einfracentral.eu}researchEntityTypes')
-    thematic = datasource.find('{http://einfracentral.eu}thematic')
-    researchProductLicensings = datasource.find('{http://einfracentral.eu}researchProductLicensings')
-    researchProductAccessPolicies = datasource.find('{http://einfracentral.eu}researchProductAccessPolicies')
-    researchProductMetadataLicensing = datasource.find('{http://einfracentral.eu}researchProductMetadataLicensing')
-    researchProductMetadataAccessPolicies = datasource.find('{http://einfracentral.eu}researchProductMetadataAccessPolicies')
-    fields = [submissionPolicyURL, preservationPolicyURL, versionControl, persistentIdentitySystems, jurisdiction,
-              datasourceClassification, researchEntityTypes, thematic, researchProductLicensings,
-              researchProductAccessPolicies, researchProductMetadataLicensing, researchProductMetadataAccessPolicies]
-    remove_service_related_fields(datasource, fields)
-
-    # remove serviceType field from ResourceExtras
-    remove_service_type_field(root)
-
-    # format ID
-    id = datasource.find('{http://einfracentral.eu}id')
-    if id is not None:
-        abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
-        resourceOrganisation = datasource.find('{http://einfracentral.eu}resourceOrganisation')
-        if abbreviation is not None and resourceOrganisation is not None:
-            if abbreviation.text is not None and resourceOrganisation.text is not None:
-                id.text = format_string(resourceOrganisation.text, abbreviation.text)
-
-    # change Payload's tags
-    root.getroot().tag = "{http://einfracentral.eu}serviceBundle"
-    datasource.tag = '{http://einfracentral.eu}service'
-
-    # change resourceTypeName
-    json_data['resourceTypeName'] = 'service'
-    if isVersion:
-        json_data["resource"]["resourceTypeName"] = 'service'
-
-    root.write('output.xml')
-    with open("output.xml", "r") as xml_file:
-        content = xml_file.readlines()
-        content = "".join(content)
-        bs_content = bs(content, "xml")
-        json_data['payload'] = str(bs_content)
-        if isVersion:
-            json_data['resource']['payload'] = json_data['payload']
-
-    return json_data
+def migrate_other_folders(otherFolders):
+    for migrationFolder in otherFolders:
+        for file in os.listdir(args.path + migrationFolder):
+            if file.endswith('.json'):
+                isVersion = False
+                with open(args.path + migrationFolder + file, 'r') as json_file:
+                    json_data = migrate_service_related_folders(json_file, isVersion)
+                    # write to file
+                    with open(args.path + migrationFolder + file, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
+            if file.endswith('-version'):
+                isVersion = True
+                versionFiles = os.listdir(args.path + migrationFolder + file)
+                for versionFile in versionFiles:
+                    with open(args.path + migrationFolder + file + '/' + versionFile, 'r') as json_file:
+                        json_data = migrate_service_related_folders(json_file, isVersion)
+                        # write to file
+                        with open(args.path + migrationFolder + file + '/' + versionFile, 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
 
 
-def migrate_other_folders(json_file, isVersion):
+def migrate_service_related_folders(json_file, isVersion):
     json_data = json.load(json_file)
     xml = json_data['payload']
     ET.register_namespace("tns", "http://einfracentral.eu")
@@ -308,10 +382,10 @@ def create_new_id():
     return str(uuid.uuid4())
 
 
-def remove_service_related_fields(datasource, fields):
+def remove_unwanted_fields(resource, fields):
     for field in fields:
         if field is not None:
-            datasource.remove(field)
+            resource.remove(field)
 
 
 def remove_service_type_field(root):
@@ -331,12 +405,52 @@ def format_string(provider, serviceId):
     formatted_serviceId = formatted_serviceId.replace(" ", "_").lower()
 
     return f"{provider}.{formatted_serviceId}"
+
+
+def add_logging_info_registration():
+    loggingInfo = ET.Element("tns:loggingInfo")
+    actionType = ET.Element("tns:actionType")
+    actionType.text = "migrated"
+    comment = ET.Element("tns:comment")
+    comment.text = "Migration to Service sub-profiles"
+    date = ET.Element("tns:date")
+    date.text = str(int(time.time()))
+    type = ET.Element("tns:type")
+    type.text = "migrate"
+    userRole = ET.Element("tns:userRole")
+    userRole.text = "admin"
+    loggingInfo.append(actionType)
+    loggingInfo.append(comment)
+    loggingInfo.append(date)
+    loggingInfo.append(type)
+    loggingInfo.append(userRole)
+    return loggingInfo
+
+
+def sort(root):
+    sort_children_by_tag_name(root)
+    sorted_tree = ET.ElementTree(root)
+    return sorted_tree
+
+
+def sort_children_by_tag_name(element):
+    sorted_children = sorted(element, key=sort_elements_by_tag_name)
+    for child in sorted_children:
+        sort_children_by_tag_name(child)
+    element[:] = sorted_children  # Replace the original children with the sorted ones
+
+
+def sort_elements_by_tag_name(element):
+    # Extract the part after "tns:" and sort based on it
+    return element.tag.split("tns:")[-1]
 ##################################################### FUNCTIONS ########################################################
 
 
 ######################################################## RUN ###########################################################
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
+parser.add_argument("-c", "--cores", help="number of cores", type=int, required=False)
 args = parser.parse_args()
+fillLowLevelIds()
 folder_selection(args.path)
 ######################################################## RUN ###########################################################
