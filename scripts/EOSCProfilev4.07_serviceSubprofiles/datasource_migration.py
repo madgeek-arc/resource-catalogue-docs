@@ -69,23 +69,23 @@ def folder_selection(directory):
     copy_tree(directory + datasourceFolder, directory + serviceFolder)
 
     # Migrate Services
-    # for file in os.listdir(directory + serviceFolder):
-    #     if file.endswith('.json'):
-    #         isVersion = False
-    #         with open(directory + serviceFolder + file, 'r') as json_file:
-    #             json_data = migrate_to_service(json_file, isVersion)
-    #             # write to file
-    #             with open(directory + serviceFolder + file, 'w') as json_file:
-    #                 json.dump(json_data, json_file, indent=2)
-    #     if file.endswith('-version'):
-    #         isVersion = True
-    #         versionFiles = os.listdir(directory + serviceFolder + file)
-    #         for versionFile in versionFiles:
-    #             with open(directory + serviceFolder + file + '/' + versionFile, 'r') as json_file:
-    #                 json_data = migrate_to_service(json_file, isVersion)
-    #                 # write to file
-    #                 with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
-    #                     json.dump(json_data, json_file, indent=2)
+    for file in os.listdir(directory + serviceFolder):
+        if file.endswith('.json'):
+            isVersion = False
+            with open(directory + serviceFolder + file, 'r') as json_file:
+                json_data = migrate_to_service(json_file, isVersion)
+                # write to file
+                with open(directory + serviceFolder + file, 'w') as json_file:
+                    json.dump(json_data, json_file, indent=2)
+        if file.endswith('-version'):
+            isVersion = True
+            versionFiles = os.listdir(directory + serviceFolder + file)
+            for versionFile in versionFiles:
+                with open(directory + serviceFolder + file + '/' + versionFile, 'r') as json_file:
+                    json_data = migrate_to_service(json_file, isVersion)
+                    # write to file
+                    with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
 
     # Migrate Datasources
     for file in os.listdir(directory + datasourceFolder):
@@ -114,8 +114,8 @@ def folder_selection(directory):
             os.rename(directory + datasourceFolder + file, directory + datasourceFolder + data[1])
 
     # Migrate other folders
-    # p = Pool(args.cores)
-    # p.map(migrate_other_folders, [otherFolders])
+    p = Pool(args.cores)
+    p.map(migrate_other_folders, [otherFolders])
 
 
 def migrate_to_service(json_file, isVersion):
@@ -171,9 +171,6 @@ def migrate_to_service(json_file, isVersion):
                         publicId = format_string(resourceOrganisation.text, abbreviation.text)
                         originalId.text = publicId.split(".")[1] + "." + publicId.split(".")[2]
 
-    # add LoggingInfo about migration
-    tree.append(add_logging_info_registration())
-
     # change Payload's tags
     root.getroot().tag = "{http://einfracentral.eu}serviceBundle"
     datasource.tag = '{http://einfracentral.eu}service'
@@ -183,7 +180,9 @@ def migrate_to_service(json_file, isVersion):
     if isVersion:
         json_data["resource"]["resourceTypeName"] = 'service'
 
-    sort(tree)
+    # sort loggingInfo by date && append new 'migration' loggingInfo
+    update_and_sort_logging_info_list(root, tree)
+
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
         content = xml_file.readlines()
@@ -316,16 +315,15 @@ def migrate_to_datasource(json_file, isVersion):
               order, paymentModel, pricing]
     remove_unwanted_fields(datasource, fields)
 
-    # add LoggingInfo about migration
-    tree.append(add_logging_info_registration())
-
     # change core ID
     newCoreId = create_new_id()
     json_data['id'] = newCoreId
     if isVersion:
         json_data["resource"]["id"] = newCoreId
 
-    sort(tree)
+    # sort loggingInfo by date && append new 'migration' loggingInfo
+    update_and_sort_logging_info_list(root, tree)
+
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
         content = xml_file.readlines()
@@ -407,6 +405,16 @@ def format_string(provider, serviceId):
     return f"{provider}.{formatted_serviceId}"
 
 
+def update_and_sort_logging_info_list(root, tree):
+    sorted_logging_info = sorted(root.findall('.//{http://einfracentral.eu}loggingInfo'),
+                                 key=lambda x: int(x.find('{http://einfracentral.eu}date').text))
+    for elem in root.findall('.//{http://einfracentral.eu}loggingInfo'):
+        tree.remove(elem)
+    for logging_info in sorted_logging_info:
+        tree.append(logging_info)
+    tree.append(add_logging_info_registration())
+
+
 def add_logging_info_registration():
     loggingInfo = ET.Element("tns:loggingInfo")
     actionType = ET.Element("tns:actionType")
@@ -425,24 +433,6 @@ def add_logging_info_registration():
     loggingInfo.append(type)
     loggingInfo.append(userRole)
     return loggingInfo
-
-
-def sort(root):
-    sort_children_by_tag_name(root)
-    sorted_tree = ET.ElementTree(root)
-    return sorted_tree
-
-
-def sort_children_by_tag_name(element):
-    sorted_children = sorted(element, key=sort_elements_by_tag_name)
-    for child in sorted_children:
-        sort_children_by_tag_name(child)
-    element[:] = sorted_children  # Replace the original children with the sorted ones
-
-
-def sort_elements_by_tag_name(element):
-    # Extract the part after "tns:" and sort based on it
-    return element.tag.split("tns:")[-1]
 ##################################################### FUNCTIONS ########################################################
 
 
