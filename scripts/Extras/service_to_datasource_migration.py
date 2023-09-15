@@ -7,23 +7,25 @@ import argparse
 ######################################################## IMPORTS #######################################################
 
 ##################################################### FUNCTIONS ########################################################
+headers = {}
+
 def folder_selection(directory):
     for file in os.listdir(directory):
         if file.endswith('.json'):
             isVersion = False
-            with open(directory + file, 'r') as json_file:
+            with open(directory + '/' + file, 'r') as json_file:
                 json_data = migrate(json_file, isVersion)
                 # write to file
-                with open(directory + file, 'w') as json_file:
+                with open(directory + '/' + file, 'w') as json_file:
                     json.dump(json_data, json_file, indent=2)
         if file.endswith('-version'):
             isVersion = True
-            versionFiles = os.listdir(directory + file)
+            versionFiles = os.listdir(directory + '/' + file)
             for versionFile in versionFiles:
-                with open(directory + file + '/' + versionFile, 'r') as json_file:
+                with open(directory + '/' + file + '/' + versionFile, 'r') as json_file:
                     json_data = migrate(json_file, isVersion)
                     # write to file
-                    with open(directory + file + '/' + versionFile, 'w') as json_file:
+                    with open(directory + '/' + file + '/' + versionFile, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
 
 def migrate(json_file, isVersion):
@@ -49,36 +51,62 @@ def migrate(json_file, isVersion):
         if serviceType is not None:
             serviceType.text = 'service_type-datasource'
 
-    ## MANDATORY FIELDS ##
+    serviceId = service.find('{http://einfracentral.eu}id').text
+    with open(args.csvPath, mode='r') as csv_file:
+        headersIndex = 0
+        for row_number, row in enumerate(csv_file.readlines()):
+            if row_number == 0:
+                header_data = row.split(',')
+                for column in header_data:
+                    headers[headersIndex] = column
+                    headersIndex = headersIndex + 1
+            else:
+                data = row.split(',')
+                if data[0] == serviceId:
+                    ## OPTIONAL FIELDS ##
+                    submissionPolicyURL = ET.Element("tns:submissionPolicyURL")
+                    submissionPolicyURL.text = data[1]
 
-    # jurisdiction field
-    jurisdiction = ET.Element("tns:jurisdiction")
-    jurisdiction.text = "ds_jurisdiction-global"
+                    preservationPolicyURL = ET.Element("tns:preservationPolicyURL")
+                    preservationPolicyURL.text = data[2]
 
-    # datasourceClassification field
-    datasourceClassification = ET.Element("tns:datasourceClassification")
-    datasourceClassification.text = "ds_classification-aggregators"
+                    versionControl = ET.Element("tns:versionControl")
+                    versionControl.text = data[3].lower()
 
-    # researchEntityTypes field
-    researchEntityTypes = ET.Element("tns:researchEntityTypes")
-    researchEntityType1 = ET.Element("tns:researchEntityType")
-    researchEntityType1.text = "ds_research_entity_type-research_publication"
-    researchEntityType2 = ET.Element("tns:researchEntityType")
-    researchEntityType2.text = "ds_research_entity_type-research_data"
-    researchEntityType3 = ET.Element("tns:researchEntityType")
-    researchEntityType3.text = "ds_research_entity_type-research_software"
-    researchEntityTypes.append(researchEntityType1)
-    researchEntityTypes.append(researchEntityType2)
-    researchEntityTypes.append(researchEntityType3)
+                    # persistentIdentitySystems = ET.Element(data[4])
 
-    # thematic field
-    thematic = ET.Element("tns:thematic")
-    thematic.text = "false"
+                    ## MANDATORY FIELDS ##
+                    jurisdiction = ET.Element("tns:jurisdiction")
+                    jurisdiction.text = data[5]
 
-    service.append(jurisdiction)
-    service.append(datasourceClassification)
-    service.append(researchEntityTypes)
-    service.append(thematic)
+                    datasourceClassification = ET.Element("tns:datasourceClassification")
+                    datasourceClassification.text = data[6]
+
+                    # researchEntityTypes = ET.Element(data[7])
+
+                    thematic = ET.Element("tns:thematic")
+                    thematic.text = data[8].lower()
+
+                    # researchProductLicensings = ET.Element(data[9])
+
+                    # researchProductAccessPolicies = ET.Element(data[10])
+
+                    # researchProductMetadataLicensing = ET.Element(data[11])
+
+                    researchProductMetadataAccessPolicies = ET.ElementTree((ET.fromstring(data[12])))
+
+                    service.append(submissionPolicyURL)
+                    service.append(preservationPolicyURL)
+                    service.append(versionControl)
+                    # service.append(persistentIdentitySystems)
+                    service.append(jurisdiction)
+                    service.append(datasourceClassification)
+                    # service.append(researchEntityTypes)
+                    service.append(thematic)
+                    # service.append(researchProductLicensings)
+                    # service.append(researchProductAccessPolicies)
+                    # service.append(researchProductMetadataLicensing)
+                    service.append(researchProductMetadataAccessPolicies)
 
 
     root.write('output.xml')
@@ -96,7 +124,8 @@ def migrate(json_file, isVersion):
 
 ######################################################## RUN ###########################################################
 parser = argparse.ArgumentParser()
-parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
+parser.add_argument("-fp", "--folderPath", help="sets the folder path", type=str, required=True)
+parser.add_argument("-cp", "--csvPath", help="sets the csv path", type=str, required=True)
 args = parser.parse_args()
-folder_selection(args.path)
+folder_selection(args.folderPath)
 ######################################################## RUN ###########################################################
