@@ -63,6 +63,7 @@ def migrate(json_file, isVersion):
             else:
                 data = row.split(',')
                 if data[0] == serviceId:
+
                     ## OPTIONAL FIELDS ##
                     submissionPolicyURL = ET.Element("tns:submissionPolicyURL")
                     submissionPolicyURL.text = data[1]
@@ -73,7 +74,9 @@ def migrate(json_file, isVersion):
                     versionControl = ET.Element("tns:versionControl")
                     versionControl.text = data[3].lower()
 
-                    # persistentIdentitySystems = ET.Element(data[4])
+                    persistentIdentitySystems = ET.Element("tns:persistentIdentitySystems")
+                    persistentIdentitySystems.text = data[4]
+                    ## OPTIONAL FIELDS ##
 
                     ## MANDATORY FIELDS ##
                     jurisdiction = ET.Element("tns:jurisdiction")
@@ -82,30 +85,36 @@ def migrate(json_file, isVersion):
                     datasourceClassification = ET.Element("tns:datasourceClassification")
                     datasourceClassification.text = data[6]
 
-                    # researchEntityTypes = ET.Element(data[7])
+                    researchEntityTypes = ET.Element("tns:researchEntityTypes")
+                    researchEntityTypes.text = data[7]
 
                     thematic = ET.Element("tns:thematic")
                     thematic.text = data[8].lower()
 
-                    # researchProductLicensings = ET.Element(data[9])
+                    researchProductLicensings = ET.Element("tns:researchProductLicensings")
+                    researchProductLicensings.text = data[9]
 
-                    # researchProductAccessPolicies = ET.Element(data[10])
+                    researchProductAccessPolicies = ET.Element("tns:researchProductAccessPolicies")
+                    researchProductAccessPolicies.text = data[10]
 
-                    # researchProductMetadataLicensing = ET.Element(data[11])
+                    researchProductMetadataLicensing = ET.Element("tns:researchProductMetadataLicensing")
+                    researchProductMetadataLicensing.text = data[11]
 
-                    researchProductMetadataAccessPolicies = ET.ElementTree((ET.fromstring(data[12])))
+                    researchProductMetadataAccessPolicies = ET.Element("tns:researchProductMetadataAccessPolicies")
+                    researchProductMetadataAccessPolicies.text = data[12]
+                    ## MANDATORY FIELDS ##
 
                     service.append(submissionPolicyURL)
                     service.append(preservationPolicyURL)
                     service.append(versionControl)
-                    # service.append(persistentIdentitySystems)
+                    service.append(persistentIdentitySystems)
                     service.append(jurisdiction)
                     service.append(datasourceClassification)
-                    # service.append(researchEntityTypes)
+                    service.append(researchEntityTypes)
                     service.append(thematic)
-                    # service.append(researchProductLicensings)
-                    # service.append(researchProductAccessPolicies)
-                    # service.append(researchProductMetadataLicensing)
+                    service.append(researchProductLicensings)
+                    service.append(researchProductAccessPolicies)
+                    service.append(researchProductMetadataLicensing)
                     service.append(researchProductMetadataAccessPolicies)
 
 
@@ -114,7 +123,7 @@ def migrate(json_file, isVersion):
         content = xml_file.readlines()
         content = "".join(content)
         bs_content = bs(content, "xml")
-        json_data['payload'] = str(bs_content)
+        json_data['payload'] = str(bs_content).replace("&lt;", "<").replace("&gt;", ">").replace("\n", "")
         if isVersion:
             json_data['resource']['payload'] = json_data['payload']
 
@@ -123,9 +132,10 @@ def migrate(json_file, isVersion):
 
 
 ######################################################## RUN ###########################################################
-parser = argparse.ArgumentParser()
-parser.add_argument("-fp", "--folderPath", help="sets the folder path", type=str, required=True)
-parser.add_argument("-cp", "--csvPath", help="sets the csv path", type=str, required=True)
-args = parser.parse_args()
-folder_selection(args.folderPath)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-fp", "--folderPath", help="sets the folder path", type=str, required=True)
+    parser.add_argument("-cp", "--csvPath", help="sets the csv path", type=str, required=True)
+    args = parser.parse_args()
+    folder_selection(args.folderPath)
 ######################################################## RUN ###########################################################
