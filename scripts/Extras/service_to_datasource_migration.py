@@ -63,7 +63,7 @@ def migrate(json_file, isVersion):
             else:
                 data = row.split(',')
                 if data[0] == serviceId:
-
+                    #TODO: USE HEADERS && AVOID THE CREATION OF FIELDS THAT ARE NULL FOR A SPECIFIC ROW
                     ## OPTIONAL FIELDS ##
                     submissionPolicyURL = ET.Element("tns:submissionPolicyURL")
                     submissionPolicyURL.text = data[1]
