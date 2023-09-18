@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import os
 from bs4 import BeautifulSoup as bs
 import argparse
+import re
 ######################################################## IMPORTS #######################################################
 
 ##################################################### FUNCTIONS ########################################################
@@ -121,13 +122,33 @@ def migrate(json_file, isVersion):
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
         content = xml_file.readlines()
-        content = "".join(content)
-        bs_content = bs(content, "xml")
-        json_data['payload'] = str(bs_content).replace("&lt;", "<").replace("&gt;", ">").replace("\n", "")
+        content = "".join(content).replace("\n", "")
+        # replace specific tags (according to where whole tags are used inside the .csv file)
+        tags_to_replace = [
+            "tns:persistentIdentitySystems",
+            "tns:researchEntityTypes",
+            "tns:researchProductLicensings",
+            "tns:researchProductAccessPolicies",
+            "tns:researchProductMetadataLicensing",
+            "tns:researchProductMetadataAccessPolicies"
+        ]
+        tag_pattern = '|'.join(re.escape(tag) for tag in tags_to_replace)
+        pattern = f'<({tag_pattern})(.*?)>(.*?)<\/\\1>'
+        modified_content = re.sub(pattern, replace_lt_gt, content)
+
+        bs_content = bs(modified_content, "xml")
+        json_data['payload'] = str(bs_content)
+
         if isVersion:
             json_data['resource']['payload'] = json_data['payload']
 
     return json_data
+
+def replace_lt_gt(match):
+    tag = match.group(1)
+    content = match.group(3)
+    content = content.replace("&lt;", "<").replace("&gt;", ">")
+    return f'<{tag}>{content}</{tag}>'
 ##################################################### FUNCTIONS ########################################################
 
 
