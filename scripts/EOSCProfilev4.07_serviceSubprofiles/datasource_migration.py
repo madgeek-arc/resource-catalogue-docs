@@ -24,7 +24,11 @@ import time
 
 ###################################################### GLOBALS #########################################################
 lowLevelIDtoServiceIdMap = dict()
+serviceAbbreviations = []
+datasourceAbbreviations = []
 
+# existing Service folder
+existingServiceFolder = '/service/'
 # existing Datasoure folder. Its contents will be updated according to the new Datasource object
 datasourceFolder = '/datasource/'
 # existing Datasoure folder (copy). Its contents will be updated to Services
@@ -63,6 +67,46 @@ def fillLowLevelIds():
                         if published.text == 'false':
                             lowLevelIDtoServiceIdMap[serviceId.text] = id.text.split(".")[1]
 
+
+def createListWithServiceAbbreviations():
+    for file in os.listdir(args.path + existingServiceFolder):
+        if file.endswith('.json'):
+            with open(args.path + datasourceFolder + file, 'r') as json_file:
+                json_data = json.load(json_file)
+                xml = json_data['payload']
+                ET.register_namespace("tns", "http://einfracentral.eu")
+                root = ET.ElementTree(ET.fromstring(xml))
+
+                service = root.find('{http://einfracentral.eu}service')
+                abbreviation = service.find('{http://einfracentral.eu}abbreviation')
+                if abbreviation is not None:
+                    if abbreviation not in serviceAbbreviations:
+                        serviceAbbreviations.append(abbreviation)
+
+
+def createListWithDatasourceAbbreviations():
+    for file in os.listdir(args.path + datasourceFolder):
+        if file.endswith('.json'):
+            with open(args.path + datasourceFolder + file, 'r') as json_file:
+                json_data = json.load(json_file)
+                xml = json_data['payload']
+                ET.register_namespace("tns", "http://einfracentral.eu")
+                root = ET.ElementTree(ET.fromstring(xml))
+
+                datasource = root.find('{http://einfracentral.eu}datasource')
+                abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
+                if abbreviation is not None:
+                    if abbreviation not in datasourceAbbreviations:
+                        datasourceAbbreviations.append(abbreviation)
+
+
+def compareServiceAndDatasourceAbbreviations(serviceAbbreviation, datasourceAbbreviation):
+    serviceAbbreviationSet = set(serviceAbbreviation)
+    datasourceAbbreviationSet = set(datasourceAbbreviation)
+    global commonAbbreviations
+    commonAbbreviations = list(serviceAbbreviationSet & datasourceAbbreviationSet)
+
+
 def folder_selection(directory):
     global isVersion
 
@@ -75,8 +119,9 @@ def folder_selection(directory):
             with open(directory + serviceFolder + file, 'r') as json_file:
                 json_data = migrate_to_service(json_file, isVersion)
                 # write to file
-                with open(directory + serviceFolder + file, 'w') as json_file:
-                    json.dump(json_data, json_file, indent=2)
+                if json_data is not None:
+                    with open(directory + serviceFolder + file, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
         if file.endswith('-version'):
             isVersion = True
             versionFiles = os.listdir(directory + serviceFolder + file)
@@ -84,8 +129,9 @@ def folder_selection(directory):
                 with open(directory + serviceFolder + file + '/' + versionFile, 'r') as json_file:
                     json_data = migrate_to_service(json_file, isVersion)
                     # write to file
-                    with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
-                        json.dump(json_data, json_file, indent=2)
+                    if json_data is not None:
+                        with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
 
     # Migrate Datasources
     for file in os.listdir(directory + datasourceFolder):
@@ -127,6 +173,11 @@ def migrate_to_service(json_file, isVersion):
 
     datasource = root.find('{http://einfracentral.eu}datasource')
 
+    # check if there is already a Service registered with the same Abbreviation
+    abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
+    if abbreviation in commonAbbreviations:
+        return
+
     # delete Datasource related fields
     submissionPolicyURL = datasource.find('{http://einfracentral.eu}submissionPolicyURL')
     preservationPolicyURL = datasource.find('{http://einfracentral.eu}preservationPolicyURL')
@@ -150,7 +201,6 @@ def migrate_to_service(json_file, isVersion):
 
     # format ID
     id = datasource.find('{http://einfracentral.eu}id')
-    abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
     resourceOrganisation = datasource.find('{http://einfracentral.eu}resourceOrganisation')
     if id is not None:
         if abbreviation is not None and resourceOrganisation is not None:
