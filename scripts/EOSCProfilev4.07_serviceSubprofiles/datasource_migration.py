@@ -38,6 +38,13 @@ otherFolders = ['/service/', '/pending_service/']
 ###################################################### GLOBALS #########################################################
 
 ##################################################### FUNCTIONS ########################################################
+def postRunningMethods():
+    fillLowLevelIds()
+    createListWithServiceAbbreviations()
+    createListWithDatasourceAbbreviations()
+    compareServiceAndDatasourceAbbreviations(serviceAbbreviations, datasourceAbbreviations)
+
+
 def fillLowLevelIds():
     for file in os.listdir(args.path + datasourceFolder):
         if file.endswith('.json'):
@@ -71,7 +78,7 @@ def fillLowLevelIds():
 def createListWithServiceAbbreviations():
     for file in os.listdir(args.path + existingServiceFolder):
         if file.endswith('.json'):
-            with open(args.path + datasourceFolder + file, 'r') as json_file:
+            with open(args.path + existingServiceFolder + file, 'r') as json_file:
                 json_data = json.load(json_file)
                 xml = json_data['payload']
                 ET.register_namespace("tns", "http://einfracentral.eu")
@@ -80,8 +87,8 @@ def createListWithServiceAbbreviations():
                 service = root.find('{http://einfracentral.eu}service')
                 abbreviation = service.find('{http://einfracentral.eu}abbreviation')
                 if abbreviation is not None:
-                    if abbreviation not in serviceAbbreviations:
-                        serviceAbbreviations.append(abbreviation)
+                    if abbreviation.text not in serviceAbbreviations:
+                        serviceAbbreviations.append(abbreviation.text)
 
 
 def createListWithDatasourceAbbreviations():
@@ -96,13 +103,13 @@ def createListWithDatasourceAbbreviations():
                 datasource = root.find('{http://einfracentral.eu}datasource')
                 abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
                 if abbreviation is not None:
-                    if abbreviation not in datasourceAbbreviations:
-                        datasourceAbbreviations.append(abbreviation)
+                    if abbreviation.text not in datasourceAbbreviations:
+                        datasourceAbbreviations.append(abbreviation.text)
 
 
-def compareServiceAndDatasourceAbbreviations(serviceAbbreviation, datasourceAbbreviation):
-    serviceAbbreviationSet = set(serviceAbbreviation)
-    datasourceAbbreviationSet = set(datasourceAbbreviation)
+def compareServiceAndDatasourceAbbreviations(serviceAbbreviations, datasourceAbbreviations):
+    serviceAbbreviationSet = set(serviceAbbreviations)
+    datasourceAbbreviationSet = set(datasourceAbbreviations)
     global commonAbbreviations
     commonAbbreviations = list(serviceAbbreviationSet & datasourceAbbreviationSet)
 
@@ -175,8 +182,9 @@ def migrate_to_service(json_file, isVersion):
 
     # check if there is already a Service registered with the same Abbreviation
     abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
-    if abbreviation in commonAbbreviations:
-        return
+    if abbreviation is not None:
+        if abbreviation.text in commonAbbreviations:
+            return
 
     # delete Datasource related fields
     submissionPolicyURL = datasource.find('{http://einfracentral.eu}submissionPolicyURL')
@@ -491,6 +499,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 parser.add_argument("-c", "--cores", help="number of cores", type=int, required=False)
 args = parser.parse_args()
-fillLowLevelIds()
+postRunningMethods()
 folder_selection(args.path)
 ######################################################## RUN ###########################################################
