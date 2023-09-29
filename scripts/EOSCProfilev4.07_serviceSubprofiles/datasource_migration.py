@@ -28,11 +28,11 @@ serviceAbbreviations = []
 datasourceAbbreviations = []
 
 # existing Service folder
-existingServiceFolder = '/service/'
+serviceFolder = '/service/'
 # existing Datasoure folder. Its contents will be updated according to the new Datasource object
 datasourceFolder = '/datasource/'
 # existing Datasoure folder (copy). Its contents will be updated to Services
-serviceFolder = '/datasource_to_service/'
+datasourceToServiceFolder = '/datasource_to_service/'
 # folders we need to ONLY remove the serviceType field
 otherFolders = ['/service/', '/pending_service/']
 ###################################################### GLOBALS #########################################################
@@ -76,9 +76,9 @@ def fillLowLevelIds():
 
 
 def createListWithServiceAbbreviations():
-    for file in os.listdir(args.path + existingServiceFolder):
+    for file in os.listdir(args.path + serviceFolder):
         if file.endswith('.json'):
-            with open(args.path + existingServiceFolder + file, 'r') as json_file:
+            with open(args.path + serviceFolder + file, 'r') as json_file:
                 json_data = json.load(json_file)
                 xml = json_data['payload']
                 ET.register_namespace("tns", "http://einfracentral.eu")
@@ -117,28 +117,32 @@ def compareServiceAndDatasourceAbbreviations(serviceAbbreviations, datasourceAbb
 def folder_selection(directory):
     global isVersion
 
-    copy_tree(directory + datasourceFolder, directory + serviceFolder)
+    copy_tree(directory + datasourceFolder, directory + datasourceToServiceFolder)
 
     # Migrate Services
-    for file in os.listdir(directory + serviceFolder):
+    for file in os.listdir(directory + datasourceToServiceFolder):
         if file.endswith('.json'):
             isVersion = False
-            with open(directory + serviceFolder + file, 'r') as json_file:
+            with open(directory + datasourceToServiceFolder + file, 'r') as json_file:
                 json_data = migrate_to_service(json_file, isVersion)
                 # write to file
                 if json_data is not None:
-                    with open(directory + serviceFolder + file, 'w') as json_file:
+                    with open(directory + datasourceToServiceFolder + file, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
+                else:
+                    os.remove(directory + datasourceToServiceFolder + file)
         if file.endswith('-version'):
             isVersion = True
-            versionFiles = os.listdir(directory + serviceFolder + file)
+            versionFiles = os.listdir(directory + datasourceToServiceFolder + file)
             for versionFile in versionFiles:
-                with open(directory + serviceFolder + file + '/' + versionFile, 'r') as json_file:
+                with open(directory + datasourceToServiceFolder + file + '/' + versionFile, 'r') as json_file:
                     json_data = migrate_to_service(json_file, isVersion)
                     # write to file
                     if json_data is not None:
-                        with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
+                        with open(directory + datasourceToServiceFolder + file + '/' + versionFile, 'w') as json_file:
                             json.dump(json_data, json_file, indent=2)
+                    else:
+                        os.remove(directory + datasourceToServiceFolder + file)
 
     # Migrate Datasources
     for file in os.listdir(directory + datasourceFolder):
