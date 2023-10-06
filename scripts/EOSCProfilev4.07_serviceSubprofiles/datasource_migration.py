@@ -24,6 +24,7 @@ import time
 
 ###################################################### GLOBALS #########################################################
 lowLevelIDtoServiceIdMap = dict()
+oldDatasourceIdToServiceIdMap = dict()
 serviceAbbreviations = []
 datasourceAbbreviations = []
 
@@ -33,6 +34,9 @@ serviceFolder = '/service/'
 datasourceFolder = '/datasource/'
 # existing Datasoure folder (copy). Its contents will be updated to Services
 datasourceToServiceFolder = '/datasource_to_service/'
+# folders with resources that may contain old Datasource IDs and need migration
+relatedIdsMigrationFolders = ['/helpdesk/', '/monitoring/', '/resource_interoperability_record/', '/service/',
+                              '/training_resource/']
 # folders we need to ONLY remove the serviceType field
 otherFolders = ['/service/', '/pending_service/']
 ###################################################### GLOBALS #########################################################
@@ -40,6 +44,7 @@ otherFolders = ['/service/', '/pending_service/']
 ##################################################### FUNCTIONS ########################################################
 def postRunningMethods():
     fillLowLevelIds()
+    mapOldDatasourceIdsToNewServiceIds()
     createListWithServiceAbbreviations()
     createListWithDatasourceAbbreviations()
     compareServiceAndDatasourceAbbreviations(serviceAbbreviations, datasourceAbbreviations)
@@ -73,6 +78,25 @@ def fillLowLevelIds():
                     if published is not None:
                         if published.text == 'false':
                             lowLevelIDtoServiceIdMap[serviceId.text] = id.text.split(".")[1]
+
+
+def mapOldDatasourceIdsToNewServiceIds():
+    for file in os.listdir(args.path + datasourceFolder):
+        if file.endswith('.json'):
+            with open(args.path + datasourceFolder + file, 'r') as json_file:
+                json_data = json.load(json_file)
+                xml = json_data['payload']
+                ET.register_namespace("tns", "http://einfracentral.eu")
+                root = ET.ElementTree(ET.fromstring(xml))
+
+                datasource = root.find('{http://einfracentral.eu}datasource')
+                datasourceId = datasource.find('{http://einfracentral.eu}id')
+                abbreviation = datasource.find('{http://einfracentral.eu}abbreviation')
+                resourceOrganisation = datasource.find('{http://einfracentral.eu}resourceOrganisation')
+                if abbreviation is not None and resourceOrganisation is not None:
+                    if abbreviation.text is not None and resourceOrganisation.text is not None:
+                        oldDatasourceIdToServiceIdMap[datasourceId.text] = format_string(resourceOrganisation.text,
+                                                                                         abbreviation.text)
 
 
 def createListWithServiceAbbreviations():
@@ -169,6 +193,9 @@ def folder_selection(directory):
                           directory + datasourceFolder + file + '/' + data[1])
         if not isVersion:
             os.rename(directory + datasourceFolder + file, directory + datasourceFolder + data[1])
+
+    # Migrate related resource IDs
+    migrate_related_to_old_datasource_ids(relatedIdsMigrationFolders)
 
     # Migrate other folders
     p = Pool(args.cores)
@@ -396,6 +423,89 @@ def migrate_to_datasource(json_file, isVersion):
             json_data['resource']['payload'] = json_data['payload']
 
     return json_data, newCoreId+'.json'
+
+
+def migrate_related_to_old_datasource_ids(relatedIdsMigrationFolders):
+    for migrationFolder in relatedIdsMigrationFolders:
+        for file in os.listdir(args.path + migrationFolder):
+            if file.endswith('.json'):
+                isVersion = False
+                with open(args.path + migrationFolder + file, 'r') as json_file:
+                    json_data = migrate_folders_with_related_ids(json_file, isVersion, migrationFolder.replace("/", ""))
+                    # write to file
+                    with open(args.path + migrationFolder + file, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
+            if file.endswith('-version'):
+                isVersion = True
+                versionFiles = os.listdir(args.path + migrationFolder + file)
+                for versionFile in versionFiles:
+                    with open(args.path + migrationFolder + file + '/' + versionFile, 'r') as json_file:
+                        json_data = migrate_folders_with_related_ids(json_file, isVersion, migrationFolder.replace("/", ""))
+                        # write to file
+                        with open(args.path + migrationFolder + file + '/' + versionFile, 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
+
+
+def migrate_folders_with_related_ids(json_file, isVersion, resourceType):
+    global resource
+    json_data = json.load(json_file)
+    xml = json_data['payload']
+    ET.register_namespace("tns", "http://einfracentral.eu")
+    root = ET.ElementTree(ET.fromstring(xml))
+
+    # get resource ID from resource type
+    match resourceType:
+        case "helpdesk":
+            resource = root.find('{http://einfracentral.eu}helpdesk')
+            serviceId = resource.find('{http://einfracentral.eu}serviceId')
+            if serviceId is not None:
+                if serviceId.text in oldDatasourceIdToServiceIdMap:
+                    serviceId.text = oldDatasourceIdToServiceIdMap[serviceId.text]
+        case "monitoring":
+            resource = root.find('{http://einfracentral.eu}monitoring')
+            serviceId = resource.find('{http://einfracentral.eu}serviceId')
+            if serviceId is not None:
+                if serviceId.text in oldDatasourceIdToServiceIdMap:
+                    serviceId.text = oldDatasourceIdToServiceIdMap[serviceId.text]
+        case "resource_interoperability_record":
+            resource = root.find('{http://einfracentral.eu}resourceInteroperabilityRecord')
+            resourceId = resource.find('{http://einfracentral.eu}resourceId')
+            if resourceId is not None:
+                if resourceId.text in oldDatasourceIdToServiceIdMap:
+                    resourceId.text = oldDatasourceIdToServiceIdMap[resourceId.text]
+        case "service":
+            resource = root.find('{http://einfracentral.eu}service')
+            relatedResources = resource.find('{http://einfracentral.eu}relatedResources')
+            if relatedResources is not None:
+                for relatedResource in relatedResources:
+                    if relatedResource is not None:
+                        if relatedResource.text in oldDatasourceIdToServiceIdMap:
+                            relatedResource.text = oldDatasourceIdToServiceIdMap[relatedResource.text]
+            requiredResources = resource.find('{http://einfracentral.eu}requiredResources')
+            if requiredResources is not None:
+                for requiredResource in requiredResources:
+                    if requiredResource is not None:
+                        if requiredResource.text in oldDatasourceIdToServiceIdMap:
+                            requiredResource.text = oldDatasourceIdToServiceIdMap[requiredResource.text]
+        case "training_resource":
+            resource = root.find('{http://einfracentral.eu}trainingResource')
+            eoscRelatedServices = resource.find('{http://einfracentral.eu}eoscRelatedServices')
+            if eoscRelatedServices is not None:
+                for eoscRelatedService in eoscRelatedServices:
+                    if eoscRelatedService is not None:
+                        if eoscRelatedService.text in oldDatasourceIdToServiceIdMap:
+                            eoscRelatedService.text = oldDatasourceIdToServiceIdMap[eoscRelatedService.text]
+
+    root.write('output.xml')
+    with open("output.xml", "r") as xml_file:
+        content = xml_file.readlines()
+        content = "".join(content)
+        bs_content = bs(content, "xml")
+        json_data['payload'] = str(bs_content)
+        if isVersion:
+            json_data['resource']['payload'] = json_data['payload']
+
+    return json_data
 
 
 def migrate_other_folders(otherFolders):
