@@ -337,10 +337,7 @@ def migrate_to_datasource(json_file, isVersion):
     id = datasource.find('{http://einfracentral.eu}id')
     if id is not None:
         if id.text is not None:
-            if published.text == 'false':
-                id.text = id.text.split(".")[1]
-            else:
-                id.text = id.text.split(".")[0] + "." + id.text.split(".")[2]
+            id.text = serviceId.text
 
     # migrate catalogueId
     # same field name no need to do anything
