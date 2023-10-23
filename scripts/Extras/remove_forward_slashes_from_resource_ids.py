@@ -14,10 +14,14 @@ def folder_selection(directory):
             if file.endswith('.json'):
                 isVersion = False
                 with open(directory + migrationFolder + file, 'r') as json_file:
-                    json_data = migrate(json_file, isVersion)
+                    json_data, entered = migrate(json_file, isVersion)
                     # write to file
-                    with open(directory + migrationFolder + file, 'w') as json_file:
-                        json.dump(json_data, json_file, indent=2)
+                    if entered:
+                        with open(directory + migrationFolder + file, 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
+                    else:
+                        # delete unchanged files
+                        os.remove(directory + migrationFolder + file)
             if file.endswith('-version'):
                 isVersion = True
                 versionFiles = os.listdir(directory + migrationFolder + file)
@@ -35,11 +39,13 @@ def migrate(json_file, isVersion):
     root = ET.ElementTree(ET.fromstring(xml))
     service = root.find('{http://einfracentral.eu}service')
 
-    # set dummy value to termsOfUse field
+    # remove forward slash from ID
+    entered = False
     id = service.find('{http://einfracentral.eu}id')
     if id is not None:
         if "/" in id.text:
             id.text = id.text.replace("/", "_")
+            entered = True
 
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
@@ -50,7 +56,7 @@ def migrate(json_file, isVersion):
         if isVersion:
             json_data['resource']['payload'] = json_data['payload']
 
-    return json_data
+    return json_data, entered
 ##################################################### FUNCTIONS ########################################################
 
 
