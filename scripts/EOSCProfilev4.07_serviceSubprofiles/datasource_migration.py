@@ -42,15 +42,15 @@ otherFolders = ['/service/', '/pending_service/']
 ###################################################### GLOBALS #########################################################
 
 ##################################################### FUNCTIONS ########################################################
-def postRunningMethods():
-    fillLowLevelIds()
-    mapOldDatasourceIdsToNewServiceIds()
-    createListWithServiceAbbreviations()
-    createListWithDatasourceAbbreviations()
-    compareServiceAndDatasourceAbbreviations(serviceAbbreviations, datasourceAbbreviations)
+def post_running_methods():
+    fill_low_level_ids()
+    map_old_datasource_ids_to_new_service_ids()
+    create_list_with_service_abbreviations()
+    create_list_with_datasource_abbreviations()
+    compare_service_and_datasource_abbreviations(serviceAbbreviations, datasourceAbbreviations)
 
 
-def fillLowLevelIds():
+def fill_low_level_ids():
     for file in os.listdir(args.path + datasourceFolder):
         if file.endswith('.json'):
             with open(args.path + datasourceFolder + file, 'r') as json_file:
@@ -80,7 +80,7 @@ def fillLowLevelIds():
                             lowLevelIDtoServiceIdMap[serviceId.text] = id.text.split(".")[1]
 
 
-def mapOldDatasourceIdsToNewServiceIds():
+def map_old_datasource_ids_to_new_service_ids():
     for file in os.listdir(args.path + datasourceFolder):
         if file.endswith('.json'):
             with open(args.path + datasourceFolder + file, 'r') as json_file:
@@ -99,7 +99,7 @@ def mapOldDatasourceIdsToNewServiceIds():
                                                                                          abbreviation.text)
 
 
-def createListWithServiceAbbreviations():
+def create_list_with_service_abbreviations():
     for file in os.listdir(args.path + serviceFolder):
         if file.endswith('.json'):
             with open(args.path + serviceFolder + file, 'r') as json_file:
@@ -115,7 +115,7 @@ def createListWithServiceAbbreviations():
                         serviceAbbreviations.append(abbreviation.text)
 
 
-def createListWithDatasourceAbbreviations():
+def create_list_with_datasource_abbreviations():
     for file in os.listdir(args.path + datasourceFolder):
         if file.endswith('.json'):
             with open(args.path + datasourceFolder + file, 'r') as json_file:
@@ -131,7 +131,7 @@ def createListWithDatasourceAbbreviations():
                         datasourceAbbreviations.append(abbreviation.text)
 
 
-def compareServiceAndDatasourceAbbreviations(serviceAbbreviations, datasourceAbbreviations):
+def compare_service_and_datasource_abbreviations(serviceAbbreviations, datasourceAbbreviations):
     serviceAbbreviationSet = set(serviceAbbreviations)
     datasourceAbbreviationSet = set(datasourceAbbreviations)
     global commonAbbreviations
@@ -610,6 +610,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 parser.add_argument("-c", "--cores", help="number of cores", type=int, required=False)
 args = parser.parse_args()
-postRunningMethods()
+post_running_methods()
 folder_selection(args.path)
 ######################################################## RUN ###########################################################

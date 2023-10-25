@@ -47,7 +47,7 @@ def migrate(json_file, isVersion):
                             persistentIdentityEntityTypeScheme.tag = '{http://einfracentral.eu}persistentIdentityEntityTypeScheme'
 
     root.write('output.xml')
-    with open("output.xml", "r") as xml_file:
+    with open("../EOSCProfilev4.08_M30Release/output.xml", "r") as xml_file:
         content = xml_file.readlines()
         content = "".join(content)
         bs_content = bs(content, "xml")

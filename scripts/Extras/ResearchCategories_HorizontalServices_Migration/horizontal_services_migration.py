@@ -745,7 +745,7 @@ def migrate_horizontal_service(json_file, isVersion):
             if resourceExtras is not None:
                 horizontalService = resourceExtras.find('{http://einfracentral.eu}horizontalService')
                 if horizontalService is not None:
-                        horizontalService.text = servicesToHorizontalServices[resourceName]
+                    horizontalService.text = servicesToHorizontalServices[resourceName]
                 else:
                     newHorizontalService = ET.Element("tns:horizontalService")
                     newHorizontalService.text = servicesToHorizontalServices[resourceName]
