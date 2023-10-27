@@ -6,6 +6,9 @@
 # Strategy -> each Datasource json file to be split into 2 different json files (1 Service and 1 Datasource)
 
                                     # DELETE DATASOURCE VERSION FOLDERS #
+                                    # DELETE PENDING DATASOURCE FOLDER  #
+   # DELETE '068c28ef-4f4d-419e-b423-320fdab02eca' (CERIC-ERIC lower) as inconsistent Datasource (rejected Service) #
+   # DELETE 'c8c54266-8a81-44c9-8189-731070228afa' (CERIC-ERIC public) as inconsistent Datasource (rejected Service) #
 
 ######################################################## Changes #######################################################
 
@@ -27,6 +30,26 @@ lowLevelIDtoServiceIdMap = dict()
 oldDatasourceIdToServiceIdMap = dict()
 serviceAbbreviations = []
 datasourceAbbreviations = []
+# Some old Services have been registered with a different strategy than the (providerId+'.'+abbreviation) one.
+# This causes a wrong Datasource ID creation, because it does not follow the "same ID as its corresponding Service"
+# strategy.
+# That's why we specifically correct them
+datasourceCorrectIDs = {
+    "icos_eric.icos_carbon_portal": "icos_eric.data_discovery_and_access_portal",
+    "eosc.icos_eric.icos_carbon_portal": "eosc.icos_eric.data_discovery_and_access_portal",
+    "seadatanet.csr": "seadatanet.european_directory_of_the_cruise_summary_reports_csr",
+    "eosc.seadatanet.csr": "eosc.seadatanet.european_directory_of_the_cruise_summary_reports_csr",
+    "seadatanet.edios": "seadatanet.european_directory_of_the_initial_ocean-observing_systems_edios",
+    "eosc.seadatanet.edios": "eosc.seadatanet.european_directory_of_the_initial_ocean-observing_systems_edios",
+    "seadatanet.edmed": "seadatanet.european_directory_of_marine_environmental_data_edmed",
+    "eosc.seadatanet.edmed": "eosc.seadatanet.european_directory_of_marine_environmental_data_edmed",
+    "seadatanet.edmerp": "seadatanet.european_directory_of_marine_environmental_research_projects",
+    "eosc.seadatanet.edmerp": "eosc.seadatanet.european_directory_of_marine_environmental_research_projects",
+    "seadatanet.edmo": "seadatanet.european_directory_of_marine_organisations_edmo",
+    "eosc.seadatanet.edmo": "eosc.seadatanet.european_directory_of_marine_organisations_edmo",
+    "seadatanet.seadatanet_cdi_gui": "seadatanet.seadatanet_cdi",
+    "eosc.seadatanet.seadatanet_cdi_gui": "eosc.seadatanet.seadatanet_cdi",
+}
 
 # existing Service folder
 serviceFolder = '/service/'
@@ -260,6 +283,17 @@ def migrate_to_service(json_file, isVersion):
                         publicId = format_string(resourceOrganisation.text, abbreviation.text)
                         originalId.text = publicId.split(".")[1] + "." + publicId.split(".")[2]
 
+    # Remove "openaire" Alternative Identifier if exists
+    identifiers = root.find('{http://einfracentral.eu}identifiers')
+    if identifiers is not None:
+        alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
+        if alternativeIdentifiers is not None:
+            for alternativeIdentifier in alternativeIdentifiers:
+                if alternativeIdentifier is not None:
+                    alternativeIdentifierType = alternativeIdentifier.find('{http://einfracentral.eu}type')
+                    if alternativeIdentifierType.text == 'openaire':
+                        alternativeIdentifiers.remove(alternativeIdentifier)
+
     # change Payload's tags
     root.getroot().tag = "{http://einfracentral.eu}serviceBundle"
     datasource.tag = '{http://einfracentral.eu}service'
@@ -333,11 +367,28 @@ def migrate_to_datasource(json_file, isVersion):
                         if lowLevelServiceId in lowLevelIDtoServiceIdMap:
                             originalId.text = lowLevelIDtoServiceIdMap[lowLevelServiceId]
 
+    # Remove "PID" Alternative Identifier if exists
+    identifiers = root.find('{http://einfracentral.eu}identifiers')
+    if identifiers is not None:
+        alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
+        if alternativeIdentifiers is not None:
+            for alternativeIdentifier in alternativeIdentifiers:
+                if alternativeIdentifier is not None:
+                    alternativeIdentifierType = alternativeIdentifier.find('{http://einfracentral.eu}type')
+                    if alternativeIdentifierType.text == 'PID':
+                        alternativeIdentifiers.remove(alternativeIdentifier)
+
     # create Datasource ID
     id = datasource.find('{http://einfracentral.eu}id')
     if id is not None:
         if id.text is not None:
             id.text = serviceId.text
+
+    # create correct Datasource ID for specific Datasources
+    if id.text in datasourceCorrectIDs.keys():
+        newDatasourceId = datasourceCorrectIDs[id.text]
+        id.text = newDatasourceId
+        serviceId.text = newDatasourceId
 
     # migrate catalogueId
     # same field name no need to do anything
