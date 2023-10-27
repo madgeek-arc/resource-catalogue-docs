@@ -83,7 +83,28 @@ def migrate(json_file, isVersion):
     # marketplaceLocation field
     marketplaceLocations = ET.Element("tns:marketplaceLocations")
     marketplaceLocation = ET.Element("tns:marketplaceLocation")
-    marketplaceLocation.text = "TBD"  # TODO: MP to decide how we roll this
+    resourceExtras = root.find('{http://einfracentral.eu}resourceExtras')
+    if resourceExtras is not None:
+        researchCategories = resourceExtras.find('{http://einfracentral.eu}researchCategories')
+        if researchCategories is not None:
+            for researchCategory in researchCategories:
+                if researchCategory is not None:
+                    if researchCategory.text == "research_category-dro":
+                        marketplaceLocation.text = "marketplace_location-discover_research_outputs"
+                    elif researchCategory.text == "research_category-pro":
+                        marketplaceLocation.text = "marketplace_location-publish_research_outputs"
+                    elif researchCategory.text == "research_category-pa":
+                        marketplaceLocation.text = "marketplace_location-process_and_analyze"
+                    elif researchCategory.text == "research_category-acr":
+                        marketplaceLocation.text = "marketplace_location-access_computing_and_storage_resources"
+                    elif researchCategory.text == "research_category-fie":
+                        marketplaceLocation.text = "marketplace_location-find_instruments_and_equipment"
+                    elif researchCategory.text == "research_category-atm":
+                        marketplaceLocation.text = "marketplace_location-access_training_material"
+                    elif researchCategory.text == "research_category-ari":
+                        marketplaceLocation.text = "marketplace_location-access_research_infrastructures"
+                    elif researchCategory.text == "research_category-mrd":
+                        marketplaceLocation.text = "marketplace_location-manage_research_data"
     marketplaceLocations.append(marketplaceLocation)
     service.append(marketplaceLocations)
 
