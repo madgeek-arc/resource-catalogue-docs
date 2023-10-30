@@ -10,10 +10,11 @@ import argparse
 datasourceIds = []
 datasourceFolder = '/datasource/'
 serviceFolder = '/service/'
+otherFolders = ['/provider/', '/training_resource/', '/interoperability_record/']
 ###################################################### GLOBALS #########################################################
 
 ##################################################### FUNCTIONS ########################################################
-def get_datasource_ids():
+def migrate_datasource():
     for file in os.listdir(args.path + datasourceFolder):
         if file.endswith('.json'):
             with open(args.path + datasourceFolder + file, 'r') as json_file:
@@ -22,11 +23,47 @@ def get_datasource_ids():
                 ET.register_namespace("tns", "http://einfracentral.eu")
                 root = ET.ElementTree(ET.fromstring(xml))
 
+                # prefill DatasourceIDs to correct them later
                 datasource = root.find('{http://einfracentral.eu}datasource')
                 id = datasource.find('{http://einfracentral.eu}id')
                 if id is not None:
                     if id.text not in datasourceIds:
                         datasourceIds.append(id.text)
+
+                # alternativeIdentifiers
+                identifiers = root.find('{http://einfracentral.eu}identifiers')
+                if identifiers is not None:
+                    alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
+                    if alternativeIdentifiers is not None:
+                        for alternativeIdentifier in alternativeIdentifiers:
+                            alternativeIdentifierValue = alternativeIdentifier.find('{http://einfracentral.eu}value')
+                            if alternativeIdentifierValue is not None:
+                                originalOpenAIREId = ET.Element("tns:originalOpenAIREId")
+                                originalOpenAIREId.text = alternativeIdentifierValue.text
+                                datasource.append(originalOpenAIREId)
+                                break
+                        identifiers.remove(alternativeIdentifiers)
+
+
+def migrate_other_folders(directory):
+    for otherFolder in otherFolders:
+        for file in os.listdir(args.path + otherFolder):
+            if file.endswith('.json'):
+                isVersion = False
+                with open(directory + otherFolder + file, 'r') as json_file:
+                    json_data = migrate_other_resources(json_file, otherFolder.replace("/", ""), isVersion)
+                    # write to file
+                    with open(directory + otherFolder + file, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
+            if file.endswith('-version'):
+                isVersion = True
+                versionFiles = os.listdir(directory + otherFolder + file)
+                for versionFile in versionFiles:
+                    with open(directory + otherFolder + file + '/' + versionFile, 'r') as json_file:
+                        json_data = migrate_other_resources(json_file, otherFolder.replace("/", ""), isVersion)
+                        # write to file
+                        with open(directory + otherFolder + file + '/' + versionFile, 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
 
 
 def folder_selection(directory):
@@ -34,7 +71,7 @@ def folder_selection(directory):
         if file.endswith('.json'):
             isVersion = False
             with open(directory + serviceFolder + file, 'r') as json_file:
-                json_data = migrate(json_file, isVersion)
+                json_data = migrate_services(json_file, isVersion)
                 # write to file
                 with open(directory + serviceFolder + file, 'w') as json_file:
                     json.dump(json_data, json_file, indent=2)
@@ -43,13 +80,13 @@ def folder_selection(directory):
             versionFiles = os.listdir(directory + serviceFolder + file)
             for versionFile in versionFiles:
                 with open(directory + serviceFolder + file + '/' + versionFile, 'r') as json_file:
-                    json_data = migrate(json_file, isVersion)
+                    json_data = migrate_services(json_file, isVersion)
                     # write to file
                     with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
 
 
-def migrate(json_file, isVersion):
+def migrate_services(json_file, isVersion):
     json_data = json.load(json_file)
     xml = json_data['payload']
     ET.register_namespace("tns", "http://einfracentral.eu")
@@ -82,13 +119,13 @@ def migrate(json_file, isVersion):
 
     # marketplaceLocation field
     marketplaceLocations = ET.Element("tns:marketplaceLocations")
-    marketplaceLocation = ET.Element("tns:marketplaceLocation")
     resourceExtras = root.find('{http://einfracentral.eu}resourceExtras')
     if resourceExtras is not None:
         researchCategories = resourceExtras.find('{http://einfracentral.eu}researchCategories')
         if researchCategories is not None:
             for researchCategory in researchCategories:
                 if researchCategory is not None:
+                    marketplaceLocation = ET.Element("tns:marketplaceLocation")
                     if researchCategory.text == "research_category-dro":
                         marketplaceLocation.text = "marketplace_location-discover_research_outputs"
                     elif researchCategory.text == "research_category-pro":
@@ -105,31 +142,21 @@ def migrate(json_file, isVersion):
                         marketplaceLocation.text = "marketplace_location-access_research_infrastructures"
                     elif researchCategory.text == "research_category-mrd":
                         marketplaceLocation.text = "marketplace_location-manage_research_data"
-    marketplaceLocations.append(marketplaceLocation)
+                    marketplaceLocations.append(marketplaceLocation)
+        resourceExtras.remove(researchCategories)
     service.append(marketplaceLocations)
 
     # horizontalService
     horizontalService = ET.Element("tns:horizontalService")
-    resourceExtras = root.find('{http://einfracentral.eu}resourceExtras')
     if resourceExtras is not None:
-        existingHorizontalService = root.find('{http://einfracentral.eu}horizontalService')
+        existingHorizontalService = resourceExtras.find('{http://einfracentral.eu}horizontalService')
         if existingHorizontalService is not None:
             horizontalService.text = existingHorizontalService.text
     service.append(horizontalService)
+    resourceExtras.remove(horizontalService)
 
     # alternativeIdentifiers
-    identifiers = root.find('{http://einfracentral.eu}identifiers')
-    if identifiers is not None:
-        alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
-        if alternativeIdentifiers is not None:
-            for alternativeIdentifier in alternativeIdentifiers:
-                if alternativeIdentifier is not None:
-                    alternativeIdentifierType = alternativeIdentifier.find('{http://einfracentral.eu}type')
-                    if alternativeIdentifierType is not None:
-                        if alternativeIdentifierType.text == "openaire":
-                            alternativeIdentifiers.remove(alternativeIdentifier)
-            service.append(alternativeIdentifiers.__copy__())
-            identifiers.remove(alternativeIdentifiers)
+    migrate_alternative_identifiers(root, service)
 
     root.write('output.xml')
     with open("../EOSCProfilev4.08_M30Release/output.xml", "r") as xml_file:
@@ -141,6 +168,42 @@ def migrate(json_file, isVersion):
             json_data['resource']['payload'] = json_data['payload']
 
     return json_data
+
+
+def migrate_other_resources(json_file, resourceType, isVersion):
+    global resource
+    json_data = json.load(json_file)
+    xml = json_data['payload']
+    ET.register_namespace("tns", "http://einfracentral.eu")
+    root = ET.ElementTree(ET.fromstring(xml))
+    match resourceType:
+        case "provider":
+            resource = root.find('{http://einfracentral.eu}provider')
+        case "training_resource":
+            resource = root.find('{http://einfracentral.eu}trainingResource')
+        case "interoperability_record":
+            resource = root.find('{http://einfracentral.eu}interoperabilityRecord')
+    migrate_alternative_identifiers(root, resource)
+
+    root.write('output.xml')
+    with open("../EOSCProfilev4.08_M30Release/output.xml", "r") as xml_file:
+        content = xml_file.readlines()
+        content = "".join(content)
+        bs_content = bs(content, "xml")
+        json_data['payload'] = str(bs_content)
+        if isVersion:
+            json_data['resource']['payload'] = json_data['payload']
+
+    return json_data
+
+def migrate_alternative_identifiers(root, resource):
+    # alternativeIdentifiers
+    identifiers = root.find('{http://einfracentral.eu}identifiers')
+    if identifiers is not None:
+        alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
+        if alternativeIdentifiers is not None:
+            resource.append(alternativeIdentifiers.__copy__())
+            identifiers.remove(alternativeIdentifiers)
 ##################################################### FUNCTIONS ########################################################
 
 
@@ -148,6 +211,6 @@ def migrate(json_file, isVersion):
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 args = parser.parse_args()
-get_datasource_ids()
+migrate_datasource()
 folder_selection(args.path)
 ######################################################## RUN ###########################################################

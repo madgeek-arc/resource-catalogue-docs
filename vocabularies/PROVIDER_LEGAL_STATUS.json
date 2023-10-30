@@ -96,14 +96,6 @@
     "extras": {}
   },
   {
-    "id": "provider_legal_status-other",
-    "name": "Other",
-    "description": null,
-    "parentId": null,
-    "type": "Provider legal status",
-    "extras": {}
-  },
-  {
     "id": "provider_legal_status-partnership",
     "name": "Partnership",
     "description": null,
