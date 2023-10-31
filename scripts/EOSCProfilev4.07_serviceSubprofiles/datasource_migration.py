@@ -663,4 +663,4 @@ parser.add_argument("-c", "--cores", help="number of cores", type=int, required=
 args = parser.parse_args()
 post_running_methods()
 folder_selection(args.path)
-######################################################## RUN ###########################################################
+####################################################### RAPHAEL ########################################################
