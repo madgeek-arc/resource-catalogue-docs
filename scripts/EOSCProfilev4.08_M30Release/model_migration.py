@@ -14,38 +14,27 @@ otherFolders = ['/provider/', '/training_resource/', '/interoperability_record/'
 ###################################################### GLOBALS #########################################################
 
 ##################################################### FUNCTIONS ########################################################
-def migrate_datasource():
+def datasource_migration(directory):
     for file in os.listdir(args.path + datasourceFolder):
         if file.endswith('.json'):
-            with open(args.path + datasourceFolder + file, 'r') as json_file:
-                json_data = json.load(json_file)
-                xml = json_data['payload']
-                ET.register_namespace("tns", "http://einfracentral.eu")
-                root = ET.ElementTree(ET.fromstring(xml))
-
-                # prefill DatasourceIDs to correct them later
-                datasource = root.find('{http://einfracentral.eu}datasource')
-                id = datasource.find('{http://einfracentral.eu}id')
-                if id is not None:
-                    if id.text not in datasourceIds:
-                        datasourceIds.append(id.text)
-
-                # alternativeIdentifiers
-                identifiers = root.find('{http://einfracentral.eu}identifiers')
-                if identifiers is not None:
-                    alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
-                    if alternativeIdentifiers is not None:
-                        for alternativeIdentifier in alternativeIdentifiers:
-                            alternativeIdentifierValue = alternativeIdentifier.find('{http://einfracentral.eu}value')
-                            if alternativeIdentifierValue is not None:
-                                originalOpenAIREId = ET.Element("tns:originalOpenAIREId")
-                                originalOpenAIREId.text = alternativeIdentifierValue.text
-                                datasource.append(originalOpenAIREId)
-                                break
-                        identifiers.remove(alternativeIdentifiers)
+            isVersion = False
+            with open(directory + datasourceFolder + file, 'r') as json_file:
+                json_data = migrate_datasources(json_file, isVersion)
+                # write to file
+                with open(directory + datasourceFolder + file, 'w') as json_file:
+                    json.dump(json_data, json_file, indent=2)
+        if file.endswith('-version'):
+            isVersion = True
+            versionFiles = os.listdir(directory + datasourceFolder + file)
+            for versionFile in versionFiles:
+                with open(directory + datasourceFolder + file + '/' + versionFile, 'r') as json_file:
+                    json_data = migrate_datasources(json_file, isVersion)
+                    # write to file
+                    with open(directory + datasourceFolder + file + '/' + versionFile, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
 
 
-def migrate_other_folders(directory):
+def other_resources_migration(directory):
     for otherFolder in otherFolders:
         for file in os.listdir(args.path + otherFolder):
             if file.endswith('.json'):
@@ -65,8 +54,7 @@ def migrate_other_folders(directory):
                         with open(directory + otherFolder + file + '/' + versionFile, 'w') as json_file:
                             json.dump(json_data, json_file, indent=2)
 
-
-def folder_selection(directory):
+def service_migration(directory):
     for file in os.listdir(directory + serviceFolder):
         if file.endswith('.json'):
             isVersion = False
@@ -84,6 +72,71 @@ def folder_selection(directory):
                     # write to file
                     with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
+
+
+def migrate_datasources(json_file, isVersion):
+    json_data = json.load(json_file)
+    xml = json_data['payload']
+    ET.register_namespace("tns", "http://einfracentral.eu")
+    root = ET.ElementTree(ET.fromstring(xml))
+    datasource = root.find('{http://einfracentral.eu}datasource')
+
+    # prefill DatasourceIDs to migrate Service's serviceCategory later
+    if not isVersion:
+        datasourceId = datasource.find('{http://einfracentral.eu}id')
+        if datasourceId is not None:
+            if datasourceId.text not in datasourceIds:
+                datasourceIds.append(datasourceId.text)
+
+    # alternativeIdentifiers
+    identifiers = root.find('{http://einfracentral.eu}identifiers')
+    if identifiers is not None:
+        alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
+        if alternativeIdentifiers is not None:
+            for alternativeIdentifier in alternativeIdentifiers:
+                alternativeIdentifierValue = alternativeIdentifier.find('{http://einfracentral.eu}value')
+                if alternativeIdentifierValue is not None:
+                    originalOpenAIREId = ET.Element("tns:originalOpenAIREId")
+                    originalOpenAIREId.text = alternativeIdentifierValue.text
+                    datasource.append(originalOpenAIREId)
+                    break
+            identifiers.remove(alternativeIdentifiers)
+
+    root.write('output.xml')
+    with open("../EOSCProfilev4.08_M30Release/output.xml", "r") as xml_file:
+        content = xml_file.readlines()
+        content = "".join(content)
+        bs_content = bs(content, "xml")
+        json_data['payload'] = str(bs_content)
+        if isVersion:
+            json_data['resource']['payload'] = json_data['payload']
+
+
+def migrate_other_resources(json_file, resourceType, isVersion):
+    global resource
+    json_data = json.load(json_file)
+    xml = json_data['payload']
+    ET.register_namespace("tns", "http://einfracentral.eu")
+    root = ET.ElementTree(ET.fromstring(xml))
+    match resourceType:
+        case "provider":
+            resource = root.find('{http://einfracentral.eu}provider')
+        case "training_resource":
+            resource = root.find('{http://einfracentral.eu}trainingResource')
+        case "interoperability_record":
+            resource = root.find('{http://einfracentral.eu}interoperabilityRecord')
+    migrate_alternative_identifiers(root, resource)
+
+    root.write('output.xml')
+    with open("../EOSCProfilev4.08_M30Release/output.xml", "r") as xml_file:
+        content = xml_file.readlines()
+        content = "".join(content)
+        bs_content = bs(content, "xml")
+        json_data['payload'] = str(bs_content)
+        if isVersion:
+            json_data['resource']['payload'] = json_data['payload']
+
+    return json_data
 
 
 def migrate_services(json_file, isVersion):
@@ -117,7 +170,7 @@ def migrate_services(json_file, isVersion):
     serviceCategories.append(serviceCategory)
     service.append(serviceCategories)
 
-    # marketplaceLocation field
+    # marketplaceLocation field / remove ResourceExtras -> researchCategories
     marketplaceLocations = ET.Element("tns:marketplaceLocations")
     resourceExtras = root.find('{http://einfracentral.eu}resourceExtras')
     if resourceExtras is not None:
@@ -146,7 +199,7 @@ def migrate_services(json_file, isVersion):
         resourceExtras.remove(researchCategories)
     service.append(marketplaceLocations)
 
-    # horizontalService
+    # horizontalService / remove ResourceExtras -> horizontalService
     horizontalService = ET.Element("tns:horizontalService")
     if resourceExtras is not None:
         existingHorizontalService = resourceExtras.find('{http://einfracentral.eu}horizontalService')
@@ -170,40 +223,19 @@ def migrate_services(json_file, isVersion):
     return json_data
 
 
-def migrate_other_resources(json_file, resourceType, isVersion):
-    global resource
-    json_data = json.load(json_file)
-    xml = json_data['payload']
-    ET.register_namespace("tns", "http://einfracentral.eu")
-    root = ET.ElementTree(ET.fromstring(xml))
-    match resourceType:
-        case "provider":
-            resource = root.find('{http://einfracentral.eu}provider')
-        case "training_resource":
-            resource = root.find('{http://einfracentral.eu}trainingResource')
-        case "interoperability_record":
-            resource = root.find('{http://einfracentral.eu}interoperabilityRecord')
-    migrate_alternative_identifiers(root, resource)
-
-    root.write('output.xml')
-    with open("../EOSCProfilev4.08_M30Release/output.xml", "r") as xml_file:
-        content = xml_file.readlines()
-        content = "".join(content)
-        bs_content = bs(content, "xml")
-        json_data['payload'] = str(bs_content)
-        if isVersion:
-            json_data['resource']['payload'] = json_data['payload']
-
-    return json_data
-
 def migrate_alternative_identifiers(root, resource):
     # alternativeIdentifiers
     identifiers = root.find('{http://einfracentral.eu}identifiers')
     if identifiers is not None:
         alternativeIdentifiers = identifiers.find('{http://einfracentral.eu}alternativeIdentifiers')
         if alternativeIdentifiers is not None:
-            resource.append(alternativeIdentifiers.__copy__())
-            identifiers.remove(alternativeIdentifiers)
+            for alternativeIdentifier in alternativeIdentifiers:
+                if alternativeIdentifier is not None:
+                    alternativeIdentifierType = alternativeIdentifier.find('{http://einfracentral.eu}type')
+                    if alternativeIdentifierType.text == 'PID':
+                        alternativeIdentifierType.text = 'EOSC PID'
+        resource.append(alternativeIdentifiers.__copy__())
+        identifiers.remove(alternativeIdentifiers)
 ##################################################### FUNCTIONS ########################################################
 
 
@@ -211,6 +243,7 @@ def migrate_alternative_identifiers(root, resource):
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 args = parser.parse_args()
-migrate_datasource()
-folder_selection(args.path)
+datasource_migration(args.path)
+other_resources_migration(args.path)
+service_migration(args.path)
 ######################################################## RUN ###########################################################
