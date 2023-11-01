@@ -15,7 +15,7 @@ otherFolders = ['/provider/', '/training_resource/', '/interoperability_record/'
 
 ##################################################### FUNCTIONS ########################################################
 def datasource_migration(directory):
-    for file in os.listdir(args.path + datasourceFolder):
+    for file in os.listdir(directory + datasourceFolder):
         if file.endswith('.json'):
             isVersion = False
             with open(directory + datasourceFolder + file, 'r') as json_file:
@@ -100,16 +100,18 @@ def migrate_datasources(json_file, isVersion):
                     originalOpenAIREId.text = alternativeIdentifierValue.text
                     datasource.append(originalOpenAIREId)
                     break
-            identifiers.remove(alternativeIdentifiers)
+        identifiers.remove(alternativeIdentifiers)
 
     root.write('output.xml')
-    with open("../EOSCProfilev4.08_M30Release/output.xml", "r") as xml_file:
+    with open("output.xml", "r") as xml_file:
         content = xml_file.readlines()
         content = "".join(content)
         bs_content = bs(content, "xml")
         json_data['payload'] = str(bs_content)
         if isVersion:
             json_data['resource']['payload'] = json_data['payload']
+
+    return json_data
 
 
 def migrate_other_resources(json_file, resourceType, isVersion):
@@ -127,8 +129,8 @@ def migrate_other_resources(json_file, resourceType, isVersion):
             resource = root.find('{http://einfracentral.eu}interoperabilityRecord')
     migrate_alternative_identifiers(root, resource)
 
-    root.write('output.xml')
-    with open("../EOSCProfilev4.08_M30Release/output.xml", "r") as xml_file:
+    root.write(resourceType + '-output.xml')
+    with open(resourceType + "-output.xml", "r") as xml_file:
         content = xml_file.readlines()
         content = "".join(content)
         bs_content = bs(content, "xml")
@@ -196,7 +198,7 @@ def migrate_services(json_file, isVersion):
                     elif researchCategory.text == "research_category-mrd":
                         marketplaceLocation.text = "marketplace_location-manage_research_data"
                     marketplaceLocations.append(marketplaceLocation)
-        resourceExtras.remove(researchCategories)
+            resourceExtras.remove(researchCategories)
     service.append(marketplaceLocations)
 
     # horizontalService / remove ResourceExtras -> horizontalService
@@ -205,8 +207,8 @@ def migrate_services(json_file, isVersion):
         existingHorizontalService = resourceExtras.find('{http://einfracentral.eu}horizontalService')
         if existingHorizontalService is not None:
             horizontalService.text = existingHorizontalService.text
+            resourceExtras.remove(existingHorizontalService)
     service.append(horizontalService)
-    resourceExtras.remove(horizontalService)
 
     # alternativeIdentifiers
     migrate_alternative_identifiers(root, service)
