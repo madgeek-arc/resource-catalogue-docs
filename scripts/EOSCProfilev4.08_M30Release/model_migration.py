@@ -79,6 +79,7 @@ def migrate_datasources(json_file, isVersion):
     xml = json_data['payload']
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
+    tree = root.getroot()
     datasource = root.find('{http://einfracentral.eu}datasource')
 
     # prefill DatasourceIDs to migrate Service's serviceCategory later
@@ -98,7 +99,7 @@ def migrate_datasources(json_file, isVersion):
                 if alternativeIdentifierValue is not None:
                     originalOpenAIREId = ET.Element("tns:originalOpenAIREId")
                     originalOpenAIREId.text = alternativeIdentifierValue.text
-                    datasource.append(originalOpenAIREId)
+                    tree.append(originalOpenAIREId)
                     break
         identifiers.remove(alternativeIdentifiers)
 
@@ -150,6 +151,10 @@ def migrate_services(json_file, isVersion):
     id = service.find('{http://einfracentral.eu}id')
 
     # serviceCategory field
+    # existingServiceCategories = service.find('{http://einfracentral.eu}serviceCategories')
+    # if existingServiceCategories is not None:
+    #     service.remove(existingServiceCategories)
+
     serviceCategories = ET.Element("tns:serviceCategories")
     serviceCategory = ET.Element("tns:serviceCategory")
     if id in datasourceIds:
@@ -173,14 +178,18 @@ def migrate_services(json_file, isVersion):
     service.append(serviceCategories)
 
     # marketplaceLocation field / remove ResourceExtras -> researchCategories
+    # existingMarketplaceLocations = service.find('{http://einfracentral.eu}marketplaceLocations')
+    # if existingMarketplaceLocations is not None:
+    #     service.remove(existingMarketplaceLocations)
+
     marketplaceLocations = ET.Element("tns:marketplaceLocations")
+    marketplaceLocation = ET.Element("tns:marketplaceLocation")
     resourceExtras = root.find('{http://einfracentral.eu}resourceExtras')
     if resourceExtras is not None:
         researchCategories = resourceExtras.find('{http://einfracentral.eu}researchCategories')
         if researchCategories is not None:
             for researchCategory in researchCategories:
                 if researchCategory is not None:
-                    marketplaceLocation = ET.Element("tns:marketplaceLocation")
                     if researchCategory.text == "research_category-dro":
                         marketplaceLocation.text = "marketplace_location-discover_research_outputs"
                     elif researchCategory.text == "research_category-pro":
@@ -199,9 +208,21 @@ def migrate_services(json_file, isVersion):
                         marketplaceLocation.text = "marketplace_location-manage_research_data"
                     marketplaceLocations.append(marketplaceLocation)
             resourceExtras.remove(researchCategories)
+        #  TODO: DECIDE FOR A REQUIRED VALUE WHEN RESEARCHCATEGORIES IS NONE
+        else:
+            marketplaceLocation.text = "marketplace_location-discover_research_outputs"
+            marketplaceLocations.append(marketplaceLocation)
+    #  TODO: DECIDE FOR A REQUIRED VALUE WHEN RESOURCEEXTRAS IS NONE
+    else:
+        marketplaceLocation.text = "marketplace_location-discover_research_outputs"
+        marketplaceLocations.append(marketplaceLocation)
     service.append(marketplaceLocations)
 
     # horizontalService / remove ResourceExtras -> horizontalService
+    # existingHorizontalServiceInsideService = service.find('{http://einfracentral.eu}horizontalService')
+    # if existingHorizontalServiceInsideService is not None:
+    #     service.remove(existingHorizontalServiceInsideService)
+
     horizontalService = ET.Element("tns:horizontalService")
     if resourceExtras is not None:
         existingHorizontalService = resourceExtras.find('{http://einfracentral.eu}horizontalService')
@@ -226,6 +247,10 @@ def migrate_services(json_file, isVersion):
 
 
 def migrate_alternative_identifiers(root, resource):
+    # existingalternativeIdentifiers = resource.find('{http://einfracentral.eu}alternativeIdentifiers')
+    # if existingalternativeIdentifiers is not None:
+    #     resource.remove(existingalternativeIdentifiers)
+
     # alternativeIdentifiers
     identifiers = root.find('{http://einfracentral.eu}identifiers')
     if identifiers is not None:
