@@ -101,7 +101,7 @@ def migrate_datasources(json_file, isVersion):
                     originalOpenAIREId.text = alternativeIdentifierValue.text
                     tree.append(originalOpenAIREId)
                     break
-        identifiers.remove(alternativeIdentifiers)
+            identifiers.remove(alternativeIdentifiers)
 
     root.write('output.xml')
     with open("output.xml", "r") as xml_file:
