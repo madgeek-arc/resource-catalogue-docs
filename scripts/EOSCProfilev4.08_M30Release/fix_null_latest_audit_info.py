@@ -12,7 +12,7 @@ migrationFolders = ['/provider/', '/service/', '/training_resource/', '/interope
 ###################################################### GLOBALS #########################################################
 
 ##################################################### FUNCTIONS ########################################################
-def datasource_migration(directory):
+def folder_migration(directory):
     for folder in migrationFolders:
         for file in os.listdir(directory + folder):
             if file.endswith('.json'):
@@ -82,5 +82,5 @@ def sort_key(element):
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 args = parser.parse_args()
-datasource_migration(args.path)
+folder_migration(args.path)
 ######################################################## RUN ###########################################################
