@@ -221,8 +221,7 @@ def folder_selection(directory):
     migrate_related_to_old_datasource_ids(relatedIdsMigrationFolders)
 
     # Migrate other folders
-    p = Pool(args.cores)
-    p.map(migrate_other_folders, [otherFolders])
+    migrate_other_folders(otherFolders)
 
 
 def migrate_to_service(json_file, isVersion):
@@ -659,7 +658,6 @@ def add_logging_info_registration():
 ######################################################## RUN ###########################################################
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
-parser.add_argument("-c", "--cores", help="number of cores", type=int, required=False)
 args = parser.parse_args()
 post_running_methods()
 folder_selection(args.path)
