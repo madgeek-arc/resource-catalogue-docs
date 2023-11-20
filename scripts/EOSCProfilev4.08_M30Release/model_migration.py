@@ -115,7 +115,8 @@ access_training_material = ['bifi_-_unizar.hm', 'e-cam.e-cam_online_training_por
                             'eosc.openminted.catalogue_of_ancillary_resources', 'openminted.support_and_training',
                             'compbiomed.software_hub', 'eosc.openminted.support_and_training',
                             'eosc.compbiomed.software_hub']
-discover_research_outputs = ['elsevier.digital_commons', 'seadatanet.marine_data_viewer', 'esa-int.geoss_web_portal',
+discover_research_outputs = ['clarin-eric.virtual_language_observatory', 'eosc.clarin-eric.virtual_language_observatory',
+                             'elsevier.digital_commons', 'seadatanet.marine_data_viewer', 'esa-int.geoss_web_portal',
                              'brfaa.chembioserver', 'ukim_fcse.gaussian_api', 'aginfra.geoanalytics_visualization',
                              'bluebridge.indian_ocean_tuna_commission_spatial_data_catalog', 'bineo.cos4env',
                              'ceric-eric.ceric-data-portal', 'nsl-ge.digital_repository_of_georgian_scientific_works',
@@ -549,18 +550,8 @@ def migrate_services(json_file, isVersion):
                         marketplaceLocation.text = "marketplace_location-manage_research_data"
                     marketplaceLocations.append(marketplaceLocation)
             resourceExtras.remove(researchCategories)
-        #  TODO: DECIDE FOR A REQUIRED VALUE WHEN RESEARCHCATEGORIES IS NONE
-        else:
-            print("Service with id [%s]", id.text, " has no Marketplace Location registered")
-            # marketplaceLocation.text = "marketplace_location-discover_research_outputs"
-            # marketplaceLocations.append(marketplaceLocation)
-    #  TODO: DECIDE FOR A REQUIRED VALUE WHEN RESOURCEEXTRAS IS NONE
-    else:
-        print("Service with id [%s]", id.text, " has no Marketplace Location registered")
-        # marketplaceLocation.text = "marketplace_location-discover_research_outputs"
-        # marketplaceLocations.append(marketplaceLocation)
     if not entered:
-        choose_predefined_marketplace_locations(id, marketplaceLocations)
+        choose_predefined_marketplace_locations(id.text, marketplaceLocations)
     service.append(marketplaceLocations)
 
     # horizontalService / remove ResourceExtras -> horizontalService

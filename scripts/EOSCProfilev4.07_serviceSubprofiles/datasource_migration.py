@@ -21,7 +21,6 @@ import argparse
 from distutils.dir_util import copy_tree
 import uuid
 from unidecode import unidecode  # removes accents
-from multiprocessing import Pool
 import time
 ######################################################## IMPORTS #######################################################
 
