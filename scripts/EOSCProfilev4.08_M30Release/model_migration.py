@@ -557,7 +557,8 @@ def migrate_services(json_file, isVersion):
             for researchCategory in researchCategories:
                 if researchCategory is not None:
                     entered = True
-                    if researchCategory.text == "research_category-dro":
+                    if researchCategory.text == "research_category-dro" or \
+                            researchCategory.text == "research_category-dro ":  # 4 malformed entries
                         marketplaceLocation.text = "marketplace_location-discover_research_outputs"
                     elif researchCategory.text == "research_category-pro":
                         marketplaceLocation.text = "marketplace_location-publish_research_outputs"
@@ -662,4 +663,4 @@ args = parser.parse_args()
 datasource_migration(args.path)
 other_resources_migration(args.path)
 service_migration(args.path)
-######################################################## RUN ###########################################################
+################################################## ANOTHER RAPHAEL #####################################################
