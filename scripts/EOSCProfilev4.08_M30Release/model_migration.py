@@ -10,6 +10,7 @@ import argparse
 datasourceIds = []
 datasourceFolder = '/datasource/'
 serviceFolder = '/service/'
+catalogueFolder = '/catalogue/'
 otherFolders = ['/provider/', '/training_resource/', '/interoperability_record/']
 ###################################################### GLOBALS #########################################################
 
@@ -378,6 +379,26 @@ publish_research_outputs = ['bluebridge.support_for_data_publication', 'openmint
 ######################################## PREDEFINED MARKETPLACE LOCATION VALUES ########################################
 
 ##################################################### FUNCTIONS ########################################################
+def catalogue_migration(directory):
+    for file in os.listdir(directory + catalogueFolder):
+        if file.endswith('.json'):
+            isVersion = False
+            with open(directory + catalogueFolder + file, 'r') as json_file:
+                json_data = migrate_catalogues(json_file, isVersion)
+                # write to file
+                with open(directory + catalogueFolder + file, 'w') as json_file:
+                    json.dump(json_data, json_file, indent=2)
+        if file.endswith('-version'):
+            isVersion = True
+            versionFiles = os.listdir(directory + catalogueFolder + file)
+            for versionFile in versionFiles:
+                with open(directory + catalogueFolder + file + '/' + versionFile, 'r') as json_file:
+                    json_data = migrate_catalogues(json_file, isVersion)
+                    # write to file
+                    with open(directory + catalogueFolder + file + '/' + versionFile, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
+
+
 def datasource_migration(directory):
     for file in os.listdir(directory + datasourceFolder):
         if file.endswith('.json'):
@@ -437,6 +458,30 @@ def service_migration(directory):
                     # write to file
                     with open(directory + serviceFolder + file + '/' + versionFile, 'w') as json_file:
                         json.dump(json_data, json_file, indent=2)
+
+
+def migrate_catalogues(json_file, isVersion):
+    json_data = json.load(json_file)
+    xml = json_data['payload']
+    ET.register_namespace("tns", "http://einfracentral.eu")
+    root = ET.ElementTree(ET.fromstring(xml))
+    catalogue = root.find('{http://einfracentral.eu}catalogue')
+
+    # scope
+    scope = ET.Element("tns:scope")
+    scope.text = 'TBD'
+    catalogue.append(scope)
+
+    root.write('output.xml')
+    with open("output.xml", "r") as xml_file:
+        content = xml_file.readlines()
+        content = "".join(content)
+        bs_content = bs(content, "xml")
+        json_data['payload'] = str(bs_content)
+        if isVersion:
+            json_data['resource']['payload'] = json_data['payload']
+
+    return json_data
 
 
 def migrate_datasources(json_file, isVersion):
@@ -515,11 +560,6 @@ def migrate_services(json_file, isVersion):
     service = root.find('{http://einfracentral.eu}service')
     id = service.find('{http://einfracentral.eu}id')
 
-    # serviceCategory field
-    # existingServiceCategories = service.find('{http://einfracentral.eu}serviceCategories')
-    # if existingServiceCategories is not None:
-    #     service.remove(existingServiceCategories)
-
     serviceCategories = ET.Element("tns:serviceCategories")
     serviceCategory = ET.Element("tns:serviceCategory")
     if id in datasourceIds:
@@ -541,11 +581,6 @@ def migrate_services(json_file, isVersion):
         serviceCategory.text = "service_category-other"
     serviceCategories.append(serviceCategory)
     service.append(serviceCategories)
-
-    # marketplaceLocation field / remove ResourceExtras -> researchCategories
-    # existingMarketplaceLocations = service.find('{http://einfracentral.eu}marketplaceLocations')
-    # if existingMarketplaceLocations is not None:
-    #     service.remove(existingMarketplaceLocations)
 
     marketplaceLocations = ET.Element("tns:marketplaceLocations")
     marketplaceLocation = ET.Element("tns:marketplaceLocation")
@@ -580,11 +615,6 @@ def migrate_services(json_file, isVersion):
         choose_predefined_marketplace_locations(id.text, marketplaceLocations)
     service.append(marketplaceLocations)
 
-    # horizontalService / remove ResourceExtras -> horizontalService
-    # existingHorizontalServiceInsideService = service.find('{http://einfracentral.eu}horizontalService')
-    # if existingHorizontalServiceInsideService is not None:
-    #     service.remove(existingHorizontalServiceInsideService)
-
     horizontalService = ET.Element("tns:horizontalService")
     if resourceExtras is not None:
         existingHorizontalService = resourceExtras.find('{http://einfracentral.eu}horizontalService')
@@ -609,10 +639,6 @@ def migrate_services(json_file, isVersion):
 
 
 def migrate_alternative_identifiers(root, resource):
-    # existingalternativeIdentifiers = resource.find('{http://einfracentral.eu}alternativeIdentifiers')
-    # if existingalternativeIdentifiers is not None:
-    #     resource.remove(existingalternativeIdentifiers)
-
     # alternativeIdentifiers
     identifiers = root.find('{http://einfracentral.eu}identifiers')
     if identifiers is not None:
@@ -663,4 +689,4 @@ args = parser.parse_args()
 datasource_migration(args.path)
 other_resources_migration(args.path)
 service_migration(args.path)
-################################################## ANOTHER RAPHAEL #####################################################
+######################################################## RUN ###########################################################

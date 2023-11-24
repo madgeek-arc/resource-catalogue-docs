@@ -62,5 +62,29 @@
     "parentId": null,
     "type": "Marketplace location",
     "extras": {}
+  },
+  {
+    "id": "marketplace_location-build_analysis_environment",
+    "name": "Build analysis environment",
+    "description": null,
+    "parentId": null,
+    "type": "Marketplace location",
+    "extras": {}
+  },
+  {
+    "id": "marketplace_location-find_supporting_services_for_eInfras",
+    "name": "Find supporting services for e-Infras",
+    "description": null,
+    "parentId": null,
+    "type": "Marketplace location",
+    "extras": {}
+  },
+  {
+    "id": "marketplace_location-explore_other_research_catalogues",
+    "name": "Explore other research catalogues",
+    "description": null,
+    "parentId": null,
+    "type": "Marketplace location",
+    "extras": {}
   }
 ]
