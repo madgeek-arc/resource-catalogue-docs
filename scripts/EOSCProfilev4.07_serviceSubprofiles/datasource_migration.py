@@ -19,6 +19,7 @@ import os
 from bs4 import BeautifulSoup as bs
 import argparse
 from distutils.dir_util import copy_tree
+import shutil
 import uuid
 from unidecode import unidecode  # removes accents
 import time
@@ -651,6 +652,12 @@ def add_logging_info_registration():
     loggingInfo.append(type)
     loggingInfo.append(userRole)
     return loggingInfo
+
+
+def copy_new_services_to_service_folder(directory):
+    for file in os.listdir(directory + datasourceToServiceFolder):
+        shutil.copyfile(directory + datasourceToServiceFolder + file, directory + serviceFolder + file)
+    shutil.rmtree(directory + datasourceToServiceFolder)
 ##################################################### FUNCTIONS ########################################################
 
 
@@ -660,4 +667,5 @@ parser.add_argument("-p", "--path", help="sets the folder path", type=str, requi
 args = parser.parse_args()
 post_running_methods()
 folder_selection(args.path)
+copy_new_services_to_service_folder(args.path)
 ####################################################### RAPHAEL ########################################################
