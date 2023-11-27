@@ -750,6 +750,7 @@ def fill_predefined_marketplace_locations(marketplaceLocations, vocabulary):
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--path", help="sets the folder path", type=str, required=True)
 args = parser.parse_args()
+catalogue_migration(args.path)
 datasource_migration(args.path)
 other_resources_migration(args.path)
 service_migration(args.path)
