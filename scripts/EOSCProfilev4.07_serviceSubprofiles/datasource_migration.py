@@ -9,6 +9,9 @@
                                     # DELETE PENDING DATASOURCE FOLDER  #
    # DELETE '068c28ef-4f4d-419e-b423-320fdab02eca' (CERIC-ERIC lower) as inconsistent Datasource (rejected Service) #
    # DELETE 'c8c54266-8a81-44c9-8189-731070228afa' (CERIC-ERIC public) as inconsistent Datasource (rejected Service) #
+           # DELETE '960e53e2-b2c9-48eb-b936-4da2574bdf71' (LINDAT/CLARIAH-CZ lower) duplicate Datasource #
+           # DELETE '6cf335e1-dd06-45b9-a136-af6dd86eba3c' (LINDAT/CLARIAH-CZ public) duplicate Datasource #
+   # DELETE '882db007-149d-4b68-85e7-3a2a04a55588' (eosc.cnb-csic.covid-19_structural_hub) duplicate Public Service #
 
 ######################################################## Changes #######################################################
 
@@ -22,7 +25,6 @@ from distutils.dir_util import copy_tree
 import shutil
 import uuid
 from unidecode import unidecode  # removes accents
-import time
 ######################################################## IMPORTS #######################################################
 
 ###################################################### GLOBALS #########################################################
@@ -641,7 +643,7 @@ def add_logging_info_registration():
     comment = ET.Element("tns:comment")
     comment.text = "Migration to Service sub-profiles"
     date = ET.Element("tns:date")
-    date.text = str(int(time.time()))
+    date.text = "1701280800000"  # Wednesday, November 29, 2023 6:00:00 PM
     type = ET.Element("tns:type")
     type.text = "migrate"
     userRole = ET.Element("tns:userRole")
