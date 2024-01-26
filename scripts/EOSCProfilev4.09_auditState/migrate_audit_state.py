@@ -34,10 +34,9 @@ def migrate(json_file, isVersion):
     ET.register_namespace("tns", "http://einfracentral.eu")
     root = ET.ElementTree(ET.fromstring(xml))
     tree = root.getroot()
-    catalogue = root.find('{http://einfracentral.eu}catalogue')
 
     # migrate auditState
-    auditState = catalogue.find('{http://einfracentral.eu}auditState')
+    auditState = root.find('{http://einfracentral.eu}auditState')
     if auditState is None:
         newAuditState = ET.Element("tns:auditState")
         newAuditState.text = "Not audited"
