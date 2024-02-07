@@ -40,7 +40,7 @@ def migrate(json_file, isVersion):
         registeredBy = metadata.find('{http://einfracentral.eu}registeredBy')
         if registeredAt is not None:
             registeredAt.text = find_registration_date_and_user(root, True)
-        if registeredAt is not None:
+        if registeredBy is not None:
             registeredBy.text = find_registration_date_and_user(root, False)
 
     root.write('output.xml')
