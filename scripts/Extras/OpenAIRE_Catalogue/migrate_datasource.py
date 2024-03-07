@@ -94,6 +94,7 @@ def migrate(json_file, isVersion):
         datasource.pop('order', None)
         datasource.pop('paymentModel', None)
         datasource.pop('pricing', None)
+        datasource.pop('extras', None)
 
     json_data['payload'] = json.dumps(payload, ensure_ascii=False)
     if isVersion:
