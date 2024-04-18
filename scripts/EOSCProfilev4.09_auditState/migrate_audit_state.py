@@ -5,10 +5,10 @@ import os
 from bs4 import BeautifulSoup as bs
 import argparse
 ######################################################## IMPORTS #######################################################
-#TODO: IF WORKS AS EXPECTED ADD MIGRATION FUNCTIONALITY FOR ALL THE OTHER RESOURCES THAT GET AUDITED
+
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
-    migrationFolders = ['/catalogue/']
+    migrationFolders = ['/catalogue/', '/provider', '/service', '/training_resource', '/interoperability_record']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
