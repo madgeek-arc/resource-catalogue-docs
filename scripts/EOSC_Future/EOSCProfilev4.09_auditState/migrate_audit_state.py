@@ -8,7 +8,7 @@ import argparse
 
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
-    migrationFolders = ['/catalogue/', '/provider', '/service', '/training_resource', '/interoperability_record']
+    migrationFolders = ['/catalogue/', '/provider/', '/service/', '/training_resource/', '/interoperability_record/']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
@@ -35,11 +35,16 @@ def migrate(json_file, isVersion):
     root = ET.ElementTree(ET.fromstring(xml))
     tree = root.getroot()
 
-    # migrate auditState
+    # migrate audit state
     auditState = root.find('{http://einfracentral.eu}auditState')
     if auditState is None:
         newAuditState = ET.Element("tns:auditState")
-        newAuditState.text = "Not audited"
+
+        # if audit functionality restart on Beyond / LOT1
+        # newAuditState.text = "Not audited"
+        # if audit functionality resumes from EOSC Future
+        newAuditState.text = get_latest_audit_state(root)
+
         tree.append(newAuditState)
 
     root.write('output.xml')
@@ -52,6 +57,24 @@ def migrate(json_file, isVersion):
             json_data['resource']['payload'] = json_data['payload']
 
     return json_data
+
+
+def get_latest_audit_state(root):
+    sortedLoggingInfo = sorted(root.findall('.//{http://einfracentral.eu}loggingInfo'),
+                                 key=lambda x: int(x.find('{http://einfracentral.eu}date').text))
+    for loggingInfo in sortedLoggingInfo:
+        if loggingInfo is not None:
+            type = loggingInfo.find('{http://einfracentral.eu}type')
+            if type is not None:
+                if type.text == "audit":
+                    actionType = loggingInfo.find('{http://einfracentral.eu}actionType')
+                    if actionType is not None:
+                        if actionType.text == "valid":
+                            return "Valid"
+                        else:
+                            return "Invalid and not updated"
+    return "Not audited"
+
 ##################################################### FUNCTIONS ########################################################
 
 
