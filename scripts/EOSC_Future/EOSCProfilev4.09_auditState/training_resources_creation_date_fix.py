@@ -5,7 +5,7 @@ import os
 from bs4 import BeautifulSoup as bs
 import argparse
 ######################################################## IMPORTS #######################################################
-#TODO: IF WORKS AS EXPECTED ADD MIGRATION FUNCTIONALITY FOR ALL THE OTHER RESOURCES THAT GET AUDITED
+
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
     migrationFolders = ['/training_resource/']
