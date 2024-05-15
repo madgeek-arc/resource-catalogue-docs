@@ -6,7 +6,7 @@ import argparse
 
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
-    migrationFolders = ['/catalogue/', '/provider/', '/service/', '/training_resource/', '/interoperability_record/']
+    migrationFolders = ['/training_resource/']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
@@ -31,40 +31,22 @@ def migrate(json_file, isVersion):
     payload_str = json_data['payload']
     payload_data = json.loads(payload_str)
 
-    # migrate audit state
-    auditState = payload_data.get('auditState')
-    if auditState is None:
-        # if audit functionality restart on Beyond / LOT1
-        # newAuditState = 'Not audited'
+    metadata = payload_data.get('metadata')
+    if metadata is not None:
+        registeredBy = metadata.get('registeredBy')
+        if registeredBy is not None:
+            if registeredBy == 'null':
+                registeredBy = 'system'
 
-        # if audit functionality resumes from EOSC Future
-        loggingInfo = payload_data.get('loggingInfo', [])
-        newAuditState = get_latest_audit_state(loggingInfo)
-        payload_data['auditState'] = newAuditState
+                metadata['registeredBy'] = registeredBy
+                payload_data['metadata'] = metadata
 
-        # update payload
-        json_data['payload'] = json.dumps(payload_data)
-        if isVersion:
-            json_data['resource']['payload'] = json.dumps(payload_data)
+                # update payload
+                json_data['payload'] = json.dumps(payload_data)
+                if isVersion:
+                    json_data['resource']['payload'] = json.dumps(payload_data)
 
     return json_data
-
-
-def get_latest_audit_state(loggingInfo):
-    sortedLoggingInfo = sorted(loggingInfo, key=lambda x: x['date'])
-    for loggingInfo in sortedLoggingInfo:
-        if loggingInfo is not None:
-            loggingInfoType = loggingInfo['type']
-            if loggingInfoType is not None:
-                if loggingInfoType == "audit":
-                    loggingInfoActionType = loggingInfo['actionType']
-                    if loggingInfoActionType is not None:
-                        if loggingInfoActionType == "valid":
-                            return "Valid"
-                        else:
-                            return "Invalid and not updated"
-    return "Not audited"
-
 ##################################################### FUNCTIONS ########################################################
 
 
