@@ -44,6 +44,7 @@ def migrate(json_file, isVersion):
         payload.pop('resourceExtras', None)
     datasource = payload.get('datasource')
     if datasource:
+        # datasource['serviceId'] = 'openaire.zenodo'
         datasource.pop('name', None)
         datasource.pop('abbreviation', None)
         datasource.pop('resourceOrganisation', None)
@@ -101,15 +102,6 @@ def migrate(json_file, isVersion):
         json_data['resource']['payload'] = json_data['payload']
 
     return json_data
-
-
-def date_to_timestamp(date_str):
-    try:
-        date_obj = datetime.strptime(date_str, "%a %b %d %H:%M:%S %Z %Y")
-        date_utc = date_obj.replace(tzinfo=timezone.utc)
-        return int(date_utc.timestamp() * 1000)
-    except ValueError:
-        return date_str
 ##################################################### FUNCTIONS ########################################################
 
 
