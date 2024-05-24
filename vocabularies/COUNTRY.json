@@ -5,7 +5,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "AE",
@@ -45,7 +47,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "AM",
@@ -93,7 +97,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "AU",
@@ -117,7 +123,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "AZ",
@@ -133,7 +141,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "BB",
@@ -157,7 +167,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "BF",
@@ -173,7 +185,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "BH",
@@ -285,7 +299,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "BZ",
@@ -341,7 +357,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "CI",
@@ -437,7 +455,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "CZ",
@@ -445,7 +465,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "DE",
@@ -453,7 +475,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "DJ",
@@ -469,7 +493,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "DM",
@@ -509,7 +535,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "EG",
@@ -533,7 +561,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "ER",
@@ -549,7 +579,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "ET",
@@ -565,7 +597,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "FJ",
@@ -597,7 +631,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "FR",
@@ -605,7 +641,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "GA",
@@ -645,7 +683,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "GH",
@@ -661,7 +701,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "GL",
@@ -773,7 +815,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "HT",
@@ -789,7 +833,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "ID",
@@ -805,7 +851,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "IL",
@@ -821,7 +869,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "IN",
@@ -861,7 +911,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "IT",
@@ -869,7 +921,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "JE",
@@ -877,7 +931,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "JM",
@@ -1021,7 +1077,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "LK",
@@ -1053,7 +1111,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "LU",
@@ -1061,7 +1121,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "LV",
@@ -1069,7 +1131,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "LY",
@@ -1093,7 +1157,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "MD",
@@ -1101,7 +1167,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "ME",
@@ -1109,7 +1177,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "MF",
@@ -1141,7 +1211,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "ML",
@@ -1213,7 +1285,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "MU",
@@ -1317,7 +1391,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "NO",
@@ -1325,7 +1401,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "NP",
@@ -1429,7 +1507,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "PM",
@@ -1469,7 +1549,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "PW",
@@ -1509,7 +1591,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "RS",
@@ -1517,7 +1601,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "RU",
@@ -1525,7 +1611,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "RW",
@@ -1573,7 +1661,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "SG",
@@ -1597,7 +1687,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "SJ",
@@ -1605,7 +1697,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "SK",
@@ -1613,7 +1707,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "SL",
@@ -1629,7 +1725,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "SN",
@@ -1837,7 +1935,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "UG",
@@ -1853,7 +1953,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "UM",
@@ -1893,7 +1995,9 @@
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
-    "extras": {}
+    "extras": {
+      "region": "EU"
+    }
   },
   {
     "id": "VC",
