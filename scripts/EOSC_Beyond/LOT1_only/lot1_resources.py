@@ -180,7 +180,6 @@ def determine_internal_item(resourceType):
 def copy_json_files(directory):
     migrationFolders = ['/provider/', '/service/', '/training_resource/', '/interoperability_record/', '/datasource/',
                         '/monitoring/', '/resource_interoperability_record/']
-    files_to_copy = []
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
