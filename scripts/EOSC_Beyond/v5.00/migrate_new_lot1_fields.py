@@ -50,7 +50,7 @@ def migrate(json_file, isVersion, resourceType):
 
     # new field classTier
     if internalItem == 'service':
-        class_tier_instance = ClassTier(level=3, accessPolicy=None, costModel=None)
+        class_tier_instance = ClassTier(level=3, accessPolicy=None, costModel=None, offerings=None)
         resource['classTier'] = class_tier_instance.to_dict()
 
 
@@ -79,16 +79,18 @@ def determine_internal_item(resourceType):
 
 
 class ClassTier:
-    def __init__(self, level, accessPolicy, costModel):
+    def __init__(self, level, accessPolicy, costModel, offerings):
         self.level = level
         self.accessPolicy = accessPolicy
         self.costModel = costModel
+        self.offerings = offerings
 
     def to_dict(self):
         return {
             'level': self.level,
             'accessPolicy': self.accessPolicy,
-            'costModel': self.costModel
+            'costModel': self.costModel,
+            'offerings': self.offerings
         }
 ##################################################### FUNCTIONS ########################################################
 
