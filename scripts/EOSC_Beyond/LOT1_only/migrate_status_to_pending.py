@@ -38,7 +38,7 @@ def migrate(json_file, isVersion):
     # set 'status' to PENDING
     status = payload_data.get('status')
     if status is not None:
-        payload_data['status'] = 'PENDING'
+        payload_data['status'] = 'pending'
     else:
         print(f"Resource with CORE ID {core_id} has no 'status' field")
 
