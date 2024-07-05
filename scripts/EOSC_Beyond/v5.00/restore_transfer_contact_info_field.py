@@ -4,6 +4,9 @@ import os
 import argparse
 ######################################################## IMPORTS #######################################################
 
+# Manually add transferContactInfo for
+# Institute for Information Science and Technologies \"Alessandro Faedo\" - ISTI
+# 985d0029-54b3-444b-9037-7b841bee49f2, 7f759133-d5ba-4b10-b6e8-6fdb132ac99a
 
 ####################################################### LOAD FILES #####################################################
 root_path = os.path.dirname(os.path.abspath(__file__))  # This gives the directory of the current script
