@@ -1,5 +1,5 @@
-# Create a dump containing only the resources LOT1 needs (consent = true)
-# SOS: do not include published (public = true) resources
+# Create a dump containing only the resources that User Admins have consented for.
+# No Public layer, no version folders
 
 ######################################################## IMPORTS #######################################################
 import json
