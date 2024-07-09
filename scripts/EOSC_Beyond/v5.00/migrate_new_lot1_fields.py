@@ -11,7 +11,7 @@ import argparse
 
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
-    migrationFolders = ['/catalogue/', '/configuration_template/', '/configuration_template_instance/','/provider/',
+    migrationFolders = ['/catalogue/', '/configuration_template/', '/configuration_template_instance/', '/provider/',
                         '/service/', '/training_resource/', '/interoperability_record/', '/datasource/', '/monitoring/',
                         '/resource_interoperability_record/']
     for migrationFolder in migrationFolders:

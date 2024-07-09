@@ -61,7 +61,7 @@ def find_consent_resources(json_file, resourceType):
         name = resource.get('name')
         if name in provider_names_to_consent:
             if name == 'Vilnius University' and catalogueId != 'eosc':  # EOSC-NORDIC same name, not consent
-                return
+                return  # FIXME: returns and then saves null json. Test if it is fixed.
             providerFound += 1
             transfer_contact_info_list = TransferContactInformation()
             emails = provider_names_to_consent[name]
@@ -72,8 +72,8 @@ def find_consent_resources(json_file, resourceType):
                 transfer_contact_info_list.add_contact(transfer_contact_info_instance)
             payload_data['transferContactInformation'] = transfer_contact_info_list.to_dict()
 
-    # update payload
-    json_data['payload'] = json.dumps(payload_data)
+        # update payload
+        json_data['payload'] = json.dumps(payload_data)
 
     return json_data
 

@@ -22,10 +22,13 @@ interoperability_core_ids = []
 datasource_core_ids = []
 monitoring_core_ids = []
 resource_interoperability_record_core_ids = []
+configuration_template_core_ids = []
+configuration_template_instance_core_ids = []
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
     migrationFolders = ['/provider/', '/service/', '/training_resource/', '/interoperability_record/', '/datasource/',
-                        '/monitoring/', '/resource_interoperability_record/']
+                        '/monitoring/', '/resource_interoperability_record/', '/configuration_template/',
+                        '/configuration_template_instance/']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
@@ -86,6 +89,13 @@ def find_consent_resources(json_file, resourceType):
             resource_interoperability_record_ids.append(resourceId)
             resource_interoperability_record_core_ids.append(core_id)
 
+    if resourceType == 'configuration_template':
+        if not published:
+            configuration_template_core_ids.append(core_id)
+    if resourceType == 'configuration_template_instance':
+        if not published:
+            configuration_template_instance_core_ids.append(core_id)
+
 
 def determine_internal_item(resourceType):
     if resourceType == 'training_resource':
@@ -94,6 +104,10 @@ def determine_internal_item(resourceType):
         internalItem = 'interoperabilityRecord'
     elif resourceType == 'resource_interoperability_record':
         internalItem = 'resourceInteroperabilityRecord'
+    elif resourceType == 'configuration_template':
+        internalItem = 'configurationTemplate'
+    elif resourceType == 'configuration_template_instance':
+        internalItem = 'configurationTemplateInstance'
     else:
         internalItem = resourceType
     return internalItem
@@ -101,48 +115,60 @@ def determine_internal_item(resourceType):
 
 def copy_json_files(directory):
     migrationFolders = ['/provider/', '/service/', '/training_resource/', '/interoperability_record/', '/datasource/',
-                        '/monitoring/', '/resource_interoperability_record/']
+                        '/monitoring/', '/resource_interoperability_record/', '/configuration_template/',
+                        '/configuration_template_instance/']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
                 # Get the file name without the .json extension
                 filename = os.path.splitext(file)[0]
-
+                folder_path = directory + migrationFolder
+                source_file = os.path.join(folder_path, file)
                 # Check if the filename exists in your array of filenames
                 if filename in provider_core_ids:
-                    folder_path = directory + migrationFolder
-                    source_file = os.path.join(folder_path, file)
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
                     destination_file = os.path.join('/tmp/lot1/provider', file)
                     shutil.copyfile(source_file, destination_file)
                 if filename in service_core_ids:
-                    folder_path = directory + migrationFolder
-                    source_file = os.path.join(folder_path, file)
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
                     destination_file = os.path.join('/tmp/lot1/service', file)
                     shutil.copyfile(source_file, destination_file)
                 if filename in training_core_ids:
-                    folder_path = directory + migrationFolder
-                    source_file = os.path.join(folder_path, file)
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
                     destination_file = os.path.join('/tmp/lot1/training_resource', file)
                     shutil.copyfile(source_file, destination_file)
                 if filename in interoperability_core_ids:
-                    folder_path = directory + migrationFolder
-                    source_file = os.path.join(folder_path, file)
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
                     destination_file = os.path.join('/tmp/lot1/interoperability_record', file)
                     shutil.copyfile(source_file, destination_file)
                 if filename in datasource_core_ids:
-                    folder_path = directory + migrationFolder
-                    source_file = os.path.join(folder_path, file)
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
                     destination_file = os.path.join('/tmp/lot1/datasource', file)
                     shutil.copyfile(source_file, destination_file)
                 if filename in monitoring_core_ids:
-                    folder_path = directory + migrationFolder
-                    source_file = os.path.join(folder_path, file)
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
                     destination_file = os.path.join('/tmp/lot1/monitoring', file)
                     shutil.copyfile(source_file, destination_file)
                 if filename in resource_interoperability_record_core_ids:
-                    folder_path = directory + migrationFolder
-                    source_file = os.path.join(folder_path, file)
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
                     destination_file = os.path.join('/tmp/lot1/resource_interoperability_record', file)
+                    shutil.copyfile(source_file, destination_file)
+                if filename in configuration_template_core_ids:
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
+                    destination_file = os.path.join('/tmp/lot1/configuration_template', file)
+                    shutil.copyfile(source_file, destination_file)
+                if filename in configuration_template_instance_core_ids:
+                    # folder_path = directory + migrationFolder
+                    # source_file = os.path.join(folder_path, file)
+                    destination_file = os.path.join('/tmp/lot1/configuration_template_instance', file)
                     shutil.copyfile(source_file, destination_file)
 ##################################################### FUNCTIONS ########################################################
 

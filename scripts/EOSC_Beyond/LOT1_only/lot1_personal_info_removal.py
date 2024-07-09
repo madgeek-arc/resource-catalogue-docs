@@ -3,42 +3,33 @@
 
 # Bundle:
 #	metadata:
-#		registerBy/At
-#		modifiedBy/At
-#		terms
-#	loggingInfo:
+#		registerBy -> system for all
+#		modifiedBy -> system for all
+#		terms -> anonymize emails not consent
+#	loggingInfo: -> delete
 #		userEmail
 #		userFullName
-#	latestAuditInfo
-#	latestOnboardingInfo
-#	latestUpdateInfo
+#	latestAuditInfo -> delete
+#	latestOnboardingInfo -> delete
+#	latestUpdateInfo -> delete
 #
-# Catalogue:
-#	location(streetNameAndNumber)?
-#	mainContact
-#	publicContacts
-#	users
-#
-# Provider:
-#	location?
-#	mainContact
-#	publicContacts
-#	users
+# Catalogue/Provider:
+#	mainContact -> anonymize everything for emails not consent
+#	users -> anonymize everything for emails not consent
 #
 # Service:
-#	mainContact
-#	publicContacts
-#	helpdeskEmail
-#	securityContactEmail
+#	mainContact -> anonymize everything for emails not consent
+#	securityContactEmail -> anonymize emails not consent
 #
 # TrainingResource:
-#	contact
+#	contact -> anonymize everything for emails not consent
 ######################################################## IMPORTS #######################################################
 import json
 import os
 import argparse
 ######################################################## IMPORTS #######################################################
 
+# Multiple same Users/terms may cause problem?
 
 ####################################################### LOAD FILES #####################################################
 root_path = os.path.dirname(os.path.abspath(__file__))
@@ -50,7 +41,9 @@ with open(emails_consented_path, 'r') as file:
 
 ##################################################### FUNCTIONS ########################################################
 def folder_selection(directory):
-    migrationFolders = ['/catalogue/', '/provider/', '/service/', '/training_resource/']
+    migrationFolders = ['/catalogue/', '/configuration_template/', '/configuration_template_instance/', '/datasource/',
+                        '/interoperability_record/', '/monitoring/', '/provider/', '/resource_interoperability_record/',
+                        '/service/', '/training_resource/']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
             if file.endswith('.json'):
@@ -66,25 +59,60 @@ def migrate(json_file, resourceType):
     json_data = json.load(json_file)
     payload_str = json_data['payload']
     payload_data = json.loads(payload_str)
+
+    # Bundle
+    metadata = payload_data.get('metadata')
+    if metadata:
+        registeredBy = metadata.get('registeredBy')
+        if registeredBy:
+            metadata['registeredBy'] = 'system'
+        modifiedBy = metadata.get('modifiedBy')
+        if modifiedBy:
+            metadata['modifiedBy'] = 'system'
+        terms = metadata.get('terms')
+        if terms:
+            for i in range(len(terms)):
+                if terms[i] and terms[i] not in emails_consented:
+                    terms[i] = 'redacted@example.com'
+    loggingInfo = payload_data.get('loggingInfo')
+    if loggingInfo:
+        del payload_data['loggingInfo']
+    latestAuditInfo = payload_data.get('latestAuditInfo')
+    if latestAuditInfo:
+        del payload_data['latestAuditInfo']
+    latestOnboardingInfo = payload_data.get('latestOnboardingInfo')
+    if latestOnboardingInfo:
+        del payload_data['latestOnboardingInfo']
+    latestUpdateInfo = payload_data.get('latestUpdateInfo')
+    if latestUpdateInfo:
+        del payload_data['latestUpdateInfo']
+
+    # Internal
     resource = payload_data.get(internalItem)
-
-    # TODO: Decide upon which fields to be removed and how (deletion OR null values)
-
     if resourceType == 'catalogue' or resourceType == 'provider':
-        remove_unconsented_main_contact(resource)
-        remove_unconsented_public_contacts(resource)
-        remove_unconsented_users(resource)
+        anonymize_unconsented_main_contact(resource)
+        anonymize_unconsented_users(resource)
 
     if resourceType == 'service':
-        remove_unconsented_main_contact(resource)
-        remove_unconsented_public_contacts(resource)
+        anonymize_unconsented_main_contact(resource)
+        securityContactEmail = resource.get('securityContactEmail')
+        if securityContactEmail:
+            resource['securityContactEmail'] = 'redacted@example.com'
 
     if resourceType == 'training_resource':
-        remove_unconsented_main_contact(resource)
+        anonymize_unconsented_main_contact(resource)
+
+    # update payload
+    json_data['payload'] = json.dumps(payload_data)
+    return json_data
 
 
 def determine_internal_item(resourceType):
-    if resourceType == 'training_resource':
+    if resourceType == 'configuration_template':
+        internalItem = 'configurationTemplate'
+    elif resourceType == 'configuration_template_instance':
+        internalItem = 'configurationTemplateInstance'
+    elif resourceType == 'training_resource':
         internalItem = 'trainingResource'
     elif resourceType == 'interoperability_record':
         internalItem = 'interoperabilityRecord'
@@ -95,42 +123,41 @@ def determine_internal_item(resourceType):
     return internalItem
 
 
-def remove_unconsented_main_contact(resource):
+def anonymize_unconsented_main_contact(resource):
     mainContact = resource.get('mainContact')
-    contact_field = 'mainContact'
-    if mainContact is None:
+    if mainContact is None:  # training resources
         mainContact = resource.get('contact')
-        contact_field = 'contact'
     if mainContact:
         mainContactEmail = mainContact.get('email')
         if mainContactEmail and mainContactEmail not in emails_consented:
-            del resource[contact_field]
+            mainContactFirstName = mainContact.get('firstName')
+            if mainContactFirstName:
+                mainContact['firstName'] = 'name'
+            mainContactLastName = mainContact.get('lastName')
+            if mainContactLastName:
+                mainContact['lastName'] = 'surname'
+            mainContact['email'] = 'redacted@example.com'
+            mainContactPhone = mainContact.get('phone')
+            if mainContactPhone:
+                del mainContact['phone']
 
-
-def remove_unconsented_public_contacts(resource):
-    publicContacts = resource.get('publicContacts')
-    if publicContacts:
-        contacts_to_delete = []
-        for publicContact in publicContacts:
-            if publicContact:
-                publicContactEmail = publicContact.get('email')
-                if publicContactEmail and publicContactEmail not in emails_consented:
-                    contacts_to_delete.append(publicContact)
-        for publicContact in contacts_to_delete:
-            publicContacts.remove(publicContact)
-
-
-def remove_unconsented_users(resource):
+def anonymize_unconsented_users(resource):
     users = resource.get('users')
     if users:
-        users_to_delete = []
         for user in users:
             if user:
                 userEmail = user.get('email')
                 if userEmail and userEmail not in emails_consented:
-                    users_to_delete.append(user)
-        for user in users_to_delete:
-            users.remove(user)
+                    userId = user.get('id')
+                    if userId:
+                        user['id'] = 'id'
+                    userName = user.get('name')
+                    if userName:
+                        user['name'] = 'name'
+                    userSurname = user.get('surname')
+                    if userSurname:
+                        user['surname'] = 'surname'
+                    user['email'] = 'redacted@example.com'
 ##################################################### FUNCTIONS ########################################################
 
 
