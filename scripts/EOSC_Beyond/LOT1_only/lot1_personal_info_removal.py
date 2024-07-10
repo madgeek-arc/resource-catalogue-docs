@@ -5,7 +5,7 @@
 #	metadata:
 #		registerBy -> system for all
 #		modifiedBy -> system for all
-#		terms -> anonymize emails not consent
+#		terms -> nullify
 #	loggingInfo: -> delete
 #		userEmail
 #		userFullName
@@ -29,7 +29,6 @@ import os
 import argparse
 ######################################################## IMPORTS #######################################################
 
-# Multiple same Users/terms may cause problem?
 
 ####################################################### LOAD FILES #####################################################
 root_path = os.path.dirname(os.path.abspath(__file__))
@@ -71,9 +70,7 @@ def migrate(json_file, resourceType):
             metadata['modifiedBy'] = 'system'
         terms = metadata.get('terms')
         if terms:
-            for i in range(len(terms)):
-                if terms[i] and terms[i] not in emails_consented:
-                    terms[i] = 'redacted@example.com'
+            metadata['terms'] = None
     loggingInfo = payload_data.get('loggingInfo')
     if loggingInfo:
         del payload_data['loggingInfo']
