@@ -30,8 +30,8 @@ def folder_selection(directory):
                 with open(directory + migrationFolder + file, 'r') as json_file:
                     json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
                     # write to file
-                    # with open(directory + migrationFolder + file, 'w') as json_file:
-                    #     json.dump(json_data, json_file, indent=2)
+                    with open(directory + migrationFolder + file, 'w') as json_file:
+                        json.dump(json_data, json_file, indent=2)
             if file.endswith('-version'):
                 isVersion = True
                 versionFiles = os.listdir(directory + migrationFolder + file)
@@ -39,8 +39,8 @@ def folder_selection(directory):
                     with open(directory + migrationFolder + file + '/' + versionFile, 'r') as json_file:
                         json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
                         # write to file
-                        # with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
-                        #     json.dump(json_data, json_file, indent=2)
+                        with open(directory + migrationFolder + file + '/' + versionFile, 'w') as json_file:
+                            json.dump(json_data, json_file, indent=2)
 
 
 def migrate(json_file, isVersion, resourceType):
