@@ -25,7 +25,7 @@ def folder_selection(directory):
     migrationFolders = ['/service/', '/datasource/']
     for migrationFolder in migrationFolders:
         for file in os.listdir(directory + migrationFolder):
-            if file.endswith('.json'):
+            if file.endswith('.json') and file != 'schema.json':
                 isVersion = False
                 with open(directory + migrationFolder + file, 'r') as json_file:
                     json_data = migrate(json_file, isVersion, migrationFolder.replace("/", ""))
@@ -53,16 +53,16 @@ def migrate(json_file, isVersion, resourceType):
     if resourceId in old_to_new_ids_mapping:
         payload_data['id'] = old_to_new_ids_mapping[resourceId]
         resource['id'] = payload_data['id']
-    providerId = resource['id'].split(".")[0]
+    # providerId = resource['id'].split(".")[0]
 
     if resourceType == "service":
-        resource['resourceOrganisation'] = providerId
-        resourceProviders = resource.get('resourceProviders')
-        if resourceProviders and any(resourceProviders):
-            for i in range(len(resourceProviders)):
-                resourceProvider = resourceProviders[i]
-                if resourceProvider == resourceId:
-                    resourceProviders[i] = providerId
+        # resource['resourceOrganisation'] = providerId
+        # resourceProviders = resource.get('resourceProviders')
+        # if resourceProviders and any(resourceProviders):
+        #     for i in range(len(resourceProviders)):
+        #         resourceProvider = resourceProviders[i]
+        #         if resourceProvider == resourceId:
+        #             resourceProviders[i] = providerId
         requiredResources = resource.get('requiredResources')
         if requiredResources and any(requiredResources):
             for i in range(len(requiredResources)):
