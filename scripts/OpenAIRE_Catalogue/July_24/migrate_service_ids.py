@@ -2,7 +2,6 @@
 import argparse
 import json
 import os
-from datetime import datetime, timezone
 ######################################################## IMPORTS #######################################################
 
 old_to_new_ids_mapping = {
@@ -75,6 +74,14 @@ def migrate(json_file, isVersion, resourceType):
                 relatedResource = relatedResources[i]
                 if relatedResource in old_to_new_ids_mapping:
                     relatedResources[i] = old_to_new_ids_mapping[relatedResource]
+        extras = resource.get('extras')
+        if extras is not None:
+            relatedServices = extras.get('relatedServices')
+            if relatedServices and any(relatedServices):
+                for i in range(len(relatedServices)):
+                    relatedService = relatedServices[i]
+                    if relatedService in old_to_new_ids_mapping:
+                        relatedServices[i] = old_to_new_ids_mapping[relatedService]
 
     if resourceType == "datasource":
         serviceId = resource.get('serviceId')
