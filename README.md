@@ -1,5 +1,1240 @@
 <div align="center">
-  <img src='https://eosc-portal.eu/sites/all/themes/theme1/logo.png'></img>
+  <img src='https://eosc.eu/wp-content/uploads/2024/02/EOSC-Beyond-logo.png'></img>
 </div>
 
-# Resource Catalogue Documentation <br /> [v5 - EOSC Beyond]
+# Service Catalogue Documentation [v5.0.0]
+
+## API:
+- [Production](https://api.providers.sandbox.eosc-beyond.eu)
+- [Integration](https://api.integration.providers.sandbox.eosc-beyond.eu)
+
+## Swagger:
+- [Production](https://providers.sandbox.eosc-beyond.eu/openapi)
+- [Integration](https://integration.providers.sandbox.eosc-beyond.eu/openapi)
+
+## Controllers:
+
+- ### Catalogue
+  #### CRUD operations for Catalogues + external (non EOSC) resources
+  - DELETE
+    - Deletes the Datasource of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/datasource/{id}
+      Params:
+        catalogueId: String (required)
+        id : String (required)
+      ```
+    - Deletes the Provider of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/provider/{id}
+      Params:
+        catalogueId: String (required)
+        id : String (required)
+      ```
+    - Deletes the Service of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/resource/{id}
+      Params:
+        catalogueId: String (required)
+        id : String (required)
+      ```
+    - Deletes the Training Resource of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/trainingResource/{id}
+      Params:
+        catalogueId: String (required)
+        id : String (required)
+      ```
+  - GET
+    - Get a list of all Catalogues in the Portal:
+      ```diff
+      /catalogue/all
+      Params:
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Datasource of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/datasource/{resourceId}
+      Params:
+        catalogueId: String (required)
+        resourceId : String (required)
+      ```
+    - Get a list of all Providers of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/provider/all
+      Params:
+        catalogueId: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Provider of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/provider/{providerId}
+      Params:
+        catalogueId: String (required)
+        providerId : String (required)
+      ```
+    - Returns the Service of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/resource/{resourceId}
+      Params:
+        catalogueId: String (required)
+        resourceId : String (required)
+      ```
+    - Returns the Training Resource of the specific Catalogue given its ID:
+      ```diff
+      /catalogue/{catalogueId}/trainingResource/{trainingResourceId}
+      Params:
+        catalogueId: String (required)
+        trainingResourceId : String (required)
+      ```
+    - Get a list of all Datasources of the specific Provider of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/{providerId}/datasource/all
+      Params:
+        catalogueId: String (required)
+        providerId : String (required)
+      ```
+    - Get a list of all Service of the specific Provider of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/{providerId}/resource/all
+      Params:
+        catalogueId: String (required)
+        providerId : String (required)
+      ```
+    - Get a list of all Training Resources of the specific Provider of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/{providerId}/trainingResource/all
+      Params:
+        catalogueId: String (required)
+        providerId : String (required)
+      ```
+    - Get a specific Catalogue given its ID:
+      ```diff
+      /catalogue/{id}
+      Params:
+        id: String (required)
+      ```
+  - POST
+    - Creates a new Datasource for the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/datasource
+      Body:
+        Datasource JSON (required)
+      Params:
+        catalogueId: String (required)
+      ```
+    - Creates a new Provider for the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/provider
+      Body:
+        Provider JSON (required)
+      Params:
+        catalogueId: String (required)
+      ```
+    - Creates a new Service for the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/resource
+      Body:
+        Service JSON (required)
+      Params:
+        catalogueId: String (required)
+      ```
+    - Creates a new Training Resource for the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/trainingResource
+      Body:
+        Training Resource JSON (required)
+      Params:
+        catalogueId: String (required)
+      ```
+  - PUT
+    - Updates a specific Catalogue:
+      ```diff
+      /catalogue
+      Body:
+        Catalogue JSON (required)
+      Params:
+        comment: String
+      ```
+    - Updates the Datasource of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/datasource
+      Body:
+        Datasource JSON (required)
+      Params:
+        catalogueId: String (required)
+        comment: String
+      ```
+    - Updates the Provider of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/provider
+      Body:
+        Provider JSON (required)
+      Params:
+        catalogueId: String (required)
+        comment: String
+      ```
+    - Updates the Service of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/resource
+      Body:
+        Service JSON (required)
+      Params:
+        catalogueId: String (required)
+        comment: String
+      ```
+    - Updates the Training Resource of the specific Catalogue:
+      ```diff
+      /catalogue/{catalogueId}/trainingResource
+      Body:
+        Training Resource JSON (required)
+      Params:
+        catalogueId: String (required)
+        comment: String
+      ```
+
+- ### Datasource
+  #### CRUD operations for Datasources
+  - DELETE
+    - Deletes the Datasource of the specific Catalogue given its ID:
+      ```diff
+      /datasource/{id}
+      Params:
+        id: String (required)
+        catalogueId: String (required)
+      ```
+  - GET
+    - Get a list of all Datasources of the specific Catalogue in the Portal:
+      ```diff
+      /datasource/all
+      Params:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Datasource of the specific Catalogue given its ID:
+      ```diff
+      /datasource/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+  - POST
+    - Creates a new EOSC Datasource:
+      ```diff
+      /datasource
+      Body:
+        Datasource JSON (required)
+      ```
+     - Validates a Datasource:
+        ```diff
+        /datasource/validate
+        Body:
+          Datasource JSON (required)
+        ```
+  - PUT
+    - Updates a specific EOSC Datasource:
+      ```diff
+      /datasource
+      Body:
+        Datasource JSON (required)
+      Params:
+        comment: String
+      ```
+        
+- ### Interoperability Record:
+  #### Get information about Interoperability Records
+  - GET
+    - Get a list of all Interoperability Records in the Portal:
+      ```diff
+      /interoperabilityRecord/all
+      Params:
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Interoperability Record given its ID:
+      ```diff
+      /interoperabilityRecord/{id}
+      Params:
+        id: String (required)
+      ```
+        
+- ### Provider
+  #### CRUD operations for Providers
+  - DELETE
+    - Deletes the Provider of the specific Catalogue given its ID:
+      ```diff
+      /provider/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String (required)
+      ```
+  - GET
+    - Get a list of all Providers of the specific Catalogue in the Portal:
+      ```diff
+      /provider/all
+      Params:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns all Datasources of a specific Provider of the EOSC Catalogue given its ID:
+      ```diff
+      /provider/datasources/{id}
+      Params:
+        id: String (required)
+      ```
+     - Returns all Services of a specific Provider of the EOSC Catalogue given its ID:
+        ```diff
+        /provider/services/{id}
+        Params:
+          id: String (required)
+        ```
+    - Returns the Provider of the specific Catalogue given its ID:
+      ```diff
+      /provider/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+  - PUT
+    - Updates the Provider of the specific Catalogue give its ID:
+      ```diff
+      /provider
+      Body:
+        Provider JSON (required)
+      Params:
+        catalogue_id: String
+        comment: String
+      ```
+- ### Public
+  #### Get information about Public resources (Datasources, Providers, Services)
+  - GET
+    - Get a list of all Public Datasources of the specific Catalogue in the Portal:
+      ```diff
+      /public/datasource/all
+      Params:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Public Datasource of the specific Catalogue given its ID:
+      ```diff
+      /public/datasource/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+    - Get a list of all Public Providers of the specific Catalogue in the Portal:
+      ```diff
+      /public/provider/all
+      Params:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Public Provider of the specific Catalogue given its ID:
+      ```diff
+      /public/provider/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+    - Get a list of all Public Services of the specific Catalogue in the Portal:
+      ```diff
+      /public/resource/all
+      Params:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Public Service of the specific Catalogue given its ID:
+      ```diff
+      /public/resource/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+    - Get a list of all Public Training Resources of the specific Catalogue in the Portal:
+      ```diff
+      /public/trainingResource/all
+      Params:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Public Training Resource of the specific Catalogue given its ID:
+      ```diff
+      /public/trainingResource/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+  
+- ### Resource 
+  #### CRUD operations for Services
+  ##### Mapping also supports '/resource'
+  ##### Query GET API calls now support the 'type' path param with values 'service', 'datasource', 'all'
+  - DELETE
+    - Deletes the Service of the specific Catalogue given its ID:
+      ```diff
+      /service/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+  - GET
+    - Returns a list of all Services of the specific Catalogue in the Portal:
+      ```diff
+        /service/all
+        Params:
+          catalogue_id: String (required)
+          query: String (Keyword to refine the search)
+          from : int (Starting index in the result set)
+          quantity: int (Quantity to be fetched)
+          order: String (asc/desc)
+          orderField: String (eg. id)
+      ```
+    - Get all Services in the catalogue organized by an attribute:
+      ```diff
+        /service/by/{field}
+        Params:
+          field: Service field (required)
+      ```
+    - Returns the Service of the specific Catalogue given its ID:
+      ```diff
+        /service/{id}
+        Params:
+          id: String (required)
+          catalogue_id: String
+      ```
+  - POST
+    - Creates a new EOSC Service:
+      ```diff
+        /service
+        Body:
+          Service JSON (required)
+    - Validates a Service:
+      ```diff
+      /service/validate
+      Body:
+        Service JSON (required)
+  - PUT
+    - Updates a specific EOSC Service:
+      ```diff
+      /service
+      Body:
+        Service JSON (required)
+      Params:
+        comment: String
+      ```
+  
+- ### Resource Interoperability Record
+  #### CRUD operations for Services
+  - DELETE
+    - Deletes the Resource Interoperability Record of the specific Resource:
+      ```diff
+      /resourceInteroperabilityRecord/{resourceId}/{resourceInteroperabilityRecordId}
+      Params:
+        resourceId: String (required)
+        resourceInteroperabilityRecordId: String (required)
+      ```
+  - GET
+    - Returns a list of all Resource Interoperability Records of the specific Catalogue in the Portal:
+      ```diff
+      /resourceInteroperabilityRecord/all
+      Params:
+        catalogue_id: String (required)
+        query: String (Keyword to refine the search)
+        from : int (Starting index in the result set)
+        quantity: int (Quantity to be fetched)
+        order: String (asc/desc)
+        orderField: String (eg. id)
+      ```
+    - Returns the Resource Interoperability Record of the specific Catalogue given the Resource ID:
+      ```diff
+        /resourceInteroperabilityRecord/byResource/{resourceId}
+        Params:
+          resourceId: String (required)
+          catalogue_id: String
+      ```
+    - Returns the Resource Interoperability Record of the specific Catalogue given its ID:
+      ```diff
+        /resourceInteroperabilityRecord/{id}
+        Params:
+          id: String (required)
+      ```
+  - POST
+    - Creates a new Resource Interoperability Record given its resourceType (eg. service, datasource):
+      ```diff
+        /resourceInteroperabilityRecord
+        Body:
+          ResourceInteroperabilityRecord: JSON (required)
+        Params:
+          resourceType: String (required)
+      ```
+  - PUT
+    - Updates a specific Resource Interoperability Record:
+      ```diff
+      /resourceInteroperabilityRecord
+      Body:
+        ResourceInteroperabilityRecord: JSON (required)
+      ```
+  
+- ### Service Extensions
+  #### CRUD operations for Service Extensions (Helpdesk/Monitoring)
+  - DELETE
+    - Deletes the Helpdesk of the specific Resource of the specific Catalogue:
+      ```diff
+      /service-extensions/helpdesk/{catalogueId}/{serviceId}
+      Params:
+        catalogueId: String (required)
+        serviceId: String (required)
+      ```
+    - Deletes the Monitoring of the specific Resource of the specific Catalogue:
+      ```diff
+      /service-extensions/monitoring/{catalogueId}/{serviceId}
+      Params:
+        catalogueId: String (required)
+        serviceId: String (required)
+      ```
+  - GET
+    - Returns a list of all Helpdesks of the specific Catalogue in the Portal:
+      ```diff
+        /service-extensions/helpdesk/all
+        Params:
+          catalogue_id: String (required)
+          query: String (Keyword to refine the search)
+          from : int (Starting index in the result set)
+          quantity: int (Quantity to be fetched)
+          order: String (asc/desc)
+          orderField: String (eg. id)
+      ```
+    - Returns the Helpdesk of the specific Catalogue given the Resource ID:
+      ```diff
+        /service-extensions/helpdesk/byService/{serviceId}
+        Params:
+          serviceId: String (required)
+          catalogue_id: String
+      ```
+    - Returns the Helpdesk of the specific Catalogue given its ID:
+      ```diff
+        /service-extensions/helpdesk/{id}
+        Params:
+          id: String (required)
+      ```
+    - Returns a list of all Monitorings of the specific Catalogue in the Portal:
+      ```diff
+        /service-extensions/monitoring/all
+        Params:
+          catalogue_id: String (required)
+          query: String (Keyword to refine the search)
+          from : int (Starting index in the result set)
+          quantity: int (Quantity to be fetched)
+          order: String (asc/desc)
+          orderField: String (eg. id)
+      ```
+    - Returns the Monitoring of the specific Catalogue given the Resource ID:
+      ```diff
+        /service-extensions/monitoring/byService/{serviceId}
+        Params:
+          serviceId: String (required)
+          catalogue_id: String
+      ```
+    - Returns a list with all the available Monitoring Service Types:
+      ```diff
+        /service-extensions/monitoring/serviceTypes
+      ```
+    - Returns the Monitoring of the specific Catalogue given its ID:
+      ```diff
+        /service-extensions/monitoring/{id}
+        Params:
+          id: String (required)
+      ```
+  - POST
+    - Creates a new Helpdesk for the specific Catalogue:
+      ```diff
+        /service-extensions/helpdesk
+        Body:
+          Helpdesk JSON (required)
+        Params:
+          catalogue_id: String
+    - Creates a new Monitoring for the specific Catalogue:
+      ```diff
+        /service-extensions/monitoring
+        Body:
+          Monitoring JSON (required)
+        Params:
+          catalogue_id: String
+  - PUT
+    - Updates a specific Helpdesk of a specific Catalogue:
+      ```diff
+      /service-extensions/helpdesk
+      Body:
+        Helpdesk JSON (required)
+      Params:
+        catalogue_id: String
+      ```
+    - Updates a specific Monitoring of a specific Catalogue:
+      ```diff
+      /service-extensions/montoring
+      Body:
+        Monitoring JSON (required)
+      Params:
+        catalogue_id: String
+      ```
+
+- ### Training Resource
+  #### CRUD operations for Training Resources
+  - DELETE
+    - Deletes the Training Resource of the specific Catalogue given its ID:
+      ```diff
+      /trainingResource/{id}
+      Params:
+        id: String (required)
+        catalogue_id: String
+      ```
+  - GET
+    - Returns a list of all Training Resources of the specific Catalogue in the Portal:
+      ```diff
+        /trainingResource/all
+        Params:
+          catalogue_id: String (required)
+          query: String (Keyword to refine the search)
+          from : int (Starting index in the result set)
+          quantity: int (Quantity to be fetched)
+          order: String (asc/desc)
+          orderField: String (eg. id)
+      ```
+    - Get all Training Resources in the catalogue organized by an attribute:
+      ```diff
+        /trainingResource/by/{field}
+        Params:
+          field: Training Resource field (required)
+      ```
+    - Returns the Training Resource of the specific Catalogue given its ID:
+      ```diff
+        /trainingResource/{id}
+        Params:
+          id: String (required)
+          catalogue_id: String
+      ```
+  - POST
+    - Creates a new EOSC Training Resource:
+      ```diff
+        /trainingResource
+        Body:
+          Training Resource JSON (required)
+    - Validates a Training Resource:
+      ```diff
+      /trainingResource/validate
+      Body:
+        Training Resource JSON (required)
+  - PUT
+    - Updates a specific EOSC Training Resource:
+      ```diff
+      /trainingResource
+      Body:
+        Training Resource JSON (required)
+      Params:
+        comment: String
+      ```
+
+- ### Vocabulary   
+  #### Get information about Vocabularies
+  - GET
+    - Get all Vocabularies grouped by Type:
+      ```diff
+      /vocabulary/byType
+      ```
+    - Get all Vocabularies of a specific Type:
+      ```diff
+      /vocabulary/byType/{type}
+      Params:
+        type: Vocabulary Type (required)
+      ```
+    - Get a list of EU Countries:
+      ```diff
+      /vocabulary/countries/EU
+      ```
+    - Get a list of WW Countries:
+      ```diff
+      /vocabulary/countries/WW
+      ```
+    - Get a specific Vocabulary given its ID:
+      ```diff
+      /vocabulary/{id}
+      Params:
+        id: String (required)
+      ```
+
+## Model:
+
+### Catalogue:
+
+| Field                    | Type                          | Required | Description                                                      |
+|--------------------------|-------------------------------|----------|------------------------------------------------------------------|
+| `id`                     | `String`                      | auto-gen | Unique identifier for the catalogue.                             |
+| `abbreviation`           | `String`                      | Yes      | Abbreviation of the catalogue's name.                            |
+| `name`                   | `String`                      | Yes      | Full name of the catalogue.                                      |
+| `website`                | `URL`                         | Yes      | URL of the catalogue's website.                                  |
+| `legalEntity`            | `boolean`                     | Yes      | Indicates if the catalogue is a legal entity.                    |
+| `legalStatus`            | `String`                      | No       | Legal status of the catalogue.                                   |
+| `hostingLegalEntity`     | `String`                      | No       | Hosting legal entity responsible for the catalogue.              |
+| `inclusionCriteria`      | `URL`                         | Yes      | URL with criteria for inclusion in the catalogue.                |
+| `validationProcess`      | `URL`                         | Yes      | URL describing the validation process.                           |
+| `endOfLife`              | `String`                      | No       | Information on the end-of-life policies for the catalogue.       |
+| `description`            | `String`                      | Yes      | Description of the catalogue.                                    |
+| `scope`                  | `String`                      | Yes      | Scope of the catalogue.                                          |
+| `logo`                   | `URL`                         | Yes      | URL of the catalogue's logo.                                     |
+| `multimedia`             | `List<MultimediaPair>`        | No       | List of multimedia items associated with the catalogue.          |
+| `scientificDomains`      | `List<ServiceProviderDomain>` | No       | Scientific domains related to the catalogue's service providers. |
+| `tags`                   | `List<String>`                | No       | Tags associated with the catalogue.                              |
+| `location`               | `ProviderLocation`            | Yes      | Physical location details of the catalogue provider.             |
+| `mainContact`            | `ProviderMainContact`         | No       | Main contact information for the catalogue.                      |
+| `publicContacts`         | `List<ProviderPublicContact`  | No       | List of public contacts for the catalogue.                       |
+| `participatingCountries` | `List<String>`                | No       | List of countries participating in the catalogue.                |
+| `affiliations`           | `List<String>`                | No       | List of affiliations related to the catalogue.                   |
+| `networks`               | `List<String>`                | No       | Networks associated with the catalogue.                          |
+| `users`                  | `List<User>`                  | Yes      | List of users associated with the catalogue.                     |
+
+#### Example:
+
+```json
+{
+  "id": "catalogue_001",
+  "abbreviation": "CAT",
+  "name": "Sample Catalogue",
+  "website": "https://example.com",
+  "legalEntity": true,
+  "legalStatus": "Non-profit",
+  "hostingLegalEntity": "Hosting Entity",
+  "inclusionCriteria": "https://example.com/inclusion",
+  "validationProcess": "https://example.com/validation",
+  "endOfLife": "No specific policy",
+  "description": "This is a sample catalogue description.",
+  "scope": "International",
+  "logo": "https://example.com/logo.png",
+  "multimedia": [
+    {
+      "multimediaURL": "https://example.com/media",
+      "multimediaName": "Sample Multimedia"
+    }
+  ],
+  "scientificDomains": [
+    {
+      "scientificDomain": "Science",
+      "scientificSubdomain": "Physics"
+    }
+  ],
+  "tags": ["science", "research"],
+  "location": {
+    "streetNameAndNumber": "123 Main St",
+    "postalCode": "12345",
+    "city": "Sample City",
+    "region": "Sample Region",
+    "country": "Sample Country"
+  },
+  "mainContact": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "+123456789",
+    "position": "Manager"
+  },
+  "publicContacts": [
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+987654321",
+      "position": "Support"
+    }
+  ],
+  "participatingCountries": ["Country1", "Country2"],
+  "affiliations": ["Affiliation1", "Affiliation2"],
+  "networks": ["Network1", "Network2"],
+  "users": [
+    {
+      "id": "user_001",
+      "email": "user@example.com",
+      "name": "User Name",
+      "surname": "Surname"
+    }
+  ]
+}
+```
+
+### Provider:
+
+| Field                     | Type                          | Required | Description                                                                                       |
+|---------------------------|-------------------------------|----------|---------------------------------------------------------------------------------------------------|
+| `id`                      | `String`                      | auto-gen | Unique identifier for the provider.                                                               |
+| `abbreviation`            | `String`                      | Yes      | Abbreviation of the provider's name.                                                              |
+| `name`                    | `String`                      | Yes      | Full name of the provider.                                                                        |
+| `website`                 | `URL`                         | Yes      | URL of the provider's website.                                                                    |
+| `legalEntity`             | `boolean`                     | Yes      | Indicates if the provider is a legal entity.                                                      |
+| `legalStatus`             | `String`                      | No       | Legal status of the provider.                                                                     |
+| `hostingLegalEntity`      | `String`                      | No       | Hosting legal entity responsible for the provider.                                                |
+| `alternativeIdentifiers`  | `List<AlternativeIdentifier>` | No       | List of alternative identifiers for the provider.                                                 |
+| `description`             | `String`                      | Yes      | Description of the provider.                                                                      |
+| `logo`                    | `URL`                         | Yes      | URL of the provider's logo.                                                                       |
+| `multimedia`              | `List<MultimediaPair>`        | No       | List of multimedia items associated with the provider.                                            |
+| `scientificDomains`       | `List<ServiceProviderDomain>` | No       | Scientific domains related to the provider's services.                                            |
+| `tags`                    | `List<String>`                | No       | Tags associated with the provider.                                                                |
+| `structureTypes`          | `List<String>`                | No       | Types of structures associated with the provider.                                                 |
+| `location`                | `ProviderLocation`            | Yes      | Physical location details of the provider.                                                        |
+| `mainContact`             | `ProviderMainContact`         | No       | Main contact information for the provider.                                                        |
+| `publicContacts`          | `List<ProviderPublicContact>` | No       | List of public contacts for the provider.                                                         |
+| `lifeCycleStatus`         | `String`                      | No       | Current lifecycle status of the provider.                                                         |
+| `certifications`          | `List<String>`                | No       | List of certifications held by the provider.                                                      |
+| `participatingCountries`  | `List<String>`                | No       | List of countries participating in the provider's services.                                       |
+| `affiliations`            | `List<String>`                | No       | List of affiliations related to the provider.                                                     |
+| `networks`                | `List<String>`                | No       | Networks associated with the provider.                                                            |
+| `catalogueId`             | `String`                      | No       | Identifier of the catalogue the provider belongs to.                                              |
+| `esfriDomains`            | `List<String>`                | No       | ESFRI (European Strategy Forum on Research Infrastructures) domains associated with the provider. |
+| `esfriType`               | `String`                      | No       | ESFRI type classification of the provider.                                                        |
+| `merilScientificDomains`  | `List<ProviderMerilDomain>`   | No       | MERIL scientific domains associated with the provider.                                            |
+| `areasOfActivity`         | `List<String>`                | No       | Areas of activity related to the provider's services.                                             |
+| `societalGrandChallenges` | `List<String>`                | No       | Societal grand challenges addressed by the provider.                                              |
+| `nationalRoadmaps`        | `List<String>`                | No       | National roadmaps associated with the provider.                                                   |
+| `users`                   | `List<User>`                  | Yes      | List of users associated with the provider.                                                       |
+
+#### Example:
+
+```json
+{
+  "id": "provider_001",
+  "abbreviation": "PROV",
+  "name": "Sample Provider",
+  "website": "https://example.com",
+  "legalEntity": true,
+  "legalStatus": "Non-profit",
+  "hostingLegalEntity": "Hosting Entity",
+  "alternativeIdentifiers": [
+    {
+      "type": "Other ID Type",
+      "value": "123-abc"
+    }
+  ],
+  "description": "This is a sample provider description.",
+  "logo": "https://example.com/logo.png",
+  "multimedia": [
+    {
+      "multimediaURL": "https://example.com/media",
+      "multimediaName": "Sample Multimedia"
+    }
+  ],
+  "scientificDomains": [
+    {
+      "scientificDomain": "Science",
+      "scientificSubdomain": "Physics"
+    }
+  ],
+  "tags": ["science", "research"],
+  "structureTypes": ["type1", "type2"],
+  "location": {
+    "streetNameAndNumber": "123 Main St",
+    "postalCode": "12345",
+    "city": "Sample City",
+    "region": "Sample Region",
+    "country": "Sample Country"
+  },
+  "mainContact": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "+123456789",
+    "position": "Manager"
+  },
+  "publicContacts": [
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+987654321",
+      "position": "Support"
+    }
+  ],
+  "lifeCycleStatus": "Active",
+  "certifications": ["ISO9001", "ISO27001"],
+  "participatingCountries": ["Country1", "Country2"],
+  "affiliations": ["Affiliation1", "Affiliation2"],
+  "networks": ["Network1", "Network2"],
+  "catalogueId": "catalogue_001",
+  "esfriDomains": ["Domain1", "Domain2"],
+  "esfriType": "Type1",
+  "merilScientificDomains": [
+    {
+      "merilScientificDomain": "MERIL Domain",
+      "merilScientificSubdomain": "Subdomain"
+    }
+  ],
+  "areasOfActivity": ["Activity1", "Activity2"],
+  "societalGrandChallenges": ["Challenge1", "Challenge2"],
+  "nationalRoadmaps": ["Roadmap1", "Roadmap2"],
+  "users": [
+    {
+      "id": "user_001",
+      "email": "user@example.com",
+      "name": "User Name",
+      "surname": "Surname"
+    }
+  ]
+}
+```
+
+### Service:
+
+| Field                        | Type                          | Required | Description                                                               |
+|------------------------------|-------------------------------|----------|---------------------------------------------------------------------------|
+| `id`                         | `String`                      | auto-gen | Unique identifier for the service.                                        |
+| `abbreviation`               | `String`                      | Yes      | Abbreviation of the service's name.                                       |
+| `name`                       | `String`                      | Yes      | Full name of the service.                                                 |
+| `resourceOrganisation`       | `String`                      | Yes      | Name of the resource organization providing the service.                  |
+| `resourceProviders`          | `List<String>`                | No       | List of resource providers associated with the service.                   |
+| `webpage`                    | `URL`                         | Yes      | URL of the service's webpage.                                             |
+| `alternativeIdentifiers`     | `List<AlternativeIdentifier>` | No       | List of alternative identifiers for the service.                          |
+| `description`                | `String`                      | Yes      | Detailed description of the service.                                      |
+| `tagline`                    | `String`                      | Yes      | Short tagline summarizing the service.                                    |
+| `logo`                       | `URL`                         | Yes      | URL of the service's logo.                                                |
+| `multimedia`                 | `List<MultimediaPair>`        | No       | List of multimedia items related to the service.                          |
+| `useCases`                   | `List<UseCasesPair>`          | No       | List of use cases demonstrating the service in action.                    |
+| `scientificDomains`          | `List<ServiceProviderDomain>` | Yes      | List of scientific domains related to the service.                        |
+| `categories`                 | `List<ServiceCategory>`       | Yes      | Categories and subcategories of the service.                              |
+| `targetUsers`                | `List<String>`                | Yes      | List of target users for the service.                                     |
+| `accessTypes`                | `List<String>`                | No       | Types of access provided by the service (e.g., open, restricted).         |
+| `accessModes`                | `List<String>`                | No       | Modes of access available for the service (e.g., online, in-person).      |
+| `tags`                       | `List<String>`                | No       | Tags associated with the service.                                         |
+| `horizontalService`          | `Boolean`                     | No       | Indicates if the service is a horizontal service.                         |
+| `serviceCategories`          | `List<String>`                | No       | List of service categories associated with the service.                   |
+| `marketplaceLocations`       | `List<String>`                | No       | List of marketplace locations where the service is available.             |
+| `classTier`                  | `ServiceClassTier`            | No       | Detailed information on the class tier of the service.                    |
+| `geographicalAvailabilities` | `List<String>`                | Yes      | List of geographical availabilities of the service.                       |
+| `languageAvailabilities`     | `List<String>`                | Yes      | List of language availabilities of the service.                           |
+| `resourceGeographicLocations`| `List<String>`                | No       | List of locations where the service resources are geographically located. |
+| `mainContact`                | `ServiceMainContact`          | No       | Main contact information for the service.                                 |
+| `publicContacts`             | `List<ServicePublicContact>`  | No       | List of public contacts for the service.                                  |
+| `helpdeskEmail`              | `String`                      | Yes      | Email address for the service's helpdesk.                                 |
+| `securityContactEmail`       | `String`                      | Yes      | Email address for security contact.                                       |
+| `trl`                        | `String`                      | Yes      | Technology Readiness Level of the service.                                |
+| `lifeCycleStatus`            | `String`                      | No       | Life cycle status of the service.                                         |
+| `certifications`             | `List<String>`                | No       | List of certifications related to the service.                            |
+| `standards`                  | `List<String>`                | No       | Standards that the service complies with.                                 |
+| `openSourceTechnologies`     | `List<String>`                | No       | List of open-source technologies used in the service.                     |
+| `version`                    | `String`                      | No       | Current version of the service.                                           |
+| `lastUpdate`                 | `Date`                        | No       | Date and time of the last update.                                         |
+| `changeLog`                  | `List<String>`                | No       | List of changes made to the service.                                      |
+| `requiredResources`          | `List<String>`                | No       | List of required resources for the service.                               |
+| `relatedResources`           | `List<String>`                | No       | List of related resources linked to the service.                          |
+| `relatedPlatforms`           | `List<String>`                | No       | List of related platforms connected to the service.                       |
+| `catalogueId`                | `String`                      | No       | Identifier of the associated catalogue.                                   |
+| `fundingBody`                | `List<String>`                | No       | List of funding bodies supporting the service.                            |
+| `fundingPrograms`            | `List<String>`                | No       | List of funding programs related to the service.                          |
+| `grantProjectNames`          | `List<String>`                | No       | List of grant project names associated with the service.                  |
+| `helpdeskPage`               | `URL`                         | No       | URL of the helpdesk page.                                                 |
+| `userManual`                 | `URL`                         | No       | URL of the user manual.                                                   |
+| `termsOfUse`                 | `URL`                         | Yes      | URL of the terms of use.                                                  |
+| `privacyPolicy`              | `URL`                         | Yes      | URL of the privacy policy.                                                |
+| `accessPolicy`               | `URL`                         | No       | URL of the access policy.                                                 |
+| `resourceLevel`              | `URL`                         | No       | URL of the resource level details.                                        |
+| `trainingInformation`        | `URL`                         | No       | URL of the training information.                                          |
+| `statusMonitoring`           | `URL`                         | No       | URL for status monitoring information.                                    |
+| `maintenance`                | `URL`                         | No       | URL of the maintenance details.                                           |
+| `orderType`                  | `String`                      | Yes      | Type of order required for the service.                                   |
+| `order`                      | `URL`                         | No       | URL for ordering the service.                                             |
+| `paymentModel`               | `URL`                         | No       | URL of the payment model information.                                     |
+| `pricing`                    | `URL`                         | No       | URL of the pricing details.                                               |
+
+### Example:
+
+```json
+{
+  "id": "service_001",
+  "abbreviation": "SERV",
+  "name": "Sample Service",
+  "resourceOrganisation": "Sample Organisation",
+  "resourceProviders": ["Provider1", "Provider2"],
+  "webpage": "https://example.com",
+  "alternativeIdentifiers": [
+    {
+      "type": "Other ID Type",
+      "value": "abc-123"
+    }
+  ],
+  "description": "This is a sample service description.",
+  "tagline": "Providing high-quality services.",
+  "logo": "https://example.com/logo.png",
+  "multimedia": [
+    {
+      "multimediaURL": "https://example.com/media",
+      "multimediaName": "Sample Multimedia"
+    }
+  ],
+  "useCases": [
+    {
+      "useCaseURL": "https://example.com/use-case",
+      "useCaseName": "Sample Use Case"
+    }
+  ],
+  "scientificDomains": [
+    {
+      "scientificDomain": "Biology",
+      "scientificSubdomain": "Molecular Biology"
+    }
+  ],
+  "categories": [
+    {
+      "category": "Category1",
+      "subcategory": "Subcategory1"
+    }
+  ],
+  "targetUsers": ["Researchers", "Students"],
+  "accessTypes": ["Open", "Restricted"],
+  "accessModes": ["Online", "In-person"],
+  "tags": ["innovation", "technology"],
+  "horizontalService": true,
+  "serviceCategories": ["CategoryA", "CategoryB"],
+  "marketplaceLocations": ["Location1", "Location2"],
+  "classTier": {
+    "level": 3,
+    "accessPolicy": "Open Access",
+    "costModel": "Subscription",
+    "offerings": ["Service Offering 1", "Service Offering 2"]
+  },
+  "geographicalAvailabilities": ["Global"],
+  "languageAvailabilities": ["English", "French"],
+  "resourceGeographicLocations": ["Location A", "Location B"],
+  "mainContact": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "contact@example.com",
+    "phone": "123-456-7890",
+    "position": "Manager",
+    "organisation": "Sample Org"
+  },
+  "publicContacts": [
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "phone": "098-765-4321",
+      "position": "Support",
+      "organisation": "Sample Org"
+    }
+  ],
+  "helpdeskEmail": "helpdesk@example.com",
+  "securityContactEmail": "security@example.com",
+  "trl": "TRL 7",
+  "lifeCycleStatus": "Active",
+  "certifications": ["Certification1", "Certification2"],
+  "standards": ["Standard1", "Standard2"],
+  "openSourceTechnologies": ["Technology1", "Technology2"],
+  "version": "1.0.0",
+  "lastUpdate": "2024-09-09T12:00:00Z",
+  "changeLog": ["Initial release.", "Minor updates."],
+  "requiredResources": ["Resource1", "Resource2"],
+  "relatedResources": ["RelatedResource1", "RelatedResource2"],
+  "relatedPlatforms": ["Platform1", "Platform2"],
+  "catalogueId": "catalogue_001",
+  "fundingBody": ["Funding Body1", "Funding Body2"],
+  "fundingPrograms": ["Program1", "Program2"],
+  "grantProjectNames": ["Project1", "Project2"],
+  "helpdeskPage": "https://example.com/helpdesk",
+  "userManual": "https://example.com/user-manual",
+  "termsOfUse": "https://example.com/terms",
+  "privacyPolicy": "https://example.com/privacy",
+  "accessPolicy": "https://example.com/access-policy",
+  "resourceLevel": "https://example.com/resource-level",
+  "trainingInformation": "https://example.com/training",
+  "statusMonitoring": "https://example.com/status-monitoring",
+  "maintenance": "https://example.com/maintenance",
+  "orderType": "Online",
+  "order": "https://example.com/order",
+  "paymentModel": "https://example.com/payment-model",
+  "pricing": "https://example.com/pricing"
+}
+```
+
+### Datasource:
+
+| Field                                   | Type                               | Required | Description                                                         |
+|-----------------------------------------|------------------------------------|----------|---------------------------------------------------------------------|
+| `id`                                    | `String`                           | auto-gen | Unique identifier for the datasource.                               |
+| `serviceId`                             | `String`                           | Yes      | Identifier of the associated service.                               |
+| `catalogueId`                           | `String`                           | Yes      | Identifier of the associated catalogue.                             |
+| `submissionPolicyURL`                   | `URL`                              | No       | URL of the submission policy.                                       |
+| `preservationPolicyURL`                 | `URL`                              | No       | URL of the preservation policy.                                     |
+| `versionControl`                        | `Boolean`                          | No       | Indicates if version control is used.                               |
+| `persistentIdentitySystems`             | `List<PersistentIdentitySystem>`   | No       | List of persistent identity systems associated with the datasource. |
+| `jurisdiction`                          | `String`                           | Yes      | Jurisdiction where the datasource operates.                         |
+| `datasourceClassification`              | `String`                           | Yes      | Classification of the datasource.                                   |
+| `researchEntityTypes`                   | `List<String>`                     | No       | List of research entity types related to the datasource.            |
+| `thematic`                              | `Boolean`                          | Yes      | Indicates if the datasource is thematic.                            |
+| `researchProductLicensings`             | `List<ResearchProductLicensing>`   | No       | List of research product licensing details.                         |
+| `researchProductAccessPolicies`         | `List<String>`                     | No       | List of research product access policies.                           |
+| `researchProductMetadataLicensing`      | `ResearchProductMetadataLicensing` | No       | Metadata licensing details for research products.                   |
+| `researchProductMetadataAccessPolicies` | `List<String>`                     | No       | List of research product metadata access policies.                  |
+| `harvestable`                           | `Boolean`                          | No       | Indicates if the datasource is harvestable.                         |
+
+### Example:
+
+```json
+{
+  "id": "datasource_001",
+  "serviceId": "service_001",
+  "catalogueId": "catalogue_001",
+  "submissionPolicyURL": "https://example.com/submission-policy",
+  "preservationPolicyURL": "https://example.com/preservation-policy",
+  "versionControl": true,
+  "persistentIdentitySystems": [
+    {
+      "persistentIdentityEntityType": "Type1",
+      "persistentIdentityEntityTypeSchemes": ["Scheme1", "Scheme2"]
+    }
+  ],
+  "jurisdiction": "Country X",
+  "datasourceClassification": "Public",
+  "researchEntityTypes": ["Type1", "Type2"],
+  "thematic": true,
+  "researchProductLicensings": [
+    {
+      "researchProductLicenseName": "License1",
+      "researchProductLicenseURL": "https://example.com/license1"
+    }
+  ],
+  "researchProductAccessPolicies": ["Policy1", "Policy2"],
+  "researchProductMetadataLicensing": {
+    "researchProductMetadataLicenseName": "Metadata License1",
+    "researchProductMetadataLicenseURL": "https://example.com/metadata-license1"
+  },
+  "researchProductMetadataAccessPolicies": ["MetadataPolicy1", "MetadataPolicy2"],
+  "harvestable": true
+}
+```
+
+
+### Training Resource:
+
+### Interoperability Record:
+
+### Helpdesk
+
+### Monitoring
+
+### Resource Interoperability Record:
+
+### Configuration Template Instance:
+
+    
+### Vocabulary:
+
+| Field         | Type                  | Required | Description                                             |
+|---------------|-----------------------|----------|---------------------------------------------------------|
+| `id`          | `String`              | auto-gen | A unique identifier for the vocabulary.                 |
+| `name`        | `String`              | Yes      | The name of the vocabulary.                             |
+| `description` | `String`              | No       | A brief description of the vocabulary.                  |
+| `parentId`    | `String`              | No       | The identifier of the parent vocabulary, if applicable. |
+| `type`        | `String`              | Yes      | Specifies the type/category of the vocabulary.          |
+| `extras`      | `Map<String, String>` | No       | A map for storing additional key-value pairs.           |
+
+#### Example
+
+```json
+{
+    "id": "access_mode-free",
+    "name": "Free",
+    "description": "Users can freely access the Resource provided, registration may be needed.",
+    "parentId": null,
+    "type": "Access mode",
+    "extras": {}
+}
+```
+
+## Vocabularies:
+  - [ACCESS_MODE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_MODE.json)
+  - [ACCESS_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_TYPE.json)
+  - [CATALOGUE_STATE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATALOGUE_STATE.json)
+  - [CATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATEGORY.json)
+  - [COUNTRY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json)
+  - [CT_COMPATIBILITY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CT_COMPATIBILITY.json)
+  - [CT_PROTOCOL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CT_PROTOCOL.json)
+  - [DS_CLASSIFICATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_CLASSIFICATION.json)
+  - [DS_COAR_ACCESS_RIGHTS_1_0](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_COAR_ACCESS_RIGHTS_1_0.json)
+  - [DS_JURISDICTION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_JURISDICTION.json)
+  - [DS_PERSISTENT_IDENTITY_SCHEME](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_PERSISTENT_IDENTITY_SCHEME.json)
+  - [DS_RESEARCH_ENTITY_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_RESEARCH_ENTITY_TYPE.json)
+  - [FUNDING_BODY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/FUNDING_BODY.json)
+  - [FUNDING_PROGRAM](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/FUNDING_PROGRAM.json)
+  - [GEOGRAPHIC_LOCATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/GEOGRAPHIC_LOCATION.json)
+  - [IR_EOSC_GUIDELINE_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_EOSC_GUIDELINE_TYPE.json)
+  - [IR_IDENTIFIER_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_IDENTIFIER_TYPE.json)
+  - [IR_NAME_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_NAME_TYPE.json)
+  - [IR_RESOURCE_TYPE_GENERAL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_RESOURCE_TYPE_GENERAL.json)
+  - [IR_STATUS](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_STATUS.json)
+  - [LANGUAGE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/LANGUAGE.json)
+  - [LIFE_CYCLE_STATUS](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/LIFE_CYCLE_STATUS.json)
+  - [MARKETPLACE_LOCATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/MARKETPLACE_LOCATION.json)
+  - [MONITORING_MONITORED_BY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/MONITORING_MONITORED_BY.json)
+  - [ORDER_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ORDER_TYPE.json)
+  - [PROVIDER_AREA_OF_ACTIVITY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_AREA_OF_ACTIVITY.json)
+  - [PROVIDER_ESFRI_DOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_ESFRI_DOMAIN.json)
+  - [PROVIDER_ESFRI_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_ESFRI_TYPE.json)
+  - [PROVIDER_HOSTING_LEGAL_ENTITY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_HOSTING_LEGAL_ENTITY.json)
+  - [PROVIDER_LEGAL_STATUS](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_LEGAL_STATUS.json)
+  - [PROVIDER_LIFE_CYCLE_STATUS](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_LIFE_CYCLE_STATUS.json)
+  - [PROVIDER_MERIL_SCIENTIFIC_DOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_MERIL_SCIENTIFIC_DOMAIN.json)
+  - [PROVIDER_MERIL_SCIENTIFIC_SUBDOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_MERIL_SCIENTIFIC_SUBDOMAIN.json)
+  - [PROVIDER_NETWORK](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_NETWORK.json)
+  - [PROVIDER_SOCIETAL_GRAND_CHALLENGE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_SOCIETAL_GRAND_CHALLENGE.json)
+  - [PROVIDER_STATE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_STATE.json)
+  - [PROVIDER_STRUCTURE_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_STRUCTURE_TYPE.json)
+  - [REGION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/REGION.json)
+  - [RELATED_PLATFORM](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/RELATED_PLATFORM.json)
+  - [RESEARCH_CATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/RESEARCH_CATEGORY.json)
+  - [RESOURCE_STATE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/RESOURCE_STATE.json)
+  - [SCIENTIFIC_DOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_DOMAIN.json)
+  - [SCIENTIFIC_SUBDOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_SUBDOMAIN.json)
+  - [SEMANTIC_RELATIONSHIP](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SEMANTIC_RELATIONSHIP.json)
+  - [SERVICE_CATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SERVICE_CATEGORY.json)
+  - [SERVICE_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SERVICE_TYPE.json)
+  - [SUBCATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SUBCATEGORY.json)
+  - [SUPERCATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SUPERCATEGORY.json)
+  - [TARGET_USER](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TARGET_USER.json)
+  - [TEMPLATE_STATE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TEMPLATE_STATE.json)
+  - [TRL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TRL.json)
+  - [TR_ACCESS_RIGHT](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_ACCESS_RIGHT.json)
+  - [TR_CONTENT_RESOURCE_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_CONTENT_RESOURCE_TYPE.json)
+  - [TR_DCMI_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_DCMI_TYPE.json)
+  - [TR_EXPERTISE_LEVEL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_EXPERTISE_LEVEL.json)
+  - [TR_QUALIFICATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_QUALIFICATION.json)
+  - [TR_URL_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_URL_TYPE.json)
