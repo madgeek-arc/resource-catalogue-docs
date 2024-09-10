@@ -4,15 +4,23 @@
 
 # Service Catalogue Documentation [v5.0.0]
 
-## API:
+## Table of Contents
+
+1. [API](#api)
+2. [Swagger](#swagger)
+3. [Controllers](#controllers)
+4. [Model](#model)
+5. [Vocabularies](#vocabularies)
+
+## API
 - [Production](https://api.providers.sandbox.eosc-beyond.eu)
 - [Integration](https://api.integration.providers.sandbox.eosc-beyond.eu)
 
-## Swagger:
+## Swagger
 - [Production](https://providers.sandbox.eosc-beyond.eu/openapi)
 - [Integration](https://integration.providers.sandbox.eosc-beyond.eu/openapi)
 
-## Controllers:
+## Controllers
 
 - ### Catalogue
   #### CRUD operations for Catalogues + external (non EOSC) resources
@@ -697,9 +705,9 @@
         id: String (required)
       ```
 
-## Model:
+## Model
 
-### Catalogue:
+### Catalogue
 
 | Field                    | Type                          | Required | Description                                                      |
 |--------------------------|-------------------------------|----------|------------------------------------------------------------------|
@@ -727,7 +735,65 @@
 | `networks`               | `List<String>`                | No       | Networks associated with the catalogue.                          |
 | `users`                  | `List<User>`                  | Yes      | List of users associated with the catalogue.                     |
 
-#### Example:
+#### Nested Objects
+
+##### MultimediaPair
+
+| Field            | Type     | Required | Description                      |
+|------------------|----------|----------|----------------------------------|
+| `multimediaURL`  | `URL`    | Yes      | URL to the multimedia resource.  |
+| `multimediaName` | `String` | No       | Name of the multimedia resource. |
+
+##### ServiceProviderDomain
+
+| Field                 | Type     | Required | Description                                    |
+|-----------------------|----------|----------|------------------------------------------------|
+| `scientificDomain`    | `String` | Yes      | Scientific domain related to the catalogue.    |
+| `scientificSubdomain` | `String` | No       | Scientific subdomain related to the catalogue. |
+
+##### ProviderLocation
+
+| Field                 | Type      | Required | Description                                     |
+|-----------------------|-----------|----------|-------------------------------------------------|
+| `streetNameAndNumber` | `String`  | Yes      | Street address of the catalogue's location.     |
+| `postalCode`          | `String`  | Yes      | Postal code of the catalogue's location.        |
+| `city`                | `String`  | Yes      | City where the catalogue is located.            |
+| `region`              | `String`  | No       | Region or state where the catalogue is located. |
+| `country`             | `String`  | Yes      | Country where the catalogue is located.         |
+
+##### ProviderMainContact
+
+| Field          | Type     | Required | Description                               |
+|----------------|----------|----------|-------------------------------------------|
+| `firstName`    | `String` | Yes      | First name of the main contact person.    |
+| `lastName`     | `String` | No       | Last name of the main contact person.     |
+| `email`        | `String` | Yes      | Email address of the main contact person. |
+| `phone`        | `String` | No       | Phone number of the main contact person.  |
+| `position`     | `String` | No       | Position of the main contact person.      |
+| `organisation` | `String` | No       | Organisation of the main contact person.  |
+
+##### ProviderPublicContact
+
+| Field          | Type     | Required | Description                                 |
+|----------------|----------|----------|---------------------------------------------|
+| `firstName`    | `String` | No       | First name of the public contact person.    |
+| `lastName`     | `String` | No       | Last name of the public contact person.     |
+| `email`        | `String` | Yes      | Email address of the public contact person. |
+| `phone`        | `String` | No       | Phone number of the public contact person.  |
+| `position`     | `String` | No       | Position of the public contact person.      |
+| `organisation` | `String` | No       | Organisation of the public contact person.  |
+
+##### User
+
+| Field     | Type     | Required | Description                     |
+|-----------|----------|----------|---------------------------------|
+| `id`      | `String` | No       | Unique identifier for the user. |
+| `email`   | `String` | Yes      | Email address of the user.      |
+| `name`    | `String` | Yes      | First name of the user.         |
+| `surname` | `String` | Yes      | Last name of the user.          |
+
+
+#### Example
 
 ```json
 {
@@ -794,7 +860,7 @@
 }
 ```
 
-### Provider:
+### Provider
 
 | Field                     | Type                          | Required | Description                                                                                       |
 |---------------------------|-------------------------------|----------|---------------------------------------------------------------------------------------------------|
@@ -829,7 +895,69 @@
 | `nationalRoadmaps`        | `List<String>`                | No       | National roadmaps associated with the provider.                                                   |
 | `users`                   | `List<User>`                  | Yes      | List of users associated with the provider.                                                       |
 
-#### Example:
+#### Nested Objects
+
+##### AlternativeIdentifier
+
+| Field   | Type     | Required | Description                          |
+|---------|----------|----------|--------------------------------------|
+| `type`  | `String` | No       | Type of the alternative identifier.  |
+| `value` | `String` | No       | Value of the alternative identifier. |
+
+##### MultimediaPair
+
+| Field            | Type     | Required | Description                      |
+|------------------|----------|----------|----------------------------------|
+| `multimediaURL`  | `URL`    | Yes      | URL to the multimedia resource.  |
+| `multimediaName` | `String` | No       | Name of the multimedia resource. |
+
+##### ServiceProviderDomain
+
+| Field                 | Type     | Required | Description                                    |
+|-----------------------|----------|----------|------------------------------------------------|
+| `scientificDomain`    | `String` | Yes      | Scientific domain related to the catalogue.    |
+| `scientificSubdomain` | `String` | No       | Scientific subdomain related to the catalogue. |
+
+##### ProviderLocation
+
+| Field                 | Type      | Required | Description                                     |
+|-----------------------|-----------|----------|-------------------------------------------------|
+| `streetNameAndNumber` | `String`  | Yes      | Street address of the catalogue's location.     |
+| `postalCode`          | `String`  | Yes      | Postal code of the catalogue's location.        |
+| `city`                | `String`  | Yes      | City where the catalogue is located.            |
+| `region`              | `String`  | No       | Region or state where the catalogue is located. |
+| `country`             | `String`  | Yes      | Country where the catalogue is located.         |
+
+##### ProviderMainContact
+
+| Field          | Type     | Required | Description                               |
+|----------------|----------|----------|-------------------------------------------|
+| `firstName`    | `String` | Yes      | First name of the main contact person.    |
+| `lastName`     | `String` | No       | Last name of the main contact person.     |
+| `email`        | `String` | Yes      | Email address of the main contact person. |
+| `phone`        | `String` | No       | Phone number of the main contact person.  |
+| `position`     | `String` | No       | Position of the main contact person.      |
+| `organisation` | `String` | No       | Organisation of the main contact person.  |
+
+##### ProviderPublicContact
+
+| Field          | Type     | Required | Description                                 |
+|----------------|----------|----------|---------------------------------------------|
+| `firstName`    | `String` | No       | First name of the public contact person.    |
+| `lastName`     | `String` | No       | Last name of the public contact person.     |
+| `email`        | `String` | Yes      | Email address of the public contact person. |
+| `phone`        | `String` | No       | Phone number of the public contact person.  |
+| `position`     | `String` | No       | Position of the public contact person.      |
+| `organisation` | `String` | No       | Organisation of the public contact person.  |
+
+##### ProviderMerilDomain
+
+| Field                      | Type     | Required | Description                                         |
+|----------------------------|----------|----------|-----------------------------------------------------|
+| `merilScientificDomain`    | `String` | Yes      | MERIL scientific domain related to the provider.    |
+| `merilScientificSubdomain` | `String` | No       | MERIL scientific subdomain related to the provider. |
+
+#### Example
 
 ```json
 {
@@ -913,69 +1041,138 @@
 }
 ```
 
-### Service:
+### Service
 
-| Field                        | Type                          | Required | Description                                                               |
-|------------------------------|-------------------------------|----------|---------------------------------------------------------------------------|
-| `id`                         | `String`                      | auto-gen | Unique identifier for the service.                                        |
-| `abbreviation`               | `String`                      | Yes      | Abbreviation of the service's name.                                       |
-| `name`                       | `String`                      | Yes      | Full name of the service.                                                 |
-| `resourceOrganisation`       | `String`                      | Yes      | Name of the resource organization providing the service.                  |
-| `resourceProviders`          | `List<String>`                | No       | List of resource providers associated with the service.                   |
-| `webpage`                    | `URL`                         | Yes      | URL of the service's webpage.                                             |
-| `alternativeIdentifiers`     | `List<AlternativeIdentifier>` | No       | List of alternative identifiers for the service.                          |
-| `description`                | `String`                      | Yes      | Detailed description of the service.                                      |
-| `tagline`                    | `String`                      | Yes      | Short tagline summarizing the service.                                    |
-| `logo`                       | `URL`                         | Yes      | URL of the service's logo.                                                |
-| `multimedia`                 | `List<MultimediaPair>`        | No       | List of multimedia items related to the service.                          |
-| `useCases`                   | `List<UseCasesPair>`          | No       | List of use cases demonstrating the service in action.                    |
-| `scientificDomains`          | `List<ServiceProviderDomain>` | Yes      | List of scientific domains related to the service.                        |
-| `categories`                 | `List<ServiceCategory>`       | Yes      | Categories and subcategories of the service.                              |
-| `targetUsers`                | `List<String>`                | Yes      | List of target users for the service.                                     |
-| `accessTypes`                | `List<String>`                | No       | Types of access provided by the service (e.g., open, restricted).         |
-| `accessModes`                | `List<String>`                | No       | Modes of access available for the service (e.g., online, in-person).      |
-| `tags`                       | `List<String>`                | No       | Tags associated with the service.                                         |
-| `horizontalService`          | `Boolean`                     | No       | Indicates if the service is a horizontal service.                         |
-| `serviceCategories`          | `List<String>`                | No       | List of service categories associated with the service.                   |
-| `marketplaceLocations`       | `List<String>`                | No       | List of marketplace locations where the service is available.             |
-| `classTier`                  | `ServiceClassTier`            | No       | Detailed information on the class tier of the service.                    |
-| `geographicalAvailabilities` | `List<String>`                | Yes      | List of geographical availabilities of the service.                       |
-| `languageAvailabilities`     | `List<String>`                | Yes      | List of language availabilities of the service.                           |
-| `resourceGeographicLocations`| `List<String>`                | No       | List of locations where the service resources are geographically located. |
-| `mainContact`                | `ServiceMainContact`          | No       | Main contact information for the service.                                 |
-| `publicContacts`             | `List<ServicePublicContact>`  | No       | List of public contacts for the service.                                  |
-| `helpdeskEmail`              | `String`                      | Yes      | Email address for the service's helpdesk.                                 |
-| `securityContactEmail`       | `String`                      | Yes      | Email address for security contact.                                       |
-| `trl`                        | `String`                      | Yes      | Technology Readiness Level of the service.                                |
-| `lifeCycleStatus`            | `String`                      | No       | Life cycle status of the service.                                         |
-| `certifications`             | `List<String>`                | No       | List of certifications related to the service.                            |
-| `standards`                  | `List<String>`                | No       | Standards that the service complies with.                                 |
-| `openSourceTechnologies`     | `List<String>`                | No       | List of open-source technologies used in the service.                     |
-| `version`                    | `String`                      | No       | Current version of the service.                                           |
-| `lastUpdate`                 | `Date`                        | No       | Date and time of the last update.                                         |
-| `changeLog`                  | `List<String>`                | No       | List of changes made to the service.                                      |
-| `requiredResources`          | `List<String>`                | No       | List of required resources for the service.                               |
-| `relatedResources`           | `List<String>`                | No       | List of related resources linked to the service.                          |
-| `relatedPlatforms`           | `List<String>`                | No       | List of related platforms connected to the service.                       |
-| `catalogueId`                | `String`                      | No       | Identifier of the associated catalogue.                                   |
-| `fundingBody`                | `List<String>`                | No       | List of funding bodies supporting the service.                            |
-| `fundingPrograms`            | `List<String>`                | No       | List of funding programs related to the service.                          |
-| `grantProjectNames`          | `List<String>`                | No       | List of grant project names associated with the service.                  |
-| `helpdeskPage`               | `URL`                         | No       | URL of the helpdesk page.                                                 |
-| `userManual`                 | `URL`                         | No       | URL of the user manual.                                                   |
-| `termsOfUse`                 | `URL`                         | Yes      | URL of the terms of use.                                                  |
-| `privacyPolicy`              | `URL`                         | Yes      | URL of the privacy policy.                                                |
-| `accessPolicy`               | `URL`                         | No       | URL of the access policy.                                                 |
-| `resourceLevel`              | `URL`                         | No       | URL of the resource level details.                                        |
-| `trainingInformation`        | `URL`                         | No       | URL of the training information.                                          |
-| `statusMonitoring`           | `URL`                         | No       | URL for status monitoring information.                                    |
-| `maintenance`                | `URL`                         | No       | URL of the maintenance details.                                           |
-| `orderType`                  | `String`                      | Yes      | Type of order required for the service.                                   |
-| `order`                      | `URL`                         | No       | URL for ordering the service.                                             |
-| `paymentModel`               | `URL`                         | No       | URL of the payment model information.                                     |
-| `pricing`                    | `URL`                         | No       | URL of the pricing details.                                               |
+| Field                         | Type                          | Required | Description                                                               |
+|-------------------------------|-------------------------------|----------|---------------------------------------------------------------------------|
+| `id`                          | `String`                      | auto-gen | Unique identifier for the service.                                        |
+| `abbreviation`                | `String`                      | Yes      | Abbreviation of the service's name.                                       |
+| `name`                        | `String`                      | Yes      | Full name of the service.                                                 |
+| `resourceOrganisation`        | `String`                      | Yes      | Name of the resource organization providing the service.                  |
+| `resourceProviders`           | `List<String>`                | No       | List of resource providers associated with the service.                   |
+| `webpage`                     | `URL`                         | Yes      | URL of the service's webpage.                                             |
+| `alternativeIdentifiers`      | `List<AlternativeIdentifier>` | No       | List of alternative identifiers for the service.                          |
+| `description`                 | `String`                      | Yes      | Detailed description of the service.                                      |
+| `tagline`                     | `String`                      | Yes      | Short tagline summarizing the service.                                    |
+| `logo`                        | `URL`                         | Yes      | URL of the service's logo.                                                |
+| `multimedia`                  | `List<MultimediaPair>`        | No       | List of multimedia items related to the service.                          |
+| `useCases`                    | `List<UseCasesPair>`          | No       | List of use cases demonstrating the service in action.                    |
+| `scientificDomains`           | `List<ServiceProviderDomain>` | Yes      | List of scientific domains related to the service.                        |
+| `categories`                  | `List<ServiceCategory>`       | Yes      | Categories and subcategories of the service.                              |
+| `targetUsers`                 | `List<String>`                | Yes      | List of target users for the service.                                     |
+| `accessTypes`                 | `List<String>`                | No       | Types of access provided by the service (e.g., open, restricted).         |
+| `accessModes`                 | `List<String>`                | No       | Modes of access available for the service (e.g., online, in-person).      |
+| `tags`                        | `List<String>`                | No       | Tags associated with the service.                                         |
+| `horizontalService`           | `Boolean`                     | No       | Indicates if the service is a horizontal service.                         |
+| `serviceCategories`           | `List<String>`                | No       | List of service categories associated with the service.                   |
+| `marketplaceLocations`        | `List<String>`                | No       | List of marketplace locations where the service is available.             |
+| `classTier`                   | `ServiceClassTier`            | No       | Detailed information on the class tier of the service.                    |
+| `geographicalAvailabilities`  | `List<String>`                | Yes      | List of geographical availabilities of the service.                       |
+| `languageAvailabilities`      | `List<String>`                | Yes      | List of language availabilities of the service.                           |
+| `resourceGeographicLocations` | `List<String>`                | No       | List of locations where the service resources are geographically located. |
+| `mainContact`                 | `ServiceMainContact`          | No       | Main contact information for the service.                                 |
+| `publicContacts`              | `List<ServicePublicContact>`  | No       | List of public contacts for the service.                                  |
+| `helpdeskEmail`               | `String`                      | Yes      | Email address for the service's helpdesk.                                 |
+| `securityContactEmail`        | `String`                      | Yes      | Email address for security contact.                                       |
+| `trl`                         | `String`                      | Yes      | Technology Readiness Level of the service.                                |
+| `lifeCycleStatus`             | `String`                      | No       | Life cycle status of the service.                                         |
+| `certifications`              | `List<String>`                | No       | List of certifications related to the service.                            |
+| `standards`                   | `List<String>`                | No       | Standards that the service complies with.                                 |
+| `openSourceTechnologies`      | `List<String>`                | No       | List of open-source technologies used in the service.                     |
+| `version`                     | `String`                      | No       | Current version of the service.                                           |
+| `lastUpdate`                  | `Date`                        | No       | Date and time of the last update.                                         |
+| `changeLog`                   | `List<String>`                | No       | List of changes made to the service.                                      |
+| `requiredResources`           | `List<String>`                | No       | List of required resources for the service.                               |
+| `relatedResources`            | `List<String>`                | No       | List of related resources linked to the service.                          |
+| `relatedPlatforms`            | `List<String>`                | No       | List of related platforms connected to the service.                       |
+| `catalogueId`                 | `String`                      | No       | Identifier of the associated catalogue.                                   |
+| `fundingBody`                 | `List<String>`                | No       | List of funding bodies supporting the service.                            |
+| `fundingPrograms`             | `List<String>`                | No       | List of funding programs related to the service.                          |
+| `grantProjectNames`           | `List<String>`                | No       | List of grant project names associated with the service.                  |
+| `helpdeskPage`                | `URL`                         | No       | URL of the helpdesk page.                                                 |
+| `userManual`                  | `URL`                         | No       | URL of the user manual.                                                   |
+| `termsOfUse`                  | `URL`                         | Yes      | URL of the terms of use.                                                  |
+| `privacyPolicy`               | `URL`                         | Yes      | URL of the privacy policy.                                                |
+| `accessPolicy`                | `URL`                         | No       | URL of the access policy.                                                 |
+| `resourceLevel`               | `URL`                         | No       | URL of the resource level details.                                        |
+| `trainingInformation`         | `URL`                         | No       | URL of the training information.                                          |
+| `statusMonitoring`            | `URL`                         | No       | URL for status monitoring information.                                    |
+| `maintenance`                 | `URL`                         | No       | URL of the maintenance details.                                           |
+| `orderType`                   | `String`                      | Yes      | Type of order required for the service.                                   |
+| `order`                       | `URL`                         | No       | URL for ordering the service.                                             |
+| `paymentModel`                | `URL`                         | No       | URL of the payment model information.                                     |
+| `pricing`                     | `URL`                         | No       | URL of the pricing details.                                               |
 
-### Example:
+
+#### Nested Objects
+
+##### AlternativeIdentifier
+
+| Field   | Type     | Required | Description                          |
+|---------|----------|----------|--------------------------------------|
+| `type`  | `String` | No       | Type of the alternative identifier.  |
+| `value` | `String` | No       | Value of the alternative identifier. |
+
+##### MultimediaPair
+
+| Field            | Type     | Required | Description                      |
+|------------------|----------|----------|----------------------------------|
+| `multimediaURL`  | `URL`    | Yes      | URL to the multimedia resource.  |
+| `multimediaName` | `String` | No       | Name of the multimedia resource. |
+
+##### UseCasesPair
+
+| Field         | Type     | Required | Description                    |
+|---------------|----------|----------|--------------------------------|
+| `useCaseURL`  | `URL`    | Yes      | URL to the use case resource.  |
+| `useCaseName` | `String` | No       | Name of the use case resource. |
+
+##### ServiceProviderDomain
+
+| Field                 | Type     | Required | Description                    |
+|-----------------------|----------|----------|--------------------------------|
+| `scientificDomain`    | `String` | Yes      | Main scientific domain.        |
+| `scientificSubdomain` | `String` | Yes      | Specific scientific subdomain. |
+
+##### ServiceCategory
+
+| Field         | Type     | Required | Description                 |
+|---------------|----------|----------|-----------------------------|
+| `category`    | `String` | Yes      | Category of the service.    |
+| `subcategory` | `String` | No       | Subcategory of the service. |
+
+##### ServiceClassTier
+
+| Field          | Type           | Required | Description                                       |
+|----------------|----------------|----------|---------------------------------------------------|
+| `level`        | `Integer`      | Yes      | Class tier level, default is 3.                   |
+| `accessPolicy` | `String`       | No       | Access policy related to the service tier.        |
+| `costModel`    | `String`       | No       | Cost model associated with the service tier.      |
+| `offerings`    | `List<String>` | No       | List of offerings available in this service tier. |
+
+##### ServiceMainContact
+
+| Field          | Type     | Required | Description                        |
+|----------------|----------|----------|------------------------------------|
+| `firstName`    | `String` | Yes      | First name of the main contact.    |
+| `lastName`     | `String` | Yes      | Last name of the main contact.     |
+| `email`        | `String` | Yes      | Email address of the main contact. |
+| `phone`        | `String` | No       | Phone number of the main contact.  |
+| `position`     | `String` | No       | Position of the main contact.      |
+| `organisation` | `String` | No       | Organization of the main contact.  |
+
+##### ServicePublicContact
+
+| Field          | Type     | Required | Description                          |
+|----------------|----------|----------|--------------------------------------|
+| `firstName`    | `String` | No       | First name of the public contact.    |
+| `lastName`     | `String` | No       | Last name of the public contact.     |
+| `email`        | `String` | Yes      | Email address of the public contact. |
+| `phone`        | `String` | No       | Phone number of the public contact.  |
+| `position`     | `String` | No       | Position of the public contact.      |
+| `organisation` | `String` | No       | Organization of the public contact.  |
+
+### Example
 
 ```json
 {
@@ -1085,7 +1282,7 @@
 }
 ```
 
-### Datasource:
+### Datasource
 
 | Field                                   | Type                               | Required | Description                                                         |
 |-----------------------------------------|------------------------------------|----------|---------------------------------------------------------------------|
@@ -1106,7 +1303,30 @@
 | `researchProductMetadataAccessPolicies` | `List<String>`                     | No       | List of research product metadata access policies.                  |
 | `harvestable`                           | `Boolean`                          | No       | Indicates if the datasource is harvestable.                         |
 
-### Example:
+#### Nested Objects
+
+##### PersistentIdentitySystem
+
+| Field                                 | Type                           | Required | Description                                       |
+|---------------------------------------|--------------------------------|----------|---------------------------------------------------|
+| `persistentIdentityEntityType`        | `String`                       | Yes      | Type of the persistent identity entity.           |
+| `persistentIdentityEntityTypeSchemes` | `List<String>`                 | No       | Schemes for the persistent identity entity types. |
+
+##### ResearchProductLicensing
+
+| Field                        | Type     | Required | Description                           |
+|------------------------------|----------|----------|---------------------------------------|
+| `researchProductLicenseName` | `String` | Yes      | Name of the research product license. |
+| `researchProductLicenseURL`  | `URL`    | Yes      | URL of the research product license.  |
+
+##### ResearchProductMetadataLicensing
+
+| Field                                | Type     | Required | Description                                    |
+|--------------------------------------|----------|----------|------------------------------------------------|
+| `researchProductMetadataLicenseName` | `String` | Yes      | Name of the research product metadata license. |
+| `researchProductMetadataLicenseURL`  | `URL`    | Yes      | URL of the research product metadata license.  |
+
+### Example
 
 ```json
 {
@@ -1143,20 +1363,406 @@
 ```
 
 
-### Training Resource:
+### Training Resource
 
-### Interoperability Record:
+| Field                        | Type                          | Required | Description                                                                       |
+|------------------------------|-------------------------------|----------|-----------------------------------------------------------------------------------|
+| `id`                         | `String`                      | auto-gen | Unique identifier for the training resource.                                      |
+| `title`                      | `String`                      | Yes      | Title of the training resource.                                                   |
+| `resourceOrganisation`       | `String`                      | Yes      | Organisation providing the resource.                                              |
+| `resourceProviders`          | `List<String>`                | No       | List of resource providers associated with the training resource.                 |
+| `authors`                    | `List<String>`                | Yes      | List of authors who contributed to the training resource.                         |
+| `url`                        | `URL`                         | Yes      | URL linking to the training resource.                                             |
+| `urlType`                    | `String`                      | No       | Type of URL, e.g., landing page, direct link, etc.                                |
+| `eoscRelatedServices`        | `List<String>`                | No       | List of related services in the European Open Science Cloud (EOSC).               |
+| `alternativeIdentifiers`     | `List<AlternativeIdentifier>` | No       | List of alternative identifiers for the training resource.                        |
+| `description`                | `String`                      | No       | Description of the training resource.                                             |
+| `keywords`                   | `List<String>`                | No       | Keywords associated with the training resource.                                   |
+| `license`                    | `String`                      | Yes      | License under which the training resource is distributed.                         |
+| `accessRights`               | `String`                      | Yes      | Access rights for the training resource, e.g., open, restricted, etc.             |
+| `versionDate`                | `Date`                        | Yes      | Date and time when the version was published.                                     |
+| `targetGroups`               | `List<String>`                | Yes      | List of target groups intended for the training resource.                         |
+| `learningResourceTypes`      | `List<String>`                | No       | Types of learning resources, e.g., video, article, tutorial.                      |
+| `learningOutcomes`           | `List<String>`                | Yes      | List of learning outcomes expected from the training resource.                    |
+| `expertiseLevel`             | `String`                      | Yes      | Expertise level required for the training resource, e.g., beginner, intermediate. |
+| `contentResourceTypes`       | `List<String>`                | No       | Types of content included in the training resource, e.g., text, multimedia.       |
+| `qualifications`             | `List<String>`                | No       | List of qualifications or certifications associated with the resource.            |
+| `duration`                   | `String`                      | No       | Duration of the training resource, e.g., "2 hours".                               |
+| `languages`                  | `List<String>`                | Yes      | Languages in which the training resource is available.                            |
+| `geographicalAvailabilities` | `List<String>`                | Yes      | List of geographical locations where the resource is available.                   |
+| `scientificDomains`          | `List<ServiceProviderDomain>` | Yes      | List of scientific domains and subdomains relevant to the training resource.      |
+| `contact`                    | `ServiceMainContact`          | No       | Contact details for the main contact person for the training resource.            |
+| `catalogueId`                | `String`                      | No       | Catalogue identifier for the training resource.                                   |
+
+#### Nested Objects
+
+##### AlternativeIdentifier
+
+| Field   | Type     | Required | Description                          |
+|---------|----------|----------|--------------------------------------|
+| `type`  | `String` | No       | Type of the alternative identifier.  |
+| `value` | `String` | No       | Value of the alternative identifier. |
+
+##### ServiceProviderDomain
+
+| Field                 | Type     | Required | Description                    |
+|-----------------------|----------|----------|--------------------------------|
+| `scientificDomain`    | `String` | Yes      | Main scientific domain.        |
+| `scientificSubdomain` | `String` | Yes      | Specific scientific subdomain. |
+
+##### ServiceMainContact
+
+| Field          | Type     | Required | Description                        |
+|----------------|----------|----------|------------------------------------|
+| `firstName`    | `String` | Yes      | First name of the main contact.    |
+| `lastName`     | `String` | Yes      | Last name of the main contact.     |
+| `email`        | `String` | Yes      | Email address of the main contact. |
+| `phone`        | `String` | No       | Phone number of the main contact.  |
+| `position`     | `String` | No       | Position of the main contact.      |
+| `organisation` | `String` | No       | Organization of the main contact.  |
+
+### Example
+
+```json
+{
+  "id": "training_001",
+  "title": "Introduction to Data Science",
+  "resourceOrganisation": "Data Science Institute",
+  "resourceProviders": ["Provider A", "Provider B"],
+  "authors": ["Author One", "Author Two"],
+  "url": "https://example.com/training-resource",
+  "urlType": "landingPage",
+  "eoscRelatedServices": ["Service A", "Service B"],
+  "alternativeIdentifiers": [
+    {
+      "type": "DOI",
+      "value": "10.1234/training"
+    }
+  ],
+  "description": "An introductory course on data science concepts.",
+  "keywords": ["Data Science", "Machine Learning"],
+  "license": "Creative Commons Attribution 4.0",
+  "accessRights": "Open Access",
+  "versionDate": "2024-09-10T00:00:00Z",
+  "targetGroups": ["Researchers", "Students"],
+  "learningResourceTypes": ["Course", "Tutorial"],
+  "learningOutcomes": ["Understand basics of data science", "Apply machine learning models"],
+  "expertiseLevel": "Beginner",
+  "contentResourceTypes": ["Video", "PDF"],
+  "qualifications": ["Certificate of Completion"],
+  "duration": "3 hours",
+  "languages": ["English", "Spanish"],
+  "geographicalAvailabilities": ["Europe", "Global"],
+  "scientificDomains": [
+    {
+      "scientificDomain": "Computer Science",
+      "scientificSubdomain": "Machine Learning"
+    }
+  ],
+  "contact": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "+123456789",
+    "position": "Course Coordinator",
+    "organisation": "Data Science Institute"
+  },
+  "catalogueId": "catalogue_001"
+}
+```
+
+### Interoperability Record
+
+| Field                    | Type                          | Required | Description                                                                      |
+|--------------------------|-------------------------------|----------|----------------------------------------------------------------------------------|
+| `id`                     | `String`                      | auto-gen | Unique identifier for the interoperability record.                               |
+| `catalogueId`            | `String`                      | Yes      | Identifier of the catalogue containing this record.                              |
+| `providerId`             | `String`                      | Yes      | Identifier of the provider associated with the record.                           |
+| `identifierInfo`         | `IdentifierInfo`              | Yes      | Information about the primary identifier of the record.                          |
+| `creators`               | `List<Creator>`               | Yes      | List of creators involved in the creation of the resource.                       |
+| `title`                  | `String`                      | Yes      | Title of the interoperability record.                                            |
+| `publicationYear`        | `Integer`                     | Yes      | Year of publication for the record.                                              |
+| `resourceTypesInfo`      | `List<ResourceTypeInfo>`      | Yes      | List of resource types associated with the record.                               |
+| `created`                | `String`                      | No       | Timestamp indicating when the record was created.                                |
+| `updated`                | `String`                      | No       | Timestamp indicating the last update to the record.                              |
+| `relatedStandards`       | `List<RelatedStandard>`       | No       | List of related standards connected to the interoperability record.              |
+| `rights`                 | `List<Right>`                 | Yes      | List of rights associated with the record.                                       |
+| `description`            | `String`                      | Yes      | Description of the interoperability record.                                      |
+| `status`                 | `String`                      | Yes      | Current status of the interoperability record.                                   |
+| `domain`                 | `String`                      | No       | Domain to which the record pertains.                                             |
+| `eoscGuidelineType`      | `String`                      | Yes      | Type of EOSC (European Open Science Cloud) guideline associated with the record. |
+| `eoscIntegrationOptions` | `List<String>`                | No       | Options for integrating the record into EOSC.                                    |
+| `alternativeIdentifiers` | `List<AlternativeIdentifier>` | No       | Alternative identifiers for the record.                                          |
+
+#### Nested Objects
+
+##### IdentifierInfo
+
+| Field            | Type     | Required | Description                                      |
+|------------------|----------|----------|--------------------------------------------------|
+| `identifier`     | `String` | Yes      | Main identifier for the interoperability record. |
+| `identifierType` | `String` | Yes      | Type of the identifier, e.g., DOI, Handle.       |
+
+##### Creator
+
+| Field                    | Type                     | Required | Description                                     |
+|--------------------------|--------------------------|----------|-------------------------------------------------|
+| `creatorNameTypeInfo`    | `CreatorNameTypeInfo`    | Yes      | Information about the creator's name and type.  |
+| `givenName`              | `String`                 | No       | Given name of the creator.                      |
+| `familyName`             | `String`                 | No       | Family name of the creator.                     |
+| `nameIdentifier`         | `String`                 | No       | Unique identifier for the creator, e.g., ORCID. |
+| `creatorAffiliationInfo` | `CreatorAffiliationInfo` | No       | Affiliation details of the creator.             |
+
+##### CreatorNameTypeInfo
+
+| Field         | Type     | Required | Description                                   |
+|---------------|----------|----------|-----------------------------------------------|
+| `creatorName` | `String` | Yes      | Full name of the creator.                     |
+| `nameType`    | `String` | Yes      | Type of name, e.g., personal, organizational. |
+
+##### CreatorAffiliationInfo
+
+| Field                   | Type     | Description                             |
+|-------------------------|----------|-----------------------------------------|
+| `affiliation`           | `String` | Name of the affiliation of the creator. |
+| `affiliationIdentifier` | `String` | Identifier for the affiliation, if any. |
+
+##### ResourceTypeInfo
+
+| Field                 | Type     | Required | Description                                         |
+|-----------------------|----------|----------|-----------------------------------------------------|
+| `resourceType`        | `String` | Yes      | Specific type of the resource, e.g., dataset, tool. |
+| `resourceTypeGeneral` | `String` | Yes      | General category of the resource type.              |
+
+##### RelatedStandard
+
+| Field                       | Type     | Description                          |
+|-----------------------------|----------|--------------------------------------|
+| `relatedStandardIdentifier` | `String` | Identifier for the related standard. |
+| `relatedStandardURI`        | `URL`    | URI linking to the related standard. |
+
+##### Right
+
+| Field             | Type     | Required | Description                                    |
+|-------------------|----------|----------|------------------------------------------------|
+| `rightTitle`      | `String` | Yes      | Title of the right associated with the record. |
+| `rightURI`        | `URL`    | Yes      | URI linking to the right.                      |
+| `rightIdentifier` | `String` | Yes      | Identifier for the right.                      |
+
+##### AlternativeIdentifier
+
+| Field   | Type     | Description                                      |
+|---------|----------|--------------------------------------------------|
+| `type`  | `String` | Type of alternative identifier, e.g., DOI, ISBN. |
+| `value` | `String` | Value of the alternative identifier.             |
+
+### Example
+
+```json
+{
+  "id": "interop_001",
+  "catalogueId": "catalogue_001",
+  "providerId": "provider_001",
+  "identifierInfo": {
+    "identifier": "10.1234/interop",
+    "identifierType": "DOI"
+  },
+  "creators": [
+    {
+      "creatorNameTypeInfo": {
+        "creatorName": "John Smith",
+        "nameType": "Personal"
+      },
+      "givenName": "John",
+      "familyName": "Smith",
+      "nameIdentifier": "0000-0002-1825-0097",
+      "creatorAffiliationInfo": {
+        "affiliation": "University of Example",
+        "affiliationIdentifier": "org_001"
+      }
+    }
+  ],
+  "title": "Interoperability Record Example",
+  "publicationYear": 2024,
+  "resourceTypesInfo": [
+    {
+      "resourceType": "Dataset",
+      "resourceTypeGeneral": "Data"
+    }
+  ],
+  "created": "2024-01-01T12:00:00Z",
+  "updated": "2024-09-01T12:00:00Z",
+  "relatedStandards": [
+    {
+      "relatedStandardIdentifier": "standard_001",
+      "relatedStandardURI": "https://example.com/standard"
+    }
+  ],
+  "rights": [
+    {
+      "rightTitle": "Open Access",
+      "rightURI": "https://example.com/right",
+      "rightIdentifier": "right_001"
+    }
+  ],
+  "description": "This is a sample interoperability record description.",
+  "status": "Active",
+  "domain": "Data Science",
+  "eoscGuidelineType": "EOSC Interoperability",
+  "eoscIntegrationOptions": ["Integration A", "Integration B"],
+  "alternativeIdentifiers": [
+    {
+      "type": "Handle",
+      "value": "hdl:20.500.12345"
+    }
+  ]
+}
+```
 
 ### Helpdesk
 
+| Field                | Type           | Required | Description                                                                     |
+|----------------------|----------------|----------|---------------------------------------------------------------------------------|
+| `id`                 | `String`       | auto-gen | Unique identifier for the helpdesk.                                             |
+| `serviceId`          | `String`       | Yes      | Identifier of the associated service.                                           |
+| `services`           | `List<String>` | No       | List of services associated with the helpdesk.                                  |
+| `helpdeskType`       | `String`       | No       | Type of the helpdesk (e.g., technical support, customer support).               |
+| `supportGroups`      | `List<String>` | No       | List of support groups related to the helpdesk.                                 |
+| `organisation`       | `String`       | No       | Organisation managing the helpdesk.                                             |
+| `emails`             | `List<String>` | No       | List of email addresses for direct assignment of tickets, bypassing L1 support. |
+| `agents`             | `List<String>` | No       | List of agents working in the helpdesk.                                         |
+| `signatures`         | `List<String>` | No       | List of signatures used by the helpdesk.                                        |
+| `ticketPreservation` | `Boolean`      | No       | Indicates if ticket preservation is enabled.                                    |
+| `webform`            | `Boolean`      | No       | Indicates if a webform is used for ticket submission.                           |
+
+#### Example
+
+```json
+{
+  "id": "helpdesk_001",
+  "serviceId": "service_001",
+  "services": ["serviceA", "serviceB"],
+  "helpdeskType": "Technical Support",
+  "supportGroups": ["group1", "group2"],
+  "organisation": "SupportOrg",
+  "emails": ["support@example.com", "escalation@example.com"],
+  "agents": ["agent1", "agent2"],
+  "signatures": ["Best regards, Support Team", "Thank you for contacting support"],
+  "ticketPreservation": true,
+  "webform": false
+}
+```
+
 ### Monitoring
 
-### Resource Interoperability Record:
+| Field              | Type                    | Required | Description                                          |
+|--------------------|-------------------------|----------|------------------------------------------------------|
+| `id`               | `String`                | auto-gen | Unique identifier for the monitoring record.         |
+| `serviceId`        | `String`                | Yes      | Identifier of the associated service.                |
+| `monitoredBy`      | `String`                | No       | Entity or system that is performing the monitoring.  |
+| `monitoringGroups` | `List<MonitoringGroup>` | Yes      | List of monitoring groups related to the monitoring. |
 
-### Configuration Template Instance:
+#### Nested Objects
 
-    
-### Vocabulary:
+##### MonitoringGroup
+
+| Field         | Type           | Required | Description                      |
+|---------------|----------------|----------|----------------------------------|
+| `serviceType` | `String`       | Yes      | Type of service being monitored. |
+| `endpoint`    | `String`       | Yes      | Endpoint URL for monitoring.     |
+| `metrics`     | `List<Metric>` | Yes      | List of metrics being monitored. |
+
+##### Metric
+
+| Field    | Type  | Required | Description                           |
+|----------|-------|----------|---------------------------------------|
+| `probe`  | `URL` | Yes      | URL for the probe used in monitoring. |
+| `metric` | `URL` | Yes      | URL for the metric being measured.    |
+
+### Example
+
+```json
+{
+  "id": "monitoring123",
+  "serviceId": "service456",
+  "monitoredBy": "MonitoringServiceX",
+  "monitoringGroups": [
+    {
+      "serviceType": "API",
+      "endpoint": "https://api.example.com/status",
+      "metrics": [
+        {
+          "probe": "https://metrics.example.com/probe1",
+          "metric": "https://metrics.example.com/metric1"
+        },
+        {
+          "probe": "https://metrics.example.com/probe2",
+          "metric": "https://metrics.example.com/metric2"
+        }
+      ]
+    },
+    {
+      "serviceType": "Database",
+      "endpoint": "https://db.example.com/status",
+      "metrics": [
+        {
+          "probe": "https://metrics.example.com/dbProbe1",
+          "metric": "https://metrics.example.com/dbMetric1"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Resource Interoperability Record
+
+| Field                       | Type           | Required | Description                                                  |
+|-----------------------------|----------------|----------|--------------------------------------------------------------|
+| `id`                        | `String`       | auto-gen | Unique identifier for the resource interoperability record.  |
+| `resourceId`                | `String`       | Yes      | Identifier of the resource associated with the record.       |
+| `catalogueId`               | `String`       | Yes      | Identifier of the catalogue where the record is stored.      |
+| `interoperabilityRecordIds` | `List<String>` | Yes      | List of interoperability record IDs related to the resource. |
+
+### Example
+
+
+```json
+{
+  "id": "resource_interop_001",
+  "resourceId": "resource_001",
+  "catalogueId": "catalogue_001",
+  "interoperabilityRecordIds": [
+    "interop_001",
+    "interop_002"
+  ]
+}
+```
+
+### Configuration Template Instance
+
+| Field                     | Type       | Required | Description                                                |
+|---------------------------|------------|----------|------------------------------------------------------------|
+| `id`                      | `String`   | auto-gen | Unique identifier for the configuration template instance. |
+| `resourceId`              | `String`   | Yes      | Identifier of the resource associated with the instance.   |
+| `configurationTemplateId` | `String`   | Yes      | Identifier of the configuration template used.             |
+| `payload`                 | `String`   | Yes      | The configuration data or settings in JSON format.         |
+
+### Example
+
+```json
+{
+  "id": "resource_interop_001",
+  "resourceId": "resource_001",
+  "catalogueId": "catalogue_001",
+  "interoperabilityRecordIds": [
+    "interop_001",
+    "interop_002"
+  ]
+}
+```
+
+### Vocabulary
 
 | Field         | Type                  | Required | Description                                             |
 |---------------|-----------------------|----------|---------------------------------------------------------|
@@ -1180,7 +1786,7 @@
 }
 ```
 
-## Vocabularies:
+## Vocabularies
   - [ACCESS_MODE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_MODE.json)
   - [ACCESS_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_TYPE.json)
   - [CATALOGUE_STATE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATALOGUE_STATE.json)
