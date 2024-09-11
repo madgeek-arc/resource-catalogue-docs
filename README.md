@@ -10,22 +10,44 @@
 ## Table of Contents
 
 1. [API](#api)
-2. [Swagger](#swagger)
+2. [Swagger UI](#swagger-ui)
 3. [Controllers](#controllers)
+    1. [Catalogue Controller](#catalogue-controller)
+    2. [Configuration Template Instance Controller](#configuration-template-instance-controller)
+    3. [Datasource Controller](#datasource-controller)
+    4. [Interoperability Record Controller](#interoperability-record-controller)
+    5. [Provider Controller](#provider-controller)
+    6. [Public Controller](#public-controller)
+    7. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
+    8. [Service Controller](#service-controller)
+    9. [Service Extensions Controller](#service-extensions-controller)
+    10. [Training Resource Controller](#training-resource-controller)
+    11. [Vocabulary Controller](#vocabulary-controller)
 4. [Model](#model)
-5. [Vocabularies](#vocabularies)
+    1. [Catalogue](#catalogue)
+    2. [Configuration Template Instance](#configuration-template-instance)
+    3. [Datasource](#datasource)
+    4. [Helpdesk](#helpdesk)
+    5. [Interoperability Record](#interoperability-record)
+    6. [Monitoring](#monitoring)
+    7. [Provider](#provider)
+    8. [Resource Interoperability Record](#resource-interoperability-record)
+    9. [Service](#service)
+    10. [Training Resource](#training-resource)
+    11. [Vocabulary](#vocabulary)
+5. [List of Vocabularies](#list-of-vocabularies)
 
 ## API
 - [Production](https://api.providers.sandbox.eosc-beyond.eu)
 - [Integration](https://api.integration.providers.sandbox.eosc-beyond.eu)
 
-## Swagger
+## Swagger UI
 - [Production](https://providers.sandbox.eosc-beyond.eu/openapi)
 - [Integration](https://integration.providers.sandbox.eosc-beyond.eu/openapi)
 
 ## Controllers
 
-- ### Catalogue
+- ### Catalogue Controller
   
   #### Operations for Catalogues + external resources
 
@@ -273,7 +295,7 @@
         Datasource JSON [required]
       ```
       
-- ### Configuration Template Instance
+- ### Configuration Template Instance Controller
   
   #### Operations for Configuration Template Instances
   
@@ -309,8 +331,24 @@
         order: String (Order of results - asc/desc, default asc) [optional]
         orderField: String (Field to use for ordering) [optional]
       ```
+      
+  - POST
+    - Creates a new Configuration Template Instance.
+      ```diff
+      /configurationTemplateInstance
+      Body:
+        Configuration Template Instance JSON [required]
+      ```
+      
+  - PUT
+    - Updates a specific Configuration Template Instance.
+      ```diff
+      /configurationTemplateInstance
+      Body:
+        Configuration Template Instance JSON [required]
+      ```
      
-- ### Datasource
+- ### Datasource Controller
   
   #### Operations for Datasources
   
@@ -322,6 +360,7 @@
         prefix: String [required]
         suffix: String [required]
       ```
+      
   - GET
     - Returns the Datasource with the given id.
       ```diff
@@ -336,7 +375,7 @@
       Params:
         prefix: String [required]
         suffix: String [required]
-        catalogue_id: String [required]
+        catalogue_id: String (default 'eosc') [optional]
       ```
     - Filter a list of Datasources based on a set of filters or get a list of all Datasources in the Catalogue.
       ```diff
@@ -352,7 +391,7 @@
       ```
       
   - POST
-    - Creates a new EOSC Datasource:
+    - Creates a new Datasource.
       ```diff
       /datasource
       Body:
@@ -360,7 +399,7 @@
       ```
         
   - PUT
-    - Updates a specific EOSC Datasource:
+    - Updates a specific Datasource.
       ```diff
       /datasource
       Params:
@@ -369,7 +408,7 @@
         Datasource JSON [required]
       ```
         
-- ### Interoperability Record:
+- ### Interoperability Record Controller
   
   #### Operations for Interoperability Records
   
@@ -443,13 +482,13 @@
       ```
       
   - POST
-    - Creates a new EOSC Interoperability Record.
+    - Creates a new Interoperability Record.
       ```diff
       /interoperabilityRecord
       Body:
         Interoperability Record JSON [required]
       ```
-    - Creates a new EOSC Draft Interoperability Record.
+    - Creates a new Draft Interoperability Record.
       ```diff
       /interoperabilityRecord/draft
       Body:
@@ -469,433 +508,785 @@
       Body:
         Interoperability Record JSON [required]
       ```
-    - Updates the Interoperability Record with the given id.
+    - Updates the Draft Interoperability Record with the given id.
       ```diff
       /interoperabilityRecord/draft
       Body:
         Interoperability Record JSON [required]
       ```
         
-- ### Provider
+- ### Provider Controller
   
   #### Operations for Providers
   
   - DELETE
-    - Deletes the Provider of the specific Catalogue given its ID:
+    - Deletes the Provider of the specific Catalogue given its id.
       ```diff
-      /provider/{id}
+      /provider/{prefix}/{suffix}
       Params:
-        id: String (required)
-        catalogue_id: String (required)
+        prefix: String [required]
+        suffix: String [required]
       ```
+    - Deletes the Draft Provider of the specific Catalogue given its id.
+      ```diff
+      /provider/draft/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+      ```      
       
   - GET
-    - Get a list of all Providers of the specific Catalogue in the Portal:
+    - Returns the Provider of the specific Catalogue given its id.
+      ```diff
+      /provider/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+        catalogue_id: String (default 'eosc') [optional]
+      ```
+    - Validates a url.
+      ```diff
+      /provider/validateUrl
+      Params:
+        urlForValidation: URL [required]
+      ```             
+    - Get a list of all inactive Services of a specific Provider.
+      ```diff
+      /provider/services/inactive/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+      ```
+    - Get a list of all rejected resources (Services or Training Resources) of a specific Provider.
+      ```diff
+      /provider/services/inactive/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+        resourceType: String [required]
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+    - Get all inactive Providers of the Catalogue.
+      ```diff
+      /provider/inactive/all
+      ```
+    - Returns a list of Providers where user is admin.
+      ```diff
+      /provider/getMyServiceProviders
+      ```
+    - Returns the Draft Provider given its id.
+      ```diff
+      /provider/draft/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+      ```
+    - Returns a list of Draft Providers where user is admin.
+      ```diff
+      /provider/draft/getMyDraftProviders
+      ```
+    - Get a list of all Providers under a specific Catalogue.
+      ```diff
+      /provider/byCatalogue/{id}
+      Params:
+        id: String [required]
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+    - Filter a list of Providers based on a set of filters or get a list of all Providers in the Catalogue.
       ```diff
       /provider/all
       Params:
-        catalogue_id: String (required)
-        query: String (Keyword to refine the search)
-        from : int (Starting index in the result set)
-        quantity: int (Quantity to be fetched)
-        order: String (asc/desc)
-        orderField: String (eg. id)
-      ```
-    - Returns all Datasources of a specific Provider of the EOSC Catalogue given its ID:
-      ```diff
-      /provider/datasources/{id}
-      Params:
-        id: String (required)
-      ```
-     - Returns all Services of a specific Provider of the EOSC Catalogue given its ID:
-        ```diff
-        /provider/services/{id}
-        Params:
-          id: String (required)
-        ```
-    - Returns the Provider of the specific Catalogue given its ID:
-      ```diff
-      /provider/{id}
-      Params:
-        id: String (required)
-        catalogue_id: String
-      ```
-      
-  - PUT
-    - Updates the Provider of the specific Catalogue give its ID:
+        suspended: boolean (default false) [optional]
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
+
+  - POST
+    - Create a new Provider.
       ```diff
       /provider
       Body:
-        Provider JSON (required)
-      Params:
-        catalogue_id: String
-        comment: String
+        Provider JSON [required]
+      ```
+    - Create a new Draft Provider.
+      ```diff
+      /provider/draft
+      Body:
+        Provider JSON [required]
+      ```
+    - Validates the Provider without actually changing the repository.
+      ```diff
+      /provider/validate
+      Body:
+        Provider JSON [required]
       ```
       
-- ### Public
+  - PUT
+    - Updates the Provider of the specific Catalogue give its id.
+      ```diff
+      /provider
+      Params:
+        catalogue_id: String (default 'eosc') [optional]
+        comment: String [optional]
+      Body:
+        Provider JSON [required]
+      ```
+    - Updates the Draft Provider of the specific Catalogue give its id.
+      ```diff
+      /provider/draft
+      Body:
+        Provider JSON [required]
+      ```
+      
+- ### Public Controller
   
   #### Get information about Public resources
   
   - GET
-    - Get a list of all Public Datasources of the specific Catalogue in the Portal:
+    - Returns the Public Configuration Template Instance with the given id.
       ```diff
-      /public/datasource/all
+      /public/configurationTemplateInstance/{id}
       Params:
-        catalogue_id: String (required)
-        query: String (Keyword to refine the search)
-        from : int (Starting index in the result set)
-        quantity: int (Quantity to be fetched)
-        order: String (asc/desc)
-        orderField: String (eg. id)
+        id: String [required]
       ```
-    - Returns the Public Datasource of the specific Catalogue given its ID:
+    - Get a list of all Public Configuration Template Instances in the Portal.
+      ```diff
+      /public/configurationTemplateInstance/all
+      Params:
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+      ```
+    - Returns the Public Datasource with the given id.
       ```diff
       /public/datasource/{id}
       Params:
-        id: String (required)
-        catalogue_id: String
+        id: String [required]
       ```
-    - Get a list of all Public Providers of the specific Catalogue in the Portal:
+    - Get a list of all Public Datasources of the specific Catalogue in the Portal.
       ```diff
-      /public/provider/all
+      /public/datasource/all
       Params:
-        catalogue_id: String (required)
-        query: String (Keyword to refine the search)
-        from : int (Starting index in the result set)
-        quantity: int (Quantity to be fetched)
-        order: String (asc/desc)
-        orderField: String (eg. id)
+        suspended: boolean (default false) [optional]
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
       ```
-    - Returns the Public Provider of the specific Catalogue given its ID:
+    - Returns the Public Interoperability Record of the specific Catalogue with the given id.
+      ```diff
+      /public/interoperabilityRecord/{id}
+      Params:
+        id: String [required]
+        catalogue_id: String (default 'eosc) [optional]
+      ```
+    - Returns the Public Related Resources of a specific Interoperability Record given its id.
+      ```diff
+      /public/interoperabilityRecord/relatedResources/{id}
+      Params:
+        id: String [required]
+      ```
+    - Returns a list of Public Interoperability Records where user is admin.
+      ```diff
+      /public/interoperabilityRecord/my
+      ```
+    - Get a list of all Public Interoperability Records of the specific Catalogue in the Portal.
+      ```diff
+      /public/interoperabilityRecord/all
+      Params:
+        suspended: boolean (default false) [optional]
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
+      ```
+    - Returns the Public Provider with the given id.
       ```diff
       /public/provider/{id}
       Params:
-        id: String (required)
-        catalogue_id: String
+        id: String [required]
       ```
-    - Get a list of all Public Services of the specific Catalogue in the Portal:
+    - Returns a list of Public Providers where user is admin.
       ```diff
-      /public/resource/all
-      Params:
-        catalogue_id: String (required)
-        query: String (Keyword to refine the search)
-        from : int (Starting index in the result set)
-        quantity: int (Quantity to be fetched)
-        order: String (asc/desc)
-        orderField: String (eg. id)
+      /public/provider/my
       ```
-    - Returns the Public Service of the specific Catalogue given its ID:
+    - Get a list of all Public Providers of the specific Catalogue in the Portal.
       ```diff
-      /public/resource/{id}
+      /public/provider/all
       Params:
-        id: String (required)
-        catalogue_id: String
+        suspended: boolean (default false) [optional]
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
       ```
-    - Get a list of all Public Training Resources of the specific Catalogue in the Portal:
+    - Returns the Public Resource Interoperability Record with the given id.
       ```diff
-      /public/trainingResource/all
+      /public/resourceInteroperabilityRecord/{id}
       Params:
-        catalogue_id: String (required)
-        query: String (Keyword to refine the search)
-        from : int (Starting index in the result set)
-        quantity: int (Quantity to be fetched)
-        order: String (asc/desc)
-        orderField: String (eg. id)
+        id: String [required]
       ```
-    - Returns the Public Training Resource of the specific Catalogue given its ID:
+    - Returns a list of Public Resource Interoperability Records where user is admin.
+      ```diff
+      /public/resourceInteroperabilityRecord/my
+      ```
+    - Get a list of all Public Resource Interoperability Records of the specific Catalogue in the Portal.
+      ```diff
+      /public/resourceInteroperabilityRecord/all
+      Params:
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
+      ```
+    - Returns the Public Service of the specific Catalogue with the given id.
+      ```diff
+      /public/service/{id}
+      Params:
+        id: String [required]
+        catalogue_id (default 'eosc') [optional]
+      ```
+    - Returns a list of Public Services where user is admin.
+      ```diff
+      /public/services/my
+      ```
+    - Get a list of all Public Services of the specific Catalogue in the Portal.
+      ```diff
+      /public/services/all
+      Params:
+        suspended: boolean (default false) [optional]
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
+      ```
+    - Returns the Public Monitoring with the given id.
+      ```diff
+      /public/monitoring/{id}
+      Params:
+        id: String [required]
+      ```
+    - Returns a list of Public Monitorings where user is admin.
+      ```diff
+      /public/monitoring/my
+      ```
+    - Get a list of all Public Monitorings of the specific Catalogue in the Portal.
+      ```diff
+      /public/monitoring/all
+      Params:
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
+      ```
+    - Returns the Public Helpdesk with the given id.
+      ```diff
+      /public/helpdesk/{id}
+      Params:
+        id: String [required]
+      ```
+    - Returns a list of Public Helpdesks where user is admin.
+      ```diff
+      /public/helpdesk/my
+      ```
+    - Get a list of all Public Helpdesks of the specific Catalogue in the Portal.
+      ```diff
+      /public/helpdesk/all
+      Params:
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
+      ```
+    - Returns the Public Training Resource of the specific Catalogue with the given id.
       ```diff
       /public/trainingResource/{id}
       Params:
-        id: String (required)
-        catalogue_id: String
+        id: String [required]
+        catalogue_id (default 'eosc') [optional]
+      ```
+    - Returns a list of Public Training Resources where user is admin.
+      ```diff
+      /public/trainingResource/my
+      ```
+    - Get a list of all Public Training Resources of the specific Catalogue in the Portal.
+      ```diff
+      /public/trainingResource/all
+      Params:
+        suspended: boolean (default false) [optional]
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (default 'eosc') [optional]
+      ```
+
+- ### Resource Interoperability Record Controller
+  
+  #### Operations for Resource Interoperability Records
+  
+  - DELETE
+    - Deletes the Resource Interoperability Record of a specific resource with the given id.
+      ```diff
+      /resourceInteroperabilityRecord/{resourceIdPrefix}/{resourceIdSuffix}/{resourceInteroperabilityRecordIdPrefix}/{resourceInteroperabilityRecordIdSuffix}
+      Params:
+        resourceIdPrefix: String [required]
+        resourceIdSuffix: String [required]
+        resourceInteroperabilityRecordIdPrefix: String [required]
+        resourceInteroperabilityRecordIdSuffix: String [required]
+      ```
+      
+  - GET
+    - Returns the Resource Interoperability Record with the given id.
+      ```diff
+      /resourceInteroperabilityRecord/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+      ```
+    - Returns the Resource Interoperability Record of the given Service of the given Catalogue.
+      ```diff
+      /resourceInteroperabilityRecord/byResource/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+        catalogue_id: String (default 'eosc') [optional]
+      ```
+    - Filter a list of Resource Interoperability Records based on a set of filters or get a list of all Resource Interoperability Records in the Catalogue.
+      ```diff
+      /datasource/all
+      Params:
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+        catalogue: String (Catalogue ID) [optional]
+      ```
+      
+  - POST
+    - Creates a new Resource Interoperability Record.
+      ```diff
+      /resourceInteroperabilityRecord
+      Params:
+        resourceType : String [required]
+      Body:
+        Resource Interoperability Record JSON [required]
+      ```
+        
+  - PUT
+    - Updates a specific Resource Interoperability Record.
+      ```diff
+      /resourceInteroperabilityRecord
+      Body:
+        Resource Interoperability Record JSON [required]
       ```
   
-- ### Service
+- ### Service Controller
   
   #### Operations for Services
   
   - DELETE
-    - Deletes the Service of the specific Catalogue given its ID:
+    - Deletes the Service of the specific Catalogue given its id.
       ```diff
-      /service/{id}
+      /service/{prefix}/{suffix}
       Params:
-        id: String (required)
-        catalogue_id: String
+        prefix: String [required]
+        suffix: String [required]
+        catalogue_id: String (default 'eosc') [optional]
+      ```
+    - Deletes the Draft Service given its id.
+      ```diff
+      /service/draft/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
       ```
       
   - GET
-    - Returns a list of all Services of the specific Catalogue in the Portal:
+    - Returns the Service of the specific Catalogue given its id.
       ```diff
-        /service/all
+        /service/{prefix}/{suffix}
         Params:
-          catalogue_id: String (required)
-          query: String (Keyword to refine the search)
-          from : int (Starting index in the result set)
-          quantity: int (Quantity to be fetched)
-          order: String (asc/desc)
-          orderField: String (eg. id)
+          prefix: String [required]
+          suffix: String [required]
+          catalogue_id: String (default 'eosc') [optional]
       ```
-    - Get all Services in the catalogue organized by an attribute:
+    - Returns a list of all inactive Services.
+      ```diff
+        /service/inactive/all
+        Params:
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+          catalogue: String (default 'eosc') [optional]
+      ```
+    - Returns the Draft Service of the specific Catalogue given its id.
+      ```diff
+        /service/draft/{prefix}/{suffix}
+        Params:
+          prefix: String [required]
+          suffix: String [required]
+      ```
+    - Returns a list of Draft Services where user is admin.
+      ```diff
+      /service/draft/my
+      ```
+    - Returns a list of Draft Services under a specific Provider.
+      ```diff
+        /service/draft/byProvider/{prefix}/{suffix}
+        Params:
+          prefix: String [required]
+          suffix: String [required]
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+      ```
+    - Returns a list of Services under a specific Provider.
+      ```diff
+        /service/byProvider/{prefix}/{suffix}
+        Params:
+          prefix: String [required]
+          suffix: String [required]
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+      ```
+    - Returns a list of Services of a specific Catalogue.
+      ```diff
+        /service/byCatalogue/{id}
+        Params:
+          id: String [required]
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+      ```
+    - Get all Services in the Catalogue organized by an attribute (eg. name)
       ```diff
         /service/by/{field}
         Params:
           field: Service field (required)
       ```
-    - Returns the Service of the specific Catalogue given its ID:
+    - Returns a list of all Services of the specific Catalogue in the Portal.
       ```diff
-        /service/{id}
+        /service/all
         Params:
-          id: String (required)
-          catalogue_id: String
+          suspended: boolean (default false) [optional]
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+          catalogue: String (default 'eosc') [optional]
       ```
       
   - POST
-    - Creates a new EOSC Service:
+    - Creates a new Service.
       ```diff
         /service
         Body:
-          Service JSON (required)
-    - Validates a Service:
+          Service JSON [required]
+    - Creates a new Draft Service.
+      ```diff
+        /service/draft
+        Body:
+          Service JSON [required]
+    - Validates a Service without actually changing the repository.
       ```diff
       /service/validate
       Body:
-        Service JSON (required)
+        Service JSON [required]
   - PUT
-    - Updates a specific EOSC Service:
+    - Updates a specific Service.
       ```diff
       /service
-      Body:
-        Service JSON (required)
       Params:
         comment: String
-      ```
-  
-- ### Resource Interoperability Record
-  
-  #### Operations for Resource Interoperability Records
-  
-  - DELETE
-    - Deletes the Resource Interoperability Record of the specific Resource:
-      ```diff
-      /resourceInteroperabilityRecord/{resourceId}/{resourceInteroperabilityRecordId}
-      Params:
-        resourceId: String (required)
-        resourceInteroperabilityRecordId: String (required)
-      ```
-      
-  - GET
-    - Returns a list of all Resource Interoperability Records of the specific Catalogue in the Portal:
-      ```diff
-      /resourceInteroperabilityRecord/all
-      Params:
-        catalogue_id: String (required)
-        query: String (Keyword to refine the search)
-        from : int (Starting index in the result set)
-        quantity: int (Quantity to be fetched)
-        order: String (asc/desc)
-        orderField: String (eg. id)
-      ```
-    - Returns the Resource Interoperability Record of the specific Catalogue given the Resource ID:
-      ```diff
-        /resourceInteroperabilityRecord/byResource/{resourceId}
-        Params:
-          resourceId: String (required)
-          catalogue_id: String
-      ```
-    - Returns the Resource Interoperability Record of the specific Catalogue given its ID:
-      ```diff
-        /resourceInteroperabilityRecord/{id}
-        Params:
-          id: String (required)
-      ```
-      
-  - POST
-    - Creates a new Resource Interoperability Record given its resourceType (eg. service, datasource):
-      ```diff
-        /resourceInteroperabilityRecord
-        Body:
-          ResourceInteroperabilityRecord: JSON (required)
-        Params:
-          resourceType: String (required)
-      ```
-  - PUT
-    - Updates a specific Resource Interoperability Record:
-      ```diff
-      /resourceInteroperabilityRecord
       Body:
-        ResourceInteroperabilityRecord: JSON (required)
+        Service JSON [required]
+      ```
+    - Updates a specific Draft Service.
+      ```diff
+      /service/draft
+      Body:
+        Service JSON [required]
       ```
   
-- ### Service Extensions
+- ### Service Extensions Controller
   
   #### Operations for Service Extensions (Helpdesks && Monitorings)
   
   - DELETE
-    - Deletes the Helpdesk of the specific Resource of the specific Catalogue:
+    - Deletes the specific Monitoring.
       ```diff
-      /service-extensions/helpdesk/{catalogueId}/{serviceId}
+      /service-extensions/monitoring/{prefix}/{suffix}
       Params:
-        catalogueId: String (required)
-        serviceId: String (required)
+        prefix: String [required]
+        suffix: String [required]
       ```
-    - Deletes the Monitoring of the specific Resource of the specific Catalogue:
+    - Deletes the specific Helpdesk.
       ```diff
-      /service-extensions/monitoring/{catalogueId}/{serviceId}
+      /service-extensions/helpdesk/{prefix}/{suffix}
       Params:
-        catalogueId: String (required)
-        serviceId: String (required)
+        prefix: String [required]
+        suffix: String [required]
       ```
       
   - GET
-    - Returns a list of all Helpdesks of the specific Catalogue in the Portal:
+    - Returns the Monitoring with the given id.
       ```diff
-        /service-extensions/helpdesk/all
-        Params:
-          catalogue_id: String (required)
-          query: String (Keyword to refine the search)
-          from : int (Starting index in the result set)
-          quantity: int (Quantity to be fetched)
-          order: String (asc/desc)
-          orderField: String (eg. id)
+      /service-extensions/monitoring/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
       ```
-    - Returns the Helpdesk of the specific Catalogue given the Resource ID:
+    - Returns a list of available Monitoring service types.
       ```diff
-        /service-extensions/helpdesk/byService/{serviceId}
-        Params:
-          serviceId: String (required)
-          catalogue_id: String
+      /service-extensions/monitoring/serviceTypes
       ```
-    - Returns the Helpdesk of the specific Catalogue given its ID:
+    - Returns the Monitoring of the given Service of the given Catalogue.
       ```diff
-        /service-extensions/helpdesk/{id}
-        Params:
-          id: String (required)
+      /service-extensions/monitoring/byService/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+        catalogue_id: String (default 'eosc') [optional]
       ```
-    - Returns a list of all Monitorings of the specific Catalogue in the Portal:
+    - Filter a list of Monitorings based on a set of filters or get a list of all Monitorings in the Catalogue.
       ```diff
         /service-extensions/monitoring/all
         Params:
-          catalogue_id: String (required)
-          query: String (Keyword to refine the search)
-          from : int (Starting index in the result set)
-          quantity: int (Quantity to be fetched)
-          order: String (asc/desc)
-          orderField: String (eg. id)
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
       ```
-    - Returns the Monitoring of the specific Catalogue given the Resource ID:
+    - Returns the Helpdesk with the given id.
       ```diff
-        /service-extensions/monitoring/byService/{serviceId}
+      /service-extensions/helpdesk/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+      ```
+    - Returns the Helpdesk of the given Service of the given Catalogue.
+      ```diff
+      /service-extensions/helpdesk/byService/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+        catalogue_id: String (default 'eosc') [optional]
+      ```
+    - Filter a list of Helpdesks based on a set of filters or get a list of all Helpdesks in the Catalogue.
+      ```diff
+        /service-extensions/helpdesk/all
         Params:
-          serviceId: String (required)
-          catalogue_id: String
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
       ```
-    - Returns a list with all the available Monitoring Service Types:
-      ```diff
-        /service-extensions/monitoring/serviceTypes
-      ```
-    - Returns the Monitoring of the specific Catalogue given its ID:
-      ```diff
-        /service-extensions/monitoring/{id}
-        Params:
-          id: String (required)
-      ```
-      
+        
   - POST
-    - Creates a new Helpdesk for the specific Catalogue:
-      ```diff
-        /service-extensions/helpdesk
-        Body:
-          Helpdesk JSON (required)
-        Params:
-          catalogue_id: String
-    - Creates a new Monitoring for the specific Catalogue:
+    - Creates a new Monitoring.
       ```diff
         /service-extensions/monitoring
-        Body:
-          Monitoring JSON (required)
         Params:
-          catalogue_id: String
-      
-  - PUT
-    - Updates a specific Helpdesk of a specific Catalogue:
-      ```diff
-      /service-extensions/helpdesk
-      Body:
-        Helpdesk JSON (required)
-      Params:
-        catalogue_id: String
+          catalogue_id: String [required]
+          resourceType: String [required]
+        Body:
+          Monitoring JSON [required]
       ```
-    - Updates a specific Monitoring of a specific Catalogue:
+    - Creates a new Helpdesk.
       ```diff
-      /service-extensions/montoring
-      Body:
-        Monitoring JSON (required)
-      Params:
-        catalogue_id: String
+        /service-extensions/helpdesk
+        Params:
+          catalogue_id: String [required]
+          resourceType: String [required]
+        Body:
+          Helpdesk JSON [required]
       ```
 
-- ### Training Resource
+  - PUT
+    - Updates the Monitoring with the given id.
+      ```diff
+      /service-extensions/monitoring
+      Params:
+        catalogue_id: String (default 'eosc') [optional]
+      Body:
+        Monitoring JSON [required]
+      ```
+    - Updates the Helpdesk with the given id.
+      ```diff
+      /service-extensions/helpdesk
+      Params:
+        catalogue_id: String (default 'eosc') [optional]
+      Body:
+        Helpdesk JSON [required]
+      ```
+
+- ### Training Resource Controller
   
   #### Operations for Training Resources
   
   - DELETE
-    - Deletes the Training Resource of the specific Catalogue given its ID:
+    - Deletes the Training Resource of the specific Catalogue given its id.
       ```diff
-      /trainingResource/{id}
+      /trainingResource/{prefix}/{suffix}
       Params:
-        id: String (required)
-        catalogue_id: String
+        prefix: String [required]
+        suffix: String [required]
+        catalogue_id: String (default 'eosc') [optional]
+      ```
+    - Deletes the Draft Training Resource given its id.
+      ```diff
+      /trainingResource/draft/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
       ```
       
   - GET
-    - Returns a list of all Training Resources of the specific Catalogue in the Portal:
+    - Returns the Training Resource of the specific Catalogue given its id.
       ```diff
-        /trainingResource/all
+        /trainingResource/{prefix}/{suffix}
         Params:
-          catalogue_id: String (required)
-          query: String (Keyword to refine the search)
-          from : int (Starting index in the result set)
-          quantity: int (Quantity to be fetched)
-          order: String (asc/desc)
-          orderField: String (eg. id)
+          prefix: String [required]
+          suffix: String [required]
+          catalogue_id: String (default 'eosc') [optional]
       ```
-    - Get all Training Resources in the catalogue organized by an attribute:
+    - Returns a list of all inactive Training Resources.
+      ```diff
+        /trainingResource/inactive/all
+        Params:
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+      ```
+    - Returns the Draft Training Resource of the specific Catalogue given its id.
+      ```diff
+        /trainingResource/draft/{prefix}/{suffix}
+        Params:
+          prefix: String [required]
+          suffix: String [required]
+      ```
+    - Returns a list of Draft Training Resources where user is admin.
+      ```diff
+      /trainingResource/draft/getMyDraftTrainingResources
+      ```
+    - Returns a list of Training Resources under a specific Provider.
+      ```diff
+        /trainingResource/byProvider/{prefix}/{suffix}
+        Params:
+          prefix: String [required]
+          suffix: String [required]
+          catalogue_id: String (default 'eosc') [optional]
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+      ```
+    - Returns a list of Training Resources of a specific Catalogue.
+      ```diff
+        /trainingResource/byCatalogue/{id}
+        Params:
+          id: String [required]
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+      ```
+    - Get all Training Resources in the Catalogue organized by an attribute (eg. name)
       ```diff
         /trainingResource/by/{field}
         Params:
-          field: Training Resource field (required)
+          field: Service field (required)
       ```
-    - Returns the Training Resource of the specific Catalogue given its ID:
+    - Returns a list of all Training Resources of the specific Catalogue in the Portal.
       ```diff
-        /trainingResource/{id}
+        /trainingResource/all
         Params:
-          id: String (required)
-          catalogue_id: String
+          suspended: boolean (default false) [optional]
+          query : String (Keyword to refine the search) [optional]
+          from : String (Starting index in the result set, default 0) [optional]
+          quantity: String (Quantity to be fetched, default 10) [optional]
+          order: String (Order of results - asc/desc, default asc) [optional]
+          orderField: String (Field to use for ordering) [optional]
+          catalogue: String (default 'eosc') [optional]
       ```
       
   - POST
-    - Creates a new EOSC Training Resource:
+    - Creates a new Training Resource.
       ```diff
         /trainingResource
         Body:
-          Training Resource JSON (required)
-    - Validates a Training Resource:
+          Training Resource JSON [required]
+    - Creates a new Draft Training Resource.
+      ```diff
+        /trainingResource/draft
+        Body:
+          Training Resource JSON [required]
+    - Validates a Training Resource without actually changing the repository.
       ```diff
       /trainingResource/validate
       Body:
-        Training Resource JSON (required)
-      
+        Training Resource JSON [required]
   - PUT
-    - Updates a specific EOSC Training Resource:
+    - Updates a specific Training Resource.
       ```diff
       /trainingResource
-      Body:
-        Training Resource JSON (required)
       Params:
         comment: String
+      Body:
+        Training Resource JSON [required]
+      ```
+    - Updates a specific Draft Training Resource.
+      ```diff
+      /trainingResource/draft
+      Body:
+        Training Resource JSON [required]
       ```
 
-- ### Vocabulary
+- ### Vocabulary Controller
   
   #### Get information about Vocabularies
   
@@ -908,7 +1299,7 @@
       ```diff
       /vocabulary/byType/{type}
       Params:
-        type: Vocabulary Type (required)
+        type: Vocabulary Type [required]
       ```
     - Get a list of EU Countries:
       ```diff
@@ -921,8 +1312,7 @@
     - Get a specific Vocabulary given its ID:
       ```diff
       /vocabulary/{id}
-      Params:
-        id: String (required)
+      Params:[required](required)
       ```
 
 ## Model
@@ -1075,6 +1465,353 @@
       "email": "user@example.com",
       "name": "User Name",
       "surname": "Surname"
+    }
+  ]
+}
+```
+
+### Configuration Template Instance
+
+| Field                     | Type       | Required | Description                                                |
+|---------------------------|------------|----------|------------------------------------------------------------|
+| `id`                      | `String`   | auto-gen | Unique identifier for the configuration template instance. |
+| `resourceId`              | `String`   | Yes      | Identifier of the resource associated with the instance.   |
+| `configurationTemplateId` | `String`   | Yes      | Identifier of the configuration template used.             |
+| `payload`                 | `String`   | Yes      | The configuration data or settings in JSON format.         |
+
+### Example
+
+```json
+{
+  "id": "resource_interop_001",
+  "resourceId": "resource_001",
+  "catalogueId": "catalogue_001",
+  "interoperabilityRecordIds": [
+    "interop_001",
+    "interop_002"
+  ]
+}
+```
+
+### Datasource
+
+| Field                                   | Type                               | Required | Description                                                         |
+|-----------------------------------------|------------------------------------|----------|---------------------------------------------------------------------|
+| `id`                                    | `String`                           | auto-gen | Unique identifier for the datasource.                               |
+| `serviceId`                             | `String`                           | Yes      | Identifier of the associated service.                               |
+| `catalogueId`                           | `String`                           | Yes      | Identifier of the associated catalogue.                             |
+| `submissionPolicyURL`                   | `URL`                              | No       | URL of the submission policy.                                       |
+| `preservationPolicyURL`                 | `URL`                              | No       | URL of the preservation policy.                                     |
+| `versionControl`                        | `Boolean`                          | No       | Indicates if version control is used.                               |
+| `persistentIdentitySystems`             | `List<PersistentIdentitySystem>`   | No       | List of persistent identity systems associated with the datasource. |
+| `jurisdiction`                          | `String`                           | Yes      | Jurisdiction where the datasource operates.                         |
+| `datasourceClassification`              | `String`                           | Yes      | Classification of the datasource.                                   |
+| `researchEntityTypes`                   | `List<String>`                     | No       | List of research entity types related to the datasource.            |
+| `thematic`                              | `Boolean`                          | Yes      | Indicates if the datasource is thematic.                            |
+| `researchProductLicensings`             | `List<ResearchProductLicensing>`   | No       | List of research product licensing details.                         |
+| `researchProductAccessPolicies`         | `List<String>`                     | No       | List of research product access policies.                           |
+| `researchProductMetadataLicensing`      | `ResearchProductMetadataLicensing` | No       | Metadata licensing details for research products.                   |
+| `researchProductMetadataAccessPolicies` | `List<String>`                     | No       | List of research product metadata access policies.                  |
+| `harvestable`                           | `Boolean`                          | No       | Indicates if the datasource is harvestable.                         |
+
+#### Nested Objects
+
+##### PersistentIdentitySystem
+
+| Field                                 | Type                           | Required | Description                                       |
+|---------------------------------------|--------------------------------|----------|---------------------------------------------------|
+| `persistentIdentityEntityType`        | `String`                       | Yes      | Type of the persistent identity entity.           |
+| `persistentIdentityEntityTypeSchemes` | `List<String>`                 | No       | Schemes for the persistent identity entity types. |
+
+##### ResearchProductLicensing
+
+| Field                        | Type     | Required | Description                           |
+|------------------------------|----------|----------|---------------------------------------|
+| `researchProductLicenseName` | `String` | Yes      | Name of the research product license. |
+| `researchProductLicenseURL`  | `URL`    | Yes      | URL of the research product license.  |
+
+##### ResearchProductMetadataLicensing
+
+| Field                                | Type     | Required | Description                                    |
+|--------------------------------------|----------|----------|------------------------------------------------|
+| `researchProductMetadataLicenseName` | `String` | Yes      | Name of the research product metadata license. |
+| `researchProductMetadataLicenseURL`  | `URL`    | Yes      | URL of the research product metadata license.  |
+
+### Example
+
+```json
+{
+  "id": "datasource_001",
+  "serviceId": "service_001",
+  "catalogueId": "catalogue_001",
+  "submissionPolicyURL": "https://example.com/submission-policy",
+  "preservationPolicyURL": "https://example.com/preservation-policy",
+  "versionControl": true,
+  "persistentIdentitySystems": [
+    {
+      "persistentIdentityEntityType": "Type1",
+      "persistentIdentityEntityTypeSchemes": ["Scheme1", "Scheme2"]
+    }
+  ],
+  "jurisdiction": "Country X",
+  "datasourceClassification": "Public",
+  "researchEntityTypes": ["Type1", "Type2"],
+  "thematic": true,
+  "researchProductLicensings": [
+    {
+      "researchProductLicenseName": "License1",
+      "researchProductLicenseURL": "https://example.com/license1"
+    }
+  ],
+  "researchProductAccessPolicies": ["Policy1", "Policy2"],
+  "researchProductMetadataLicensing": {
+    "researchProductMetadataLicenseName": "Metadata License1",
+    "researchProductMetadataLicenseURL": "https://example.com/metadata-license1"
+  },
+  "researchProductMetadataAccessPolicies": ["MetadataPolicy1", "MetadataPolicy2"],
+  "harvestable": true
+}
+```
+
+### Helpdesk
+
+| Field                | Type           | Required | Description                                                                     |
+|----------------------|----------------|----------|---------------------------------------------------------------------------------|
+| `id`                 | `String`       | auto-gen | Unique identifier for the helpdesk.                                             |
+| `serviceId`          | `String`       | Yes      | Identifier of the associated service.                                           |
+| `services`           | `List<String>` | No       | List of services associated with the helpdesk.                                  |
+| `helpdeskType`       | `String`       | No       | Type of the helpdesk (e.g., technical support, customer support).               |
+| `supportGroups`      | `List<String>` | No       | List of support groups related to the helpdesk.                                 |
+| `organisation`       | `String`       | No       | Organisation managing the helpdesk.                                             |
+| `emails`             | `List<String>` | No       | List of email addresses for direct assignment of tickets, bypassing L1 support. |
+| `agents`             | `List<String>` | No       | List of agents working in the helpdesk.                                         |
+| `signatures`         | `List<String>` | No       | List of signatures used by the helpdesk.                                        |
+| `ticketPreservation` | `Boolean`      | No       | Indicates if ticket preservation is enabled.                                    |
+| `webform`            | `Boolean`      | No       | Indicates if a webform is used for ticket submission.                           |
+
+#### Example
+
+```json
+{
+  "id": "helpdesk_001",
+  "serviceId": "service_001",
+  "services": ["serviceA", "serviceB"],
+  "helpdeskType": "Technical Support",
+  "supportGroups": ["group1", "group2"],
+  "organisation": "SupportOrg",
+  "emails": ["support@example.com", "escalation@example.com"],
+  "agents": ["agent1", "agent2"],
+  "signatures": ["Best regards, Support Team", "Thank you for contacting support"],
+  "ticketPreservation": true,
+  "webform": false
+}
+```
+
+### Interoperability Record
+
+| Field                    | Type                          | Required | Description                                                                      |
+|--------------------------|-------------------------------|----------|----------------------------------------------------------------------------------|
+| `id`                     | `String`                      | auto-gen | Unique identifier for the interoperability record.                               |
+| `catalogueId`            | `String`                      | Yes      | Identifier of the catalogue containing this record.                              |
+| `providerId`             | `String`                      | Yes      | Identifier of the provider associated with the record.                           |
+| `identifierInfo`         | `IdentifierInfo`              | Yes      | Information about the primary identifier of the record.                          |
+| `creators`               | `List<Creator>`               | Yes      | List of creators involved in the creation of the resource.                       |
+| `title`                  | `String`                      | Yes      | Title of the interoperability record.                                            |
+| `publicationYear`        | `Integer`                     | Yes      | Year of publication for the record.                                              |
+| `resourceTypesInfo`      | `List<ResourceTypeInfo>`      | Yes      | List of resource types associated with the record.                               |
+| `created`                | `String`                      | No       | Timestamp indicating when the record was created.                                |
+| `updated`                | `String`                      | No       | Timestamp indicating the last update to the record.                              |
+| `relatedStandards`       | `List<RelatedStandard>`       | No       | List of related standards connected to the interoperability record.              |
+| `rights`                 | `List<Right>`                 | Yes      | List of rights associated with the record.                                       |
+| `description`            | `String`                      | Yes      | Description of the interoperability record.                                      |
+| `status`                 | `String`                      | Yes      | Current status of the interoperability record.                                   |
+| `domain`                 | `String`                      | No       | Domain to which the record pertains.                                             |
+| `eoscGuidelineType`      | `String`                      | Yes      | Type of EOSC (European Open Science Cloud) guideline associated with the record. |
+| `eoscIntegrationOptions` | `List<String>`                | No       | Options for integrating the record into EOSC.                                    |
+| `alternativeIdentifiers` | `List<AlternativeIdentifier>` | No       | Alternative identifiers for the record.                                          |
+
+#### Nested Objects
+
+##### IdentifierInfo
+
+| Field            | Type     | Required | Description                                      |
+|------------------|----------|----------|--------------------------------------------------|
+| `identifier`     | `String` | Yes      | Main identifier for the interoperability record. |
+| `identifierType` | `String` | Yes      | Type of the identifier, e.g., DOI, Handle.       |
+
+##### Creator
+
+| Field                    | Type                     | Required | Description                                     |
+|--------------------------|--------------------------|----------|-------------------------------------------------|
+| `creatorNameTypeInfo`    | `CreatorNameTypeInfo`    | Yes      | Information about the creator's name and type.  |
+| `givenName`              | `String`                 | No       | Given name of the creator.                      |
+| `familyName`             | `String`                 | No       | Family name of the creator.                     |
+| `nameIdentifier`         | `String`                 | No       | Unique identifier for the creator, e.g., ORCID. |
+| `creatorAffiliationInfo` | `CreatorAffiliationInfo` | No       | Affiliation details of the creator.             |
+
+##### CreatorNameTypeInfo
+
+| Field         | Type     | Required | Description                                   |
+|---------------|----------|----------|-----------------------------------------------|
+| `creatorName` | `String` | Yes      | Full name of the creator.                     |
+| `nameType`    | `String` | Yes      | Type of name, e.g., personal, organizational. |
+
+##### CreatorAffiliationInfo
+
+| Field                   | Type     | Description                             |
+|-------------------------|----------|-----------------------------------------|
+| `affiliation`           | `String` | Name of the affiliation of the creator. |
+| `affiliationIdentifier` | `String` | Identifier for the affiliation, if any. |
+
+##### ResourceTypeInfo
+
+| Field                 | Type     | Required | Description                                         |
+|-----------------------|----------|----------|-----------------------------------------------------|
+| `resourceType`        | `String` | Yes      | Specific type of the resource, e.g., dataset, tool. |
+| `resourceTypeGeneral` | `String` | Yes      | General category of the resource type.              |
+
+##### RelatedStandard
+
+| Field                       | Type     | Description                          |
+|-----------------------------|----------|--------------------------------------|
+| `relatedStandardIdentifier` | `String` | Identifier for the related standard. |
+| `relatedStandardURI`        | `URL`    | URI linking to the related standard. |
+
+##### Right
+
+| Field             | Type     | Required | Description                                    |
+|-------------------|----------|----------|------------------------------------------------|
+| `rightTitle`      | `String` | Yes      | Title of the right associated with the record. |
+| `rightURI`        | `URL`    | Yes      | URI linking to the right.                      |
+| `rightIdentifier` | `String` | Yes      | Identifier for the right.                      |
+
+##### AlternativeIdentifier
+
+| Field   | Type     | Description                                      |
+|---------|----------|--------------------------------------------------|
+| `type`  | `String` | Type of alternative identifier, e.g., DOI, ISBN. |
+| `value` | `String` | Value of the alternative identifier.             |
+
+### Example
+
+```json
+{
+  "id": "interop_001",
+  "catalogueId": "catalogue_001",
+  "providerId": "provider_001",
+  "identifierInfo": {
+    "identifier": "10.1234/interop",
+    "identifierType": "DOI"
+  },
+  "creators": [
+    {
+      "creatorNameTypeInfo": {
+        "creatorName": "John Smith",
+        "nameType": "Personal"
+      },
+      "givenName": "John",
+      "familyName": "Smith",
+      "nameIdentifier": "0000-0002-1825-0097",
+      "creatorAffiliationInfo": {
+        "affiliation": "University of Example",
+        "affiliationIdentifier": "org_001"
+      }
+    }
+  ],
+  "title": "Interoperability Record Example",
+  "publicationYear": 2024,
+  "resourceTypesInfo": [
+    {
+      "resourceType": "Dataset",
+      "resourceTypeGeneral": "Data"
+    }
+  ],
+  "created": "2024-01-01T12:00:00Z",
+  "updated": "2024-09-01T12:00:00Z",
+  "relatedStandards": [
+    {
+      "relatedStandardIdentifier": "standard_001",
+      "relatedStandardURI": "https://example.com/standard"
+    }
+  ],
+  "rights": [
+    {
+      "rightTitle": "Open Access",
+      "rightURI": "https://example.com/right",
+      "rightIdentifier": "right_001"
+    }
+  ],
+  "description": "This is a sample interoperability record description.",
+  "status": "Active",
+  "domain": "Data Science",
+  "eoscGuidelineType": "EOSC Interoperability",
+  "eoscIntegrationOptions": ["Integration A", "Integration B"],
+  "alternativeIdentifiers": [
+    {
+      "type": "Handle",
+      "value": "hdl:20.500.12345"
+    }
+  ]
+}
+```
+
+### Monitoring
+
+| Field              | Type                    | Required | Description                                          |
+|--------------------|-------------------------|----------|------------------------------------------------------|
+| `id`               | `String`                | auto-gen | Unique identifier for the monitoring record.         |
+| `serviceId`        | `String`                | Yes      | Identifier of the associated service.                |
+| `monitoredBy`      | `String`                | No       | Entity or system that is performing the monitoring.  |
+| `monitoringGroups` | `List<MonitoringGroup>` | Yes      | List of monitoring groups related to the monitoring. |
+
+#### Nested Objects
+
+##### MonitoringGroup
+
+| Field         | Type           | Required | Description                      |
+|---------------|----------------|----------|----------------------------------|
+| `serviceType` | `String`       | Yes      | Type of service being monitored. |
+| `endpoint`    | `String`       | Yes      | Endpoint URL for monitoring.     |
+| `metrics`     | `List<Metric>` | Yes      | List of metrics being monitored. |
+
+##### Metric
+
+| Field    | Type  | Required | Description                           |
+|----------|-------|----------|---------------------------------------|
+| `probe`  | `URL` | Yes      | URL for the probe used in monitoring. |
+| `metric` | `URL` | Yes      | URL for the metric being measured.    |
+
+### Example
+
+```json
+{
+  "id": "monitoring123",
+  "serviceId": "service456",
+  "monitoredBy": "MonitoringServiceX",
+  "monitoringGroups": [
+    {
+      "serviceType": "API",
+      "endpoint": "https://api.example.com/status",
+      "metrics": [
+        {
+          "probe": "https://metrics.example.com/probe1",
+          "metric": "https://metrics.example.com/metric1"
+        },
+        {
+          "probe": "https://metrics.example.com/probe2",
+          "metric": "https://metrics.example.com/metric2"
+        }
+      ]
+    },
+    {
+      "serviceType": "Database",
+      "endpoint": "https://db.example.com/status",
+      "metrics": [
+        {
+          "probe": "https://metrics.example.com/dbProbe1",
+          "metric": "https://metrics.example.com/dbMetric1"
+        }
+      ]
     }
   ]
 }
@@ -1261,6 +1998,29 @@
 }
 ```
 
+### Resource Interoperability Record
+
+| Field                       | Type           | Required | Description                                                  |
+|-----------------------------|----------------|----------|--------------------------------------------------------------|
+| `id`                        | `String`       | auto-gen | Unique identifier for the resource interoperability record.  |
+| `resourceId`                | `String`       | Yes      | Identifier of the resource associated with the record.       |
+| `catalogueId`               | `String`       | Yes      | Identifier of the catalogue where the record is stored.      |
+| `interoperabilityRecordIds` | `List<String>` | Yes      | List of interoperability record IDs related to the resource. |
+
+### Example
+
+```json
+{
+  "id": "resource_interop_001",
+  "resourceId": "resource_001",
+  "catalogueId": "catalogue_001",
+  "interoperabilityRecordIds": [
+    "interop_001",
+    "interop_002"
+  ]
+}
+```
+
 ### Service
 
 | Field                         | Type                          | Required | Description                                                               |
@@ -1322,7 +2082,6 @@
 | `order`                       | `URL`                         | No       | URL for ordering the service.                                             |
 | `paymentModel`                | `URL`                         | No       | URL of the payment model information.                                     |
 | `pricing`                     | `URL`                         | No       | URL of the pricing details.                                               |
-
 
 #### Nested Objects
 
@@ -1502,87 +2261,6 @@
 }
 ```
 
-### Datasource
-
-| Field                                   | Type                               | Required | Description                                                         |
-|-----------------------------------------|------------------------------------|----------|---------------------------------------------------------------------|
-| `id`                                    | `String`                           | auto-gen | Unique identifier for the datasource.                               |
-| `serviceId`                             | `String`                           | Yes      | Identifier of the associated service.                               |
-| `catalogueId`                           | `String`                           | Yes      | Identifier of the associated catalogue.                             |
-| `submissionPolicyURL`                   | `URL`                              | No       | URL of the submission policy.                                       |
-| `preservationPolicyURL`                 | `URL`                              | No       | URL of the preservation policy.                                     |
-| `versionControl`                        | `Boolean`                          | No       | Indicates if version control is used.                               |
-| `persistentIdentitySystems`             | `List<PersistentIdentitySystem>`   | No       | List of persistent identity systems associated with the datasource. |
-| `jurisdiction`                          | `String`                           | Yes      | Jurisdiction where the datasource operates.                         |
-| `datasourceClassification`              | `String`                           | Yes      | Classification of the datasource.                                   |
-| `researchEntityTypes`                   | `List<String>`                     | No       | List of research entity types related to the datasource.            |
-| `thematic`                              | `Boolean`                          | Yes      | Indicates if the datasource is thematic.                            |
-| `researchProductLicensings`             | `List<ResearchProductLicensing>`   | No       | List of research product licensing details.                         |
-| `researchProductAccessPolicies`         | `List<String>`                     | No       | List of research product access policies.                           |
-| `researchProductMetadataLicensing`      | `ResearchProductMetadataLicensing` | No       | Metadata licensing details for research products.                   |
-| `researchProductMetadataAccessPolicies` | `List<String>`                     | No       | List of research product metadata access policies.                  |
-| `harvestable`                           | `Boolean`                          | No       | Indicates if the datasource is harvestable.                         |
-
-#### Nested Objects
-
-##### PersistentIdentitySystem
-
-| Field                                 | Type                           | Required | Description                                       |
-|---------------------------------------|--------------------------------|----------|---------------------------------------------------|
-| `persistentIdentityEntityType`        | `String`                       | Yes      | Type of the persistent identity entity.           |
-| `persistentIdentityEntityTypeSchemes` | `List<String>`                 | No       | Schemes for the persistent identity entity types. |
-
-##### ResearchProductLicensing
-
-| Field                        | Type     | Required | Description                           |
-|------------------------------|----------|----------|---------------------------------------|
-| `researchProductLicenseName` | `String` | Yes      | Name of the research product license. |
-| `researchProductLicenseURL`  | `URL`    | Yes      | URL of the research product license.  |
-
-##### ResearchProductMetadataLicensing
-
-| Field                                | Type     | Required | Description                                    |
-|--------------------------------------|----------|----------|------------------------------------------------|
-| `researchProductMetadataLicenseName` | `String` | Yes      | Name of the research product metadata license. |
-| `researchProductMetadataLicenseURL`  | `URL`    | Yes      | URL of the research product metadata license.  |
-
-### Example
-
-```json
-{
-  "id": "datasource_001",
-  "serviceId": "service_001",
-  "catalogueId": "catalogue_001",
-  "submissionPolicyURL": "https://example.com/submission-policy",
-  "preservationPolicyURL": "https://example.com/preservation-policy",
-  "versionControl": true,
-  "persistentIdentitySystems": [
-    {
-      "persistentIdentityEntityType": "Type1",
-      "persistentIdentityEntityTypeSchemes": ["Scheme1", "Scheme2"]
-    }
-  ],
-  "jurisdiction": "Country X",
-  "datasourceClassification": "Public",
-  "researchEntityTypes": ["Type1", "Type2"],
-  "thematic": true,
-  "researchProductLicensings": [
-    {
-      "researchProductLicenseName": "License1",
-      "researchProductLicenseURL": "https://example.com/license1"
-    }
-  ],
-  "researchProductAccessPolicies": ["Policy1", "Policy2"],
-  "researchProductMetadataLicensing": {
-    "researchProductMetadataLicenseName": "Metadata License1",
-    "researchProductMetadataLicenseURL": "https://example.com/metadata-license1"
-  },
-  "researchProductMetadataAccessPolicies": ["MetadataPolicy1", "MetadataPolicy2"],
-  "harvestable": true
-}
-```
-
-
 ### Training Resource
 
 | Field                        | Type                          | Required | Description                                                                       |
@@ -1691,297 +2369,6 @@
 }
 ```
 
-### Interoperability Record
-
-| Field                    | Type                          | Required | Description                                                                      |
-|--------------------------|-------------------------------|----------|----------------------------------------------------------------------------------|
-| `id`                     | `String`                      | auto-gen | Unique identifier for the interoperability record.                               |
-| `catalogueId`            | `String`                      | Yes      | Identifier of the catalogue containing this record.                              |
-| `providerId`             | `String`                      | Yes      | Identifier of the provider associated with the record.                           |
-| `identifierInfo`         | `IdentifierInfo`              | Yes      | Information about the primary identifier of the record.                          |
-| `creators`               | `List<Creator>`               | Yes      | List of creators involved in the creation of the resource.                       |
-| `title`                  | `String`                      | Yes      | Title of the interoperability record.                                            |
-| `publicationYear`        | `Integer`                     | Yes      | Year of publication for the record.                                              |
-| `resourceTypesInfo`      | `List<ResourceTypeInfo>`      | Yes      | List of resource types associated with the record.                               |
-| `created`                | `String`                      | No       | Timestamp indicating when the record was created.                                |
-| `updated`                | `String`                      | No       | Timestamp indicating the last update to the record.                              |
-| `relatedStandards`       | `List<RelatedStandard>`       | No       | List of related standards connected to the interoperability record.              |
-| `rights`                 | `List<Right>`                 | Yes      | List of rights associated with the record.                                       |
-| `description`            | `String`                      | Yes      | Description of the interoperability record.                                      |
-| `status`                 | `String`                      | Yes      | Current status of the interoperability record.                                   |
-| `domain`                 | `String`                      | No       | Domain to which the record pertains.                                             |
-| `eoscGuidelineType`      | `String`                      | Yes      | Type of EOSC (European Open Science Cloud) guideline associated with the record. |
-| `eoscIntegrationOptions` | `List<String>`                | No       | Options for integrating the record into EOSC.                                    |
-| `alternativeIdentifiers` | `List<AlternativeIdentifier>` | No       | Alternative identifiers for the record.                                          |
-
-#### Nested Objects
-
-##### IdentifierInfo
-
-| Field            | Type     | Required | Description                                      |
-|------------------|----------|----------|--------------------------------------------------|
-| `identifier`     | `String` | Yes      | Main identifier for the interoperability record. |
-| `identifierType` | `String` | Yes      | Type of the identifier, e.g., DOI, Handle.       |
-
-##### Creator
-
-| Field                    | Type                     | Required | Description                                     |
-|--------------------------|--------------------------|----------|-------------------------------------------------|
-| `creatorNameTypeInfo`    | `CreatorNameTypeInfo`    | Yes      | Information about the creator's name and type.  |
-| `givenName`              | `String`                 | No       | Given name of the creator.                      |
-| `familyName`             | `String`                 | No       | Family name of the creator.                     |
-| `nameIdentifier`         | `String`                 | No       | Unique identifier for the creator, e.g., ORCID. |
-| `creatorAffiliationInfo` | `CreatorAffiliationInfo` | No       | Affiliation details of the creator.             |
-
-##### CreatorNameTypeInfo
-
-| Field         | Type     | Required | Description                                   |
-|---------------|----------|----------|-----------------------------------------------|
-| `creatorName` | `String` | Yes      | Full name of the creator.                     |
-| `nameType`    | `String` | Yes      | Type of name, e.g., personal, organizational. |
-
-##### CreatorAffiliationInfo
-
-| Field                   | Type     | Description                             |
-|-------------------------|----------|-----------------------------------------|
-| `affiliation`           | `String` | Name of the affiliation of the creator. |
-| `affiliationIdentifier` | `String` | Identifier for the affiliation, if any. |
-
-##### ResourceTypeInfo
-
-| Field                 | Type     | Required | Description                                         |
-|-----------------------|----------|----------|-----------------------------------------------------|
-| `resourceType`        | `String` | Yes      | Specific type of the resource, e.g., dataset, tool. |
-| `resourceTypeGeneral` | `String` | Yes      | General category of the resource type.              |
-
-##### RelatedStandard
-
-| Field                       | Type     | Description                          |
-|-----------------------------|----------|--------------------------------------|
-| `relatedStandardIdentifier` | `String` | Identifier for the related standard. |
-| `relatedStandardURI`        | `URL`    | URI linking to the related standard. |
-
-##### Right
-
-| Field             | Type     | Required | Description                                    |
-|-------------------|----------|----------|------------------------------------------------|
-| `rightTitle`      | `String` | Yes      | Title of the right associated with the record. |
-| `rightURI`        | `URL`    | Yes      | URI linking to the right.                      |
-| `rightIdentifier` | `String` | Yes      | Identifier for the right.                      |
-
-##### AlternativeIdentifier
-
-| Field   | Type     | Description                                      |
-|---------|----------|--------------------------------------------------|
-| `type`  | `String` | Type of alternative identifier, e.g., DOI, ISBN. |
-| `value` | `String` | Value of the alternative identifier.             |
-
-### Example
-
-```json
-{
-  "id": "interop_001",
-  "catalogueId": "catalogue_001",
-  "providerId": "provider_001",
-  "identifierInfo": {
-    "identifier": "10.1234/interop",
-    "identifierType": "DOI"
-  },
-  "creators": [
-    {
-      "creatorNameTypeInfo": {
-        "creatorName": "John Smith",
-        "nameType": "Personal"
-      },
-      "givenName": "John",
-      "familyName": "Smith",
-      "nameIdentifier": "0000-0002-1825-0097",
-      "creatorAffiliationInfo": {
-        "affiliation": "University of Example",
-        "affiliationIdentifier": "org_001"
-      }
-    }
-  ],
-  "title": "Interoperability Record Example",
-  "publicationYear": 2024,
-  "resourceTypesInfo": [
-    {
-      "resourceType": "Dataset",
-      "resourceTypeGeneral": "Data"
-    }
-  ],
-  "created": "2024-01-01T12:00:00Z",
-  "updated": "2024-09-01T12:00:00Z",
-  "relatedStandards": [
-    {
-      "relatedStandardIdentifier": "standard_001",
-      "relatedStandardURI": "https://example.com/standard"
-    }
-  ],
-  "rights": [
-    {
-      "rightTitle": "Open Access",
-      "rightURI": "https://example.com/right",
-      "rightIdentifier": "right_001"
-    }
-  ],
-  "description": "This is a sample interoperability record description.",
-  "status": "Active",
-  "domain": "Data Science",
-  "eoscGuidelineType": "EOSC Interoperability",
-  "eoscIntegrationOptions": ["Integration A", "Integration B"],
-  "alternativeIdentifiers": [
-    {
-      "type": "Handle",
-      "value": "hdl:20.500.12345"
-    }
-  ]
-}
-```
-
-### Helpdesk
-
-| Field                | Type           | Required | Description                                                                     |
-|----------------------|----------------|----------|---------------------------------------------------------------------------------|
-| `id`                 | `String`       | auto-gen | Unique identifier for the helpdesk.                                             |
-| `serviceId`          | `String`       | Yes      | Identifier of the associated service.                                           |
-| `services`           | `List<String>` | No       | List of services associated with the helpdesk.                                  |
-| `helpdeskType`       | `String`       | No       | Type of the helpdesk (e.g., technical support, customer support).               |
-| `supportGroups`      | `List<String>` | No       | List of support groups related to the helpdesk.                                 |
-| `organisation`       | `String`       | No       | Organisation managing the helpdesk.                                             |
-| `emails`             | `List<String>` | No       | List of email addresses for direct assignment of tickets, bypassing L1 support. |
-| `agents`             | `List<String>` | No       | List of agents working in the helpdesk.                                         |
-| `signatures`         | `List<String>` | No       | List of signatures used by the helpdesk.                                        |
-| `ticketPreservation` | `Boolean`      | No       | Indicates if ticket preservation is enabled.                                    |
-| `webform`            | `Boolean`      | No       | Indicates if a webform is used for ticket submission.                           |
-
-#### Example
-
-```json
-{
-  "id": "helpdesk_001",
-  "serviceId": "service_001",
-  "services": ["serviceA", "serviceB"],
-  "helpdeskType": "Technical Support",
-  "supportGroups": ["group1", "group2"],
-  "organisation": "SupportOrg",
-  "emails": ["support@example.com", "escalation@example.com"],
-  "agents": ["agent1", "agent2"],
-  "signatures": ["Best regards, Support Team", "Thank you for contacting support"],
-  "ticketPreservation": true,
-  "webform": false
-}
-```
-
-### Monitoring
-
-| Field              | Type                    | Required | Description                                          |
-|--------------------|-------------------------|----------|------------------------------------------------------|
-| `id`               | `String`                | auto-gen | Unique identifier for the monitoring record.         |
-| `serviceId`        | `String`                | Yes      | Identifier of the associated service.                |
-| `monitoredBy`      | `String`                | No       | Entity or system that is performing the monitoring.  |
-| `monitoringGroups` | `List<MonitoringGroup>` | Yes      | List of monitoring groups related to the monitoring. |
-
-#### Nested Objects
-
-##### MonitoringGroup
-
-| Field         | Type           | Required | Description                      |
-|---------------|----------------|----------|----------------------------------|
-| `serviceType` | `String`       | Yes      | Type of service being monitored. |
-| `endpoint`    | `String`       | Yes      | Endpoint URL for monitoring.     |
-| `metrics`     | `List<Metric>` | Yes      | List of metrics being monitored. |
-
-##### Metric
-
-| Field    | Type  | Required | Description                           |
-|----------|-------|----------|---------------------------------------|
-| `probe`  | `URL` | Yes      | URL for the probe used in monitoring. |
-| `metric` | `URL` | Yes      | URL for the metric being measured.    |
-
-### Example
-
-```json
-{
-  "id": "monitoring123",
-  "serviceId": "service456",
-  "monitoredBy": "MonitoringServiceX",
-  "monitoringGroups": [
-    {
-      "serviceType": "API",
-      "endpoint": "https://api.example.com/status",
-      "metrics": [
-        {
-          "probe": "https://metrics.example.com/probe1",
-          "metric": "https://metrics.example.com/metric1"
-        },
-        {
-          "probe": "https://metrics.example.com/probe2",
-          "metric": "https://metrics.example.com/metric2"
-        }
-      ]
-    },
-    {
-      "serviceType": "Database",
-      "endpoint": "https://db.example.com/status",
-      "metrics": [
-        {
-          "probe": "https://metrics.example.com/dbProbe1",
-          "metric": "https://metrics.example.com/dbMetric1"
-        }
-      ]
-    }
-  ]
-}
-```
-
-### Resource Interoperability Record
-
-| Field                       | Type           | Required | Description                                                  |
-|-----------------------------|----------------|----------|--------------------------------------------------------------|
-| `id`                        | `String`       | auto-gen | Unique identifier for the resource interoperability record.  |
-| `resourceId`                | `String`       | Yes      | Identifier of the resource associated with the record.       |
-| `catalogueId`               | `String`       | Yes      | Identifier of the catalogue where the record is stored.      |
-| `interoperabilityRecordIds` | `List<String>` | Yes      | List of interoperability record IDs related to the resource. |
-
-### Example
-
-
-```json
-{
-  "id": "resource_interop_001",
-  "resourceId": "resource_001",
-  "catalogueId": "catalogue_001",
-  "interoperabilityRecordIds": [
-    "interop_001",
-    "interop_002"
-  ]
-}
-```
-
-### Configuration Template Instance
-
-| Field                     | Type       | Required | Description                                                |
-|---------------------------|------------|----------|------------------------------------------------------------|
-| `id`                      | `String`   | auto-gen | Unique identifier for the configuration template instance. |
-| `resourceId`              | `String`   | Yes      | Identifier of the resource associated with the instance.   |
-| `configurationTemplateId` | `String`   | Yes      | Identifier of the configuration template used.             |
-| `payload`                 | `String`   | Yes      | The configuration data or settings in JSON format.         |
-
-### Example
-
-```json
-{
-  "id": "resource_interop_001",
-  "resourceId": "resource_001",
-  "catalogueId": "catalogue_001",
-  "interoperabilityRecordIds": [
-    "interop_001",
-    "interop_002"
-  ]
-}
-```
-
 ### Vocabulary
 
 | Field         | Type                  | Required | Description                                             |
@@ -2006,7 +2393,7 @@
 }
 ```
 
-## Vocabularies
+## List of Vocabularies
   - [ACCESS_MODE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_MODE.json)
   - [ACCESS_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_TYPE.json)
   - [CATALOGUE_STATE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATALOGUE_STATE.json)
