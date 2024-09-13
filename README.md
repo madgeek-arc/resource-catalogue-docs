@@ -38,12 +38,14 @@
 5. [List of Vocabularies](#list-of-vocabularies)
 
 ## API
-- [Production](https://api.providers.sandbox.eosc-beyond.eu)
-- [Integration](https://api.integration.providers.sandbox.eosc-beyond.eu)
+- https://api.providers.sandbox.eosc-beyond.eu / https://providers.sandbox.eosc-beyond.eu/api
+- https://integration.providers.sandbox.eosc-beyond.eu/api
+- https://dev.providers.sandbox.eosc-beyond.eu/api
 
 ## Swagger UI
-- [Production](https://providers.sandbox.eosc-beyond.eu/openapi)
-- [Integration](https://integration.providers.sandbox.eosc-beyond.eu/openapi)
+- [Production](https://providers.sandbox.eosc-beyond.eu/api/swagger-ui/index.html)
+- [Integration](https://integration.providers.sandbox.eosc-beyond.eu/api/swagger-ui/index.html)
+- [Dev](https://dev.providers.sandbox.eosc-beyond.eu/api/swagger-ui/index.html)
 
 ## Controllers
 
