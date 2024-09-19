@@ -1,0 +1,32 @@
+id: http://example.org/schema/provider_public_contact
+name: ProviderPublicContactSchema
+description: Schema representing the ProviderPublicContact object.
+
+classes:
+  ProviderPublicContact:
+    name: ProviderPublicContact
+    description: Represents a Provider Public Contact item.
+    attributes:
+      firstName:
+        description: First Name of the resource's public contact person/manager.
+        range: string
+        required: false
+      lastName:
+        description: Last Name of the resource's public contact person/manager.
+        range: string
+        required: false
+      email:
+        description: Email of the resource's public contact person/manager.
+        range: string
+        required: true
+        pattern: '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
+      phone:
+        description: Phone of the resource's public contact person/manager.
+        range: string
+        required: false
+        # allows for international numbers starting with + or 00, optional country codes, area codes in parentheses, and various separators (-, . or spaces).
+        pattern: '^(((\\+)|(00))\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$'
+      position:
+        description: Position of the resource's public contact person/manager.
+        range: string
+        required: false

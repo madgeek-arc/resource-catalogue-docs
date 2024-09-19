@@ -1,0 +1,33 @@
+id: http://example.org/schema/provider_location
+name: ProviderLocationSchema
+description: Schema representing the ProviderLocation object.
+
+classes:
+  ProviderLocation:
+    name: ProviderLocation
+    description: Physical location of the resource.
+    attributes:
+      streetNameAndNumber:
+        description: Street and Number of incorporation or Physical location of the resource or its coordinating centre in the case of distributed, virtual, and mobile resources.
+        range: string
+        required: true
+      postalCode:
+        description: Postal code of incorporation or Physical location of the resource or its coordinating centre in the case of distributed, virtual, and mobile resources.
+        range: string
+        required: true
+      city:
+        description: City of incorporation or Physical location of the resource or its coordinating centre in the case of distributed, virtual, and mobile resources.
+        range: string
+        required: true
+      region:
+        description: Region of incorporation or Physical location of the resource or its coordinating centre in the case of distributed, virtual, and mobile resources.
+        range: string
+        required: false
+      country:
+        description: |
+          Country of incorporation or Physical location of the resource or its coordinating centre in the case of distributed, virtual, and mobile resources.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^[A-Z]{2}$'
+        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json

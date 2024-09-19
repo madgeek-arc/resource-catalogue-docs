@@ -1,0 +1,20 @@
+id: http://example.org/schema/multimedia_pair
+name: MultimediaPairSchema
+description: Schema representing the MultimediaPair object.
+
+classes:
+  MultimediaPair:
+    name: MultimediaPair
+    description: Represents a Multimedia Pair item.
+    attributes:
+      multimediaURL:
+        description: |
+          Link to video, slideshow, photos, screenshots with details of the resource.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https?://.*'
+      multimediaName:
+        description: Short description of the Multimedia content.
+        range: string
+        required: false

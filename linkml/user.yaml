@@ -1,0 +1,26 @@
+id: http://example.org/schema/user
+name: UserSchema
+description: Schema representing the User object.
+
+classes:
+  User:
+    name: User
+    description: Represents a User item.
+    attributes:
+      id:
+        description: ID of the User
+        range: string
+        required: false
+      email:
+        description: Email of the User
+        range: string
+        required: true
+        pattern: '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
+      name:
+        description: Name of the User
+        range: string
+        required: true
+      surname:
+        description: Surname of the User
+        range: string
+        required: true
