@@ -2193,12 +2193,6 @@
   "horizontalService": true,
   "serviceCategories": ["CategoryA", "CategoryB"],
   "marketplaceLocations": ["Location1", "Location2"],
-  "classTier": {
-    "level": 3,
-    "accessPolicy": "Open Access",
-    "costModel": "Subscription",
-    "offerings": ["Service Offering 1", "Service Offering 2"]
-  },
   "geographicalAvailabilities": ["Global"],
   "languageAvailabilities": ["English", "French"],
   "resourceGeographicLocations": ["Location A", "Location B"],
