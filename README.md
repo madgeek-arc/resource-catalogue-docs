@@ -2048,7 +2048,6 @@
 | `horizontalService`           | `Boolean`                     | No       | Indicates if the service is a horizontal service.                         |
 | `serviceCategories`           | `List<String>`                | No       | List of service categories associated with the service.                   |
 | `marketplaceLocations`        | `List<String>`                | No       | List of marketplace locations where the service is available.             |
-| `classTier`                   | `ServiceClassTier`            | No       | Detailed information on the class tier of the service.                    |
 | `geographicalAvailabilities`  | `List<String>`                | Yes      | List of geographical availabilities of the service.                       |
 | `languageAvailabilities`      | `List<String>`                | Yes      | List of language availabilities of the service.                           |
 | `resourceGeographicLocations` | `List<String>`                | No       | List of locations where the service resources are geographically located. |
@@ -2121,15 +2120,6 @@
 |---------------|----------|----------|-----------------------------|
 | `category`    | `String` | Yes      | Category of the service.    |
 | `subcategory` | `String` | No       | Subcategory of the service. |
-
-##### ServiceClassTier
-
-| Field          | Type           | Required | Description                                       |
-|----------------|----------------|----------|---------------------------------------------------|
-| `level`        | `Integer`      | Yes      | Class tier level, default is 3.                   |
-| `accessPolicy` | `String`       | No       | Access policy related to the service tier.        |
-| `costModel`    | `String`       | No       | Cost model associated with the service tier.      |
-| `offerings`    | `List<String>` | No       | List of offerings available in this service tier. |
 
 ##### ServiceMainContact
 
