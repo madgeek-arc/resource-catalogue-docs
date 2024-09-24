@@ -1340,8 +1340,8 @@
 | `scientificDomains`      | `List<ServiceProviderDomain>` | No       | Scientific domains related to the catalogue's service providers. |
 | `tags`                   | `List<String>`                | No       | Tags associated with the catalogue.                              |
 | `location`               | `ProviderLocation`            | Yes      | Physical location details of the catalogue provider.             |
-| `mainContact`            | `ProviderMainContact`         | No       | Main contact information for the catalogue.                      |
-| `publicContacts`         | `List<ProviderPublicContact`  | No       | List of public contacts for the catalogue.                       |
+| `mainContact`            | `ProviderMainContact`         | Yes      | Main contact information for the catalogue.                      |
+| `publicContacts`         | `List<ProviderPublicContact`  | Yes      | List of public contacts for the catalogue.                       |
 | `participatingCountries` | `List<String>`                | No       | List of countries participating in the catalogue.                |
 | `affiliations`           | `List<String>`                | No       | List of affiliations related to the catalogue.                   |
 | `networks`               | `List<String>`                | No       | Networks associated with the catalogue.                          |
@@ -1838,8 +1838,8 @@
 | `tags`                    | `List<String>`                | No       | Tags associated with the provider.                                                                |
 | `structureTypes`          | `List<String>`                | No       | Types of structures associated with the provider.                                                 |
 | `location`                | `ProviderLocation`            | Yes      | Physical location details of the provider.                                                        |
-| `mainContact`             | `ProviderMainContact`         | No       | Main contact information for the provider.                                                        |
-| `publicContacts`          | `List<ProviderPublicContact>` | No       | List of public contacts for the provider.                                                         |
+| `mainContact`             | `ProviderMainContact`         | Yes      | Main contact information for the provider.                                                        |
+| `publicContacts`          | `List<ProviderPublicContact>` | Yes      | List of public contacts for the provider.                                                         |
 | `lifeCycleStatus`         | `String`                      | No       | Current lifecycle status of the provider.                                                         |
 | `certifications`          | `List<String>`                | No       | List of certifications held by the provider.                                                      |
 | `participatingCountries`  | `List<String>`                | No       | List of countries participating in the provider's services.                                       |
@@ -2051,8 +2051,8 @@
 | `geographicalAvailabilities`  | `List<String>`                | Yes      | List of geographical availabilities of the service.                       |
 | `languageAvailabilities`      | `List<String>`                | Yes      | List of language availabilities of the service.                           |
 | `resourceGeographicLocations` | `List<String>`                | No       | List of locations where the service resources are geographically located. |
-| `mainContact`                 | `ServiceMainContact`          | No       | Main contact information for the service.                                 |
-| `publicContacts`              | `List<ServicePublicContact>`  | No       | List of public contacts for the service.                                  |
+| `mainContact`                 | `ServiceMainContact`          | Yes      | Main contact information for the service.                                 |
+| `publicContacts`              | `List<ServicePublicContact>`  | Yes      | List of public contacts for the service.                                  |
 | `helpdeskEmail`               | `String`                      | Yes      | Email address for the service's helpdesk.                                 |
 | `securityContactEmail`        | `String`                      | Yes      | Email address for security contact.                                       |
 | `trl`                         | `String`                      | Yes      | Technology Readiness Level of the service.                                |
@@ -2281,7 +2281,7 @@
 | `languages`                  | `List<String>`                | Yes      | Languages in which the training resource is available.                            |
 | `geographicalAvailabilities` | `List<String>`                | Yes      | List of geographical locations where the resource is available.                   |
 | `scientificDomains`          | `List<ServiceProviderDomain>` | Yes      | List of scientific domains and subdomains relevant to the training resource.      |
-| `contact`                    | `ServiceMainContact`          | No       | Contact details for the main contact person for the training resource.            |
+| `contact`                    | `ServiceMainContact`          | Yes      | Contact details for the main contact person for the training resource.            |
 | `catalogueId`                | `String`                      | No       | Catalogue identifier for the training resource.                                   |
 
 #### Nested Objects
