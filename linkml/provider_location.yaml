@@ -30,4 +30,3 @@ classes:
         range: string
         required: true
         pattern: '^[A-Z]{2}$'
-        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json
