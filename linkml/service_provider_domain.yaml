@@ -14,7 +14,6 @@ classes:
         range: string
         required: true
         pattern: '^scientific_domain-.+'
-        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_DOMAIN.json
       scientificSubdomain:
         description: |
           The sub-branch of science, scientific sub-discipline that is related to the resource.
@@ -22,4 +21,3 @@ classes:
         range: string
         required: true
         pattern: '^scientific_subdomain-.+'
-        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_SUBDOMAIN.json
