@@ -3,7 +3,7 @@ name: ServiceProviderDomainSchema
 description: Schema representing the ServiceProviderDomain object.
 
 classes:
-  ScientificDomain:
+  ServiceProviderDomain:
     name: ServiceProviderDomain
     description: Represents a Service Provider Domain item.
     attributes:
