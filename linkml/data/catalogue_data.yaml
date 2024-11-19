@@ -1,5 +1,5 @@
 id: testCatalogue
-abbreviation: Test Catalogue
+abbreviation:
 name: Test Catalogue
 website: https://example.com
 legalEntity: false

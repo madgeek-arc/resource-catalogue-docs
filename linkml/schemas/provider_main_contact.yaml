@@ -1,4 +1,4 @@
-id: https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/provider_main_contact
+id: provider_main_contact
 name: ProviderMainContactSchema
 description: Schema representing the ProviderMainContact object.
 

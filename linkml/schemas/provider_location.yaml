@@ -1,4 +1,4 @@
-id: https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/provider_location
+id: provider_location
 name: ProviderLocationSchema
 description: Schema representing the ProviderLocation object.
 

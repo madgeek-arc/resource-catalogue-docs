@@ -1,4 +1,4 @@
-id: https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/user
+id: user
 name: UserSchema
 description: Schema representing the User object.
 
