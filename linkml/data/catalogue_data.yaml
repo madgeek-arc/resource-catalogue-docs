@@ -1,0 +1,37 @@
+id: testCatalogue
+abbreviation: Test Catalogue
+name: Test Catalogue
+website: https://example.com
+legalEntity: false
+legalStatus: null
+hostingLegalEntity: null
+inclusionCriteria: https://example.com
+validationProcess: https://example.com
+endOfLife: TBD
+description: This is a Test Catalogue
+scope: TBD
+logo: https://example.com/test.png
+multimedia: []
+scientificDomains: []
+tags: []
+location:
+  city: Athens
+  country: GR
+  postalCode: "12345"
+  region: Attica
+  streetNameAndNumber: "some road 10"
+mainContact:
+  email: redacted@example.com
+  firstName: name
+  lastName: surname
+publicContacts:
+  email: redacted@example.com
+  firstName: name
+  lastName: surname
+participatingCountries: []
+affiliations: []
+networks: []
+users:
+  email: redacted@example.com
+  name: name
+  surname: surname

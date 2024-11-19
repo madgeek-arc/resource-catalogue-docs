@@ -1,16 +1,17 @@
-id: https://example.org/schema/catalogue
+id: https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/catalogue
 name: CatalogueSchema
 description: Schema representing the Catalogue object.
 imports:
-  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/multimedia_pair.yaml
-  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/service_provider_domain.yaml
-  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/provider_location.yaml
-  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/provider_main_contact.yaml
-  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/provider_public_contact.yaml
-  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/user.yaml
+  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/multimedia_pair
+  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/provider_location
+  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/provider_main_contact
+  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/provider_public_contact
+  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/service_provider_domain
+  - https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/user
 
 classes:
   Catalogue:
+    tree_root: true
     name: Catalogue
     description: Represents a catalogue with various attributes and nested structures
     attributes:
@@ -51,7 +52,7 @@ classes:
         range: string
         required: false
         pattern: '^provider_legal_status-.+'
-        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_LEGAL_STATUS.json
+#        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_LEGAL_STATUS.json
       hostingLegalEntity:
         description: |
           Name of the organisation legally hosting (housing) the Catalogue or its coordinating centre.
@@ -59,7 +60,7 @@ classes:
         range: string
         required: false
         pattern: '^provider_hosting_legal_entity-.+'
-        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_HOSTING_LEGAL_ENTITY.json
+#        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_HOSTING_LEGAL_ENTITY.json
       inclusionCriteria:
         description: |
           Inclusion criteria URL for the Catalogue.
@@ -140,7 +141,7 @@ classes:
           - string
         required: false
         pattern: '^[A-Z]{2}$'
-        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json
+#        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json
       affiliations:
         description: |
           Catalogues that are members or affiliated or associated with other organisations should list those organisations here.
@@ -154,7 +155,7 @@ classes:
           - string
         required: false
         pattern: '^provider_network-.+'
-        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_NETWORK.json
+#        documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_NETWORK.json
       # Authentication
       users:
         description: List of Catalogue's user admins

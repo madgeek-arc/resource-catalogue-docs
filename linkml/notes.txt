@@ -1,0 +1,2 @@
+Validates linkml schema -> gen-json-schema catalogue.yaml
+Validates JSON to linkml schema -> linkml-validate -s catalogue.yaml catalogue_data.yaml

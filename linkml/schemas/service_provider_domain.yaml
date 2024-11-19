@@ -1,4 +1,4 @@
-id: http://example.org/schema/service_provider_domain
+id: https://raw.githubusercontent.com/madgeek-arc/resource-catalogue-docs/master/linkml/service_provider_domain
 name: ServiceProviderDomainSchema
 description: Schema representing the ServiceProviderDomain object.
 
