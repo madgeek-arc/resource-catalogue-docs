@@ -1,5 +1,5 @@
 id: testCatalogue
-abbreviation:
+abbreviation: Test Abbreviation
 name: Test Catalogue
 website: https://example.com
 legalEntity: false
@@ -8,7 +8,7 @@ hostingLegalEntity: null
 inclusionCriteria: https://example.com
 validationProcess: https://example.com
 endOfLife: TBD
-description: This is a Test Catalogue
+description: This is a Test Catalogue.
 scope: TBD
 logo: https://example.com/test.png
 multimedia: []
@@ -19,19 +19,22 @@ location:
   country: GR
   postalCode: "12345"
   region: Attica
-  streetNameAndNumber: "some road 10"
+  streetNameAndNumber: some road 10
 mainContact:
-  email: redacted@example.com
+  email: main@example.com
   firstName: name
   lastName: surname
 publicContacts:
-  email: redacted@example.com
-  firstName: name
-  lastName: surname
+  - email: public1@example.com
+    firstName: name
+    lastName: surname
+  - email: public2@example.com
+    firstName: name
+    lastName: surname
 participatingCountries: []
 affiliations: []
 networks: []
 users:
-  email: redacted@example.com
-  name: name
-  surname: surname
+  - email: user1@example.com
+    name: name
+    surname: surname

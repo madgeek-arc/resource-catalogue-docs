@@ -36,6 +36,7 @@
     10. [Training Resource](#training-resource)
     11. [Vocabulary](#vocabulary)
 5. [List of Vocabularies](#list-of-vocabularies)
+6. [Data Validation](#data-validation)
 
 ## API
 - https://api.providers.sandbox.eosc-beyond.eu / https://providers.sandbox.eosc-beyond.eu/api
@@ -2437,3 +2438,23 @@
   - [TR_EXPERTISE_LEVEL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_EXPERTISE_LEVEL.json)
   - [TR_QUALIFICATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_QUALIFICATION.json)
   - [TR_URL_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_URL_TYPE.json)
+
+## Data Validation
+This project provides [LinkML](https://linkml.io/) schemas for validating your data. Users can validate their data files 
+(e.g., YAML, JSON) against these schemas to ensure compliance with the defined structure, data types, and constraints. 
+Simply provide your data and use LinkML’s built-in tools or Python libraries to run the validation process. Errors or 
+mismatches will be reported to help you identify and fix issues.
+  - [View All Available Schemas](https://github.com/madgeek-arc/resource-catalogue-docs/tree/master/linkml/schemas) to
+    explore the structures and constraints defined for validation.
+  - [Example Data Files](https://github.com/madgeek-arc/resource-catalogue-docs/tree/master/linkml/data) are provided to
+    help you get started quickly and understand the expected format.
+
+### Quick Guide (Linux based systems):
+To validate your data against the provided LinkML schemas:
+1. Install LinkML 
+   `pip install linkml`
+2. Download [schemas](https://github.com/madgeek-arc/resource-catalogue-docs/tree/master/linkml/schemas) folder
+3. Create a folder for your data 
+   `mkdir path/to/data`
+4. Run the validation command 
+   `linkml-validate -s path/to/schemas/schema.yaml path/to/data/data.yaml`

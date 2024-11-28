@@ -1,6 +1,8 @@
 id: multimedia_pair
 name: MultimediaPairSchema
 description: Schema representing the MultimediaPair object.
+imports:
+  - linkml:types
 
 classes:
   MultimediaPair:

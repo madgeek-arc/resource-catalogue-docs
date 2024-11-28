@@ -1,6 +1,8 @@
 id: provider_public_contact
 name: ProviderPublicContactSchema
 description: Schema representing the ProviderPublicContact object.
+imports:
+  - linkml:types
 
 classes:
   ProviderPublicContact:

@@ -1,6 +1,8 @@
 id: provider_location
 name: ProviderLocationSchema
 description: Schema representing the ProviderLocation object.
+imports:
+  - linkml:types
 
 classes:
   ProviderLocation:
@@ -26,7 +28,7 @@ classes:
       country:
         description: |
           Country of incorporation or Physical location of the resource or its coordinating centre in the case of distributed, virtual, and mobile resources.
-          Controlled Vocabulary.
+          Controlled Vocabulary (ISO 3166-1 A-2).
         range: string
         required: true
         pattern: '^[A-Z]{2}$'

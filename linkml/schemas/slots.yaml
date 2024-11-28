@@ -1,6 +1,8 @@
 id: slots
 name: Slots
 description: A shared schema defining common slots.
+imports:
+  - linkml:types
 
 slots:
   id:

@@ -1,6 +1,8 @@
 id: user
 name: UserSchema
 description: Schema representing the User object.
+imports:
+  - linkml:types
 
 classes:
   User:
@@ -8,19 +10,19 @@ classes:
     description: Represents a User item.
     attributes:
       id:
-        description: ID of the User
+        description: ID of the User.
         range: string
         required: false
       email:
-        description: Email of the User
+        description: Email of the User.
         range: string
         required: true
         pattern: '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
       name:
-        description: Name of the User
+        description: Name of the User.
         range: string
         required: true
       surname:
-        description: Surname of the User
+        description: Surname of the User.
         range: string
         required: true

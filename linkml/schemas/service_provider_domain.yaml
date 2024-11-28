@@ -1,6 +1,8 @@
 id: service_provider_domain
 name: ServiceProviderDomainSchema
 description: Schema representing the ServiceProviderDomain object.
+imports:
+  - linkml:types
 
 classes:
   ServiceProviderDomain:
