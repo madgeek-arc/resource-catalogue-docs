@@ -1,0 +1,19 @@
+id: alternative_identifier
+name: AlternativeIdentifierSchema
+description: Schema representing the AlternativeIdentifier object.
+imports:
+  - linkml:types
+
+classes:
+  AlternativeIdentifier:
+    name: AlternativeIdentifier
+    description: Represents an Alternative Identifier item.
+    attributes:
+      type:
+        description: Alternative Identifier type.
+        range: string
+        required: false
+      value:
+        description: Alternative Identifier value.
+        range: string
+        required: false

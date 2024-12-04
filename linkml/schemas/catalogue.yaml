@@ -4,10 +4,10 @@ description: Schema representing the Catalogue object.
 imports:
   - linkml:types
   - multimedia_pair
+  - service_provider_domain
   - provider_location
   - provider_main_contact
   - provider_public_contact
-  - service_provider_domain
   - user
   - slots
 
@@ -15,7 +15,7 @@ classes:
   Catalogue:
     tree_root: true
     name: Catalogue
-    description: Represents a catalogue with various attributes and nested structures.
+    description: Represents a Catalogue with various attributes and nested structures.
     slots:
       - id
     attributes:
@@ -124,12 +124,12 @@ classes:
       mainContact:
         description: Catalogue's main contact info.
         range: ProviderMainContact
-        required: false
+        required: true
       publicContacts:
         description: List of the Catalogue's public contacts info.
         multivalued: true
         range: ProviderPublicContact
-        required: false
+        required: true
       # Dependencies Information
       participatingCountries:
         description: |
@@ -146,12 +146,13 @@ classes:
         description: |
           Catalogues that are members or affiliated or associated with other organisations should list those 
           organisations here.
-          Controlled Vocabulary.
         multivalued: true
         range: string
         required: false
       networks:
-        description: List of networks.
+        description: |
+          List of networks.
+          Controlled Vocabulary.
         multivalued: true
         range: string
         required: false

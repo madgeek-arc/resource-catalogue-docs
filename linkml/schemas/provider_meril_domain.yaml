@@ -1,0 +1,29 @@
+id: provider_meril_domain
+name: ProviderMerilDomainSchema
+description: Schema representing the ProviderMerilDomain object.
+imports:
+  - linkml:types
+
+classes:
+  ProviderMerilDomain:
+    name: ProviderMerilDomain
+    description: Represents a Provider MERIL Domain item.
+    attributes:
+      merilScientificDomain:
+        description: |
+          MERIL scientific domain classification.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^provider_meril_scientific_domain-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_MERIL_SCIENTIFIC_DOMAIN.json
+      merilScientificSubdomain:
+        description: |
+          MERIL scientific subdomain classification.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^provider_meril_scientific_subdomain-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_MERIL_SCIENTIFIC_SUBDOMAIN.json
