@@ -1,0 +1,228 @@
+id: provider
+name: ProviderSchema
+description: Schema representing the Provider object.
+imports:
+  - linkml:types
+  - alternative_identifier
+  - multimedia_pair
+  - service_provider_domain
+  - provider_location
+  - provider_main_contact
+  - provider_public_contact
+  - provider_meril_domain
+  - user
+  - slots
+
+classes:
+  Provider:
+    tree_root: true
+    name: Provider
+    description: Represents a Provider with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      # Basic Information
+      abbreviation:
+        description: An abbreviation of the Provider Name as assigned by the Provider.
+        range: string
+        required: true
+      name:
+        description: Full Name of the Provider/Organisation offering the resource and acting as main contact point.
+        range: string
+        required: true
+      website:
+        description: |
+          Website with information about the Provider.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      legalEntity:
+        description: A Y/N question to define whether the Provider is a Legal Entity or not.
+        range: boolean
+        required: true
+      legalStatus:
+        description: |
+          Legal status of the Provider. 
+          The legal status is usually noted in the registration act/statutes. 
+          For independent legal entities (1) - legal status of the Provider.
+          For embedded providers (2) - legal status of the hosting legal entity. 
+          It is also possible to select Not a legal entity.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^provider_legal_status-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_LEGAL_STATUS.json
+      hostingLegalEntity:
+        description: |
+          Name of the organisation/institution legally hosting (housing) the provider/research infrastructure or 
+          its coordinating centre. A distinction is made between: (1) research infrastructures that are self-standing 
+          and have a defined and distinct legal entity, (2) research infrastructures that are embedded into another 
+          institution which is a legal entity (such as a university, a research organisation, etc.). If (1) - name of 
+          the research infrastructure, if (2) - name of the hosting organisation.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^provider_hosting_legal_entity-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_HOSTING_LEGAL_ENTITY.json
+      alternativeIdentifiers:
+        description: Other types of Identifiers for the specific Service (eg. PID)
+        multivalued: true
+        range: AlternativeIdentifier
+        required: false
+      # Marketing Information
+      description:
+        description: |
+          A high-level description of the Provider in fairly non-technical terms, with the vision, mission, objectives, 
+          background, experience.
+        range: string
+        required: true
+      logo:
+        description: |
+          Link to the logo/visual identity of the Provider.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      multimedia:
+        description: Link to video, slideshow, photos, screenshots with details of the Provider.
+        multivalued: true
+        range: MultimediaPair
+        required: false
+      # Classification Information
+      scientificDomains:
+        description: A named group of providers that offer access to the same type of resource or capabilities.
+        multivalued: true
+        range: ServiceProviderDomain
+        required: false
+      tags:
+        description: Keywords associated to the Provider to simplify search by relevant keywords.
+        multivalued: true
+        range: string
+        required: false
+      structureTypes:
+        description: Defines the Provider structure type (single-sited, distributed, mobile, virtual, etc.).
+        multivalued: true
+        range: string
+        required: false
+      # Location Information
+      location:
+        description: |
+          Physical location of the Provider or its coordinating centre in the case of distributed, virtual, 
+          and mobile Providers.
+        range: ProviderLocation
+        required: true
+      # Contact Information
+      mainContact:
+        description: Provider's main contact info.
+        range: ProviderMainContact
+        required: true
+      publicContacts:
+        description: List of the Provider's public contacts info.
+        multivalued: true
+        range: ProviderPublicContact
+        required: true
+      # Maturity Information
+      lifeCycleStatus:
+        description: | 
+          Current status of the Provider life-cycle.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^life_cycle_status-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/LIFE_CYCLE_STATUS.json
+      certifications:
+        description: |
+          List of certifications obtained for the Provider 
+          (including the certification body, the certificate number or URL if available).
+        multivalued: true
+        range: string
+        required: false
+      # Dependencies Information
+      participatingCountries:
+        description: |
+          Providers/Research Infrastructures that are funded by several countries should list here all supporting 
+          countries (including the Coordinating country).
+          Controlled Vocabulary (ISO 3166-1 A-2).
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^[A-Z]{2}$'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json
+      affiliations:
+        description: |
+          Providers that are members or affiliated or associated with other organisations should list those 
+          organisations here.
+        multivalued: true
+        range: string
+        required: false
+      networks:
+        description: |
+          List of networks.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^provider_network-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_NETWORK.json
+      catalogueId:
+        description: The Catalogue this Provider is originally registered at. (default value 'eosc')
+        multivalued: false
+        range: string
+        required: false
+      # Other Information
+      esfriDomains:
+        description: ESFRI domain classification.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^provider_esfri_domain-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_ESFRI_DOMAIN.json
+      esfriType:
+        description: |
+          If the research infrastructure is (part of) an ESFRI project indicate how the RI participates:
+          a) is a node of an ESFRI project, b) is an ESFRI project, 
+          c) is an ESFRI landmark, d) is not an ESFRI project or landmark.
+        range: string
+        required: false
+        pattern: '^provider_esfri_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_ESFRI_TYPE.json
+      merilScientificDomains:
+        description: MERIL scientific domain / subdomain classification.
+        multivalued: true
+        range: ProviderMerilDomain
+        required: false
+      areasOfActivity:
+        description: Basic research, Applied research or Technological development.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^provider_area_of_activity-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_AREA_OF_ACTIVITY.json
+      societalGrandChallenges:
+        description: Provider’s participation in the Grand Societal Challenges defined by the European Commission.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^provider_societal_grand_challenge-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_SOCIETAL_GRAND_CHALLENGE.json
+      nationalRoadmaps:
+        description: Provider's participation in a national roadmap.
+        multivalued: true
+        range: string
+        required: false
+      # Authentication
+      users:
+        description: List of Provider's user admins.
+        multivalued: true
+        range: User
+        required: true
