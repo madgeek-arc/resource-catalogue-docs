@@ -1,0 +1,22 @@
+id: use_cases_pair
+name: UseCasesSchema
+description: Schema representing the UseCasesPair object.
+imports:
+  - linkml:types
+
+classes:
+  UseCasesPair:
+    name: UseCasesPair
+    description: Represents a Use Cases Pair item.
+    attributes:
+      useCaseURL:
+        description: |
+          Link to use cases supported by this Service.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      useCaseName:
+        description: Short description of the UseCase content.
+        range: string
+        required: false

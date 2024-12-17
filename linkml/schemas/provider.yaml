@@ -11,7 +11,7 @@ imports:
   - provider_public_contact
   - provider_meril_domain
   - user
-  - slots
+  - slots_and_types
 
 classes:
   Provider:
@@ -103,10 +103,13 @@ classes:
         range: string
         required: false
       structureTypes:
-        description: Defines the Provider structure type (single-sited, distributed, mobile, virtual, etc.).
+        description: | 
+          Defines the Provider structure type (single-sited, distributed, mobile, virtual, etc.).
+          Controlled Vocabulary.
         multivalued: true
         range: string
         required: false
+        pattern: '^provider_structure_type-.+'
       # Location Information
       location:
         description: |
@@ -131,9 +134,9 @@ classes:
           Controlled Vocabulary.
         range: string
         required: false
-        pattern: '^life_cycle_status-.+'
+        pattern: '^provider_life_cycle_status-.+'
         annotations:
-          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/LIFE_CYCLE_STATUS.json
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_LIFE_CYCLE_STATUS.json
       certifications:
         description: |
           List of certifications obtained for the Provider 
@@ -172,12 +175,13 @@ classes:
           documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_NETWORK.json
       catalogueId:
         description: The Catalogue this Provider is originally registered at. (default value 'eosc')
-        multivalued: false
         range: string
         required: false
       # Other Information
       esfriDomains:
-        description: ESFRI domain classification.
+        description: |
+          ESFRI domain classification.
+          Controlled Vocabulary.
         multivalued: true
         range: string
         required: false
@@ -189,6 +193,7 @@ classes:
           If the research infrastructure is (part of) an ESFRI project indicate how the RI participates:
           a) is a node of an ESFRI project, b) is an ESFRI project, 
           c) is an ESFRI landmark, d) is not an ESFRI project or landmark.
+          Controlled Vocabulary.
         range: string
         required: false
         pattern: '^provider_esfri_type-.+'
@@ -200,7 +205,9 @@ classes:
         range: ProviderMerilDomain
         required: false
       areasOfActivity:
-        description: Basic research, Applied research or Technological development.
+        description: | 
+          Basic research, Applied research or Technological development.
+          Controlled Vocabulary.
         multivalued: true
         range: string
         required: false
@@ -208,7 +215,9 @@ classes:
         annotations:
           documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_AREA_OF_ACTIVITY.json
       societalGrandChallenges:
-        description: Provider’s participation in the Grand Societal Challenges defined by the European Commission.
+        description: |
+          Provider’s participation in the Grand Societal Challenges defined by the European Commission.
+          Controlled Vocabulary.
         multivalued: true
         range: string
         required: false

@@ -15,7 +15,7 @@ classes:
           Example: https://example.com
         range: string
         required: true
-        pattern: '^https?://.*'
+        pattern: '^https://.*'
       multimediaName:
         description: Short description of the Multimedia content.
         range: string

@@ -1,0 +1,413 @@
+id: service
+name: ServiceSchema
+description: Schema representing the Service object.
+imports:
+  - linkml:types
+  - alternative_identifier
+  - multimedia_pair
+  - use_cases_pair
+  - service_provider_domain
+  - service_category
+  - service_main_contact
+  - service_public_contact
+  - slots_and_types
+
+classes:
+  Service:
+    tree_root: true
+    name: Service
+    description: Represents a Service with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      # Basic Information
+      abbreviation:
+        description: An abbreviation of the Service Name as assigned by the Provider
+        range: string
+        required: true
+      name:
+        description: Service full name as assigned by the Provider.
+        range: string
+        required: true
+      resourceOrganisation:
+        description: |
+          The ID of the organisation that manages or delivers the service, or that coordinates 
+          service delivery in a federated scenario.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      resourceProviders:
+        description: The ID(s) of Provider(s) that manage or deliver the Service in federated scenarios.
+        multivalued: true
+        range: string
+        required: false
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      webpage:
+        description: |
+          Webpage with information about the Service usually hosted and maintained by the Provider.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      alternativeIdentifiers:
+        description: Other types of Identifiers for the specific Service (eg. PID)
+        multivalued: true
+        range: AlternativeIdentifier
+        required: false
+      # Marketing Information
+      description:
+        description: |
+          A high-level description in fairly non-technical terms of a) what the Service does, functionality it provides
+          and Services it enables to access,
+          b) the benefit to a user/customer delivered by a Service; benefits are usually related to alleviating pains
+          (e.g., eliminate undesired outcomes, obstacles or risks) or producing gains (e.g. increased performance, 
+          social gains, positive emotions or cost saving),
+          c) list of customers, communities, users, etc. using the Service.
+        range: string
+        required: true
+      tagline:
+        description: | 
+          Short catch-phrase for marketing and advertising purposes. It will be usually displayed close to the Service 
+          name and should refer to the main value or purpose of the Service.
+        range: string
+        required: true
+      logo:
+        description: |
+          Link to video, slideshow, photos, screenshots with details of the Service.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      multimedia:
+        description: Link to video, slideshow, photos, screenshots with details of the Service.
+        multivalued: true
+        range: MultimediaPair
+        required: false
+      useCases:
+        description: Link to use cases supported by this Service.
+        multivalued: true
+        range: UseCasesPair
+        required: false
+      # Classification Information
+      scientificDomains:
+        description: The branch of science, scientific discipline that is related to the Service.
+        multivalued: true
+        range: ServiceProviderDomain
+        required: true
+      categories:
+        description: A named group of Services that offer access to the same type of Services.
+        multivalued: true
+        range: ServiceCategory
+        required: true
+      targetUsers:
+        description: |
+          Type of users/customers that commissions a Provider to deliver a Service.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: true
+        pattern: '^target_user-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TARGET_USER.json
+      accessTypes:
+        description: |
+          The way a user can access the Service (Remote, Physical, Virtual, etc.).
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^access_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_TYPE.json
+      accessModes:
+        description: |
+          Eligibility/criteria for granting access to users (excellence-based, free-conditionally, free etc.).
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^access_mode-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_MODE.json
+      tags:
+        description: Keywords associated to the Service to simplify search by relevant keywords.
+        multivalued: true
+        range: string
+        required: false
+      horizontalService:
+        description: |
+          Does Service consist a generic service or resource bringing significant value to two or more 
+          research infrastructures.
+        range: boolean
+        required: false
+      serviceCategories:
+        description: |
+          A named group of Services that offer access to the same type of Services.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^service_category-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SERVICE_CATEGORY.json
+      marketplaceLocations:
+        description: |
+          Placement of the Service in the different sections of the EOSC Marketplace.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^marketplace_location-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/MARKETPLACE_LOCATION.json
+      # Geographical and Language Availability Information
+      geographicalAvailabilities:
+        description: |
+          Locations where the Service is offered.
+          Controlled Vocabulary (ISO 3166-1 A-2).
+        multivalued: true
+        range: string
+        required: true
+        pattern: '^[A-Z]{2}$'
+        annotations:
+          countryDocumentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json
+          regionDocumentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/REGION.json
+      languageAvailabilities:
+        description: |
+          Languages of the (user interface of the) Service.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: true
+        pattern: '^[a-z]{2}$'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/LANGUAGE.json
+      # Service Location Information
+      resourceGeographicLocations:
+        description: |
+          List of geographic locations where data, samples, etc. are stored and processed.
+          Controlled Vocabulary (ISO 3166-1 A-2).
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^[A-Z]{2}$'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json
+      # Contact Information
+      mainContact:
+        description: Service's Main Contact/Resource Owner info.
+        range: ServiceMainContact
+        required: true
+      publicContacts:
+        description: List of the Service's Public Contacts info.
+        multivalued: true
+        range: ServicePublicContact
+        required: true
+      helpdeskEmail:
+        description: The email to ask more information from the Provider about this Service.
+        range: string
+        required: true
+        pattern: '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
+      securityContactEmail:
+        description: The email to contact the Provider for critical security issues about this Service.
+        range: string
+        required: true
+        pattern: '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
+      # Maturity Information
+      trl:
+        description: |
+          The Technology Readiness Level of the Service (to be further updated in the context of the EOSC).
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^trl-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TRL.json
+      lifeCycleStatus:
+        description: |
+          Phase of the Service life-cycle.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^life_cycle_status-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/LIFE_CYCLE_STATUS.json
+      certifications:
+        description: List of certifications obtained for the Service (including the certification body).
+        multivalued: true
+        range: string
+        required: false
+      standards:
+        description: List of standards supported by the Service.
+        multivalued: true
+        range: string
+        required: false
+      openSourceTechnologies:
+        description: List of open source technologies supported by the Service.
+        multivalued: true
+        range: string
+        required: false
+      version:
+        description: Version of the Service that is in force.
+        range: string
+        required: false
+      lastUpdate:
+        description: Date of the latest update of the Service (timestamp in milliseconds).
+        range: TimestampMilliseconds
+        required: false
+      changeLog:
+        description: Summary of the Service features updated from the previous version.
+        multivalued: true
+        range: string
+        required: false
+      # Dependencies Information
+      requiredResources:
+        description: List of other Service IDs required to use this Service.
+        multivalued: true
+        range: string
+        required: false
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      relatedResources:
+        description: List of other Service IDs that are commonly used with this Service.
+        multivalued: true
+        range: string
+        required: false
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      relatedPlatforms:
+        description: |
+          List of suites or thematic platforms in which the Service is engaged or Providers (Provider groups) 
+          contributing to this Service.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^related_platform-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/RELATED_PLATFORM.json
+      catalogueId:
+        description: The Catalogue this Service is originally registered at.
+        range: string
+        required: false
+      # Attribution Information
+      fundingBody:
+        description: |
+          Name of the funding body that supported the development and/or operation of the Service.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^funding_body-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/FUNDING_BODY.json
+      fundingPrograms:
+        description: | 
+          Name of the funding program that supported the development and/or operation of the Service.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^funding_program-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/FUNDING_PROGRAM.json
+      grantProjectNames:
+        description: Name of the project that supported the development and/or operation of the Service.
+        multivalued: true
+        range: string
+        required: false
+      # Management Information
+      helpdeskPage:
+        description: |
+          The URL to a webpage to ask more information from the Provider about this Service.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      userManual:
+        description: |
+          Link to the Service user manual and documentation.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      termsOfUse:
+        description: |
+          Webpage describing the rules, Service conditions and usage policy which one must agree to abide by in order to
+          use the Service.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      privacyPolicy:
+        description: |
+          Link to the privacy policy applicable to the Service.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      accessPolicy:
+        description: |
+          Information about the access policies that apply.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      resourceLevel:
+        description: |
+          Webpage with the information about the levels of performance that a Provider is expected to deliver.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      trainingInformation:
+        description: |
+          Webpage to training information on the Service.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      statusMonitoring:
+        description: |
+          Webpage with monitoring information about this Service.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      maintenance:
+        description: |
+          Webpage with information about planned maintenance windows for this Service.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      # Access & Order Information
+      orderType:
+        description: |
+          Information on the order type (requires an ordering procedure, or no ordering and if fully open or requires 
+          authentication).
+        range: string
+        required: true
+        pattern: '^order_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ORDER_TYPE.json
+      order:
+        description: |
+          Webpage through which an order for the Service can be placed.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      # Financial Information
+      paymentModel:
+        description: |
+          Webpage with the supported payment models and restrictions that apply to each of them.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      pricing:
+        description: |
+          Webpage with the information on the price scheme for this Service in case the customer is charged for.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'

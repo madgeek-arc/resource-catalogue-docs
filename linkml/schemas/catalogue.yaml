@@ -9,7 +9,7 @@ imports:
   - provider_main_contact
   - provider_public_contact
   - user
-  - slots
+  - slots_and_types
 
 classes:
   Catalogue:

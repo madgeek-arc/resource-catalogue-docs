@@ -1,0 +1,30 @@
+id: service_category
+name: ServiceCategorySchema
+description: Schema representing the ServiceCategory object.
+imports:
+  - linkml:types
+
+classes:
+  ServiceCategory:
+    name: ServiceCategory
+    description: Represents a Service Category item.
+    attributes:
+      category:
+        description: |
+          A named group of Resources that offer access to the same type of Resources
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^category-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATEGORY.json
+      subcategory:
+        description: |
+          A named group of Resources that offer access to the same type of Resource or capabilities, within the defined 
+          Resource Category.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^subcategory-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SUBCATEGORY.json
