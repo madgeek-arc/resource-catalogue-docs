@@ -1,0 +1,22 @@
+id: research_product_metadata_licensing
+name: ResearchProductMetadataLicensing
+description: Schema representing the ResearchProductMetadataLicensing object.
+imports:
+  - linkml:types
+
+classes:
+  ResearchProductMetadataLicensing:
+    name: ResearchProductMetadataLicensing
+    description: Represents a Research Product Metadata Licensing item.
+    attributes:
+      researchProductMetadataLicenseName:
+        description: Research Product Metadata License Name.
+        range: string
+        required: true
+      researchProductMetadataLicenseURL:
+        description: |
+          Research Product Metadata License URL.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'

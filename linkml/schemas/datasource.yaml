@@ -1,0 +1,137 @@
+id: service
+name: ServiceSchema
+description: Schema representing the Service object.
+imports:
+  - linkml:types
+  - slots_and_types
+  - persistent_identity_system
+  - research_product_licensing
+  - research_product_metadata_licensing
+
+classes:
+  Service:
+    tree_root: true
+    name: Service
+    description: Represents a Service with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      # Basic Information
+      serviceId:
+        description: The Service ID this Datasource is associated to.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      catalogueId:
+        description: The Catalogue this Datasource is originally registered at. (default value 'eosc')
+        range: string
+        required: false
+      # Data Source Policies
+      submissionPolicyURL:
+        description: |
+          This policy provides a comprehensive framework for the contribution of research products.
+          Criteria for submitting content to the repository as well as product preparation guidelines can be stated. 
+          Concepts for quality assurance may be provided.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      preservationPolicyURL:
+        description: |
+          This policy provides a comprehensive framework for the long-term preservation of the research products. 
+          Principles aims and responsibilities must be clarified. An important aspect is the description of preservation
+          concepts to ensure the technical and conceptual utility of the content.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      versionControl:
+        description: |
+          If data versioning is supported: the data source explicitly allows the deposition of different versions of the
+          same object.
+        range: boolean
+        required: false
+      persistentIdentitySystems:
+        description: |
+          The persistent identifier systems that are used by the Data Source to identify the EntityType it 
+          supports.
+        multivalued: true
+        range: PersistentIdentitySystem
+        required: false
+      # Data Source Content
+      jurisdiction:
+        description: |
+          The property defines the jurisdiction of the users of the data source, based on the vocabulary for this 
+          property.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^ds_jurisdiction-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_JURISDICTION.json
+      datasourceClassification:
+        description: |
+          The specific type of the data source based on the vocabulary defined for this property.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^ds_classification-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_CLASSIFICATION.json
+      researchEntityTypes:
+        description: |
+          The types of OpenAIRE entities managed by the data source, based on the vocabulary for this property.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: true
+        pattern: '^ds_research_entity_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_RESEARCH_ENTITY_TYPE.json
+      thematic:
+        description: |
+          Boolean value specifying if the data source is dedicated to a given discipline or is instead discipline 
+          agnostic.
+        range: boolean
+        required: true
+      # Research Product Policies
+      researchProductLicensings:
+        description: |
+          Licenses under which the research products contained within the data sources can be made available.
+          Repositories can allow a license to be defined for each research product, while for scientific databases the 
+          database is typically provided under a single license.
+        multivalued: true
+        range: ResearchProductLicensing
+        required: false
+      researchProductAccessPolicies:
+        description: |
+          Research product access policy.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^ds_coar_access_rights_1_0-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_COAR_ACCESS_RIGHTS_1_0.json
+      # Research Product Metadata
+      researchProductMetadataLicensing:
+        description: Metadata Policy for information describing items in the repository - Access and re-use of metadata.
+        range: ResearchProductMetadataLicensing
+        required: false
+      researchProductMetadataAccessPolicies:
+        description: |
+          Research product access policy.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^ds_coar_access_rights_1_0-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_COAR_ACCESS_RIGHTS_1_0.json
+      # Extras
+      harvestable:
+        description: |
+          Boolean value specifying if the data source requires the harvesting of Research Products into the Research 
+          Catalogue.
+        range: boolean
+        required: false

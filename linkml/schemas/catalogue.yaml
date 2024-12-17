@@ -3,13 +3,13 @@ name: CatalogueSchema
 description: Schema representing the Catalogue object.
 imports:
   - linkml:types
+  - slots_and_types
   - multimedia_pair
   - service_provider_domain
   - provider_location
   - provider_main_contact
   - provider_public_contact
   - user
-  - slots_and_types
 
 classes:
   Catalogue:

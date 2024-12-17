@@ -3,6 +3,7 @@ name: ServiceSchema
 description: Schema representing the Service object.
 imports:
   - linkml:types
+  - slots_and_types
   - alternative_identifier
   - multimedia_pair
   - use_cases_pair
@@ -10,7 +11,6 @@ imports:
   - service_category
   - service_main_contact
   - service_public_contact
-  - slots_and_types
 
 classes:
   Service:
@@ -285,7 +285,7 @@ classes:
         annotations:
           documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/RELATED_PLATFORM.json
       catalogueId:
-        description: The Catalogue this Service is originally registered at.
+        description: The Catalogue this Service is originally registered at. (default value 'eosc')
         range: string
         required: false
       # Attribution Information
