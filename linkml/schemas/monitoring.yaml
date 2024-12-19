@@ -1,0 +1,33 @@
+id: monitoring
+name: MonitoringSchema
+description: Schema representing the Monitoring object.
+imports:
+  - linkml:types
+  - slots_and_types
+  - monitoring_group
+
+classes:
+  Monitoring:
+    tree_root: true
+    name: Monitoring
+    description: Represents a Monitoring with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      serviceId:
+        description: The Service ID this Monitoring is associated to.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      monitoredBy:
+        description: The organisation which monitors the specific Monitoring
+        range: string
+        required: false
+        pattern: '^monitored_by-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/MONITORING_MONITORED_BY.json
+      monitoringGroups:
+        description: Monitoring Groups
+        multivalued: true
+        range: MonitoringGroup
+        required: true

@@ -1,13 +1,13 @@
 [
-    {
+  {
     "id": "AH",
     "name": "Schengen Area",
     "description": "All Schengen Area countries.",
     "parentId": "geographic_location",
     "type": "Region",
     "extras": {}
-    },
-    {
+  },
+  {
     "id": "EO",
     "name": "Europe",
     "description": "All European Countries.",

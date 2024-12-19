@@ -1,0 +1,29 @@
+id: metric
+name: MetricSchema
+description: Schema representing the Metric object.
+imports:
+  - linkml:types
+  - slots_and_types
+
+classes:
+  Metric:
+    tree_root: true
+    name: Metric
+    description: Represents a Metric with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      probe:
+        description: |
+          Probe
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      metric:
+        description: |
+          Metric
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'

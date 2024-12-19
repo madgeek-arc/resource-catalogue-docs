@@ -1,0 +1,29 @@
+id: monitoring_group
+name: MonitoringGroupSchema
+description: Schema representing the MonitoringGroup object.
+imports:
+  - linkml:types
+  - slots_and_types
+  - metric
+
+classes:
+  MonitoringGroup:
+    tree_root: true
+    name: MonitoringGroup
+    description: Represents a Monitoring Group with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      serviceType:
+        description: Service Type of the Monitoring
+        range: string
+        required: true
+      endpoint:
+        description: Monitoring endpoint
+        range: string
+        required: true
+      metrics:
+        description: Monitoring Metrics
+        multivalued: true
+        range: Metric
+        required: false

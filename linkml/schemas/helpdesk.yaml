@@ -1,0 +1,61 @@
+id: helpdesk
+name: HelpdeskSchema
+description: Schema representing the Helpdesk object.
+imports:
+  - linkml:types
+  - slots_and_types
+
+classes:
+  Helpdesk:
+    tree_root: true
+    name: Helpdesk
+    description: Represents a Helpdesk with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      serviceId:
+        description: The Service ID this Helpdesk is associated to.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      services:
+        description: A list of Services related to the Helpdesk
+        multivalued: true
+        range: string
+        required: false
+      helpdeskType:
+        description: Helpdesk Type
+        range: string
+        required: false
+      supportGroups:
+        description: Helpdesk Support Groups
+        multivalued: true
+        range: string
+        required: false
+      organisation:
+        description: Helpdesk Organisation
+        range: string
+        required: false
+      emails:
+        description: Helpdesk list of emails for direct assignment of the tickets, bypassing the L1 support
+        multivalued: true
+        range: string
+        required: false
+      agents:
+        description: Helpdesk Agents
+        multivalued: true
+        range: string
+        required: false
+      signatures:
+        description: Helpdesk Signatures
+        multivalued: true
+        range: string
+        required: false
+      ticketPreservation:
+        description: A Y/N question to define whether to preserve the ticket
+        range: boolean
+        required: false
+      webform:
+        description: Helpdesk Webform
+        range: boolean
+        required: false
