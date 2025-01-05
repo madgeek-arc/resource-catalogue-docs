@@ -3,8 +3,8 @@ name: MonitoringGroupSchema
 description: Schema representing the MonitoringGroup object.
 imports:
   - linkml:types
-  - slots_and_types
-  - metric
+  - ../helper/slots_and_types
+  - ../related/metric
 
 classes:
   MonitoringGroup:

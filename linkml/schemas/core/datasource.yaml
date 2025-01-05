@@ -3,10 +3,10 @@ name: ServiceSchema
 description: Schema representing the Service object.
 imports:
   - linkml:types
-  - slots_and_types
-  - persistent_identity_system
-  - research_product_licensing
-  - research_product_metadata_licensing
+  - ../helper/slots_and_types
+  - ../related/persistent_identity_system
+  - ../related/research_product_licensing
+  - ../related/research_product_metadata_licensing
 
 classes:
   Service:

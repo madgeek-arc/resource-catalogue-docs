@@ -3,14 +3,14 @@ name: ServiceSchema
 description: Schema representing the Service object.
 imports:
   - linkml:types
-  - slots_and_types
-  - alternative_identifier
-  - multimedia_pair
-  - use_cases_pair
-  - service_provider_domain
-  - service_category
-  - service_main_contact
-  - service_public_contact
+  - ../helper/slots_and_types
+  - ../related/alternative_identifier
+  - ../related/multimedia_pair
+  - ../related/use_cases_pair
+  - ../related/service_provider_domain
+  - ../related/service_category
+  - ../related/service_main_contact
+  - ../related/service_public_contact
 
 classes:
   Service:

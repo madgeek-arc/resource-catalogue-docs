@@ -3,15 +3,15 @@ name: ProviderSchema
 description: Schema representing the Provider object.
 imports:
   - linkml:types
-  - slots_and_types
-  - alternative_identifier
-  - multimedia_pair
-  - service_provider_domain
-  - provider_location
-  - provider_main_contact
-  - provider_public_contact
-  - provider_meril_domain
-  - user
+  - ../helper/slots_and_types
+  - ../related/alternative_identifier
+  - ../related/multimedia_pair
+  - ../related/service_provider_domain
+  - ../related/provider_location
+  - ../related/provider_main_contact
+  - ../related/provider_public_contact
+  - ../related/provider_meril_domain
+  - ../related/user
 
 classes:
   Provider:

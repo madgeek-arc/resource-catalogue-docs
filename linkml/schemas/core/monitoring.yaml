@@ -3,8 +3,8 @@ name: MonitoringSchema
 description: Schema representing the Monitoring object.
 imports:
   - linkml:types
-  - slots_and_types
-  - monitoring_group
+  - ../helper/slots_and_types
+  - ../related/monitoring_group
 
 classes:
   Monitoring:

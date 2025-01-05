@@ -3,7 +3,7 @@ name: HelpdeskSchema
 description: Schema representing the Helpdesk object.
 imports:
   - linkml:types
-  - slots_and_types
+  - ../helper/slots_and_types
 
 classes:
   Helpdesk:
