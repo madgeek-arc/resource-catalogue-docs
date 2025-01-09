@@ -24,5 +24,4 @@ We welcome contributions to improve the documentation! Please follow these steps
 
 6. **Code of Conduct**: Please ensure your contributions adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-Thanks for helping us improve the documentation!
-
+Thank you for helping us improve the documentation!
