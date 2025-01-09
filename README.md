@@ -3,12 +3,21 @@
 </div>
 
 # Resource Catalogue Documentation [v5.0.0]
-**License:** [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
+- - -
 
 **Work in Progress:** This section is a work in progress and is subject to modification.
 
-## Table of Contents
+## Description
+**Resource Catalogue Documentation** provides a comprehensive guide to the API endpoints, models, and core components 
+of the **[Resource Catalogue](https://github.com/madgeek-arc/resource-catalogue)** project, offering detailed 
+descriptions of each controller, along with their associated functionalities and endpoints. It includes an overview of 
+its data models and a detailed list of vocabularies used within the platform. Additionally, the documentation provides 
+schemas for validating data of the various classes, ensuring consistency and reliability across the system.
 
+## Table of Contents
 1. [API](#api)
 2. [Swagger UI](#swagger-ui)
 3. [Controllers](#controllers)
@@ -39,7 +48,7 @@
 6. [Data Validation](#data-validation)
 
 ## API
-- https://api.providers.sandbox.eosc-beyond.eu / https://providers.sandbox.eosc-beyond.eu/api
+- https://providers.sandbox.eosc-beyond.eu/api
 - https://integration.providers.sandbox.eosc-beyond.eu/api
 - https://dev.providers.sandbox.eosc-beyond.eu/api
 
