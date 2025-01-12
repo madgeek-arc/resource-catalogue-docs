@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
-- - -
+---
 
 **Work in Progress:** This section is a work in progress and is subject to modification.
 
@@ -16,6 +16,8 @@ of the **[Resource Catalogue](https://github.com/madgeek-arc/resource-catalogue)
 descriptions of each controller, along with their associated functionalities and endpoints. It includes an overview of 
 its data models and a detailed list of vocabularies used within the platform. Additionally, the documentation provides 
 schemas for validating data of the various classes, ensuring consistency and reliability across the system.
+
+---
 
 ## Table of Contents
 1. [API](#api)
@@ -47,15 +49,21 @@ schemas for validating data of the various classes, ensuring consistency and rel
 5. [List of Vocabularies](#list-of-vocabularies)
 6. [Data Validation](#data-validation)
 
+---
+
 ## API
 - https://providers.sandbox.eosc-beyond.eu/api
 - https://integration.providers.sandbox.eosc-beyond.eu/api
 - https://dev.providers.sandbox.eosc-beyond.eu/api
 
+---
+
 ## Swagger UI
 - [Production](https://providers.sandbox.eosc-beyond.eu/api/swagger-ui/index.html)
 - [Integration](https://integration.providers.sandbox.eosc-beyond.eu/api/swagger-ui/index.html)
 - [Dev](https://dev.providers.sandbox.eosc-beyond.eu/api/swagger-ui/index.html)
+
+---
 
 ## Controllers
 
@@ -1327,6 +1335,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
       Params:[required](required)
       ```
 
+---
+
 ## Model
 
 ### Catalogue
@@ -2389,6 +2399,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
 }
 ```
 
+---
+
 ## List of Vocabularies
   - [ACCESS_MODE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_MODE.json)
   - [ACCESS_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_TYPE.json)
@@ -2447,6 +2459,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
   - [TR_EXPERTISE_LEVEL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_EXPERTISE_LEVEL.json)
   - [TR_QUALIFICATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_QUALIFICATION.json)
   - [TR_URL_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_URL_TYPE.json)
+
+---
 
 ## Data Validation
 This project provides [LinkML](https://linkml.io/) schemas for validating your data. Users can validate their data files 
