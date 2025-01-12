@@ -1,0 +1,46 @@
+id: vocabulary
+name: VocabularySchema
+description: Schema representing the Vocabulary object.
+imports:
+  - linkml:types
+
+classes:
+  Vocabulary:
+    tree_root: true
+    name: Vocabulary
+    description: Represents a Vocabulary with various attributes and nested structures.
+    attributes:
+      id:
+        description: ID of the Vocabulary.
+        range: string
+        required: true
+      name:
+        description: Vocabulary name
+        range: string
+        required: true
+      description:
+        description: Vocabulary description
+        range: string
+        required: false
+      parentId:
+        description: | 
+          The parent's vocabulary ID (if exists).
+          For example category "category-access_physical_and_eInfrastructures-compute" is the parent vocabulary of 
+          subcategory "subcategory-access_physical_and_eInfrastructures-compute-container_management"
+        range: string
+        required: false
+      type:
+        description: Vocabulary type (eg. "Country")
+        range: string
+        required: true
+      extras:
+        description: Vocabulary extra info map
+        range: StringToStringMap
+        required: false
+
+types:
+  StringToStringMap:
+    description: A map from string keys to string values.
+    typeof: dict
+    key_type: string
+    value_type: string
