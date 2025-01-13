@@ -1,0 +1,61 @@
+id: creator
+name: CreatorSchema
+description: Schema representing the Creator object.
+imports:
+  - linkml:types
+
+classes:
+  Creator:
+    tree_root: true
+    name: Creator
+    description: Represents an Creator Info item.
+    attributes:
+      creatorNameTypeInfo:
+        description: Creator's full name and name type.
+        range: CreatorNameTypeInfo
+        required: true
+      givenName:
+        description: The personal or first name of the creator.
+        range: string
+        required: false
+      familyName:
+        description: The surname or last name of the creator.
+        range: string
+        required: false
+      nameIdentifier:
+        description: Uniquely identifies an individual or legal entity, according to various schemes.
+        range: string
+        required: false
+      creatorAffiliationInfo:
+        description: Affiliation.
+        range: CreatorAffiliationInfo
+        required: false
+  CreatorNameTypeInfo:
+    name: CreatorNameTypeInfo
+    description: Represents a Creator Name Type Info item.
+    attributes:
+      creatorName:
+        description: The full name of the creator.
+        range: string
+        required: true
+      nameType:
+        description: |
+          The type of name.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^ir_name_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_NAME_TYPE.json
+  CreatorAffiliationInfo:
+    name: CreatorAffiliationInfo
+    description: Represents a Creator Affiliation Info item.
+    attributes:
+      affiliation:
+        description: The organizational or institutional affiliation of the creator.
+        range: string
+        required: false
+      affiliationIdentifier:
+        description: Uniquely identifies the organizational affiliation of the creator.
+        range: string
+        required: false

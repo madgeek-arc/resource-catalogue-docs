@@ -1,0 +1,121 @@
+id: interoperability_record
+name: InteroperabilityRecordSchema
+description: Schema representing the InteroperabilityRecord object.
+imports:
+  - linkml:types
+  - ../helper/slots_and_types
+  - ../related/identifier_info
+  - ../related/creator
+  - ../related/resource_type_info
+  - ../related/related_standard
+  - ../related/right
+  - ../related/alternative_identifier
+
+classes:
+  InteroperabilityRecord:
+    tree_root: true
+    name: InteroperabilityRecord
+    description: Represents an Interoperability Record with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      # Basic Information
+      catalogueId:
+        description: The Catalogue this Interoperability Record is originally registered at.
+        range: string
+        required: true
+      providerId:
+        description: The Provider this Interoperability Record is originally registered at.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      identifierInfo:
+        description: Interoperability Record Identifier Info.
+        range: IdentifierInfo
+        required: true
+      creators:
+        description: |
+          The main researchers involved in producing the data, or the authors of the publication, in priority order.
+          To supply multiple creators, repeat this property.
+        multivalued: true
+        range: Creator
+        required: true
+      title:
+        description: |
+          A name or title by which a resource is known. It can be the title of a dataset or the name of a piece of 
+          software.
+        range: string
+        required: true
+      publicationYear:
+        description: |
+          The year when the guideline was or will be made publicly available.  If an embargo period has been in 
+          effect, use the date when the embargo period ends. In the case of datasets, "publish" is understood to mean 
+          making the data available on a specific date to the community of researchers. If there is no standard 
+          publication year value, use the date that would be preferred from a citation perspective.
+        range: integer
+        required: true
+      resourceTypesInfo:
+        description: Interoperability Record Resource Type Info.
+        multivalued: true
+        range: ResourceTypeInfo
+        required: true
+      created:
+        description: Time/date the record was created.
+        range: string
+        required: false
+      updated:
+        description: Time/date the record was last saved, with or without modifications.
+        range: string
+        required: false
+      relatedStandards:
+        description: |
+          Standards related to the guideline.
+          This should point out to related standards only when it is a prerequisite/dependency, and likely to influence
+          a Provider's design towards interoperability based on the guideline.
+        multivalued: true
+        range: RelatedStandard
+        required: false
+      rights:
+        description: |
+          Any rights information for this resource. The property may be repeated to record complex rights 
+          characteristics.
+        multivalued: true
+        range: Right
+        required: true
+      description:
+        description: |
+          All additional information that does not fit in any of the other categories. 
+          May be used for technical information.
+        range: string
+        required: true
+      status:
+        description: Status of the resource.
+        range: string
+        required: true
+        pattern: '^ir_status-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_STATUS.json
+      domain:
+        description: Intended Audience for the Guideline.
+        range: string
+        required: false
+        pattern: '^scientific_domain-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_DOMAIN.json
+      eoscGuidelineType:
+        description: The type of record within the registry.
+        range: string
+        required: true
+        pattern: '^ir_eosc_guideline_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_EOSC_GUIDELINE_TYPE.json
+      eoscIntegrationOptions:
+        description: A short summary of any options to integrate this guideline (if applicable).
+        multivalued: true
+        range: string
+        required: false
+      alternativeIdentifiers:
+        description: Other types of Identifiers for the specific Service (eg. PID)
+        multivalued: true
+        range: AlternativeIdentifier
+        required: false

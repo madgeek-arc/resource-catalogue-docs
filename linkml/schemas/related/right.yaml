@@ -1,0 +1,24 @@
+id: right
+name: RightSchema
+description: Schema representing the Right object.
+imports:
+  - linkml:types
+
+classes:
+  Right:
+    name: Right
+    description: Represents a Right item.
+    attributes:
+      rightTitle:
+        description: Right title.
+        range: string
+        required: true
+      rightURI:
+        description: The URI of the right.
+        range: string
+        required: true
+        pattern: '^https://.*'
+      rightIdentifier:
+        description: Right identifier.
+        range: string
+        required: true

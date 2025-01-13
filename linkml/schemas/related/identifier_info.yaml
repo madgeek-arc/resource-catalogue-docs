@@ -1,0 +1,27 @@
+id: identifier_info
+name: IdentifierInfoSchema
+description: Schema representing the IdentifierInfo object.
+imports:
+  - linkml:types
+
+classes:
+  IdentifierInfo:
+    name: IdentifierInfo
+    description: Represents an Identifier Info item.
+    attributes:
+      identifier:
+        description: |
+          The Identifier is a unique string that identifies a resource. For software, determine whether the identifier
+          is for a specific version of a piece of software,(per the Force11 Software Citation Principles11), or for all
+          versions. The record's primary key for locating it in the EOSC-IF database.
+        range: string
+        required: true
+      identifierType:
+        description: |
+          The type of Identifier.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^ir_identifier_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_IDENTIFIER_TYPE.json

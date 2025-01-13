@@ -1,0 +1,19 @@
+id: related_standard
+name: RelatedStandardSchema
+description: Schema representing the RelatedStandard object.
+imports:
+  - linkml:types
+
+classes:
+  RelatedStandard:
+    name: RelatedStandard
+    description: Represents a Related Standard item.
+    attributes:
+      relatedStandardIdentifier:
+        description: The name of the related standard.
+        range: string
+        required: false
+      relatedStandardURI:
+        description: The URI of the related standard.
+        range: string
+        required: false

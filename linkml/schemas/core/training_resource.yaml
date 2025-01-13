@@ -1,0 +1,196 @@
+id: training_resource
+name: TrainingResourceSchema
+description: Schema representing the TrainingResource object.
+imports:
+  - linkml:types
+  - ../helper/slots_and_types
+  - ../related/alternative_identifier
+  - ../related/service_provider_domain
+  - ../related/service_main_contact
+
+classes:
+  TrainingResource:
+    tree_root: true
+    name: TrainingResource
+    description: Represents a Training Resource with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      # Basic Information
+      title:
+        description: The human-readable name of the learning resource.
+        range: string
+        required: true
+      resourceOrganisation:
+        description: |
+          The ID of the organisation that manages or delivers the service, or that coordinates 
+          service delivery in a federated scenario.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      resourceProviders:
+        description: The ID(s) of Provider(s) that manage or deliver the Service in federated scenarios.
+        multivalued: true
+        range: string
+        required: false
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      authors:
+        description: The name of entity(ies) authoring the resource.
+        multivalued: true
+        range: string
+        required: true
+      url:
+        description: |
+          The URL that resolves to the learning resource or to a "landing page" for the resource that contains important
+          contextual information including the direct resolvable link to the resource, if applicable.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      urlType:
+        description: | 
+          The designation of identifier scheme used for the resource URL. It represents the type of the URL of the 
+          resource, that is the used scheme (e.g., Web Address URL, DOI, ARK, etc.).
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^tr_url_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_URL_TYPE.json
+      eoscRelatedServices:
+        description: The name(s) of (all) the Provider(s) that manage or deliver the Resource in federated scenarios.
+        multivalued: true
+        range: string
+        required: false
+      alternativeIdentifiers:
+        description: Other types of Identifiers for the specific Service (eg. PID)
+        multivalued: true
+        range: AlternativeIdentifier
+        required: false
+      # Detailed & Access Information
+      description:
+        description: A brief synopsis about or description of the learning resource.
+        range: string
+        required: true
+      keywords:
+        description: The keyword(s) or tag(s) used to describe the resource.
+        multivalued: true
+        range: string
+        required: false
+      license:
+        description: A license document that applies to this content, typically indicated by URL.
+        range: string
+        required: true
+      accessRights:
+        description: |
+          The access status of a resource (open, restricted, paid).
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^tr_access_right-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_ACCESS_RIGHT.json
+      versionDate:
+        description: The version date for the most recently published or broadcast resource.
+        range: TimestampMilliseconds
+        required: false
+      # Learning Information
+      targetGroups:
+        description: |
+          The principal users(s) for which the learning resource was designed.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: true
+        pattern: '^target_user-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TARGET_USER.json
+      learningResourceTypes:
+        description: |
+          The predominant type or kind that characterizes the learning resource.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^tr_dcmi_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_DCMI_TYPE.json
+      learningOutcomes:
+        description: |
+          The descriptions of what knowledge, skills or abilities students should acquire on completion of the resource.
+        multivalued: true
+        range: string
+        required: true
+      expertiseLevel:
+        description: |
+          Target skill level in the topic being taught.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^tr_expertise_level-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_EXPERTISE_LEVEL.json
+      contentResourceTypes:
+        description: |
+          The predominant content type of the learning resource (video, game, diagram, slides, etc.).
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^tr_content_resource_type-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_CONTENT_RESOURCE_TYPE.json
+      qualifications:
+        description: |
+          Identification of certification, accreditation or badge obtained with course or learning resource.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^tr_qualification-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TR_QUALIFICATION.json
+      duration:
+        description: |
+          Approximate or typical time it takes to work with or through the learning resource for the typical intended 
+          target audience.
+        range: string
+        required: false
+      # Geographical and Language Availability Information
+      languages:
+        description: |
+          The language in which the resource was originally published or made available.
+          Controlled Vocabulary.
+        multivalued: true
+        range: string
+        required: true
+        pattern: '^[a-z]{2}$'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/LANGUAGE.json
+      geographicalAvailabilities:
+        description: |
+          Locations where the Resource is offered.
+          Controlled Vocabulary (ISO 3166-1 A-2).
+        multivalued: true
+        range: string
+        required: true
+        pattern: '^[A-Z]{2}$'
+        annotations:
+          countryDocumentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json
+          regionDocumentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/REGION.json
+      # Classification Information
+      scientificDomains:
+        description: The branch of science, scientific discipline that is related to the Resource.
+        multivalued: true
+        range: ServiceProviderDomain
+        required: true
+      # Contact Information
+      mainContact:
+        description: Training Resource's Main Contact Owner info.
+        range: ServiceMainContact
+        required: true
+      # Dependencies Information
+      catalogueId:
+        description: The Catalogue this Training Resource is originally registered at.
+        range: string
+        required: false

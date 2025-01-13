@@ -1,0 +1,24 @@
+id: resource_type_info
+name: ResourceTypeInfoSchema
+description: Schema representing the ResourceTypeInfo object.
+imports:
+  - linkml:types
+
+classes:
+  ResourceTypeInfo:
+    name: ResourceTypeInfo
+    description: Represents an Resource Type Info item.
+    attributes:
+      resourceType:
+        description: A description of the resource.
+        range: string
+        required: true
+      resourceTypeGeneral:
+        description: |
+          The general type of a resource.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^ir_resource_type_general-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/IR_RESOURCE_TYPE_GENERAL.json
