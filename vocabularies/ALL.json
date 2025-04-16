@@ -15322,5 +15322,13 @@
     "parentId": null,
     "type": "Node",
     "extras": {}
+  },
+  {
+    "id": "node-sandbox",
+    "name": "Sandbox",
+    "description": "Sandbox",
+    "parentId": null,
+    "type": "Node",
+    "extras": {}
   }
 ]
