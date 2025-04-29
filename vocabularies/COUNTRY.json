@@ -119,7 +119,7 @@
   },
   {
     "id": "AX",
-    "name": "Åland Islands",
+    "name": "Aland Islands",
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
@@ -215,7 +215,7 @@
   },
   {
     "id": "BL",
-    "name": "Saint Barthélemy",
+    "name": "Saint Barthelemy",
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
@@ -363,7 +363,7 @@
   },
   {
     "id": "CI",
-    "name": "Côte d'Ivoire",
+    "name": "Cote d'Ivoire",
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
@@ -435,7 +435,7 @@
   },
   {
     "id": "CW",
-    "name": "Curaçao",
+    "name": "Curacao",
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
@@ -1579,7 +1579,7 @@
   },
   {
     "id": "RE",
-    "name": "Réunion",
+    "name": "Reunion",
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",
@@ -1763,7 +1763,7 @@
   },
   {
     "id": "ST",
-    "name": "São Tomé and Príncipe",
+    "name": "Sao Tome and Principe",
     "description": null,
     "parentId": "geographic_location",
     "type": "Country",

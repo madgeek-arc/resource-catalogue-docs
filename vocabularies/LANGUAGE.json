@@ -889,7 +889,7 @@
   },
   {
     "id": "nb",
-    "name": "Norwegian Bokmål",
+    "name": "Norwegian Bokmal",
     "description": null,
     "parentId": null,
     "type": "Language",
@@ -1025,7 +1025,7 @@
   },
   {
     "id": "pi",
-    "name": "Pāli",
+    "name": "Pali",
     "description": null,
     "parentId": null,
     "type": "Language",
@@ -1409,7 +1409,7 @@
   },
   {
     "id": "vo",
-    "name": "Volapük",
+    "name": "Volapuk",
     "description": null,
     "parentId": null,
     "type": "Language",
