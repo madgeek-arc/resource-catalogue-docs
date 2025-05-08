@@ -1,5 +1,5 @@
 <div align="center">
-  <img src='https://eosc.eu/wp-content/uploads/2024/02/EOSC-Beyond-logo.png'></img>
+  <img src='https://eosc.eu/wp-content/uploads/2024/02/EOSC-Beyond-logo.png'>
 </div>
 
 # Resource Catalogue Documentation [v5.0.0]
