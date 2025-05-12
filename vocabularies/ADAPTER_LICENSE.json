@@ -1,0 +1,114 @@
+[
+  {
+    "id": "adapter_license-agpl_3_0",
+    "name": "AGPL-3.0",
+    "description": "GNU Affero General Public License v3.0",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-apache_2_0",
+    "name": "Apache-2.0",
+    "description": "Apache License 2.0",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-bsd_2_clause",
+    "name": "BSD-2-Clause",
+    "description": "BSD 2-Clause Simplified License",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-bsd_3_clause",
+    "name": "BSD-3-Clause",
+    "description": "BSD 3-Clause New or Revised License",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-bsl_1_0",
+    "name": "BSL-1.0",
+    "description": "Boost Software License 1.0",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-epl_2_0",
+    "name": "EPL-2.0",
+    "description": "Eclipse Public License 2.0",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-gpl_2_0",
+    "name": "GPL-2.0",
+    "description": "GNU General Public License v2.0",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-gpl_3_0",
+    "name": "GPL-3.0",
+    "description": "GNU General Public License v3.0",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-agpl_3_0",
+    "name": "AGPL-3.0",
+    "description": "GNU Affero General Public License v3.0",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-lgpl_2_1",
+    "name": "LGPL-2.1",
+    "description": "GNU Lesser General Public License v2.1",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-mit",
+    "name": "MIT",
+    "description": "MIT License",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-mpl_2_0",
+    "name": "MPL-2.0",
+    "description": "Mozilla Public License 2.0",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-unlicense",
+    "name": "Unlicense",
+    "description": "The Unlicense",
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  },
+  {
+    "id": "adapter_license-other",
+    "name": "Other",
+    "description": null,
+    "parentId": null,
+    "type": "Adapter license",
+    "extras": {}
+  }
+]
