@@ -184,14 +184,6 @@
     "extras": {}
   },
   {
-    "id": "adapter_programming_language-perl",
-    "name": "Perl",
-    "description": null,
-    "parentId": null,
-    "type": "Adapter programming language",
-    "extras": {}
-  },
-  {
     "id": "adapter_programming_language-cvb",
     "name": "Classic Visual Basic",
     "description": null,

@@ -64,14 +64,6 @@
     "extras": {}
   },
   {
-    "id": "adapter_license-agpl_3_0",
-    "name": "AGPL-3.0",
-    "description": "GNU Affero General Public License v3.0",
-    "parentId": null,
-    "type": "Adapter license",
-    "extras": {}
-  },
-  {
     "id": "adapter_license-lgpl_2_1",
     "name": "LGPL-2.1",
     "description": "GNU Lesser General Public License v2.1",
