@@ -25,29 +25,31 @@ schemas for validating data of the various classes, ensuring consistency and rel
 1. [API](#api)
 2. [Swagger UI](#swagger-ui)
 3. [Controllers](#controllers)
-    1. [Catalogue Controller](#catalogue-controller)
-    2. [Configuration Template Instance Controller](#configuration-template-instance-controller)
-    3. [Datasource Controller](#datasource-controller)
-    4. [Interoperability Record Controller](#interoperability-record-controller)
-    5. [Provider Controller](#provider-controller)
-    6. [Public Controller](#public-controller)
-    7. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
-    8. [Service Controller](#service-controller)
-    9. [Service Extensions Controller](#service-extensions-controller)
-    10. [Training Resource Controller](#training-resource-controller)
-    11. [Vocabulary Controller](#vocabulary-controller)
+    1. [Adapter Controller](#adapter-controller)
+    2. [Catalogue Controller](#catalogue-controller)
+    3. [Configuration Template Instance Controller](#configuration-template-instance-controller)
+    4. [Datasource Controller](#datasource-controller)
+    5. [Interoperability Record Controller](#interoperability-record-controller)
+    6. [Provider Controller](#provider-controller)
+    7. [Public Controller](#public-controller)
+    8. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
+    9. [Service Controller](#service-controller)
+    10. [Service Extensions Controller](#service-extensions-controller)
+    11. [Training Resource Controller](#training-resource-controller)
+    12. [Vocabulary Controller](#vocabulary-controller)
 4. [Model](#model)
-    1. [Catalogue](#catalogue)
-    2. [Configuration Template Instance](#configuration-template-instance)
-    3. [Datasource](#datasource)
-    4. [Helpdesk](#helpdesk)
-    5. [Interoperability Record](#interoperability-record)
-    6. [Monitoring](#monitoring)
-    7. [Provider](#provider)
-    8. [Resource Interoperability Record](#resource-interoperability-record)
-    9. [Service](#service)
-    10. [Training Resource](#training-resource)
-    11. [Vocabulary](#vocabulary)
+    1. [Adapter](#adapter)
+    2. [Catalogue](#catalogue)
+    3. [Configuration Template Instance](#configuration-template-instance)
+    4. [Datasource](#datasource)
+    5. [Helpdesk](#helpdesk)
+    6. [Interoperability Record](#interoperability-record)
+    7. [Monitoring](#monitoring)
+    8. [Provider](#provider)
+    9. [Resource Interoperability Record](#resource-interoperability-record)
+    10. [Service](#service)
+    11. [Training Resource](#training-resource)
+    12. [Vocabulary](#vocabulary)
 5. [List of Vocabularies](#list-of-vocabularies)
 6. [Data Validation](#data-validation)
 
@@ -68,6 +70,58 @@ schemas for validating data of the various classes, ensuring consistency and rel
 ---
 
 ## Controllers
+
+- ### Adapter Controller
+  
+  #### Operations for Adapters
+
+  - DELETE
+    - Deletes the Adapter with the given id.
+      ```diff
+      /adapter/{prefix}/{suffix}
+      Params:
+        prefix : String [required]
+        suffix: String [required]
+      ```  
+
+  - GET
+    - Returns the Adapter with the given id.
+      ```diff
+      /adapter/{prefix}/{suffix}
+      Params:
+        prefix: String [required]
+        suffix: String [required]
+      ```
+    - Returns a list of Adapters where user is admin.
+      ```diff
+      /adapter/getMy
+      ```
+    - Filter a list of Adapters based on a set of filters or get a list of all Adapters in the Catalogue.
+      ```diff
+      /adapter/all
+      Params:
+        query : String (Keyword to refine the search) [optional]
+        from : String (Starting index in the result set, default 0) [optional]
+        quantity: String (Quantity to be fetched, default 10) [optional]
+        order: String (Order of results - asc/desc, default asc) [optional]
+        orderField: String (Field to use for ordering) [optional]
+      ```
+      
+  - POST
+    - Creates a new Adapter.
+      ```diff
+      /adapter
+      Body:
+        Adapter JSON [required]
+      ```
+      
+  - PUT
+    - Updates a specific Adapter.
+      ```diff
+      /adapter
+      Body:
+        Adapter JSON [required]
+      ```
 
 - ### Catalogue Controller
   
@@ -343,7 +397,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
         prefix: String [required]
         suffix: String [required]
       ```
-    - Filter a list of Configuration Template Instances based on a set of filters or get a list of all Configuration Template Instances in the Catalogue.
+    - Filter a list of Configuration Template Instances based on a set of filters or get a list of all Configuration 
+      Template Instances in the Catalogue.
       ```diff
       /configurationTemplateInstance/all
       Params:
@@ -477,7 +532,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
       ```diff
       /interoperabilityRecord/draft/getMyDraftInteroperabilityRecords
       ```
-    - Filter a list of Interoperability Records based on a set of filters or get a list of all Interoperability Records of a specific Provider in the Catalogue.
+    - Filter a list of Interoperability Records based on a set of filters or get a list of all Interoperability Records 
+      of a specific Provider in the Catalogue.
       ```diff
       /interoperabilityRecord/byProvider/{prefix}/{suffix}
       Params:
@@ -900,7 +956,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
         suffix: String [required]
         catalogue_id: String (default 'eosc') [optional]
       ```
-    - Filter a list of Resource Interoperability Records based on a set of filters or get a list of all Resource Interoperability Records in the Catalogue.
+    - Filter a list of Resource Interoperability Records based on a set of filters or get a list of all Resource 
+      Interoperability Records in the Catalogue.
       ```diff
       /datasource/all
       Params:
@@ -1340,6 +1397,84 @@ schemas for validating data of the various classes, ensuring consistency and rel
 ---
 
 ## Model
+
+### Adapter
+
+| Field                 | Type             | Required | Description                                                                                           |
+|-----------------------|------------------|----------|-------------------------------------------------------------------------------------------------------|
+| `id`                  | `String`         | auto-gen | Unique identifier for the adapter.                                                                    |
+| `name`                | `String`         | Yes      | Full name of the adapter.                                                                             |
+| `catalogueId`         | `String`         | Yes      | Identifier of the catalogue containing this record.                                                   |
+| `node`                | `String`         | No       | Adapter's original Node                                                                               |
+| `description`         | `String`         | Yes      | Description of the catalogue.                                                                         |
+| `linkedResource`      | `LinkedResource` | Yes      | Identifier of the EOSC Guideline or Service ID.                                                       |
+| `tagline`             | `String`         | No       | Short tagline summarizing the adapter.                                                                |
+| `logo`                | `URI`            | No       | URI of the adapter's logo.                                                                            |
+| `documentation`       | `URI`            | Yes      | Documentation webpage (e.g., read-the-docs page).                                                     |
+| `repository`          | `URI`            | Yes      | Code repository webpage (e.g., a GitHub repository).                                                  |
+| `releases`            | `List<URI>`      | No       | Links to the latest package release page(s) (e.g., PyPI project, Docker image, GitHub releases page). |
+| `programmingLanguage` | `String`         | Yes      | Programming language.                                                                                 |
+| `license`             | `String`         | Yes      | Software/Code license (e.g., MIT, Apache, GPL).                                                       |
+| `version`             | `String`         | Yes      | Software version.                                                                                     |
+| `changeLog`           | `String`         | Yes      | Changes in the latest version.                                                                        |
+| `lastUpdate`          | `Date`           | Yes      | Latest update date.                                                                                   |
+| `admins`              | `List<User>`     | Yes      | Adapter user admins.                                                                                  |
+
+#### Nested Objects
+
+##### LinkedResource
+
+| Field  | Type       | Required | Description                  |
+|--------|------------|----------|------------------------------|
+| `type` | `String`   | Yes      | Type of the linked resource. |
+| `id`   | `String`   | Yes      | ID of the linked resource.   |
+
+##### User
+
+| Field     | Type     | Required | Description                     |
+|-----------|----------|----------|---------------------------------|
+| `id`      | `String` | No       | Unique identifier for the user. |
+| `email`   | `String` | Yes      | Email address of the user.      |
+| `name`    | `String` | Yes      | First name of the user.         |
+| `surname` | `String` | Yes      | Last name of the user.          |
+
+
+#### Example
+
+```json
+{
+  "id": "adapter_001",
+  "name": "Sample Adapter",
+  "catalogueId": "catalogue_001",
+  "node": "node-sandbox",
+  "description": "This is a sample adapter description.",
+  "linkedResource": {
+    "type": "service",
+    "id": "service_001"
+  },
+  "tagline": "Sample tagline",
+  "logo": "https://example.com/logo.png",
+  "documentation": "https://example.com/documentation",
+  "repository": "https://example.com/repository",
+  "releases": [
+    "https://example.com/release1",
+    "https://example.com/release2"
+  ],
+  "programmingLanguage": "Python",
+  "license": "Sample license",
+  "version": "version 1",
+  "changeLog": "updated",
+  "lastUpdate": "2025-06-19T13:10:58.119Z",
+  "admins": [
+    {
+      "id": "user_001",
+      "email": "user@example.com",
+      "name": "User Name",
+      "surname": "Surname"
+    }
+  ]
+}
+```
 
 ### Catalogue
 
