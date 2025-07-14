@@ -174,5 +174,29 @@
     "parentId": null,
     "type": "Adapter state",
     "extras": {}
+  },
+  {
+    "id": "approved deployable service",
+    "name": "Approved Deployable Service",
+    "description": "Approved Deployable Service",
+    "parentId": null,
+    "type": "Deployable Service state",
+    "extras": {}
+  },
+  {
+    "id": "pending deployable service",
+    "name": "Pending Deployable Service",
+    "description": "Pending Deployable Service",
+    "parentId": null,
+    "type": "Deployable Service state",
+    "extras": {}
+  },
+  {
+    "id": "rejected deployable service",
+    "name": "Rejected Deployable Service",
+    "description": "Rejected Deployable Service",
+    "parentId": null,
+    "type": "Deployable Service state",
+    "extras": {}
   }
 ]
