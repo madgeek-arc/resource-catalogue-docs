@@ -30,6 +30,15 @@ classes:
         description: Full Name of the Provider/Organisation offering the resource and acting as main contact point.
         range: string
         required: true
+      node:
+        description: |
+          Provider's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
       website:
         description: |
           Website with information about the Provider.
@@ -176,7 +185,7 @@ classes:
       catalogueId:
         description: The Catalogue this Provider is originally registered at. (default value 'eosc')
         range: string
-        required: false
+        required: true
       # Other Information
       esfriDomains:
         description: |

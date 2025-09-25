@@ -1,0 +1,104 @@
+id: deployable_service
+name: DeployableServiceSchema
+description: Schema representing the DeployableService object.
+imports:
+  - linkml:types
+  - ../helper/slots_and_types
+  - ../related/service_provider_domain
+  - ../related/creator
+
+classes:
+  DeployableService:
+    tree_root: true
+    name: DeployableService
+    description: Represents a Deployable Service with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      name:
+        description: Deployable Service's full name as assigned by the Provider.
+        range: string
+        required: true
+      acronym:
+        description: Acronym of the Deployable Service.
+        range: string
+        required: false
+      resourceOrganisation:
+        description: |
+          The ID of the organisation that manages or delivers the deployable service, or that coordinates 
+          the delivery in a federated scenario.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      catalogueId:
+        description: The Catalogue this Deployable Service is originally registered at.
+        range: string
+        required: true
+      node:
+        description: |
+          Adapter's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
+      url:
+        description: |
+          The URL where the TOSCA template to deploy this service is stored.
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      scientificDomains:
+        description: The branch of science, scientific discipline that is related to the Deployable Service.
+        multivalued: true
+        range: ServiceProviderDomain
+        required: false
+      tags:
+        description: Keywords associated to the Deployable Service to simplify search by relevant keywords.
+        multivalued: true
+        range: string
+        required: false
+      creators:
+        description: |
+          The main researchers involved in producing the data, or the authors of the publication, in priority order.
+          To supply multiple creators, repeat this property.
+        multivalued: true
+        range: Creator
+        required: true
+      description:
+        description: |
+          A high-level description in fairly non-technical terms of what the Deployable Service does and the 
+          functionality it provides.
+        range: string
+        required: false
+      tagline:
+        description: |
+          Short catch-phrase for marketing and advertising purposes.
+        range: string
+        required: false
+      logo:
+        description: |
+          Link to the logo/visual identity of the Deployable Service.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      version:
+        description: Version of the Deployable Service that is in force.
+        range: string
+        required: true
+      lastUpdate:
+        description: Date of the latest update of the Deployable Service (timestamp in milliseconds).
+        range: TimestampMilliseconds
+        required: false
+      softwareLicense:
+        description: |
+          Software/Code license (e.g., MIT, Apache, GPL).
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^adapter_license-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ADAPTER_LICENSE.json

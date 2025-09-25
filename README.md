@@ -2,7 +2,7 @@
   <img src='https://eosc.eu/wp-content/uploads/2024/02/EOSC-Beyond-logo.png'>
 </div>
 
-# Resource Catalogue Documentation [v5.0.0]
+# Resource Catalogue Documentation [v5.3.0]
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 <a href="https://confluence.egi.eu/display/EOSCBeyond/Software+and+Services+Quality+Assurance+%28SQA%29+guidelines">
@@ -10,13 +10,10 @@
 
 ---
 
-**Work in Progress:** This section is a work in progress and is subject to modification.
-
 ## Description
 **Resource Catalogue Documentation** provides a comprehensive guide to the API endpoints, models, and core components 
-of the **[Resource Catalogue](https://github.com/madgeek-arc/resource-catalogue)** project, offering detailed 
-descriptions of each controller, along with their associated functionalities and endpoints. It includes an overview of 
-its data models and a detailed list of vocabularies used within the platform. Additionally, the documentation provides 
+of the **[Resource Catalogue](https://github.com/madgeek-arc/resource-catalogue)** project, offering detailed descriptions of each controller, along with their 
+associated functionalities and endpoints. It includes an overview of its data models and a detailed list of vocabularies used within the platform. Additionally, the documentation provides 
 schemas for validating data of the various classes, ensuring consistency and reliability across the system.
 
 ---
@@ -29,29 +26,32 @@ schemas for validating data of the various classes, ensuring consistency and rel
     2. [Catalogue Controller](#catalogue-controller)
     3. [Configuration Template Instance Controller](#configuration-template-instance-controller)
     4. [Datasource Controller](#datasource-controller)
-    5. [Interoperability Record Controller](#interoperability-record-controller)
-    6. [Provider Controller](#provider-controller)
-    7. [Public Controller](#public-controller)
-    8. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
-    9. [Service Controller](#service-controller)
-    10. [Service Extensions Controller](#service-extensions-controller)
-    11. [Training Resource Controller](#training-resource-controller)
-    12. [Vocabulary Controller](#vocabulary-controller)
+    5. [Deployable Service Controller](#deployable-service-controller)
+    6. [Interoperability Record Controller](#interoperability-record-controller)
+    7. [Provider Controller](#provider-controller)
+    8. [Public Controller](#public-controller)
+    9. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
+    10. [Service Controller](#service-controller)
+    11. ~~[Service Extensions Controller](#service-extensions-controller)~~ (*deprecated*)
+    12. [Training Resource Controller](#training-resource-controller)
+    13. [Vocabulary Controller](#vocabulary-controller)
 4. [Model](#model)
     1. [Adapter](#adapter)
     2. [Catalogue](#catalogue)
     3. [Configuration Template Instance](#configuration-template-instance)
     4. [Datasource](#datasource)
-    5. [Helpdesk](#helpdesk)
-    6. [Interoperability Record](#interoperability-record)
-    7. [Monitoring](#monitoring)
-    8. [Provider](#provider)
-    9. [Resource Interoperability Record](#resource-interoperability-record)
-    10. [Service](#service)
-    11. [Training Resource](#training-resource)
-    12. [Vocabulary](#vocabulary)
+    5. [Deployable Service](#deployable-service)
+    6. ~~[Helpdesk](#helpdesk)~~ (*deprecated*)
+    7. [Interoperability Record](#interoperability-record)
+    8. ~~[Monitoring](#monitoring)~~ (*deprecated*)
+    9. [Provider](#provider)
+    10. [Resource Interoperability Record](#resource-interoperability-record)
+    11. [Service](#service)
+    12. [Training Resource](#training-resource)
+    13. [Vocabulary](#vocabulary)
 5. [List of Vocabularies](#list-of-vocabularies)
 6. [Data Validation](#data-validation)
+7. [External Services](#external-services)
 
 ---
 
@@ -484,6 +484,97 @@ schemas for validating data of the various classes, ensuring consistency and rel
       Body:
         Datasource JSON [required]
       ```
+
+- ### Deployable Service Controller
+
+  #### Operations for Deployable Services
+
+    - DELETE
+        - Deletes the Deployable Service of the specific Catalogue given its id.
+          ```diff
+          /deployableService/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            catalogue_id: String (default 'eosc') [optional]
+          ```
+
+    - GET
+        - Returns the Deployable Service of the specific Catalogue given its id.
+          ```diff
+            /deployableService/{prefix}/{suffix}
+            Params:
+              prefix: String [required]
+              suffix: String [required]
+              catalogue_id: String (default 'eosc') [optional]
+          ```
+        - Returns a list of all inactive Deployable Services.
+          ```diff
+            /deployableService/inactive/all
+            Params:
+              query : String (Keyword to refine the search) [optional]
+              from : String (Starting index in the result set, default 0) [optional]
+              quantity: String (Quantity to be fetched, default 10) [optional]
+              order: String (Order of results - asc/desc, default asc) [optional]
+              orderField: String (Field to use for ordering) [optional]
+              catalogue: String (default 'eosc') [optional]
+          ```
+        - Returns a list of Deployable Services under a specific Provider.
+          ```diff
+            /deployableService/byProvider/{prefix}/{suffix}
+            Params:
+              prefix: String [required]
+              suffix: String [required]
+              query : String (Keyword to refine the search) [optional]
+              from : String (Starting index in the result set, default 0) [optional]
+              quantity: String (Quantity to be fetched, default 10) [optional]
+              order: String (Order of results - asc/desc, default asc) [optional]
+              orderField: String (Field to use for ordering) [optional]
+          ```
+        - Returns a list of Deployable Services of a specific Catalogue.
+          ```diff
+            /deployableService/byCatalogue/{id}
+            Params:
+              id: String [required]
+              query : String (Keyword to refine the search) [optional]
+              from : String (Starting index in the result set, default 0) [optional]
+              quantity: String (Quantity to be fetched, default 10) [optional]
+              order: String (Order of results - asc/desc, default asc) [optional]
+              orderField: String (Field to use for ordering) [optional]
+          ```
+        - Returns a list of all Deployable Services of the specific Catalogue in the Portal.
+          ```diff
+            /deployableService/all
+            Params:
+              suspended: boolean (default false) [optional]
+              query : String (Keyword to refine the search) [optional]
+              from : String (Starting index in the result set, default 0) [optional]
+              quantity: String (Quantity to be fetched, default 10) [optional]
+              order: String (Order of results - asc/desc, default asc) [optional]
+              orderField: String (Field to use for ordering) [optional]
+              catalogue: String (default 'eosc') [optional]
+          ```
+
+    - POST
+        - Creates a new Deployable Service.
+          ```diff
+            /deployableService
+            Body:
+              Deployable Service JSON [required]
+        - Validates a Deployable Service without actually changing the repository.
+          ```diff
+          /deployableService/validate
+          Body:
+            Deployable Service JSON [required]
+    - PUT
+        - Updates a specific Deployable Service.
+          ```diff
+          /deployableService
+          Params:
+            comment: String
+          Body:
+            Deployable Service JSON [required]
+          ```
         
 - ### Interoperability Record Controller
   
@@ -1483,6 +1574,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
 | `id`                     | `String`                      | auto-gen | Unique identifier for the catalogue.                             |
 | `abbreviation`           | `String`                      | Yes      | Abbreviation of the catalogue's name.                            |
 | `name`                   | `String`                      | Yes      | Full name of the catalogue.                                      |
+| `node`                   | `String`                      | No       | Catalogue's original Node.                                       |
 | `website`                | `URL`                         | Yes      | URL of the catalogue's website.                                  |
 | `legalEntity`            | `boolean`                     | Yes      | Indicates if the catalogue is a legal entity.                    |
 | `legalStatus`            | `String`                      | No       | Legal status of the catalogue.                                   |
@@ -1569,6 +1661,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
   "id": "catalogue_001",
   "abbreviation": "CAT",
   "name": "Sample Catalogue",
+  "node": "node-sandbox",
   "website": "https://example.com",
   "legalEntity": true,
   "legalStatus": "Non-profit",
@@ -1631,24 +1724,28 @@ schemas for validating data of the various classes, ensuring consistency and rel
 
 ### Configuration Template Instance
 
-| Field                     | Type       | Required | Description                                                |
-|---------------------------|------------|----------|------------------------------------------------------------|
-| `id`                      | `String`   | auto-gen | Unique identifier for the configuration template instance. |
-| `resourceId`              | `String`   | Yes      | Identifier of the resource associated with the instance.   |
-| `configurationTemplateId` | `String`   | Yes      | Identifier of the configuration template used.             |
-| `payload`                 | `String`   | Yes      | The configuration data or settings in JSON format.         |
+| Field                      | Type       | Required | Description                                                |
+|----------------------------|------------|----------|------------------------------------------------------------|
+| `id`                       | `String`   | auto-gen | Unique identifier for the configuration template instance. |
+| `resourceId`               | `String`   | Yes      | Identifier of the resource associated with the instance.   |
+| `configurationTemplateId`  | `String`   | Yes      | Identifier of the configuration template used.             |
+| `catalogueId`              | `String`   | Yes      | Identifier of the associated catalogue.                    |
+| `node`                     | `String`   | No       | Configuration Template Instance's original Node.           |
+| `payload`                  | `String`   | Yes      | The configuration data or settings in JSON format.         |
 
 ### Example
 
 ```json
 {
-  "id": "resource_interop_001",
+  "id": "conf_temp_inst_001",
   "resourceId": "resource_001",
+  "configurationTemplateId": "conf_temp_001",
   "catalogueId": "catalogue_001",
-  "interoperabilityRecordIds": [
-    "interop_001",
-    "interop_002"
-  ]
+  "node": "node-sandbox",
+  "payload": {
+    "key1": "value",
+    "key2": "value"
+  }
 }
 ```
 
@@ -1659,6 +1756,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
 | `id`                                    | `String`                           | auto-gen | Unique identifier for the datasource.                               |
 | `serviceId`                             | `String`                           | Yes      | Identifier of the associated service.                               |
 | `catalogueId`                           | `String`                           | Yes      | Identifier of the associated catalogue.                             |
+| `node`                                  | `String`                           | No       | Datasource's original Node.                                         |
 | `submissionPolicyURL`                   | `URL`                              | No       | URL of the submission policy.                                       |
 | `preservationPolicyURL`                 | `URL`                              | No       | URL of the preservation policy.                                     |
 | `versionControl`                        | `Boolean`                          | No       | Indicates if version control is used.                               |
@@ -1703,6 +1801,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
   "id": "datasource_001",
   "serviceId": "service_001",
   "catalogueId": "catalogue_001",
+  "node": "node-sandbox",
   "submissionPolicyURL": "https://example.com/submission-policy",
   "preservationPolicyURL": "https://example.com/preservation-policy",
   "versionControl": true,
@@ -1732,12 +1831,111 @@ schemas for validating data of the various classes, ensuring consistency and rel
 }
 ```
 
+### Deployable Service
+
+| Field                  | Type                          | Required  | Description                                                                                           |
+|------------------------|-------------------------------|-----------|-------------------------------------------------------------------------------------------------------|
+| `id`                   | `String`                      | auto-gen  | Unique identifier for the deployable service.                                                         |
+| `name`                 | `String`                      | Yes       | Full name of the deployable service.                                                                  |
+| `acronym`              | `String`                      | No        | Acronym of the deployable service.                                                                    |
+| `resourceOrganisation` | `String`                      | Yes       | Name of the resource organization providing the deployable service.                                   |
+| `catalogueId`          | `String`                      | Yes       | Identifier of the catalogue containing this record.                                                   |
+| `node`                 | `String`                      | No        | Deployable Service's original Node.                                                                   |
+| `url`                  | `URL`                         | Yes       | Short tagline summarizing the adapter.                                                                |
+| `scientificDomains`    | `List<ServiceProviderDomain>` | No        | URI of the adapter's logo.                                                                            |
+| `tags`                 | `List<String>`                | No        | Documentation webpage (e.g., read-the-docs page).                                                     |
+| `creators`             | `List<Creator>`               | Yes       | Code repository webpage (e.g., a GitHub repository).                                                  |
+| `description`          | `String`                      | No        | Links to the latest package release page(s) (e.g., PyPI project, Docker image, GitHub releases page). |
+| `tagline`              | `String`                      | No        | Programming language.                                                                                 |
+| `logo`                 | `URL`                         | No        | Software/Code license (e.g., MIT, Apache, GPL).                                                       |
+| `version`              | `String`                      | Yes       | Software version.                                                                                     |
+| `lastUpdate`           | `Date`                        | No        | Changes in the latest version.                                                                        |
+| `softwareLicense`      | `String`                      | No        | Latest update date.                                                                                   |
+
+#### Nested Objects
+
+##### ServiceProviderDomain
+
+| Field                 | Type     | Required | Description                                    |
+|-----------------------|----------|----------|------------------------------------------------|
+| `scientificDomain`    | `String` | Yes      | Scientific domain related to the catalogue.    |
+| `scientificSubdomain` | `String` | No       | Scientific subdomain related to the catalogue. |
+
+##### Creator
+
+| Field                    | Type                     | Required | Description                                     |
+|--------------------------|--------------------------|----------|-------------------------------------------------|
+| `creatorNameTypeInfo`    | `CreatorNameTypeInfo`    | Yes      | Information about the creator's name and type.  |
+| `givenName`              | `String`                 | No       | Given name of the creator.                      |
+| `familyName`             | `String`                 | No       | Family name of the creator.                     |
+| `nameIdentifier`         | `String`                 | No       | Unique identifier for the creator, e.g., ORCID. |
+| `creatorAffiliationInfo` | `CreatorAffiliationInfo` | No       | Affiliation details of the creator.             |
+
+##### CreatorNameTypeInfo
+
+| Field         | Type     | Required | Description                                   |
+|---------------|----------|----------|-----------------------------------------------|
+| `creatorName` | `String` | Yes      | Full name of the creator.                     |
+| `nameType`    | `String` | Yes      | Type of name, e.g., personal, organizational. |
+
+##### CreatorAffiliationInfo
+
+| Field                   | Type     | Description                             |
+|-------------------------|----------|-----------------------------------------|
+| `affiliation`           | `String` | Name of the affiliation of the creator. |
+| `affiliationIdentifier` | `String` | Identifier for the affiliation, if any. |
+
+
+#### Example
+
+```json
+{
+  "id": "deployable_service_001",
+  "name": "Sample Deployable Service",
+  "acronym": "sds",
+  "resourceOrganisation": "provider_001",
+  "catalogueId": "catalogue_001",
+  "node": "node-sandbox",
+  "url": "https://www.google.com",
+  "scientificDomains": [
+    {
+      "scientificDomain": "Science",
+      "scientificSubdomain": "Physics"
+    }
+  ],
+  "tags": ["tag1", "tag2"],
+  "creators": [
+    {
+      "creatorNameTypeInfo": {
+        "creatorName": "John Smith",
+        "nameType": "Personal"
+      },
+      "givenName": "John",
+      "familyName": "Smith",
+      "nameIdentifier": "0000-0002-1825-0097",
+      "creatorAffiliationInfo": {
+        "affiliation": "University of Example",
+        "affiliationIdentifier": "org_001"
+      }
+    }
+  ],
+  "description": "Sample description",
+  "tagline": "sample tagline",
+  "logo": "https://example.com/logo.png",
+  "version": "v1",
+  "lastUpdate": "2024-09-09T12:00:00Z",
+  "softwareLicense": "sample license"
+}
+```
+
 ### Helpdesk
 
 | Field                | Type           | Required | Description                                                                     |
 |----------------------|----------------|----------|---------------------------------------------------------------------------------|
 | `id`                 | `String`       | auto-gen | Unique identifier for the helpdesk.                                             |
 | `serviceId`          | `String`       | Yes      | Identifier of the associated service.                                           |
+| `catalogueId`        | `String`       | Yes      | Identifier of the catalogue containing this record.                             |
+| `node`               | `String`       | No       | Helpdesk's original Node.                                                       |
 | `services`           | `List<String>` | No       | List of services associated with the helpdesk.                                  |
 | `helpdeskType`       | `String`       | No       | Type of the helpdesk (e.g., technical support, customer support).               |
 | `supportGroups`      | `List<String>` | No       | List of support groups related to the helpdesk.                                 |
@@ -1754,6 +1952,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
 {
   "id": "helpdesk_001",
   "serviceId": "service_001",
+  "catalogueId": "catalogue_001",
+  "node": "node-sandbox",
   "services": ["serviceA", "serviceB"],
   "helpdeskType": "Technical Support",
   "supportGroups": ["group1", "group2"],
@@ -1773,6 +1973,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
 | `id`                     | `String`                      | auto-gen | Unique identifier for the interoperability record.                               |
 | `catalogueId`            | `String`                      | Yes      | Identifier of the catalogue containing this record.                              |
 | `providerId`             | `String`                      | Yes      | Identifier of the provider associated with the record.                           |
+| `node`                   | `String`                      | No       | Interoperability Record's original Node.                                         |
 | `identifierInfo`         | `IdentifierInfo`              | Yes      | Information about the primary identifier of the record.                          |
 | `creators`               | `List<Creator>`               | Yes      | List of creators involved in the creation of the resource.                       |
 | `title`                  | `String`                      | Yes      | Title of the interoperability record.                                            |
@@ -1858,6 +2059,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
   "id": "interop_001",
   "catalogueId": "catalogue_001",
   "providerId": "provider_001",
+  "node": "node-sandbox",
   "identifierInfo": {
     "identifier": "10.1234/interop",
     "identifierType": "DOI"
@@ -1920,6 +2122,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
 |--------------------|-------------------------|----------|------------------------------------------------------|
 | `id`               | `String`                | auto-gen | Unique identifier for the monitoring record.         |
 | `serviceId`        | `String`                | Yes      | Identifier of the associated service.                |
+| `catalogueId`      | `String`                | Yes      | Identifier of the catalogue containing this record.  |
+| `node`             | `String`                | No       | Monitoring's original Node.                          |
 | `monitoredBy`      | `String`                | No       | Entity or system that is performing the monitoring.  |
 | `monitoringGroups` | `List<MonitoringGroup>` | Yes      | List of monitoring groups related to the monitoring. |
 
@@ -1946,6 +2150,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
 {
   "id": "monitoring123",
   "serviceId": "service456",
+  "catalogueId": "catalogue_001",
+  "node": "node-sandbox",
   "monitoredBy": "MonitoringServiceX",
   "monitoringGroups": [
     {
@@ -1983,6 +2189,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
 | `id`                      | `String`                      | auto-gen | Unique identifier for the provider.                                                               |
 | `abbreviation`            | `String`                      | Yes      | Abbreviation of the provider's name.                                                              |
 | `name`                    | `String`                      | Yes      | Full name of the provider.                                                                        |
+| `node`                    | `String`                      | No       | Provider's original Node.                                                                         |
 | `website`                 | `URL`                         | Yes      | URL of the provider's website.                                                                    |
 | `legalEntity`             | `boolean`                     | Yes      | Indicates if the provider is a legal entity.                                                      |
 | `legalStatus`             | `String`                      | No       | Legal status of the provider.                                                                     |
@@ -2080,6 +2287,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
   "id": "provider_001",
   "abbreviation": "PROV",
   "name": "Sample Provider",
+  "node": "node-sandbox",
   "website": "https://example.com",
   "legalEntity": true,
   "legalStatus": "Non-profit",
@@ -2164,6 +2372,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
 | `id`                        | `String`       | auto-gen | Unique identifier for the resource interoperability record.  |
 | `resourceId`                | `String`       | Yes      | Identifier of the resource associated with the record.       |
 | `catalogueId`               | `String`       | Yes      | Identifier of the catalogue where the record is stored.      |
+| `node`                      | `String`       | No       | Resource Interoperability Record's original Node.            |
 | `interoperabilityRecordIds` | `List<String>` | Yes      | List of interoperability record IDs related to the resource. |
 
 ### Example
@@ -2173,6 +2382,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
   "id": "resource_interop_001",
   "resourceId": "resource_001",
   "catalogueId": "catalogue_001",
+  "node": "node-sandbox",
   "interoperabilityRecordIds": [
     "interop_001",
     "interop_002"
@@ -2187,6 +2397,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
 | `id`                          | `String`                      | auto-gen | Unique identifier for the service.                                        |
 | `abbreviation`                | `String`                      | Yes      | Abbreviation of the service's name.                                       |
 | `name`                        | `String`                      | Yes      | Full name of the service.                                                 |
+| `node`                        | `String`                      | No       | Service's original Node.                                                  |
 | `resourceOrganisation`        | `String`                      | Yes      | Name of the resource organization providing the service.                  |
 | `resourceProviders`           | `List<String>`                | No       | List of resource providers associated with the service.                   |
 | `webpage`                     | `URL`                         | Yes      | URL of the service's webpage.                                             |
@@ -2307,6 +2518,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
   "id": "service_001",
   "abbreviation": "SERV",
   "name": "Sample Service",
+  "node": "node-sandbox",
   "resourceOrganisation": "Sample Organisation",
   "resourceProviders": ["Provider1", "Provider2"],
   "webpage": "https://example.com",
@@ -2410,6 +2622,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
 |------------------------------|-------------------------------|----------|-----------------------------------------------------------------------------------|
 | `id`                         | `String`                      | auto-gen | Unique identifier for the training resource.                                      |
 | `title`                      | `String`                      | Yes      | Title of the training resource.                                                   |
+| `node`                       | `String`                      | No       | Training Resource's original Node.                                                |
 | `resourceOrganisation`       | `String`                      | Yes      | Organisation providing the resource.                                              |
 | `resourceProviders`          | `List<String>`                | No       | List of resource providers associated with the training resource.                 |
 | `authors`                    | `List<String>`                | Yes      | List of authors who contributed to the training resource.                         |
@@ -2468,6 +2681,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
 {
   "id": "training_001",
   "title": "Introduction to Data Science",
+  "node": "node-sandbox",
   "resourceOrganisation": "Data Science Institute",
   "resourceProviders": ["Provider A", "Provider B"],
   "authors": ["Author One", "Author Two"],
@@ -2541,6 +2755,8 @@ schemas for validating data of the various classes, ensuring consistency and rel
 ## List of Vocabularies
   - [ACCESS_MODE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_MODE.json)
   - [ACCESS_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_TYPE.json)
+  - [ADAPTER_LICENSE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ADAPTER_LICENSE.json)
+  - [ADAPTER_PROGRAMMING_LANGUAGE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ADAPTER_PROGRAMMING_LANGUAGE.json)
   - [CATALOGUE_STATE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATALOGUE_STATE.json)
   - [CATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATEGORY.json)
   - [COUNTRY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/COUNTRY.json)
@@ -2563,6 +2779,7 @@ schemas for validating data of the various classes, ensuring consistency and rel
   - [LIFE_CYCLE_STATUS](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/LIFE_CYCLE_STATUS.json)
   - [MARKETPLACE_LOCATION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/MARKETPLACE_LOCATION.json)
   - [MONITORING_MONITORED_BY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/MONITORING_MONITORED_BY.json)
+  - [NODE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json)
   - [ORDER_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ORDER_TYPE.json)
   - [PROVIDER_AREA_OF_ACTIVITY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_AREA_OF_ACTIVITY.json)
   - [PROVIDER_ESFRI_DOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/PROVIDER_ESFRI_DOMAIN.json)
@@ -2584,7 +2801,6 @@ schemas for validating data of the various classes, ensuring consistency and rel
   - [SCIENTIFIC_SUBDOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_SUBDOMAIN.json)
   - [SEMANTIC_RELATIONSHIP](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SEMANTIC_RELATIONSHIP.json)
   - [SERVICE_CATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SERVICE_CATEGORY.json)
-  - [SERVICE_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SERVICE_TYPE.json)
   - [SUBCATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SUBCATEGORY.json)
   - [SUPERCATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SUPERCATEGORY.json)
   - [TARGET_USER](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TARGET_USER.json)
@@ -2618,3 +2834,19 @@ To validate your data against the provided LinkML schemas:
    `mkdir path/to/data`
 4. Run the validation command 
    `linkml-validate -s path/to/schemas/schema.yaml path/to/data/data.yaml`
+
+---
+
+## External Services
+In addition to its core functionality, this project also integrates with external services that extend its capabilities.
+These services are optional but can provide added value depending on the use case:
+
+1. **PID Service** – The Persistent Identifiers (PID) Service offers a robust, reliable solution for the long-term 
+identification and management of digital objects underpinned by leading European data centers and cutting-edge
+technology. [Read the docs](https://docs.sandbox.eosc-beyond.eu/Service%20Portfolio/PID/PID/)
+2. **Helpdesk Service** - The EOSC Helpdesk provides you with the information and support you need to troubleshoot your 
+service problems. You can report incidents, bugs or change requests.
+[Read the docs](https://docs.sandbox.eosc-beyond.eu/Service%20Portfolio/Helpdesk/Helpdesk/)
+3. **Accounting Service** – The EOSC Accounting for Services is a comprehensive platform designed to streamline the 
+collection, aggregation, and exchange of metrics across various infrastructures, providers, and projects.
+[Read the docs](https://docs.sandbox.eosc-beyond.eu/Service%20Portfolio/Accounting/Accounting/)

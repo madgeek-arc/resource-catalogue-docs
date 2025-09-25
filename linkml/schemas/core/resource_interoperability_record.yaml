@@ -1,0 +1,39 @@
+id: resource_interoperability_record
+name: ResourceInteroperabilityRecordSchema
+description: Schema representing the ResourceInteroperabilityRecord object.
+imports:
+  - linkml:types
+  - ../helper/slots_and_types
+
+classes:
+  ResourceInteroperabilityRecord:
+    tree_root: true
+    name: ResourceInteroperabilityRecord
+    description: Represents a Resource Interoperability Record with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      resourceId:
+        description: The resource ID this Resource Interoperability Record is associated to.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      catalogueId:
+        description: The Catalogue this Resource Interoperability Record is originally registered at.
+        range: string
+        required: true
+      node:
+        description: |
+          Resource Interoperability Record's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
+      interoperabilityRecordIds:
+        description: A list of Guideline IDs this Resource Interoperability Record is associated to.
+        multivalued: true
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"

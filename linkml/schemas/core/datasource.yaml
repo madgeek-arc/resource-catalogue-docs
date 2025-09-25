@@ -25,7 +25,16 @@ classes:
       catalogueId:
         description: The Catalogue this Datasource is originally registered at. (default value 'eosc')
         range: string
+        required: true
+      node:
+        description: |
+          Datasource's original Node.
+          Controlled Vocabulary.
+        range: string
         required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
       # Data Source Policies
       submissionPolicyURL:
         description: |

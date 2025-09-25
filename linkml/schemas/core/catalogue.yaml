@@ -28,6 +28,15 @@ classes:
         description: Full Name of the (Multi-Provider Regional or Thematic) Catalogue.
         range: string
         required: true
+      node:
+        description: |
+          Catalogue's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
       website:
         description: |
           Website with information about the (Multi-Provider Regional or Thematic) Catalogue.

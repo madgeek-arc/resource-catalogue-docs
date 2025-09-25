@@ -1,0 +1,43 @@
+id: configuration_template_instance
+name: ConfigurationTemplateInstanceSchema
+description: Schema representing the ConfigurationTemplateInstance object.
+imports:
+  - linkml:types
+  - ../helper/slots_and_types
+
+classes:
+  ConfigurationTemplateInstance:
+    tree_root: true
+    name: ConfigurationTemplateInstance
+    description: Represents a Configuration Template Instance with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      resourceId:
+        description: The resource ID this Configuration Template instance is associated to.
+        range: string
+        required: true
+        pattern: "^\\d{2}\\.\\d{5}/.*$"
+      configurationTemplateId:
+        description: The Configuration Template ID this Configuration Template instance is associated to.
+        range: string
+        required: true
+      catalogueId:
+        description: The Catalogue this Configuration Template instance is originally registered at.
+        range: string
+        required: true
+      node:
+        description: |
+          Configuration Template instance's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
+      payload:
+        description: Configuration Template instance payload.
+        range: any
+        required: true
+        multivalued: true
+        mapping: string

@@ -1,6 +1,7 @@
 id: testCatalogue
 abbreviation: Test Abbreviation
 name: Test Catalogue
+node: node-sandbox
 website: https://example.com
 legalEntity: false
 legalStatus: null

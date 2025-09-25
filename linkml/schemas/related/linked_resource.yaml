@@ -1,0 +1,27 @@
+id: linked_resource
+name: LinkedResourceSchema
+description: Schema representing the LinkedResource object.
+imports:
+  - linkml:types
+
+enums:
+  LinkedResourceType:
+    permissible_values:
+      GUIDELINE:
+        text: "Guideline"
+      SERVICE:
+        text: "Service"
+
+classes:
+  LinkedResource:
+    name: LinkedResource
+    description: Represents a Linked Resource item.
+    attributes:
+      type:
+        description: Type
+        range: LinkedResourceType
+        required: true
+      id:
+        description: Id
+        range: string
+        required: true

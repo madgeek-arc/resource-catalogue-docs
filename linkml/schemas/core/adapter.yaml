@@ -1,0 +1,111 @@
+id: adapter
+name: AdapterSchema
+description: Schema representing the Adapter object.
+imports:
+  - linkml:types
+  - ../helper/slots_and_types
+  - ../related/linked_resource
+
+classes:
+  Adapter:
+    tree_root: true
+    name: Adapter
+    description: Represents an Adapter with various attributes and nested structures.
+    slots:
+      - id
+    attributes:
+      name:
+        description: The human-readable name of the adapter.
+        range: string
+        required: true
+      catalogueId:
+        description: The Catalogue this Adapter is originally registered at.
+        range: string
+        required: true
+      node:
+        description: |
+          Adapter's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
+      description:
+        description: Adapter's description
+        range: string
+        required: true
+      linkedResource:
+        description: EOSC Guideline or Service ID.
+        range: LinkedResource
+        required: true
+      tagline:
+        description: |
+          Short catch-phrase for marketing and advertising purposes. It will be usually displayed close to the Adapter 
+          name and should refer to the main value or purpose of the Adapter.
+        range: string
+        required: false
+      logo:
+        description: |
+          Link to video, slideshow, photos, screenshots with details of the Adapter.
+          Example: https://example.com
+        range: string
+        required: false
+        pattern: '^https://.*'
+      documentation:
+        description: |
+          Documentation webpage (e.g., read-the-docs page).
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      repository:
+        description: |
+          Code repository webpage (e.g., a GitHub repository).
+          Example: https://example.com
+        range: string
+        required: true
+        pattern: '^https://.*'
+      releases:
+        description: |
+          Code repository webpage (e.g., a GitHub repository).
+          Example: https://example.com
+        multivalued: true
+        range: string
+        required: false
+        pattern: '^https://.*'
+      programmingLanguage:
+        description: |
+          Programming language.
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^adapter_programming_language-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ADAPTER_PROGRAMMING_LANGUAGE.json
+      license:
+        description: |
+          Software/Code license (e.g., MIT, Apache, GPL).
+          Controlled Vocabulary.
+        range: string
+        required: true
+        pattern: '^adapter_license-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ADAPTER_LICENSE.json
+      version:
+        description: Software version.
+        range: string
+        required: true
+      changeLog:
+        description: Changes in the latest version.
+        range: string
+        required: true
+      lastUpdate:
+        description: Date of the latest update of the Adapter (timestamp in milliseconds).
+        range: TimestampMilliseconds
+        required: false
+      admins:
+        description: Adapter user admins.
+        multivalued: true
+        range: User
+        required: true

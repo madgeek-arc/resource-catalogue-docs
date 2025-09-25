@@ -21,6 +21,15 @@ classes:
         description: The human-readable name of the learning resource.
         range: string
         required: true
+      node:
+        description: |
+          Training Resources's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
       resourceOrganisation:
         description: |
           The ID of the organisation that manages or delivers the service, or that coordinates 
@@ -185,7 +194,7 @@ classes:
         range: ServiceProviderDomain
         required: true
       # Contact Information
-      mainContact:
+      contact:
         description: Training Resource's Main Contact Owner info.
         range: ServiceMainContact
         required: true
@@ -193,4 +202,4 @@ classes:
       catalogueId:
         description: The Catalogue this Training Resource is originally registered at.
         range: string
-        required: false
+        required: true

@@ -29,6 +29,15 @@ classes:
         description: Service full name as assigned by the Provider.
         range: string
         required: true
+      node:
+        description: |
+          Service's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
       resourceOrganisation:
         description: |
           The ID of the organisation that manages or delivers the service, or that coordinates 
@@ -287,7 +296,7 @@ classes:
       catalogueId:
         description: The Catalogue this Service is originally registered at. (default value 'eosc')
         range: string
-        required: false
+        required: true
       # Attribution Information
       fundingBody:
         description: |

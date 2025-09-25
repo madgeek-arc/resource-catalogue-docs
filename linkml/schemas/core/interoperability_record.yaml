@@ -29,6 +29,15 @@ classes:
         range: string
         required: true
         pattern: "^\\d{2}\\.\\d{5}/.*$"
+      node:
+        description: |
+          Guideline's original Node.
+          Controlled Vocabulary.
+        range: string
+        required: false
+        pattern: '^node-.+'
+        annotations:
+          documentation: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/NODE.json
       identifierInfo:
         description: Interoperability Record Identifier Info.
         range: IdentifierInfo
