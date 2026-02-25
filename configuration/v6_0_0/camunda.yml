@@ -1,0 +1,7 @@
+camunda:
+  client:
+    mode:
+    rest-address:
+    grpc-address:
+    auth:
+      method:
