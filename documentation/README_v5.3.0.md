@@ -685,30 +685,30 @@ ensuring consistency and reliability across the system.
         Interoperability Record JSON [required]
       ```
         
-- ### Provider Controller
+- ### Organisation Controller
   
-  #### Operations for Providers
+  #### Operations for Organisation
   
   - DELETE
-    - Deletes the Provider of the specific Catalogue given its id.
+    - Deletes the Organisation of the specific Catalogue given its id.
       ```diff
-      /provider/{prefix}/{suffix}
+      /organisation/{prefix}/{suffix}
       Params:
         prefix: String [required]
         suffix: String [required]
       ```
-    - Deletes the Draft Provider of the specific Catalogue given its id.
+    - Deletes the Draft Organisation of the specific Catalogue given its id.
       ```diff
-      /provider/draft/{prefix}/{suffix}
+      /organisation/draft/{prefix}/{suffix}
       Params:
         prefix: String [required]
         suffix: String [required]
       ```      
       
   - GET
-    - Returns the Provider of the specific Catalogue given its id.
+    - Returns the Organisation of the specific Catalogue given its id.
       ```diff
-      /provider/{prefix}/{suffix}
+      /organisation/{prefix}/{suffix}
       Params:
         prefix: String [required]
         suffix: String [required]
@@ -716,20 +716,20 @@ ensuring consistency and reliability across the system.
       ```
     - Validates a url.
       ```diff
-      /provider/validateUrl
+      /organisation/validateUrl
       Params:
         urlForValidation: URL [required]
       ```             
-    - Get a list of all inactive Services of a specific Provider.
+    - Get a list of all inactive Services of a specific Organisation.
       ```diff
-      /provider/services/inactive/{prefix}/{suffix}
+      /organisation/services/inactive/{prefix}/{suffix}
       Params:
         prefix: String [required]
         suffix: String [required]
       ```
-    - Get a list of all rejected resources (Services or Training Resources) of a specific Provider.
+    - Get a list of all rejected resources (Services or Training Resources) of a specific Organisation.
       ```diff
-      /provider/services/inactive/{prefix}/{suffix}
+      /organisation/services/inactive/{prefix}/{suffix}
       Params:
         prefix: String [required]
         suffix: String [required]
@@ -739,28 +739,28 @@ ensuring consistency and reliability across the system.
         quantity: String (Quantity to be fetched, default 10) [optional]
         order: String (Order of results - asc/desc, default asc) [optional]
         orderField: String (Field to use for ordering) [optional]
-    - Get all inactive Providers of the Catalogue.
+    - Get all inactive Organisation of the Catalogue.
       ```diff
-      /provider/inactive/all
+      /organisation/inactive/all
       ```
-    - Returns a list of Providers where user is admin.
+    - Returns a list of Organisations where user is admin.
       ```diff
-      /provider/getMyServiceProviders
+      /organisation/getMyServiceProviders
       ```
-    - Returns the Draft Provider given its id.
+    - Returns the Draft Organisation given its id.
       ```diff
-      /provider/draft/{prefix}/{suffix}
+      /organisation/draft/{prefix}/{suffix}
       Params:
         prefix: String [required]
         suffix: String [required]
       ```
-    - Returns a list of Draft Providers where user is admin.
+    - Returns a list of Draft Organisations where user is admin.
       ```diff
-      /provider/draft/getMyDraftProviders
+      /organisation/draft/getMyDraftProviders
       ```
-    - Get a list of all Providers under a specific Catalogue.
+    - Get a list of all Organisations under a specific Catalogue.
       ```diff
-      /provider/byCatalogue/{id}
+      /organisation/byCatalogue/{id}
       Params:
         id: String [required]
         query : String (Keyword to refine the search) [optional]
@@ -768,9 +768,9 @@ ensuring consistency and reliability across the system.
         quantity: String (Quantity to be fetched, default 10) [optional]
         order: String (Order of results - asc/desc, default asc) [optional]
         orderField: String (Field to use for ordering) [optional]
-    - Filter a list of Providers based on a set of filters or get a list of all Providers in the Catalogue.
+    - Filter a list of Organisations based on a set of filters or get a list of all Organisations in the Catalogue.
       ```diff
-      /provider/all
+      /organisation/all
       Params:
         suspended: boolean (default false) [optional]
         query : String (Keyword to refine the search) [optional]
@@ -781,38 +781,38 @@ ensuring consistency and reliability across the system.
         catalogue: String (default 'eosc') [optional]
 
   - POST
-    - Create a new Provider.
+    - Create a new Organisation.
       ```diff
-      /provider
+      /organisation
       Body:
         Provider JSON [required]
       ```
-    - Create a new Draft Provider.
+    - Create a new Draft Organisation.
       ```diff
-      /provider/draft
+      /organisation/draft
       Body:
         Provider JSON [required]
       ```
-    - Validates the Provider without actually changing the repository.
+    - Validates the Organisation without actually changing the repository.
       ```diff
-      /provider/validate
+      /organisation/validate
       Body:
         Provider JSON [required]
       ```
       
   - PUT
-    - Updates the Provider of the specific Catalogue give its id.
+    - Updates the Organisation of the specific Catalogue give its id.
       ```diff
-      /provider
+      /organisation
       Params:
         catalogue_id: String (default 'eosc') [optional]
         comment: String [optional]
       Body:
-        Provider JSON [required]
+        Organisation JSON [required]
       ```
-    - Updates the Draft Provider of the specific Catalogue give its id.
+    - Updates the Draft Organisation of the specific Catalogue give its id.
       ```diff
-      /provider/draft
+      /organisation/draft
       Body:
         Provider JSON [required]
       ```
@@ -1725,14 +1725,14 @@ ensuring consistency and reliability across the system.
 
 ### Configuration Template Instance
 
-| Field                      | Type       | Required | Description                                                |
-|----------------------------|------------|----------|------------------------------------------------------------|
-| `id`                       | `String`   | auto-gen | Unique identifier for the configuration template instance. |
-| `resourceId`               | `String`   | Yes      | Identifier of the resource associated with the instance.   |
-| `configurationTemplateId`  | `String`   | Yes      | Identifier of the configuration template used.             |
-| `catalogueId`              | `String`   | Yes      | Identifier of the associated catalogue.                    |
-| `node`                     | `String`   | No       | Configuration Template Instance's original Node.           |
-| `payload`                  | `String`   | Yes      | The configuration data or settings in JSON format.         |
+| Field                     | Type         | Required | Description                                                |
+|---------------------------|--------------|----------|------------------------------------------------------------|
+| `id`                      | `String`     | auto-gen | Unique identifier for the configuration template instance. |
+| `resourceId`              | `Vocabulary` | Yes      | Identifier of the resource associated with the instance.   |
+| `configurationTemplateId` | `Vocabulary` | Yes      | Identifier of the configuration template used.             |
+| `nodePID`                 | `Vocabulary` | Yes      | Configuration Template Instance's original Node.           |
+| `description`             | `String`     | No       | Description.                                               |
+| `payload`                 | `Composite`  | Yes      | The configuration data or settings in JSON format.         |
 
 ### Example
 
@@ -1741,8 +1741,8 @@ ensuring consistency and reliability across the system.
   "id": "conf_temp_inst_001",
   "resourceId": "resource_001",
   "configurationTemplateId": "conf_temp_001",
-  "catalogueId": "catalogue_001",
-  "node": "node-sandbox",
+  "nodePID": "node-sandbox",
+  "description": "This is a description",
   "payload": {
     "key1": "value",
     "key2": "value"
@@ -1752,27 +1752,67 @@ ensuring consistency and reliability across the system.
 
 ### Datasource
 
-| Field                                   | Type                               | Required | Description                                                         |
-|-----------------------------------------|------------------------------------|----------|---------------------------------------------------------------------|
-| `id`                                    | `String`                           | auto-gen | Unique identifier for the datasource.                               |
-| `serviceId`                             | `String`                           | Yes      | Identifier of the associated service.                               |
-| `catalogueId`                           | `String`                           | Yes      | Identifier of the associated catalogue.                             |
-| `node`                                  | `String`                           | No       | Datasource's original Node.                                         |
-| `submissionPolicyURL`                   | `URL`                              | No       | URL of the submission policy.                                       |
-| `preservationPolicyURL`                 | `URL`                              | No       | URL of the preservation policy.                                     |
-| `versionControl`                        | `Boolean`                          | No       | Indicates if version control is used.                               |
-| `persistentIdentitySystems`             | `List<PersistentIdentitySystem>`   | No       | List of persistent identity systems associated with the datasource. |
-| `jurisdiction`                          | `String`                           | Yes      | Jurisdiction where the datasource operates.                         |
-| `datasourceClassification`              | `String`                           | Yes      | Classification of the datasource.                                   |
-| `researchEntityTypes`                   | `List<String>`                     | No       | List of research entity types related to the datasource.            |
-| `thematic`                              | `Boolean`                          | Yes      | Indicates if the datasource is thematic.                            |
-| `researchProductLicensings`             | `List<ResearchProductLicensing>`   | No       | List of research product licensing details.                         |
-| `researchProductAccessPolicies`         | `List<String>`                     | No       | List of research product access policies.                           |
-| `researchProductMetadataLicensing`      | `ResearchProductMetadataLicensing` | No       | Metadata licensing details for research products.                   |
-| `researchProductMetadataAccessPolicies` | `List<String>`                     | No       | List of research product metadata access policies.                  |
-| `harvestable`                           | `Boolean`                          | No       | Indicates if the datasource is harvestable.                         |
+| Field                                   | Type                               | Required | Description                                                                                                                           |
+|-----------------------------------------|------------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                                    | `String`                           | auto-gen | Unique identifier for the datasource.                                                                                                 |
+| `name`                                  | `String`                           | Yes      | Name of the datasource.                                                                                                               |
+| `urls`                                  | `List<URL>`                        | No       | URLs resolving to the datasource.                                                                                                     |
+| `alternativePIDs`                       | `List<AlternativePIDs>`            | No       | Other persistent identifiers.                                                                                                         |
+| `nodePID`                               | `Vocabulary`                       | Yes      | Node the resource belongs to.                                                                                                         |
+| `description`                           | `String`                           | Yes      | Description of the datasource.                                                                                                        |
+| `publishingDate`                        | `Date`                             | Yes      | Date in which the resource was made available for discovery and access to others.                                                     |
+| `type`                                  | `String`                           | Yes      | Type of the resource.                                                                                                                 |
+| `resourceOwner`                         | `Vocabulary`                       | Yes      | The organisation that manages or delivers the datasource.                                                                             |
+| `serviceProviders`                      | `Vocabulary`                       | No       | The name(s) (or abbreviation(s)) of Organisation(s) that manage or deliver the Service in federated scenarios.                        |
+| `webpage`                               | `URL`                              | Yes      | Webpage with information about the Service usually hosted and maintained by the Organisation.                                         |
+| `logo`                                  | `URL`                              | No       | Link to the logo/visual identity of the datasource.                                                                                   |
+| `jurisdiction`                          | `Vocabulary`                       | Yes      | The property defines the jurisdiction of the users of the data source, based on the vocabulary for this property.                     |
+| `scientificDomains`                     | `List<ScientificDomains>`          | No       |                                                                                                                                       |
+| `categories`                            | `List<Categories>`                 | No       |                                                                                                                                       |
+| `accessTypes`                           | `Vocabulary`                       | Yes      | The way a user can access the datasource (Remote, Physical, Virtual, etc.).                                                           |
+| `tags`                                  | `List<String>`                     | No       | Keywords associated to the datasource to simplify search by relevant keywords.                                                        |
+| `trl`                                   | `Vocabulary`                       | Yes      | The Technology Readiness Level of the datasource (to be further updated in the context of the EOSC).                                  |
+| `termsOfUse`                            | `URL`                              | No       | Webpage describing the rules, datasource conditions and usage policy which one must agree to abide by in order to use the datasource. |
+| `privacyPolicy`                         | `URL`                              | No       | Link to the privacy policy applicable to the datasource.                                                                              |
+| `accessPolicy`                          | `URL`                              | No       | Information about the access policies that apply.                                                                                     |
+| `serviceId`                             | `String`                           | Yes      | Identifier of the associated service.                                                                                                 |
+| `catalogueId`                           | `String`                           | Yes      | Identifier of the associated catalogue.                                                                                               |
+| `node`                                  | `String`                           | No       | Datasource's original Node.                                                                                                           |
+| `submissionPolicyURL`                   | `URL`                              | No       | URL of the submission policy.                                                                                                         |
+| `preservationPolicyURL`                 | `URL`                              | No       | URL of the preservation policy.                                                                                                       |
+| `versionControl`                        | `Boolean`                          | No       | Indicates if version control is used.                                                                                                 |
+| `persistentIdentitySystems`             | `List<PersistentIdentitySystem>`   | No       | List of persistent identity systems associated with the datasource.                                                                   |
+| `datasourceClassification`              | `String`                           | Yes      | Classification of the datasource.                                                                                                     |
+| `researchEntityTypes`                   | `List<String>`                     | No       | List of research entity types related to the datasource.                                                                              |
+| `thematic`                              | `Boolean`                          | Yes      | Indicates if the datasource is thematic.                                                                                              |
+| `researchProductLicensings`             | `List<ResearchProductLicensing>`   | No       | List of research product licensing details.                                                                                           |
+| `researchProductAccessPolicies`         | `List<String>`                     | No       | List of research product access policies.                                                                                             |
+| `researchProductMetadataLicensing`      | `ResearchProductMetadataLicensing` | No       | Metadata licensing details for research products.                                                                                     |
+| `researchProductMetadataAccessPolicies` | `List<String>`                     | No       | List of research product metadata access policies.                                                                                    |
+| `harvestable`                           | `Boolean`                          | No       | Indicates if the datasource is harvestable.                                                                                           |
 
 #### Nested Objects
+
+##### AlternativePIDs
+
+| Field       | Type     | Required | Description |
+|-------------|----------|----------|-------------|
+| `pid`       | `String` | No       |             |
+| `pidSchema` | `String` | No       |             |
+
+##### ScientificDomains
+
+| Field                 | Type         | Required | Description                                                                                                  |
+|-----------------------|--------------|----------|--------------------------------------------------------------------------------------------------------------|
+| `scientificDomain`    | `Vocabulary` | No       | A named group of Organisations that offer access to the same type of datasources.                            |
+| `scientificSubdomain` | `Vocabulary` | No       | A named group of Organisations that offer access to the same type of datasources, within the defined domain. |
+
+##### Categories
+
+| Field         | Type         | Required | Description                                                                                                  |
+|---------------|--------------|----------|--------------------------------------------------------------------------------------------------------------|
+| `category`    | `Vocabulary` | No       | A named group of Organisations that offer access to the same type of datasources.                            |
+| `subcategory` | `Vocabulary` | No       | A named group of Organisations that offer access to the same type of datasources, within the defined domain. |
 
 ##### PersistentIdentitySystem
 
@@ -2183,43 +2223,35 @@ ensuring consistency and reliability across the system.
 }
 ```
 
-### Provider
+### Organisation
 
-| Field                     | Type                          | Required | Description                                                                                       |
-|---------------------------|-------------------------------|----------|---------------------------------------------------------------------------------------------------|
-| `id`                      | `String`                      | auto-gen | Unique identifier for the provider.                                                               |
-| `abbreviation`            | `String`                      | Yes      | Abbreviation of the provider's name.                                                              |
-| `name`                    | `String`                      | Yes      | Full name of the provider.                                                                        |
-| `node`                    | `String`                      | No       | Provider's original Node.                                                                         |
-| `website`                 | `URL`                         | Yes      | URL of the provider's website.                                                                    |
-| `legalEntity`             | `boolean`                     | Yes      | Indicates if the provider is a legal entity.                                                      |
-| `legalStatus`             | `String`                      | No       | Legal status of the provider.                                                                     |
-| `hostingLegalEntity`      | `String`                      | No       | Hosting legal entity responsible for the provider.                                                |
-| `alternativeIdentifiers`  | `List<AlternativeIdentifier>` | No       | List of alternative identifiers for the provider.                                                 |
-| `description`             | `String`                      | Yes      | Description of the provider.                                                                      |
-| `logo`                    | `URL`                         | Yes      | URL of the provider's logo.                                                                       |
-| `multimedia`              | `List<MultimediaPair>`        | No       | List of multimedia items associated with the provider.                                            |
-| `scientificDomains`       | `List<ServiceProviderDomain>` | No       | Scientific domains related to the provider's services.                                            |
-| `tags`                    | `List<String>`                | No       | Tags associated with the provider.                                                                |
-| `structureTypes`          | `List<String>`                | No       | Types of structures associated with the provider.                                                 |
-| `location`                | `ProviderLocation`            | Yes      | Physical location details of the provider.                                                        |
-| `mainContact`             | `ProviderMainContact`         | Yes      | Main contact information for the provider.                                                        |
-| `publicContacts`          | `List<ProviderPublicContact>` | Yes      | List of public contacts for the provider.                                                         |
-| `lifeCycleStatus`         | `String`                      | No       | Current lifecycle status of the provider.                                                         |
-| `certifications`          | `List<String>`                | No       | List of certifications held by the provider.                                                      |
-| `participatingCountries`  | `List<String>`                | No       | List of countries participating in the provider's services.                                       |
-| `affiliations`            | `List<String>`                | No       | List of affiliations related to the provider.                                                     |
-| `networks`                | `List<String>`                | No       | Networks associated with the provider.                                                            |
-| `catalogueId`             | `String`                      | No       | Identifier of the catalogue the provider belongs to.                                              |
-| `esfriDomains`            | `List<String>`                | No       | ESFRI (European Strategy Forum on Research Infrastructures) domains associated with the provider. |
-| `esfriType`               | `String`                      | No       | ESFRI type classification of the provider.                                                        |
-| `merilScientificDomains`  | `List<ProviderMerilDomain>`   | No       | MERIL scientific domains associated with the provider.                                            |
-| `areasOfActivity`         | `List<String>`                | No       | Areas of activity related to the provider's services.                                             |
-| `societalGrandChallenges` | `List<String>`                | No       | Societal grand challenges addressed by the provider.                                              |
-| `nationalRoadmaps`        | `List<String>`                | No       | National roadmaps associated with the provider.                                                   |
-| `users`                   | `List<User>`                  | Yes      | List of users associated with the provider.                                                       |
+| Field                      | Type                          | Required | Description                                                                                                                                             |
+|----------------------------|-------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                       | `String`                      | auto-gen | Unique identifier for the organisation.                                                                                                                 |
+| `name`                     | `String`                      | Yes      | Full name of the organisation.                                                                                                                          |
+| `abbreviation`             | `String`                      | Yes      | Abbreviation of the organisation's name.                                                                                                                |
+| `alternativePIDs`          | `List<AlternativePIDs>`       | No       | Alternative PIDs of the organisation.                                                                                                                   |
+| `nodePID`                  | `Vocabulary`                  | Yes      | Node the organisation is contributing to.                                                                                                               |
+| `website`                  | `URL`                         | Yes      | URL of the organisation's website.                                                                                                                      |
+| `country`                  | `Vocabulary`                  | Yes      | Country of incorporation or Physical location of the organisation or its coordinating centre in the case of distributed, virtual, and mobile providers. |
+| `legalEntity`              | `boolean`                     | Yes      | Indicates if the organisation is a legal entity.                                                                                                        |
+| `legalStatus`              | `Vocabulary`                  | No       | Legal status of the organisation.                                                                                                                       |
+| `hostingLegalEntity`       | `Vocabulary`                  | No       | Hosting legal entity responsible for the organisation.                                                                                                  |
+| `description`              | `String`                      | Yes      | Description of the organisation.                                                                                                                        |
+| `logo`                     | `URL`                         | Yes      | URL of the organisation's logo.                                                                                                                         |
+| `multimedia`               | `List<MultimediaPair>`        | No       | List of multimedia items associated with the organisation.                                                                                              |
+| `mainContact`              | `ProviderMainContact`         | Yes      | Main contact information for the organisation.                                                                                                          |
+| `publicContacts`           | `List<String>`                | Yes      | List of public contact emails for the organisation.                                                                                                     |
+| `users`                    | `List<User>`                  | Yes      | List of users associated with the organisation.                                                                                                         |
 
 #### Nested Objects
+
+##### AlternativePIDs
+
+| Field       | Type     | Required | Description |
+|-------------|----------|----------|-------------|
+| `pid`       | `String` | No       |             |
+| `pidSchema` | `String` | No       |             |
 
 ##### AlternativeIdentifier
 
@@ -2232,7 +2264,7 @@ ensuring consistency and reliability across the system.
 
 | Field            | Type     | Required | Description                      |
 |------------------|----------|----------|----------------------------------|
-| `multimediaURL`  | `URL`    | Yes      | URL to the multimedia resource.  |
+| `multimediaURL`  | `URL`    | No       | URL to the multimedia resource.  |
 | `multimediaName` | `String` | No       | Name of the multimedia resource. |
 
 ##### ServiceProviderDomain
@@ -2252,16 +2284,37 @@ ensuring consistency and reliability across the system.
 | `region`              | `String`  | No       | Region or state where the catalogue is located. |
 | `country`             | `String`  | Yes      | Country where the catalogue is located.         |
 
-##### ProviderMainContact
+##### OrganisationMainContact
 
-| Field          | Type     | Required | Description                               |
-|----------------|----------|----------|-------------------------------------------|
-| `firstName`    | `String` | Yes      | First name of the main contact person.    |
-| `lastName`     | `String` | No       | Last name of the main contact person.     |
-| `email`        | `String` | Yes      | Email address of the main contact person. |
-| `phone`        | `String` | No       | Phone number of the main contact person.  |
-| `position`     | `String` | No       | Position of the main contact person.      |
-| `organisation` | `String` | No       | Organisation of the main contact person.  |
+| Field          | Type                 | Required | Description                               |
+|----------------|----------------------|----------|-------------------------------------------|
+| `firstName`    | `String`             | Yes      | First name of the main contact person.    |
+| `lastName`     | `String`             | Yes      | Last name of the main contact person.     |
+| `email`        | `String`             | Yes      | Email address of the main contact person. |
+| `role`         | `Vocabulary`         | No       | Role of the main contact person.          |
+| `PIDs`         | `List<PIDs>`         | No       | PIDs of the main contact person.          |
+| `affiliations` | `List<Affiliations>` | No       | Affiliations of the main contact person.  |
+
+##### PIDs
+
+| Field                  | Type     | Required | Description                                                                      |
+|------------------------|----------|----------|----------------------------------------------------------------------------------|
+| `mainContactPID`       | `String` | Yes      | Uniquely identifies an individual or legal entity, according to various schemes. |
+| `mainContactPIDScheme` | `String` | Yes      | Uniquely identifies the organizational affiliation of the main contact.          |
+
+##### Affiliations
+
+| Field                   | Type                          | Required | Description                                                             |
+|-------------------------|-------------------------------|----------|-------------------------------------------------------------------------|
+| `affiliationName`       | `String`                      | Yes      | The organizational or institutional affiliation of the main contact.    |
+| `affiliationIdentifier` | `List<AffiliationIdentifier>` | No       | Uniquely identifies the organizational affiliation of the main contact. |
+
+##### AffiliationIdentifier
+
+| Field             | Type     | Required | Description |
+|-------------------|----------|----------|-------------|
+| `mainContactID`   | `String` | Yes      |             |
+| `mainContactType` | `String` | Yes      |             |
 
 ##### ProviderPublicContact
 
@@ -2280,6 +2333,15 @@ ensuring consistency and reliability across the system.
 |----------------------------|----------|----------|-----------------------------------------------------|
 | `merilScientificDomain`    | `String` | Yes      | MERIL scientific domain related to the provider.    |
 | `merilScientificSubdomain` | `String` | No       | MERIL scientific subdomain related to the provider. |
+
+##### User
+
+| Field         | Type     | Required | Description                                             |
+|---------------|----------|----------|---------------------------------------------------------|
+| `userId`      | `String` | No       | Unique identifier for the Organisation's administrator. |
+| `userName`    | `String` | Yes      | Email address of the Organisation's administrator.      |
+| `userSurname` | `String` | Yes      | Last Name of the Organisation's administrator.          |
+| `userEmail`   | `String` | Yes      | Last name of the Organisation's administrator.          |
 
 #### Example
 
@@ -2368,13 +2430,12 @@ ensuring consistency and reliability across the system.
 
 ### Resource Interoperability Record
 
-| Field                       | Type           | Required | Description                                                  |
-|-----------------------------|----------------|----------|--------------------------------------------------------------|
-| `id`                        | `String`       | auto-gen | Unique identifier for the resource interoperability record.  |
-| `resourceId`                | `String`       | Yes      | Identifier of the resource associated with the record.       |
-| `catalogueId`               | `String`       | Yes      | Identifier of the catalogue where the record is stored.      |
-| `node`                      | `String`       | No       | Resource Interoperability Record's original Node.            |
-| `interoperabilityRecordIds` | `List<String>` | Yes      | List of interoperability record IDs related to the resource. |
+| Field                       | Type         | Required | Description                                                  |
+|-----------------------------|--------------|----------|--------------------------------------------------------------|
+| `id`                        | `String`     | auto-gen | Unique identifier for the resource interoperability record.  |
+| `resourceId`                | `String`     | Yes      | Identifier of the resource associated with the record.       |
+| `nodePID`                   | `Vocabulary` | No       | Resource Interoperability Record's original Node.            |
+| `interoperabilityRecordIds` | `Vocabulary` | Yes      | List of interoperability record IDs related to the resource. |
 
 ### Example
 
@@ -2382,8 +2443,7 @@ ensuring consistency and reliability across the system.
 {
   "id": "resource_interop_001",
   "resourceId": "resource_001",
-  "catalogueId": "catalogue_001",
-  "node": "node-sandbox",
+  "nodePID": "node-sandbox",
   "interoperabilityRecordIds": [
     "interop_001",
     "interop_002"
