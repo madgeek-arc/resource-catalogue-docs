@@ -81,7 +81,7 @@
   },
   {
     "id": "node-ni4os",
-    "name": "NI4OS",
+    "name": "NI4OS-EUROPE",
     "description": "NI4OS",
     "parentId": null,
     "type": "Node",
@@ -89,7 +89,7 @@
   },
   {
     "id": "node-sandbox",
-    "name": "Sandbox",
+    "name": "EOSC-Beyond",
     "description": "Sandbox",
     "parentId": null,
     "type": "Node",
