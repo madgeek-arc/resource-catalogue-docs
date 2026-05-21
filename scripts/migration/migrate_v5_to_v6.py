@@ -16,6 +16,21 @@ Transformations applied:
   - Removes schema.json files from all remaining folders
   - Reports duplicate IDs detected after migration
 
+Catalogue resources (v5 → v6):
+  In v6, Catalogue is no longer a standalone resource type — it is modelled as a Service.
+  Automatic migration is not possible, so the catalogue folder is deleted without conversion.
+
+  The -c / --catalogue argument identifies your node's default catalogue. Resources belonging
+  to that catalogue have their catalogueId set to null in the migrated output (they become
+  top-level resources of the node, which is the v6 equivalent).
+
+  If your v5 instance had additional, non-default catalogues, those catalogue records are also
+  deleted without replacement. Any resource whose catalogueId pointed to one of those catalogues
+  will be left with a dangling catalogueId after migration. For each such catalogue you must:
+    1. Manually create the corresponding Catalogue resource in v6.
+    2. Update the catalogueId on every affected resource to reference the new Catalogue ID.
+  The post-migration report lists all affected catalogues and resources.
+
 Expected input directory structure:
   <path>/
     adapter/
@@ -131,6 +146,7 @@ folder_renames = {
 
 all_ids = []
 adapter_ids_needing_owner = []
+non_default_catalogue_references = []  # (resource_id, catalogue_id) for resources pointing to non-default catalogues
 
 
 ######################################################## GLOBALS #######################################################
@@ -206,6 +222,9 @@ def migrate(json_file, resource_type, default_catalogue, node, service_owner_map
             payload_data['catalogueId'] = None
         else:
             payload_data['catalogueId'] = catalogue_id
+            # This resource belongs to a non-default catalogue that will be deleted without a
+            # v6 equivalent. Record it so the migration report can flag it for manual follow-up.
+            non_default_catalogue_references.append((payload_data.get('id', 'unknown'), catalogue_id))
 
     # update node
     resource.pop('node', None)
@@ -807,13 +826,51 @@ def delete_schema_files(base_path, dry_run=False):
                 os.remove(schema_path)
 
 
-def print_migration_report():
+def scan_non_default_catalogues(directory, default_catalogue):
+    """Return a list of non-default catalogue IDs found in the catalogue folder."""
+    non_default = []
+    catalogue_folder = os.path.join(directory, 'catalogue')
+    if not os.path.exists(catalogue_folder):
+        return non_default
+    for file in os.listdir(catalogue_folder):
+        if file.endswith('.json') and file != 'schema.json':
+            file_path = os.path.join(catalogue_folder, file)
+            with open(file_path, 'r', encoding='utf-8') as f:
+                json_data = json.load(f)
+                payload_data = json.loads(json_data['payload'])
+                catalogue = payload_data.get('catalogue', {})
+                catalogue_id = catalogue.get('id') or payload_data.get('id')
+                if catalogue_id and catalogue_id != default_catalogue:
+                    non_default.append(catalogue_id)
+    return non_default
+
+
+def print_migration_report(non_default_catalogues=None):
     print("\n" + "=" * 60)
     print("POST-MIGRATION CHECKLIST")
     print("=" * 60)
 
+    print("[CATALOGUE — ACTION REQUIRED]")
+    print("In v6, Catalogue is no longer a standalone resource type; it is modelled as a Service.")
+    print("Automatic migration is not possible — the catalogue folder has been deleted.")
+    print("Your default catalogue's resources have had their catalogueId set to null (node-level).")
+    if non_default_catalogues:
+        print(f"\n{len(non_default_catalogues)} non-default catalogue(s) were found and deleted without a v6 equivalent:")
+        for cat_id in non_default_catalogues:
+            print(f"  - {cat_id}")
+        print("\nFor each deleted catalogue you must:")
+        print("  1. Manually create the corresponding Catalogue resource in v6.")
+        print("  2. Update the catalogueId on every affected resource to reference the new Catalogue ID.")
+        affected = [(rid, cid) for rid, cid in non_default_catalogue_references if cid in non_default_catalogues]
+        if affected:
+            print(f"\nResources with a dangling catalogueId ({len(affected)} total):")
+            for resource_id, cat_id in affected:
+                print(f"  - {resource_id}  (catalogueId: {cat_id})")
+    else:
+        print("No non-default catalogues were detected — no dangling references.")
+
     if adapter_ids_needing_owner:
-        print("[ACTION REQUIRED]")
+        print("\n[ACTION REQUIRED]")
         print(f"{len(adapter_ids_needing_owner)} adapter(s) have resourceOwner set to 'changeme!'")
         print("Update each one with the correct Organisation ID:")
         for adapter_id in adapter_ids_needing_owner:
@@ -864,8 +921,9 @@ else:
 service_owner_map = build_service_owner_map(args.path)
 folder_selection(args.path, args.catalogue, args.node, service_owner_map, args.dry_run)
 rename_folders(args.path, args.dry_run)
+non_default_catalogues = scan_non_default_catalogues(args.path, args.catalogue)
 delete_folders(args.path, args.dry_run)
 delete_schema_files(args.path, args.dry_run)
 find_duplicates(all_ids)
-print_migration_report()
+print_migration_report(non_default_catalogues)
 ######################################################## RUN ###########################################################
