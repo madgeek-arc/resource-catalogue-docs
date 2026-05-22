@@ -2482,8 +2482,8 @@ To validate your data against the provided LinkML schemas:
 ### Standalone
 
 1. **Node Endpoint** – The EOSC Node Endpoint and its UI together provide a backend service and user interface that 
-  expose an EOSC node’s capabilities, enabling standardized programmatic access and user-friendly discovery and 
-  interaction with the node’s services and resources. You can find more info at:
+  expose an EOSC node’s capabilities, enabling user-friendly discovery and interaction with the node’s services and 
+  resources. You can find more info at:
    1. [EOSC Node Endpoint](https://github.com/madgeek-arc/eosc-node-endpoint)
    2. [EOSC Node Endpoint UI](https://github.com/madgeek-arc/eosc-node-endpoint-ui)
 
