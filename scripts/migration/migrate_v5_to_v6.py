@@ -102,20 +102,20 @@ deleteFolders = [
 # The right-hand side is the prefix that will be written into the migrated files.
 # If a prefix has not changed between versions, keep both sides identical.
 #
-# Example — if datasource IDs changed from "dat/ds-001" to "21.15136/ds-001":
-#   'dat': '21.15136'
-# Example — if service IDs stayed the same ("21.15132/svc-001" -> "21.15132/svc-001"):
-#   '21.15132': '21.15132'
+# Example — if datasource IDs changed from "dat/ds-001" to "21.99999/ds-001":
+#   'dat': '21.99999'
+# Example — if service IDs stayed the same ("21.99999/svc-001" -> "21.99999/svc-001"):
+#   '21.99999': '21.99999'
 #
 # IMPORTANT: review every entry below and update any prefix that differs in your v6 instance.
 resource_type_mapping = {
-    '21.15133': '21.15133',  # adapter
-    'dat': '21.15136',       # datasource
-    '21.11176': '21.11176',  # deployable application (ex deployable service)
-    '21.11175': '21.11175',  # interoperability record / guideline
-    '21.11174': '21.11174',  # organisation (ex provider)
-    '21.15132': '21.15132',  # service
-    '21.15134': '21.15134',  # training resource
+    '21.99999': '21.99999',  # adapter
+    'dat': '21.99999',       # datasource
+    '21.99999': '21.99999',  # deployable application (ex deployable service)
+    '21.99999': '21.99999',  # interoperability record / guideline
+    '21.99999': '21.99999',  # organisation (ex provider)
+    '21.99999': '21.99999',  # service
+    '21.99999': '21.99999',  # training resource
     'con': 'con',            # configuration template
     'cti': 'cti',            # configuration template instance
     'rir': 'rir',            # resource interoperability record
