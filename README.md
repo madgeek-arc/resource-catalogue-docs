@@ -39,7 +39,8 @@ ensuring consistency and reliability across the system.
     10. [Service Controller](#service-controller)
     11. [Training Resource Controller](#training-resource-controller)
     12. [Vocabulary Controller](#vocabulary-controller)
-4. [Model](#model)
+4. [Federation Search](#federation-search)
+5. [Model](#model)
     1. [Adapter](#adapter)
     2. [Catalogue](#catalogue)
     3. [Configuration Template Instance](#configuration-template-instance)
@@ -1421,6 +1422,16 @@ ensuring consistency and reliability across the system.
             order: String (Order of results - asc/desc, default asc) [optional]
             orderField: String (Field to use for ordering) [optional]
           ```
+        - Search Public Configuration Template Instances in the Portal.
+          ```diff
+          /public/configurationTemplateInstance/search
+          Params:
+            keyword: String (Search keyword) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            sort: String (Field to use for sorting) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+          ```
         - Returns the Public Datasource with the given id.
           ```diff
           /public/datasource/{id}
@@ -1438,6 +1449,16 @@ ensuring consistency and reliability across the system.
             order: String (Order of results - asc/desc, default asc) [optional]
             orderField: String (Field to use for ordering) [optional]
             catalogue: String (default 'eosc') [optional]
+          ```
+        - Search Public Datasources in the Portal.
+          ```diff
+          /public/datasource/search
+          Params:
+            keyword: String (Search keyword) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            sort: String (Field to use for sorting) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
           ```
         - Returns the Public Interoperability Record with the given id.
           ```diff
@@ -1468,6 +1489,16 @@ ensuring consistency and reliability across the system.
             orderField: String (Field to use for ordering) [optional]
             catalogue: String (default 'eosc') [optional]
           ```
+        - Search Public Interoperability Records in the Portal.
+          ```diff
+          /public/interoperabilityRecord/search
+          Params:
+            keyword: String (Search keyword) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            sort: String (Field to use for sorting) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+          ```
         - Returns the Public Organisation with the given id.
           ```diff
           /public/organisation/{id}
@@ -1490,6 +1521,16 @@ ensuring consistency and reliability across the system.
             orderField: String (Field to use for ordering) [optional]
             catalogue: String (default 'eosc') [optional]
           ```
+        - Search Public Organisations in the Portal.
+          ```diff
+          /public/organisation/search
+          Params:
+            keyword: String (Search keyword) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            sort: String (Field to use for sorting) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+          ```
         - Returns the Public Resource Interoperability Record with the given id.
           ```diff
           /public/resourceInteroperabilityRecord/{id}
@@ -1510,6 +1551,16 @@ ensuring consistency and reliability across the system.
             order: String (Order of results - asc/desc, default asc) [optional]
             orderField: String (Field to use for ordering) [optional]
             catalogue: String (default 'eosc') [optional]
+          ```
+        - Search Public Resource Interoperability Records in the Portal.
+          ```diff
+          /public/resourceInteroperabilityRecord/search
+          Params:
+            keyword: String (Search keyword) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            sort: String (Field to use for sorting) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
           ```
         - Returns the Public Service with the given id.
           ```diff
@@ -1534,6 +1585,16 @@ ensuring consistency and reliability across the system.
             orderField: String (Field to use for ordering) [optional]
             catalogue: String (default 'eosc') [optional]
           ```
+        - Search Public Services in the Portal.
+          ```diff
+          /public/service/search
+          Params:
+            keyword: String (Search keyword) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            sort: String (Field to use for sorting) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+          ```
         - Returns the Public Training Resource with the given id.
           ```diff
           /public/trainingResource/{id}
@@ -1556,6 +1617,16 @@ ensuring consistency and reliability across the system.
             order: String (Order of results - asc/desc, default asc) [optional]
             orderField: String (Field to use for ordering) [optional]
             catalogue: String (default 'eosc') [optional]
+          ```
+        - Search Public Training Resources in the Portal.
+          ```diff
+          /public/trainingResource/search
+          Params:
+            keyword: String (Search keyword) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            sort: String (Field to use for sorting) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
           ```
 
 - ### Resource Interoperability Record Controller
@@ -3418,3 +3489,28 @@ These services are optional but can provide added value depending on the use cas
 3. **Accounting Service** – The EOSC Accounting for Services is a comprehensive platform designed to streamline the
    collection, aggregation, and exchange of metrics across various infrastructures, providers, and projects.
    [Read the docs](https://docs.sandbox.eosc-beyond.eu/Service%20Portfolio/Accounting/Accounting/)
+
+---
+
+## Federation Search
+
+The **[Federation Search](https://github.com/madgeek-arc/federation-search)** is a companion service that aggregates
+resources from multiple Resource Catalogue instances into a single API endpoint. It connects to each configured
+catalogue node and fans out queries across them, merging the results into a unified response.
+
+Federation Search relies on the `/public/{resource_type}/search` endpoints of each node to perform full-text,
+highlighted searches across the federation. The following Public Controller endpoints are consumed by the service:
+
+| Resource Type | Endpoint |
+|---|---|
+| Adapter | `/public/adapter/search` |
+| Catalogue | `/public/catalogue/search` |
+| Datasource | `/public/datasource/search` |
+| Deployable Application | `/public/deployableApplication/search` |
+| Interoperability Record | `/public/interoperabilityRecord/search` |
+| Organisation | `/public/organisation/search` |
+| Service | `/public/service/search` |
+| Training Resource | `/public/trainingResource/search` |
+
+For configuration and deployment details, refer to the
+[Federation Search repository](https://github.com/madgeek-arc/federation-search).
