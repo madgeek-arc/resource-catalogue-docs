@@ -28,27 +28,29 @@ ensuring consistency and reliability across the system.
 2. [Swagger UI](#swagger-ui)
 3. [Controllers](#controllers)
     1. [Adapter Controller](#adapter-controller)
-    2. [Configuration Template Instance Controller](#configuration-template-instance-controller)
-    3. [Datasource Controller](#datasource-controller)
-    4. [Deployable Application Controller](#deployable-application-controller)
-    5. [Interoperability Record Controller](#interoperability-record-controller)
-    6. [Organisation Controller](#organisation-controller)
-    7. [Public Controller](#public-controller)
-    8. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
-    9. [Service Controller](#service-controller)
-    10. [Training Resource Controller](#training-resource-controller)
-    11. [Vocabulary Controller](#vocabulary-controller)
+    2. [Catalogue Controller](#catalogue-controller)
+    3. [Configuration Template Instance Controller](#configuration-template-instance-controller)
+    4. [Datasource Controller](#datasource-controller)
+    5. [Deployable Application Controller](#deployable-application-controller)
+    6. [Interoperability Record Controller](#interoperability-record-controller)
+    7. [Organisation Controller](#organisation-controller)
+    8. [Public Controller](#public-controller)
+    9. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
+    10. [Service Controller](#service-controller)
+    11. [Training Resource Controller](#training-resource-controller)
+    12. [Vocabulary Controller](#vocabulary-controller)
 4. [Model](#model)
     1. [Adapter](#adapter)
-    2. [Configuration Template Instance](#configuration-template-instance)
-    3. [Datasource](#datasource)
-    4. [Deployable Application](#deployable-application)
-    5. [Interoperability Record](#interoperability-record)
-    6. [Organisation](#organisation)
-    7. [Resource Interoperability Record](#resource-interoperability-record)
-    8. [Service](#service)
-    9. [Training Resource](#training-resource)
-    10. [Vocabulary](#vocabulary)
+    2. [Catalogue](#catalogue)
+    3. [Configuration Template Instance](#configuration-template-instance)
+    4. [Datasource](#datasource)
+    5. [Deployable Application](#deployable-application)
+    6. [Interoperability Record](#interoperability-record)
+    7. [Organisation](#organisation)
+    8. [Resource Interoperability Record](#resource-interoperability-record)
+    9. [Service](#service)
+    10. [Training Resource](#training-resource)
+    11. [Vocabulary](#vocabulary)
 5. [List of Vocabularies](#list-of-vocabularies)
 6. [Data Validation](#data-validation)
 7. [External Services](#external-services)
@@ -124,6 +126,755 @@ ensuring consistency and reliability across the system.
           Body:
             Adapter JSON [required]
           ```
+
+- ### Catalogue Controller
+
+  #### Operations for Catalogues and their resources
+
+  ##### Catalogue
+
+    - DELETE
+        - Deletes the Catalogue with the given id.
+          ```diff
+          /catalogue/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+        - Deletes the Draft Catalogue with the given id.
+          ```diff
+          /catalogue/draft/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+
+    - GET
+        - Returns the Catalogue with the given id.
+          ```diff
+          /catalogue/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+        - Get a list of Catalogues based on a list of filters.
+          ```diff
+          /catalogue/all
+          Params:
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Returns all Catalogues of a User.
+          ```diff
+          /catalogue/getMy
+          Params:
+            draft: boolean (default false) [optional]
+          ```
+        - Returns all resources belonging to the Catalogue with the given id.
+          ```diff
+          /catalogue/{prefix}/{suffix}/resources/all
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+        - Get a list of Catalogues based on a set of ids.
+          ```diff
+          /catalogue/ids
+          Params:
+            ids: String[] [required]
+          ```
+        - Get Catalogues by Provider/Organisation.
+          ```diff
+          /catalogue/byProvider/{prefix}/{suffix}
+          /catalogue/byOrganisation/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get all inactive Catalogues.
+          ```diff
+          /catalogue/inactive/all
+          Params:
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Returns shared resources for the Catalogue with the given id.
+          ```diff
+          /catalogue/getSharedResources/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get the LoggingInfo History of a specific Catalogue.
+          ```diff
+          /catalogue/loggingInfoHistory/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+        - Returns the Draft Catalogue with the given id.
+          ```diff
+          /catalogue/draft/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+        - Get Draft Catalogues by Provider/Organisation.
+          ```diff
+          /catalogue/draft/byProvider/{prefix}/{suffix}
+          /catalogue/draft/byOrganisation/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Send an email notification to a Provider for an outdated resource.
+          ```diff
+          /catalogue/sendEmailForOutdatedResource/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+
+    - PATCH
+        - Verifies the Catalogue.
+          ```diff
+          /catalogue/verify/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            active: boolean [optional]
+            status: String [optional]
+          ```
+        - Activates/Deactivates the Catalogue.
+          ```diff
+          /catalogue/setActive/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            active: boolean [required]
+          ```
+        - Audits the Catalogue.
+          ```diff
+          /catalogue/audit/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            comment: String [optional]
+            actionType: LoggingInfo.ActionType [required]
+          ```
+
+    - POST
+        - Adds a new Catalogue.
+          ```diff
+          /catalogue
+          Body:
+            Catalogue JSON [required]
+          ```
+        - Validates the Catalogue without actually changing the repository.
+          ```diff
+          /catalogue/validate
+          Body:
+            Catalogue JSON [required]
+          ```
+        - Adds a new Draft Catalogue.
+          ```diff
+          /catalogue/draft
+          Body:
+            Catalogue JSON [required]
+          ```
+
+    - PUT
+        - Updates the Catalogue with the given id.
+          ```diff
+          /catalogue
+          Params:
+            comment: String [optional]
+          Body:
+            Catalogue JSON [required]
+          ```
+        - Suspends a specific Catalogue.
+          ```diff
+          /catalogue/suspend
+          Params:
+            id: String [required]
+            suspend: boolean [required]
+          ```
+        - Updates the Draft Catalogue with the given id.
+          ```diff
+          /catalogue/draft
+          Body:
+            Catalogue JSON [required]
+          ```
+        - Finalizes a Draft Catalogue (transforms it into a published Catalogue).
+          ```diff
+          /catalogue/draft/transform
+          Body:
+            Catalogue JSON [required]
+          ```
+
+  ##### Catalogue's Organisation
+
+    - DELETE
+        - Deletes the Organisation of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/provider/**
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/organisation/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - GET
+        - Returns the Organisation of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/provider/**
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/organisation/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+        - Get a list of all Providers in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/provider/all
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/organisation/all
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get the LoggingInfo History of an Organisation in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/provider/loggingInfoHistory/**
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/organisation/loggingInfoHistory/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - PATCH
+        - Audits the Organisation of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/provider/audit/{prefix}/{suffix}
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/organisation/audit/{prefix}/{suffix}
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            prefix: String [required]
+            suffix: String [required]
+            comment: String [optional]
+            actionType: LoggingInfo.ActionType [required]
+          ```
+
+    - POST
+        - Creates a new Provider for the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/provider
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/organisation
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          Body:
+            Organisation JSON [required]
+          ```
+
+    - PUT
+        - Updates the Provider of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/provider
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/organisation
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            comment: String [optional]
+          Body:
+            Organisation JSON [required]
+          ```
+
+  ##### Catalogue's Service
+
+    - DELETE
+        - Deletes the Service of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/service/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - GET
+        - Returns the Service of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/service/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+        - Get a list of all Services in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/service/all
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get the LoggingInfo History of a Service in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/service/loggingInfoHistory/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - PATCH
+        - Audits the Service of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/service/audit/{prefix}/{suffix}
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            prefix: String [required]
+            suffix: String [required]
+            comment: String [optional]
+            actionType: LoggingInfo.ActionType [required]
+          ```
+
+    - POST
+        - Creates a new Service for the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/service
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          Body:
+            Service JSON [required]
+          ```
+
+    - PUT
+        - Updates the Service of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/service
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            comment: String [optional]
+          Body:
+            Service JSON [required]
+          ```
+
+  ##### Catalogue's Datasource
+
+    - DELETE
+        - Deletes the Datasource of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/datasource/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - GET
+        - Returns the Datasource of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/datasource/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+        - Get a list of all Datasources in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/datasource/all
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get the LoggingInfo History of a Datasource in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/datasource/loggingInfoHistory/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - PATCH
+        - Audits the Datasource of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/datasource/audit/{prefix}/{suffix}
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            prefix: String [required]
+            suffix: String [required]
+            comment: String [optional]
+            actionType: LoggingInfo.ActionType [required]
+          ```
+
+    - POST
+        - Creates a new Datasource for the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/datasource
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          Body:
+            Datasource JSON [required]
+          ```
+
+    - PUT
+        - Updates the Datasource of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/datasource
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            comment: String [optional]
+          Body:
+            Datasource JSON [required]
+          ```
+
+  ##### Catalogue's Adapter
+
+    - DELETE
+        - Deletes the Adapter of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/adapter/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - GET
+        - Returns the Adapter of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/adapter/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+        - Get a list of all Adapters in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/adapter/all
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get the LoggingInfo History of an Adapter in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/adapter/loggingInfoHistory/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - PATCH
+        - Audits the Adapter of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/adapter/audit/{prefix}/{suffix}
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            prefix: String [required]
+            suffix: String [required]
+            comment: String [optional]
+            actionType: LoggingInfo.ActionType [required]
+          ```
+
+    - POST
+        - Creates a new Adapter for the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/adapter
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          Body:
+            Adapter JSON [required]
+          ```
+
+    - PUT
+        - Updates the Adapter of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/adapter
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            comment: String [optional]
+          Body:
+            Adapter JSON [required]
+          ```
+
+  ##### Catalogue's Training Resource
+
+    - DELETE
+        - Deletes the Training Resource of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/trainingResource/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - GET
+        - Returns the Training Resource of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/trainingResource/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+        - Get a list of all Training Resources in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/trainingResource/all
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get the LoggingInfo History of a Training Resource in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/trainingResource/loggingInfoHistory/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - PATCH
+        - Audits the Training Resource of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/trainingResource/audit/{prefix}/{suffix}
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            prefix: String [required]
+            suffix: String [required]
+            comment: String [optional]
+            actionType: LoggingInfo.ActionType [required]
+          ```
+
+    - POST
+        - Creates a new Training Resource for the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/trainingResource
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          Body:
+            Training Resource JSON [required]
+          ```
+
+    - PUT
+        - Updates the Training Resource of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/trainingResource
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            comment: String [optional]
+          Body:
+            Training Resource JSON [required]
+          ```
+
+  ##### Catalogue's Deployable Application
+
+    - DELETE
+        - Deletes the Deployable Application of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/deployableApplication/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - GET
+        - Returns the Deployable Application of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/deployableApplication/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+        - Get a list of all Deployable Applications in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/deployableApplication/all
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get the LoggingInfo History of a Deployable Application in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/deployableApplication/loggingInfoHistory/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - PATCH
+        - Audits the Deployable Application of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/deployableApplication/audit/{prefix}/{suffix}
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            prefix: String [required]
+            suffix: String [required]
+            comment: String [optional]
+            actionType: LoggingInfo.ActionType [required]
+          ```
+
+    - POST
+        - Creates a new Deployable Application for the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/deployableApplication
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          Body:
+            Deployable Application JSON [required]
+          ```
+
+    - PUT
+        - Updates the Deployable Application of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/deployableApplication
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            comment: String [optional]
+          Body:
+            Deployable Application JSON [required]
+          ```
+
+  ##### Catalogue's Interoperability Record
+
+    - DELETE
+        - Deletes the Interoperability Record of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/interoperabilityRecord/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - GET
+        - Returns the Interoperability Record of the specific Catalogue with the given id.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/interoperabilityRecord/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+        - Get a list of all Interoperability Records in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/interoperabilityRecord/all
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            suspended: boolean (default false) [optional]
+            query: String (Keyword to refine the search) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            orderField: String (Field to use for ordering) [optional]
+          ```
+        - Get the LoggingInfo History of an Interoperability Record in the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/interoperabilityRecord/loggingInfoHistory/**
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          ```
+
+    - PATCH
+        - Audits the Interoperability Record of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/interoperabilityRecord/audit/{prefix}/{suffix}
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            prefix: String [required]
+            suffix: String [required]
+            comment: String [optional]
+            actionType: LoggingInfo.ActionType [required]
+          ```
+
+    - POST
+        - Creates a new Interoperability Record for the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/interoperabilityRecord
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+          Body:
+            Interoperability Record JSON [required]
+          ```
+
+    - PUT
+        - Updates the Interoperability Record of the specific Catalogue.
+          ```diff
+          /catalogue/{cataloguePrefix}/{catalogueSuffix}/interoperabilityRecord
+          Params:
+            cataloguePrefix: String [required]
+            catalogueSuffix: String [required]
+            comment: String [optional]
+          Body:
+            Interoperability Record JSON [required]
+          ```
+
+
 
 - ### Configuration Template Instance Controller
 
@@ -1348,6 +2099,172 @@ ensuring consistency and reliability across the system.
     "sqaURL": "https://eosc-synergy/assessment-results",
     "sqaBadge": "sqa_badge-bronze"
   }
+}
+```
+
+### Catalogue
+
+| Field               | Type                      | Required | Description                                                                                                      |
+|---------------------|---------------------------|----------|------------------------------------------------------------------------------------------------------------------|
+| `id`                | `String`                  | auto-gen | Unique identifier for the catalogue.                                                                             |
+| `name`              | `String`                  | Yes      | Name of the catalogue.                                                                                           |
+| `urls`              | `List<URL>`               | No       | URLs resolving to the resource.                                                                                  |
+| `alternativePIDs`   | `List<AlternativePIDs>`   | No       | Other persistent identifiers.                                                                                    |
+| `nodePID`           | `String`                  | Yes      | Node the resource belongs to.                                                                                    |
+| `description`       | `String`                  | Yes      | Detailed description of the catalogue.                                                                           |
+| `publishingDate`    | `Date`                    | Yes      | Date in which the resource was made available for discovery and access to others.                                |
+| `type`              | `String`                  | Yes      | Type of the resource.                                                                                            |
+| `resourceOwner`     | `String`                  | Yes      | The organisation that manages or delivers the Resource.                                                          |
+| `serviceProviders`  | `String`                  | No       | The name(s) (or abbreviation(s)) of Organisation(s) that manage or deliver the Catalogue in federated scenarios. |
+| `webpage`           | `URL`                     | Yes      | Webpage with information about the Catalogue usually hosted and maintained by the Organisation.                    |
+| `logo`              | `URL`                     | No       | Link to the logo/visual identity of the Resource.                                                                |
+| `scientificDomains` | `List<ScientificDomains>` | No       |                                                                                                                  |
+| `categories`        | `List<Categories>`        | No       |                                                                                                                  |
+| `accessTypes`       | `String`                  | Yes      | The way a user can access the resource (Remote, Physical, Virtual, etc.).                                        |
+| `tags`              | `List<String>`            | No       | Keywords associated to the Resource to simplify search by relevant keywords.                                     |
+| `jurisdiction`      | `String`                  | Yes      | The property defines the jurisdiction of the users of the resource, based on the vocabulary for this property.   |
+| `trl`               | `String`                  | Yes      | The Technology Readiness Level of the Resource.                                                                  |
+| `termsOfUse`        | `URL`                     | No       | Webpage describing the rules, Resource conditions and usage policy which one must agree to abide by.             |
+| `privacyPolicy`     | `URL`                     | No       | Link to the privacy policy applicable to the Resource.                                                           |
+| `accessPolicy`      | `URL`                     | No       | Information about the access policies that apply.                                                                |
+| `orderType`         | `String`                  | Yes      | Information on the ordering process type.                                                                        |
+| `order`             | `URL`                     | No       | Webpage through which an order for the Resource can be placed.                                                   |
+| `mainContact`       | `MainContact`             | Yes      |                                                                                                                  |
+| `publicContacts`    | `List<String>`            | Yes      | List of public contact emails.                                                                                   |
+
+#### Nested Objects
+
+##### AlternativePIDs
+
+| Field       | Type     | Required | Description |
+|-------------|----------|----------|-------------|
+| `pid`       | `String` | No       |             |
+| `pidSchema` | `String` | No       |             |
+
+##### ScientificDomains
+
+| Field                 | Type     | Required | Description                                                                                                |
+|-----------------------|----------|----------|------------------------------------------------------------------------------------------------------------|
+| `scientificDomain`    | `String` | No       | A named group of Organisations that offer access to the same type of Resources.                            |
+| `scientificSubdomain` | `String` | No       | A named group of Organisations that offer access to the same type of Resources, within the defined domain. |
+
+##### Categories
+
+| Field         | Type     | Required | Description                                                                                                |
+|---------------|----------|----------|------------------------------------------------------------------------------------------------------------|
+| `category`    | `String` | No       | A named group of Organisations that offer access to the same type of Resources.                            |
+| `subcategory` | `String` | No       | A named group of Organisations that offer access to the same type of Resources, within the defined domain. |
+
+##### MainContact
+
+| Field          | Type                 | Required | Description                               |
+|----------------|----------------------|----------|-------------------------------------------|
+| `firstName`    | `String`             | Yes      | First name of the main contact person.    |
+| `lastName`     | `String`             | Yes      | Last name of the main contact person.     |
+| `email`        | `String`             | Yes      | Email address of the main contact person. |
+| `role`         | `String`             | No       | Role of the main contact person.          |
+| `PIDs`         | `List<PIDs>`         | No       | PIDs of the main contact person.          |
+| `affiliations` | `List<Affiliations>` | No       | Affiliations of the main contact person.  |
+
+##### PIDs
+
+| Field                  | Type     | Required | Description                                                                      |
+|------------------------|----------|----------|----------------------------------------------------------------------------------|
+| `mainContactPID`       | `String` | Yes      | Uniquely identifies an individual or legal entity, according to various schemes. |
+| `mainContactPIDScheme` | `String` | Yes      | Uniquely identifies the organizational affiliation of the main contact.          |
+
+##### Affiliations
+
+| Field                   | Type                          | Required | Description                                                             |
+|-------------------------|-------------------------------|----------|-------------------------------------------------------------------------|
+| `affiliationName`       | `String`                      | Yes      | The organizational or institutional affiliation of the main contact.    |
+| `affiliationIdentifier` | `List<AffiliationIdentifier>` | No       | Uniquely identifies the organizational affiliation of the main contact. |
+
+##### AffiliationIdentifier
+
+| Field             | Type     | Required | Description |
+|-------------------|----------|----------|-------------|
+| `mainContactID`   | `String` | Yes      |             |
+| `mainContactType` | `String` | Yes      |             |
+
+### Example
+
+```json
+{
+  "id": "10.1234/catalogue",
+  "name": "Sample Catalogue",
+  "urls": [
+    "https://example.com/catalogue",
+    "https://mirror.example.com/catalogue"
+  ],
+  "alternativePIDs": [
+    {
+      "pid": "10.1234/catalogue_alternative_pid",
+      "pidSchema": "DOI"
+    }
+  ],
+  "nodePID": "node-sandbox",
+  "description": "A sample catalogue description.",
+  "publishingDate": "2026-01-01",
+  "type": "Catalogue",
+  "resourceOwner": "10.1234/organisation",
+  "serviceProviders": [
+    "10.1234/organisation2",
+    "10.1234/organisation3"
+  ],
+  "webpage": "https://example.com/catalogue/info",
+  "logo": "https://example.com/catalogue/logo.png",
+  "scientificDomains": [
+    {
+      "scientificDomain": "scientific_domain-agricultural_sciences",
+      "scientificSubdomain": "scientific_subdomain-agricultural_sciences-agricultural_biotechnology"
+    }
+  ],
+  "categories": [
+    {
+      "category": "category-access_physical_and_eInfrastructures-compute",
+      "subcategory": "subcategory-access_physical_and_eInfrastructures-compute-container_management"
+    }
+  ],
+  "accessTypes": "access_type-mail_in",
+  "tags": [
+    "innovation",
+    "technology"
+  ],
+  "jurisdiction": "ds_jurisdiction-global",
+  "trl": "trl-9",
+  "termsOfUse": "https://example.com/catalogue/terms",
+  "privacyPolicy": "https://example.com/catalogue/privacy",
+  "accessPolicy": "https://example.com/catalogue/access-policy",
+  "orderType": "order_type-open_access",
+  "order": "https://example.com/catalogue/order",
+  "mainContact": {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com",
+    "role": "credit-conceptualization",
+    "PIDs": [
+      {
+        "mainContactPID": "0000-0001-2345-6789",
+        "mainContactPIDScheme": "ORCID"
+      }
+    ],
+    "affiliations": [
+      {
+        "affiliationName": "Sample Organisation",
+        "affiliationIdentifier": [
+          {
+            "mainContactID": "https://ror.org/example123",
+            "mainContactType": "ROR"
+          }
+        ]
+      }
+    ]
+  },
+  "publicContacts": [
+    "support@example.com",
+    "info@example.com"
+  ]
 }
 ```
 
