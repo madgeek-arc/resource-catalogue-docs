@@ -39,8 +39,7 @@ ensuring consistency and reliability across the system.
     10. [Service Controller](#service-controller)
     11. [Training Resource Controller](#training-resource-controller)
     12. [Vocabulary Controller](#vocabulary-controller)
-4. [Federation Search](#federation-search)
-5. [Model](#model)
+4. [Model](#model)
     1. [Adapter](#adapter)
     2. [Catalogue](#catalogue)
     3. [Configuration Template Instance](#configuration-template-instance)
@@ -55,6 +54,7 @@ ensuring consistency and reliability across the system.
 5. [List of Vocabularies](#list-of-vocabularies)
 6. [Data Validation](#data-validation)
 7. [External Services](#external-services)
+8. [Federation Search](#federation-search)
 
 ---
 
