@@ -61,7 +61,7 @@ def post_public(base_url: str, headers: dict, post_path: str, resource: dict) ->
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Migrate resources to public endpoints")
+    parser = argparse.ArgumentParser(description="Publish approved active resources to their public endpoints")
     parser.add_argument("baseurl", help="Base URL (e.g. https://api.example.com)")
     parser.add_argument("token", help="Bearer token for authentication")
     parser.add_argument("--dry-run", action="store_true", help="Fetch only, do not POST")
