@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alternativePIDs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "string"
+          },
+          "pidSchema": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "nodePID": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "publishingDate": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "resourceOwner": {
+      "type": "string"
+    },
+    "acronym": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "scientificDomains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scientificDomain": {
+            "type": "string"
+          },
+          "scientificSubdomain": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "creators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "PIDs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "creatorPID": {
+                  "type": "string"
+                },
+                "creatorPIDScheme": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "creatorPID",
+                "creatorPIDScheme"
+              ]
+            }
+          },
+          "affiliations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "affiliationName": {
+                  "type": "string"
+                },
+                "affiliationIdentifier": {
+                  "type": "object",
+                  "properties": {
+                    "creatorID": {
+                      "type": "string"
+                    },
+                    "creatorType": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "creatorID",
+                    "creatorType"
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "affiliationName"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "firstName",
+          "lastName",
+          "email"
+        ]
+      }
+    },
+    "publicContacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "lastUpdate": {
+      "type": "string"
+    },
+    "license": {
+      "type": "object",
+      "properties": {
+        "licenseName": {
+          "type": "string"
+        },
+        "licenseURL": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "nodePID",
+    "description",
+    "publishingDate",
+    "type",
+    "resourceOwner",
+    "acronym",
+    "creators",
+    "publicContacts",
+    "version"
+  ]
+}

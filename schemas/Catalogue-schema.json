@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alternativePIDs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "string"
+          },
+          "pidSchema": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "nodePID": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "publishingDate": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "resourceOwner": {
+      "type": "string"
+    },
+    "serviceProviders": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "webpage": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "scientificDomains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scientificDomain": {
+            "type": "string"
+          },
+          "scientificSubdomain": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "subcategory": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "accessTypes": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "trl": {
+      "type": "string"
+    },
+    "termsOfUse": {
+      "type": "string"
+    },
+    "privacyPolicy": {
+      "type": "string"
+    },
+    "accessPolicy": {
+      "type": "string"
+    },
+    "orderType": {
+      "type": "string"
+    },
+    "order": {
+      "type": "string"
+    },
+    "mainContact": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "PIDs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mainContactPID": {
+                "type": "string"
+              },
+              "mainContactPIDScheme": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "mainContactPID",
+              "mainContactPIDScheme"
+            ]
+          }
+        },
+        "affiliations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "affiliationName": {
+                "type": "string"
+              },
+              "affiliationIdentifier": {
+                "type": "object",
+                "properties": {
+                  "mainContactID": {
+                    "type": "string"
+                  },
+                  "mainContactType": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "mainContactID",
+                  "mainContactType"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "affiliationName"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "firstName",
+        "lastName",
+        "email"
+      ]
+    },
+    "publicContacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "nodePID",
+    "description",
+    "publishingDate",
+    "type",
+    "resourceOwner",
+    "webpage",
+    "jurisdiction",
+    "trl",
+    "orderType",
+    "mainContact",
+    "publicContacts"
+  ]
+}
