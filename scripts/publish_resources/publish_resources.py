@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 Migrates resources to public by:
@@ -15,6 +14,8 @@ import requests
 ENDPOINT_MAP = {
     "adapter":                         ("adapter",                        "adapter"),
     "catalogue":                       ("catalogue",                      "catalogue"),
+    "configuration_template":          ("configurationTemplate",          "configurationTemplate"),
+    "configuration_template_instance": ("configurationTemplateInstance",  "configurationTemplateInstance"),
     "datasource":                      ("datasource",                     "datasource"),
     "deployable_application":          ("deployableApplication",          "deployableApplication"),
     "interoperability_record":         ("interoperabilityRecord",         "interoperabilityRecord"),
