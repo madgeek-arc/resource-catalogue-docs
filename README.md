@@ -2,7 +2,7 @@
   <img src='https://eosc.eu/wp-content/uploads/2024/02/EOSC-Beyond-logo.png'>
 </div>
 
-# Resource Catalogue Documentation [v6.1.0]
+# Resource Catalogue Documentation [v6.4.0]
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
@@ -29,28 +29,30 @@ ensuring consistency and reliability across the system.
 3. [Controllers](#controllers)
     1. [Adapter Controller](#adapter-controller)
     2. [Catalogue Controller](#catalogue-controller)
-    3. [Configuration Template Instance Controller](#configuration-template-instance-controller)
-    4. [Datasource Controller](#datasource-controller)
-    5. [Deployable Application Controller](#deployable-application-controller)
-    6. [Interoperability Record Controller](#interoperability-record-controller)
-    7. [Organisation Controller](#organisation-controller)
-    8. [Public Controller](#public-controller)
-    9. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
-    10. [Service Controller](#service-controller)
-    11. [Training Resource Controller](#training-resource-controller)
-    12. [Vocabulary Controller](#vocabulary-controller)
+    3. [Configuration Template Controller](#configuration-template-controller)
+    4. [Configuration Template Instance Controller](#configuration-template-instance-controller)
+    5. [Datasource Controller](#datasource-controller)
+    6. [Deployable Application Controller](#deployable-application-controller)
+    7. [Interoperability Record Controller](#interoperability-record-controller)
+    8. [Organisation Controller](#organisation-controller)
+    9. [Public Controller](#public-controller)
+    10. [Resource Interoperability Record Controller](#resource-interoperability-record-controller)
+    11. [Service Controller](#service-controller)
+    12. [Training Resource Controller](#training-resource-controller)
+    13. [Vocabulary Controller](#vocabulary-controller)
 4. [Model](#model)
     1. [Adapter](#adapter)
     2. [Catalogue](#catalogue)
-    3. [Configuration Template Instance](#configuration-template-instance)
-    4. [Datasource](#datasource)
-    5. [Deployable Application](#deployable-application)
-    6. [Interoperability Record](#interoperability-record)
-    7. [Organisation](#organisation)
-    8. [Resource Interoperability Record](#resource-interoperability-record)
-    9. [Service](#service)
-    10. [Training Resource](#training-resource)
-    11. [Vocabulary](#vocabulary)
+    3. [Configuration Template](#configuration-template)
+    4. [Configuration Template Instance](#configuration-template-instance)
+    5. [Datasource](#datasource)
+    6. [Deployable Application](#deployable-application)
+    7. [Interoperability Record](#interoperability-record)
+    8. [Organisation](#organisation)
+    9. [Resource Interoperability Record](#resource-interoperability-record)
+    10. [Service](#service)
+    11. [Training Resource](#training-resource)
+    12. [Vocabulary](#vocabulary)
 5. [List of Vocabularies](#list-of-vocabularies)
 6. [Data Validation](#data-validation)
 7. [External Services](#external-services)
@@ -110,6 +112,18 @@ ensuring consistency and reliability across the system.
             quantity: String (Quantity to be fetched, default 10) [optional]
             order: String (Order of results - asc/desc, default asc) [optional]
             orderField: String (Field to use for ordering) [optional]
+          ```
+
+    - PATCH
+        - Moves the Adapter to a different owner Organisation. The target Organisation must exist in the Adapter's
+          catalogue and be approved, active and not suspended. Administrative access moves to the new Organisation's admins.
+          ```diff
+          /adapter/changeResourceOwner/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            newOwnerId: String [required]
+            comment: String [optional]
           ```
 
     - POST
@@ -877,6 +891,93 @@ ensuring consistency and reliability across the system.
 
 
 
+- ### Configuration Template Controller
+
+  #### Operations for Configuration Templates
+
+    - DELETE
+        - Deletes a Configuration Template and its corresponding Model in a single request. It fails if the
+          Configuration Template has registered instances.
+          ```diff
+          /configurationTemplate/{prefix}/{suffix}/withModel
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+
+    - GET
+        - Returns the Configuration Template with the given id.
+          ```diff
+          /configurationTemplate/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+          ```
+        - Returns the Model of the Configuration Template with the given id.
+          ```diff
+          /configurationTemplate/{prefix}/{suffix}/model
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            federation: boolean (Look the Model up in the federation when it is not found locally, default false) [optional]
+          ```
+        - Filter a list of Configuration Templates based on a set of filters or get a list of all Configuration
+          Templates in the Catalogue.
+          ```diff
+          /configurationTemplate/all
+          Params:
+            keyword : String (Keyword to refine the search) [optional]
+            from : String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            sort: String (Field to use for sorting) [optional]
+            catalogue: String (Catalogue ID) [optional]
+          ```
+        - Returns all Configuration Templates of an Interoperability Record.
+          ```diff
+          /configurationTemplate/getAllByInteroperabilityRecordId/{prefix}/{suffix}
+          Params:
+            prefix: String [required]
+            suffix: String [required]
+            federation: boolean (Fall back to the federation when nothing is found locally, default false) [optional]
+            from : String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+          ```
+        - Returns a mapping of Interoperability Record ID to Configuration Template list.
+          ```diff
+          /configurationTemplate/interoperabilityRecordIdToConfigurationTemplateListMap
+          ```
+        - Returns all the available Monitoring service types.
+          ```diff
+          /configurationTemplate/monitoring/serviceTypes
+          ```
+
+    - POST
+        - Creates a Model and a Configuration Template in a single request. The Model must be of resourceType
+          'configuration_template_instance'.
+          ```diff
+          /configurationTemplate/{irPrefix}/{irSuffix}/withModel
+          Params:
+            irPrefix: String [required]
+            irSuffix: String [required]
+          Body:
+            Model JSON [required]
+          ```
+
+    - PUT
+        - Updates a Model and its corresponding Configuration Template in a single request, propagating name and
+          description from the Model to the Configuration Template. It fails if the Configuration Template has
+          registered instances.
+          ```diff
+          /configurationTemplate/{irPrefix}/{irSuffix}/withModel
+          Params:
+            irPrefix: String [required]
+            irSuffix: String [required]
+            comment: String [optional]
+          Body:
+            Model JSON [required]
+          ```
+
 - ### Configuration Template Instance Controller
 
   #### Operations for Configuration Template Instances
@@ -885,20 +986,6 @@ ensuring consistency and reliability across the system.
         - Returns the ConfigurationTemplateInstance with the given id.
           ```diff
           /configurationTemplateInstance/{prefix}/{suffix}
-          Params:
-            prefix: String [required]
-            suffix: String [required]
-          ```
-        - Returns a List of Configuration Template Instances associated with the given 'resourceId'.
-          ```diff
-          /configurationTemplateInstance/getAllByResourceId/{prefix}/{suffix}
-          Params:
-            prefix: String [required]
-            suffix: String [required]
-          ```
-        - Returns a List of Configuration Template Instances associated with the given 'configurationTemplateId'.
-          ```diff
-          /configurationTemplateInstance/getAllByConfigurationTemplateId/{prefix}/{suffix}
           Params:
             prefix: String [required]
             suffix: String [required]
@@ -979,10 +1066,6 @@ ensuring consistency and reliability across the system.
               prefix: String [required]
               suffix: String [required]
           ```
-        - Returns a list of Draft Datasources where user is admin.
-          ```diff
-          /datasource/draft/my
-          ```
         - Returns a list of Draft Datasources under a specific Organisation.
           ```diff
             /datasource/draft/byOrganisation/{prefix}/{suffix}
@@ -1006,23 +1089,6 @@ ensuring consistency and reliability across the system.
               quantity: String (Quantity to be fetched, default 10) [optional]
               order: String (Order of results - asc/desc, default asc) [optional]
               orderField: String (Field to use for ordering) [optional]
-          ```
-        - Returns a list of Datasources of a specific Catalogue.
-          ```diff
-            /datasource/byCatalogue/{id}
-            Params:
-              id: String [required]
-              query : String (Keyword to refine the search) [optional]
-              from : String (Starting index in the result set, default 0) [optional]
-              quantity: String (Quantity to be fetched, default 10) [optional]
-              order: String (Order of results - asc/desc, default asc) [optional]
-              orderField: String (Field to use for ordering) [optional]
-          ```
-        - Get all Datasources in the Catalogue organized by an attribute (eg. name)
-          ```diff
-            /datasource/by/{field}
-            Params:
-              field: Service field (required)
           ```
         - Returns a list of all Datasources of the specific Catalogue in the Portal.
           ```diff
@@ -1115,17 +1181,6 @@ ensuring consistency and reliability across the system.
               order: String (Order of results - asc/desc, default asc) [optional]
               orderField: String (Field to use for ordering) [optional]
           ```
-        - Returns a list of Deployable Applications of a specific Catalogue.
-          ```diff
-            /deployableApplication/byCatalogue/{id}
-            Params:
-              id: String [required]
-              query : String (Keyword to refine the search) [optional]
-              from : String (Starting index in the result set, default 0) [optional]
-              quantity: String (Quantity to be fetched, default 10) [optional]
-              order: String (Order of results - asc/desc, default asc) [optional]
-              orderField: String (Field to use for ordering) [optional]
-          ```
         - Returns a list of all Deployable Applications of the specific Catalogue in the Portal.
           ```diff
             /deployableApplication/all
@@ -1202,10 +1257,6 @@ ensuring consistency and reliability across the system.
           Params:
             prefix: String [required]
             suffix: String [required]
-          ```
-        - Returns a list of Draft Interoperability Records where user is admin.
-          ```diff
-          /interoperabilityRecord/draft/getMyDraftInteroperabilityRecords
           ```
         - Filter a list of Interoperability Records based on a set of filters or get a list of all Interoperability
           Records
@@ -1298,39 +1349,6 @@ ensuring consistency and reliability across the system.
             suffix: String [required]
             catalogue_id: String (default 'eosc') [optional]
           ```
-        - Validates a url.
-          ```diff
-          /organisation/validateUrl
-          Params:
-            urlForValidation: URL [required]
-          ```             
-        - Get a list of all inactive Services of a specific Organisation.
-          ```diff
-          /organisation/services/inactive/{prefix}/{suffix}
-          Params:
-            prefix: String [required]
-            suffix: String [required]
-          ```
-        - Get a list of all rejected resources (Services or Training Resources) of a specific Organisation.
-          ```diff
-          /organisation/services/inactive/{prefix}/{suffix}
-          Params:
-            prefix: String [required]
-            suffix: String [required]
-            resourceType: String [required]
-            query : String (Keyword to refine the search) [optional]
-            from : String (Starting index in the result set, default 0) [optional]
-            quantity: String (Quantity to be fetched, default 10) [optional]
-            order: String (Order of results - asc/desc, default asc) [optional]
-            orderField: String (Field to use for ordering) [optional]
-        - Get all inactive Organisations of the Catalogue.
-          ```diff
-          /organisation/inactive/all
-          ```
-        - Returns a list of Organisations where user is admin.
-          ```diff
-          /organisation/getMyServiceProviders
-          ```
         - Returns the Draft Organisation given its id.
           ```diff
           /organisation/draft/{prefix}/{suffix}
@@ -1338,20 +1356,6 @@ ensuring consistency and reliability across the system.
             prefix: String [required]
             suffix: String [required]
           ```
-        - Returns a list of Draft Organisations where user is admin.
-          ```diff
-          /organisation/draft/getMyDraftProviders
-          ```
-        - Get a list of all Organisations under a specific Catalogue.
-          ```diff
-          /organisation/byCatalogue/{id}
-          Params:
-            id: String [required]
-            query : String (Keyword to refine the search) [optional]
-            from : String (Starting index in the result set, default 0) [optional]
-            quantity: String (Quantity to be fetched, default 10) [optional]
-            order: String (Order of results - asc/desc, default asc) [optional]
-            orderField: String (Field to use for ordering) [optional]
         - Filter a list of Organisations based on a set of filters or get a list of all Organisations in the Catalogue.
           ```diff
           /organisation/all
@@ -1406,11 +1410,32 @@ ensuring consistency and reliability across the system.
   #### Get information about Public resources
 
     - GET
-        - Returns the Public Configuration Template Instance with the given id.
+        - Get a list of all Public Configuration Templates in the Portal.
           ```diff
-          /public/configurationTemplateInstance/{id}
+          /public/configurationTemplate/all
           Params:
-            id: String [required]
+            keyword : String (Keyword to refine the search) [optional]
+            from : String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+            sort: String (Field to use for sorting) [optional]
+          ```
+        - Search Public Configuration Templates in the Portal.
+          ```diff
+          /public/configurationTemplate/search
+          Params:
+            keyword: String (Search keyword) [optional]
+            from: String (Starting index in the result set, default 0) [optional]
+            quantity: String (Quantity to be fetched, default 10) [optional]
+            sort: String (Field to use for sorting) [optional]
+            order: String (Order of results - asc/desc, default asc) [optional]
+          ```
+        - Returns the Model bound to the Public Configuration Template with the given id.
+          ```diff
+          /public/configurationTemplate/{prefix}/{suffix}/model
+          Params:
+            prefix: String [required]
+            suffix: String [required]
           ```
         - Get a list of all Public Configuration Template Instances in the Portal.
           ```diff
@@ -1431,12 +1456,6 @@ ensuring consistency and reliability across the system.
             quantity: String (Quantity to be fetched, default 10) [optional]
             sort: String (Field to use for sorting) [optional]
             order: String (Order of results - asc/desc, default asc) [optional]
-          ```
-        - Returns the Public Datasource with the given id.
-          ```diff
-          /public/datasource/{id}
-          Params:
-            id: String [required]
           ```
         - Get a list of all Public Datasources in the Portal.
           ```diff
@@ -1460,23 +1479,6 @@ ensuring consistency and reliability across the system.
             sort: String (Field to use for sorting) [optional]
             order: String (Order of results - asc/desc, default asc) [optional]
           ```
-        - Returns the Public Interoperability Record with the given id.
-          ```diff
-          /public/interoperabilityRecord/{id}
-          Params:
-            id: String [required]
-            catalogue_id: String (default 'eosc) [optional]
-          ```
-        - Returns the Public Related Resources of a specific Interoperability Record given its id.
-          ```diff
-          /public/interoperabilityRecord/relatedResources/{id}
-          Params:
-            id: String [required]
-          ```
-        - Returns a list of Public Interoperability Records where user is admin.
-          ```diff
-          /public/interoperabilityRecord/my
-          ```
         - Get a list of all Public Interoperability Records in the Portal.
           ```diff
           /public/interoperabilityRecord/all
@@ -1498,16 +1500,6 @@ ensuring consistency and reliability across the system.
             quantity: String (Quantity to be fetched, default 10) [optional]
             sort: String (Field to use for sorting) [optional]
             order: String (Order of results - asc/desc, default asc) [optional]
-          ```
-        - Returns the Public Organisation with the given id.
-          ```diff
-          /public/organisation/{id}
-          Params:
-            id: String [required]
-          ```
-        - Returns a list of Public Organisations where user is admin.
-          ```diff
-          /public/organisation/my
           ```
         - Get a list of all Public Organisations in the Portal.
           ```diff
@@ -1531,16 +1523,6 @@ ensuring consistency and reliability across the system.
             sort: String (Field to use for sorting) [optional]
             order: String (Order of results - asc/desc, default asc) [optional]
           ```
-        - Returns the Public Resource Interoperability Record with the given id.
-          ```diff
-          /public/resourceInteroperabilityRecord/{id}
-          Params:
-            id: String [required]
-          ```
-        - Returns a list of Public Resource Interoperability Records where user is admin.
-          ```diff
-          /public/resourceInteroperabilityRecord/my
-          ```
         - Get a list of all Public Resource Interoperability Records in the Portal.
           ```diff
           /public/resourceInteroperabilityRecord/all
@@ -1562,29 +1544,6 @@ ensuring consistency and reliability across the system.
             sort: String (Field to use for sorting) [optional]
             order: String (Order of results - asc/desc, default asc) [optional]
           ```
-        - Returns the Public Service with the given id.
-          ```diff
-          /public/service/{id}
-          Params:
-            id: String [required]
-            catalogue_id (default 'eosc') [optional]
-          ```
-        - Returns a list of Public Services where user is admin.
-          ```diff
-          /public/services/my
-          ```
-        - Get a list of all Public Services in the Portal.
-          ```diff
-          /public/services/all
-          Params:
-            suspended: boolean (default false) [optional]
-            query : String (Keyword to refine the search) [optional]
-            from : String (Starting index in the result set, default 0) [optional]
-            quantity: String (Quantity to be fetched, default 10) [optional]
-            order: String (Order of results - asc/desc, default asc) [optional]
-            orderField: String (Field to use for ordering) [optional]
-            catalogue: String (default 'eosc') [optional]
-          ```
         - Search Public Services in the Portal.
           ```diff
           /public/service/search
@@ -1594,17 +1553,6 @@ ensuring consistency and reliability across the system.
             quantity: String (Quantity to be fetched, default 10) [optional]
             sort: String (Field to use for sorting) [optional]
             order: String (Order of results - asc/desc, default asc) [optional]
-          ```
-        - Returns the Public Training Resource with the given id.
-          ```diff
-          /public/trainingResource/{id}
-          Params:
-            id: String [required]
-            catalogue_id (default 'eosc') [optional]
-          ```
-        - Returns a list of Public Training Resources where user is admin.
-          ```diff
-          /public/trainingResource/my
           ```
         - Get a list of all Public Training Resources in the Portal.
           ```diff
@@ -1739,10 +1687,6 @@ ensuring consistency and reliability across the system.
               prefix: String [required]
               suffix: String [required]
           ```
-        - Returns a list of Draft Services where user is admin.
-          ```diff
-          /service/draft/my
-          ```
         - Returns a list of Draft Services under a specific Organisation.
           ```diff
             /service/draft/byOrganisation/{prefix}/{suffix}
@@ -1766,23 +1710,6 @@ ensuring consistency and reliability across the system.
               quantity: String (Quantity to be fetched, default 10) [optional]
               order: String (Order of results - asc/desc, default asc) [optional]
               orderField: String (Field to use for ordering) [optional]
-          ```
-        - Returns a list of Services of a specific Catalogue.
-          ```diff
-            /service/byCatalogue/{id}
-            Params:
-              id: String [required]
-              query : String (Keyword to refine the search) [optional]
-              from : String (Starting index in the result set, default 0) [optional]
-              quantity: String (Quantity to be fetched, default 10) [optional]
-              order: String (Order of results - asc/desc, default asc) [optional]
-              orderField: String (Field to use for ordering) [optional]
-          ```
-        - Get all Services in the Catalogue organized by an attribute (eg. name)
-          ```diff
-            /service/by/{field}
-            Params:
-              field: Service field (required)
           ```
         - Returns a list of all Services in the Portal.
           ```diff
@@ -1876,10 +1803,6 @@ ensuring consistency and reliability across the system.
               prefix: String [required]
               suffix: String [required]
           ```
-        - Returns a list of Draft Training Resources where user is admin.
-          ```diff
-          /trainingResource/draft/getMyDraftTrainingResources
-          ```
         - Returns a list of Training Resources under a specific Organisation.
           ```diff
             /trainingResource/byOrganisation/{prefix}/{suffix}
@@ -1892,23 +1815,6 @@ ensuring consistency and reliability across the system.
               quantity: String (Quantity to be fetched, default 10) [optional]
               order: String (Order of results - asc/desc, default asc) [optional]
               orderField: String (Field to use for ordering) [optional]
-          ```
-        - Returns a list of Training Resources of a specific Catalogue.
-          ```diff
-            /trainingResource/byCatalogue/{id}
-            Params:
-              id: String [required]
-              query : String (Keyword to refine the search) [optional]
-              from : String (Starting index in the result set, default 0) [optional]
-              quantity: String (Quantity to be fetched, default 10) [optional]
-              order: String (Order of results - asc/desc, default asc) [optional]
-              orderField: String (Field to use for ordering) [optional]
-          ```
-        - Get all Training Resources in the Catalogue organized by an attribute (eg. name)
-          ```diff
-            /trainingResource/by/{field}
-            Params:
-              field: Service field (required)
           ```
         - Returns a list of all Training Resources in the Portal.
           ```diff
@@ -2020,7 +1926,7 @@ ensuring consistency and reliability across the system.
 | `type`                | `String`                | Yes      | Type of the resource.                                                                                      |
 | `resourceOwner`       | `String`                | Yes      | The organisation that manages or delivers the Resource.                                                    |
 | `linkedResource`      | `LinkedResource`        | Yes      | Service or Guideline linked with the Adapter.                                                              |
-| `tagline`             | `String`                | Yes      | Short tagline summarizing the adapter.                                                                     |
+| `tagline`             | `String`                | No       | Short tagline summarizing the adapter.                                                                     |
 | `logo`                | `URL`                   | No       | Link to the logo/visual identity of the adapter.                                                           |
 | `documentation`       | `URL`                   | Yes      | Documentation webpage (e.g., read-the-docs page).                                                          |
 | `repository`          | `URL`                   | Yes      | Code repository webpage (e.g., a GitHub repository).                                                       |
@@ -2191,7 +2097,7 @@ ensuring consistency and reliability across the system.
 | `logo`              | `URL`                     | No       | Link to the logo/visual identity of the Resource.                                                                |
 | `scientificDomains` | `List<ScientificDomains>` | No       |                                                                                                                  |
 | `categories`        | `List<Categories>`        | No       |                                                                                                                  |
-| `accessTypes`       | `String`                  | Yes      | The way a user can access the resource (Remote, Physical, Virtual, etc.).                                        |
+| `accessTypes`       | `String`                  | No       | The way a user can access the resource (Remote, Physical, Virtual, etc.).                                        |
 | `tags`              | `List<String>`            | No       | Keywords associated to the Resource to simplify search by relevant keywords.                                     |
 | `jurisdiction`      | `String`                  | Yes      | The property defines the jurisdiction of the users of the resource, based on the vocabulary for this property.   |
 | `trl`               | `String`                  | Yes      | The Technology Readiness Level of the Resource.                                                                  |
@@ -2339,6 +2245,33 @@ ensuring consistency and reliability across the system.
 }
 ```
 
+### Configuration Template
+
+| Field                     | Type     | Required | Description                                                                  |
+|---------------------------|----------|----------|------------------------------------------------------------------------------|
+| `id`                      | `String` | auto-gen | Unique identifier for the configuration template.                           |
+| `interoperabilityRecordId`| `String` | Yes      | Identifier of the Interoperability Record the configuration template is for. |
+| `modelId`                 | `String` | Yes      | Identifier of the Model that describes the configuration.                    |
+| `name`                    | `String` | Yes      | Name of the configuration template (taken from the Model).                   |
+| `description`             | `String` | No       | Description (taken from the Model).                                          |
+| `nodePID`                 | `String` | Yes      | Configuration Template's original Node.                                      |
+
+The Configuration Template has no dedicated JSON schema: it is stored as a free-form object, and the endpoint
+`POST /configurationTemplate/{irPrefix}/{irSuffix}/withModel` fills in the fields above from the supplied Model.
+
+### Example
+
+```json
+{
+  "id": "10.1234/con",
+  "interoperabilityRecordId": "10.1234/ir",
+  "modelId": "model-id",
+  "name": "Sample Configuration Template",
+  "description": "This is a description",
+  "nodePID": "node-sandbox"
+}
+```
+
 ### Configuration Template Instance
 
 | Field                     | Type                  | Required | Description                                                |
@@ -2385,7 +2318,7 @@ ensuring consistency and reliability across the system.
 | `jurisdiction`              | `String`                         | Yes      | The property defines the jurisdiction of the users of the data source, based on the vocabulary for this property.                     |
 | `scientificDomains`         | `List<ScientificDomains>`        | No       | Scientific Domains and Subdomains.                                                                                                    |
 | `categories`                | `List<Categories>`               | No       | Categories and Subcategories.                                                                                                         |
-| `accessTypes`               | `String`                         | Yes      | The way a user can access the datasource (Remote, Physical, Virtual, etc.).                                                           |
+| `accessTypes`               | `String`                         | No       | The way a user can access the datasource (Remote, Physical, Virtual, etc.).                                                           |
 | `tags`                      | `List<String>`                   | No       | Keywords associated to the datasource to simplify search by relevant keywords.                                                        |
 | `trl`                       | `String`                         | Yes      | The Technology Readiness Level of the datasource (to be further updated in the context of the EOSC).                                  |
 | `termsOfUse`                | `URL`                            | No       | Webpage describing the rules, datasource conditions and usage policy which one must agree to abide by in order to use the datasource. |
@@ -3054,7 +2987,7 @@ ensuring consistency and reliability across the system.
 | `logo`              | `URL`                     | No       | Link to the logo/visual identity of the Resource.                                                              |
 | `scientificDomains` | `List<ScientificDomains>` | No       |                                                                                                                |
 | `categories`        | `List<Categories>`        | No       |                                                                                                                |
-| `accessTypes`       | `String`                  | Yes      | The way a user can access the resource (Remote, Physical, Virtual, etc.).                                      |
+| `accessTypes`       | `String`                  | No       | The way a user can access the resource (Remote, Physical, Virtual, etc.).                                      |
 | `tags`              | `List<String>`            | No       | Keywords associated to the Resource to simplify search by relevant keywords.                                   |
 | `jurisdiction`      | `String`                  | Yes      | The property defines the jurisdiction of the users of the resource, based on the vocabulary for this property. |
 | `trl`               | `String`                  | Yes      | The Technology Readiness Level of the Resource.                                                                |
